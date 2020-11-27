@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Registration View Controller-->
+        <scene sceneID="hoR-0e-RzL">
+            <objects>
+                <viewController restorationIdentifier="RegistrationViewController" storyboardIdentifier="RegistrationViewController" id="nMP-O0-cPs" customClass="RegistrationViewController" customModule="MVVMC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6SQ-mI-4xa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UBU-Xi-A9C" customClass="LocalizedTextField" customModule="MVVMC" customModuleProvider="target">
+                                <rect key="frame" x="16" y="388" width="382" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4wA-PK-qKp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="upperText" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizationKey" value="FirstName"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lfI-4A-VVO" customClass="LocalizedTextField" customModule="MVVMC" customModuleProvider="target">
+                                <rect key="frame" x="16" y="438" width="382" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cpU-Zh-oVZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="upperText" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizationKey" value="Email"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VsD-hF-u52" customClass="LocalizedTextField" customModule="MVVMC" customModuleProvider="target">
+                                <rect key="frame" x="16" y="488" width="382" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Q7y-Q7-9rl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="upperText" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizationKey" value="Password"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxv-eV-QAS" customClass="ButtonWithProgress" customModule="MVVMC" customModuleProvider="target">
+                                <rect key="frame" x="133.5" y="553" width="147" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="loginButton"/>
+                                <color key="tintColor" red="0.081568567960000005" green="0.56862745100000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="9" maxX="40" maxY="9"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="0.081568567960000005" green="0.56862745100000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationKey" value="SignUp"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="upperText" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qkH-KO-GQF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VsD-hF-u52" firstAttribute="leading" secondItem="qkH-KO-GQF" secondAttribute="leading" constant="16" id="BL1-HH-RHz"/>
+                            <constraint firstItem="qkH-KO-GQF" firstAttribute="trailing" secondItem="lfI-4A-VVO" secondAttribute="trailing" constant="16" id="FpC-Ls-ReH"/>
+                            <constraint firstItem="qkH-KO-GQF" firstAttribute="trailing" secondItem="UBU-Xi-A9C" secondAttribute="trailing" constant="16" id="Fur-sv-zUu"/>
+                            <constraint firstItem="UBU-Xi-A9C" firstAttribute="leading" secondItem="qkH-KO-GQF" secondAttribute="leading" constant="16" id="K1A-hu-VAB"/>
+                            <constraint firstItem="Oxv-eV-QAS" firstAttribute="top" secondItem="VsD-hF-u52" secondAttribute="bottom" constant="25" id="KpH-u2-FC5"/>
+                            <constraint firstItem="UBU-Xi-A9C" firstAttribute="centerY" secondItem="6SQ-mI-4xa" secondAttribute="centerY" constant="-40" id="Ldl-ir-hwP"/>
+                            <constraint firstItem="Oxv-eV-QAS" firstAttribute="centerX" secondItem="qkH-KO-GQF" secondAttribute="centerX" id="PEK-uT-Ywl"/>
+                            <constraint firstItem="VsD-hF-u52" firstAttribute="top" secondItem="lfI-4A-VVO" secondAttribute="bottom" constant="10" id="Xqa-Uc-n3a"/>
+                            <constraint firstItem="lfI-4A-VVO" firstAttribute="top" secondItem="UBU-Xi-A9C" secondAttribute="bottom" constant="10" id="gWu-b8-fRS"/>
+                            <constraint firstItem="qkH-KO-GQF" firstAttribute="trailing" secondItem="VsD-hF-u52" secondAttribute="trailing" constant="16" id="h3c-0S-Nvj"/>
+                            <constraint firstItem="lfI-4A-VVO" firstAttribute="leading" secondItem="qkH-KO-GQF" secondAttribute="leading" constant="16" id="nCf-s1-Cyf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="lfI-4A-VVO" id="L9X-X2-bw2"/>
+                        <outlet property="firstNameTextField" destination="UBU-Xi-A9C" id="IDJ-fg-uEV"/>
+                        <outlet property="passwordTextField" destination="VsD-hF-u52" id="ylb-gJ-cU4"/>
+                        <outlet property="signUpButton" destination="Oxv-eV-QAS" id="OZA-hS-h3h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pt8-Wb-nrf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-546" y="73"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="Oxv-eV-QAS">
+            <size key="intrinsicContentSize" width="147" height="40"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
