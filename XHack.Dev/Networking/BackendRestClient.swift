@@ -7,7 +7,7 @@ class BackendRestClient: RestClient {
     private lazy var sessionService: SessionService? = AppDelegate.container.resolve(SessionService.self)
     
     private var token: String? {
-        return sessionService?.sessionState?.token.getToken()
+        return sessionService?.sessionState?.token.accessToken
     }
     
     init(httpClient: HttpClient, alertDispatcher: AlertDispatcher) {
@@ -57,7 +57,7 @@ class BackendRestClient: RestClient {
     private func getHeaders() -> [String:String] {
         var headers = ["Content-Type": "application/json"]
         if let tokenHeader = token {
-            headers["Authorization"] = tokenHeader
+            headers["Authorization"] = "Bearer \(tokenHeader)"
         }
         return headers
     }

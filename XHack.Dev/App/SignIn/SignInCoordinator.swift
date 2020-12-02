@@ -2,14 +2,14 @@ import Foundation
 import UIKit
 import RxSwift
 
-class SignInCoordinator: BaseCoordinator {
+class SignInCoordinator: BaseCoordinator<Void> {
     private let viewModel: SignInViewModel
     
     init(viewModel: SignInViewModel) {
         self.viewModel = viewModel
     }
     
-    override func start() {
+    override func start() -> Observable<Void> {
         let viewController = SignInViewController.instantiate()
         viewController.viewModel = viewModel
         
@@ -17,6 +17,7 @@ class SignInCoordinator: BaseCoordinator {
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.viewControllers = [viewController]
         setUpBinding()
+        return Observable.empty()
     }
     
     func toRegistration() {

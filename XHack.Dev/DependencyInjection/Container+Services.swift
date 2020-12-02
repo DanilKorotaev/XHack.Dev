@@ -12,5 +12,7 @@ extension Container {
         autoregister(IMessager.self, initializer: Messager.init).inObjectScope(.container)
         autoregister(IPushSubscriptionProvider.self, initializer: PushSubscriptionProvider.init).inObjectScope(.container)
         autoregister(NotificationCenter.self, initializer: {() in return NotificationCenter.default}).inObjectScope(.container)
+        autoregister(IAccountSecureStorage.self, initializer: AccountSecureStorage.init).inObjectScope(.container)
+
     }
 }

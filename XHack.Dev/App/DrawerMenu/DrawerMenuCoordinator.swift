@@ -3,7 +3,7 @@ import RxSwift
 import RxCocoa
 import SideMenu
 
-class DrawerMenuCoordinator: BaseCoordinator {
+class DrawerMenuCoordinator: BaseCoordinator<Void> {
     private let sessionService: SessionService
     private let drawerMenuViewModel: DrawerMenuViewModel
 
@@ -12,37 +12,38 @@ class DrawerMenuCoordinator: BaseCoordinator {
         self.sessionService = sessionService
     }
     
-    override func start() {
-        drawerMenuViewModel.didSelectScreen
-            .distinctUntilChanged()
-            .subscribe(onNext: { [weak self] screen in self?.selectScreen(screen) })
-            .disposed(by: disposeBag)
+    override func start() -> Observable<Void> {
+//        drawerMenuViewModel.didSelectScreen
+//            .distinctUntilChanged()
+//            .subscribe(onNext: { [weak self] screen in self?.selectScreen(screen) })
+//            .disposed(by: disposeBag)
         
         let drawerMenu = SideMenuManager.default.leftMenuNavigationController
         let menuViewController = drawerMenu?.topViewController as? DrawerMenuViewController
         menuViewController?.viewModel = drawerMenuViewModel
+        return Observable.empty()
     }
     
-    func selectScreen(_ screen: DrawerMenuScreen) {
-        Logger.info("Selected screen: \(screen)")
-        
-        switch screen {
-        case .dashboard:
-            removeChildCoordinators()
-            let coordinator = AppDelegate.container.resolve(DashboardCoordinator.self)!
-            coordinator.navigationController = navigationController
-            start(coordinator: coordinator)
-            
-        case .settings:
-            removeChildCoordinators()
-            let coordinator = AppDelegate.container.resolve(SettingsCoordinator.self)!
-            coordinator.navigationController = navigationController
-            start(coordinator: coordinator)
-            
-        case .signOut:
-            sessionService.signOut()
-                .subscribe()
-                .disposed(by: disposeBag)
-        }
-    }
+//    func selectScreen(_ screen: DrawerMenuScreen) {
+//        Logger.info("Selected screen: \(screen)")
+//
+//        switch screen {
+//        case .dashboard:
+//            removeChildCoordinators()
+//            let coordinator = AppDelegate.container.resolve(DashboardCoordinator.self)!
+//            coordinator.navigationController = navigationController
+//            start(coordinator: coordinator)
+//
+//        case .settings:
+//            removeChildCoordinators()
+//            let coordinator = AppDelegate.container.resolve(SettingsCoordinator.self)!
+//            coordinator.navigationController = navigationController
+//            start(coordinator: coordinator)
+//
+//        case .signOut:
+//            sessionService.signOut()
+//                .subscribe()
+//                .disposed(by: disposeBag)
+//        }
+//    }
 }

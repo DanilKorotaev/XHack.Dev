@@ -23,4 +23,8 @@ class HttpRequestExecutor: HttpClient {
         print("Fetching \(request.url?.absoluteString ?? "")...")
         dataTask.resume()
     }
+    
+    func setBearerToken(_ token: String) {
+        
+    }
 }

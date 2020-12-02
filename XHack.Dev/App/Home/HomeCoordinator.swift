@@ -1,7 +1,7 @@
-
 import Foundation
+import RxSwift
 
-class HomeCoordinator: BaseCoordinator {
+class HomeCoordinator: BaseCoordinator<Void> {
     
     let homeViewModel: HomeViewModel
     
@@ -9,10 +9,12 @@ class HomeCoordinator: BaseCoordinator {
         homeViewModel = viewModel
     }
     
-    override func start() {
+    override func start() -> Observable<Void> {
         let viewController = HomeViewController.instantiate()
         navigationController.navigationBar.isHidden = true
         navigationController.viewControllers = [viewController]
         viewController.viewModel = homeViewModel
+        
+        return Observable.empty()
     }
 }

@@ -6,7 +6,7 @@ class ProfileViewController: UIViewController, Storyboarded {
     static var storyboard = AppStoryboard.profile
     
     @IBOutlet weak var signOutButton: LocalizedButton!
-    var viewModel: ProfileViewModel!
+    var viewModel: ProfileViewModel?
     private let disposeBag = DisposeBag()
     
     
@@ -16,6 +16,8 @@ class ProfileViewController: UIViewController, Storyboarded {
     }
     
     private func setUpBindings() {
+        guard let viewModel = viewModel else { return }
+        
         signOutButton.rx.tap
             .bind(to: viewModel.signOut)
             .disposed(by: disposeBag)

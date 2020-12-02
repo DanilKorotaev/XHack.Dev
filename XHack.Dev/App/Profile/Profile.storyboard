@@ -12,7 +12,7 @@
         <!--Profile View Controller-->
         <scene sceneID="hGT-HF-KMC">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Inu-mL-gAY" customClass="ProfileViewController" customModule="MVVMC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Inu-mL-gAY" customClass="ProfileViewController" customModule="XHack_Dev" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GgK-6n-Shx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,8 +23,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2KH-WE-qzx" customClass="LocalizedButton" customModule="MVVMC" customModuleProvider="target">
-                                <rect key="frame" x="178.5" y="802" width="57" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2KH-WE-qzx" customClass="LocalizedButton" customModule="XHack_Dev" customModuleProvider="target">
+                                <rect key="frame" x="138.5" y="796" width="137" height="36"/>
                                 <state key="normal" title="Sign out"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="localizationKey" value="SignOut"/>
@@ -51,7 +51,7 @@
     </scenes>
     <designables>
         <designable name="2KH-WE-qzx">
-            <size key="intrinsicContentSize" width="57" height="30"/>
+            <size key="intrinsicContentSize" width="137" height="36"/>
         </designable>
     </designables>
     <resources>

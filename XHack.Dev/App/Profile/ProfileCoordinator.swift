@@ -1,6 +1,7 @@
 import Foundation
+import RxSwift
 
-class ProfileCoordinator: BaseCoordinator {
+class ProfileCoordinator: BaseCoordinator<Void> {
     let viewModel: ProfileViewModel
     let sessionService: SessionService
     
@@ -9,18 +10,26 @@ class ProfileCoordinator: BaseCoordinator {
         self.sessionService = sessionService
     }
     
-    override func start() {
+    override func start() -> Observable<Void> {
         let viewController = ProfileViewController.instantiate()
         navigationController.navigationBar.isHidden = true
         navigationController.viewControllers = [viewController]
         viewController.viewModel = viewModel
         setUpBinding()
+        return Observable.empty()
     }
     
     func setUpBinding() {
         viewModel.signOut
             .subscribe(onNext: { [weak self] in
-                _ = self?.sessionService.signOut()
+                guard let self = self else {return}
+                self.sessionService.signOut().subscribe().disposed(by: self.disposeBag)
+            },
+            onError: { (error) in
+                print(error)
+            },
+            onDisposed: {
+                print("onDisposed")
             })
             .disposed(by: disposeBag)
     }

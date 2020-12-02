@@ -1,7 +1,7 @@
-
 import Foundation
+import RxSwift
 
-class TaskDetailCoordinator: BaseCoordinator {
+class TaskDetailCoordinator: BaseCoordinator<Void> {
     
     var taskDetailViewModel: TaskDetailViewModel
     
@@ -9,9 +9,10 @@ class TaskDetailCoordinator: BaseCoordinator {
         self.taskDetailViewModel = taskDetailViewModel
     }
     
-    override func start() {
+    override func start() -> Observable<Void> {
         let viewController = TaskDetailViewController.instantiate()
         viewController.viewModel = taskDetailViewModel
         navigationController.pushViewController(viewController, animated: true)
+        return Observable.empty()
     }
 }

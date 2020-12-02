@@ -3,7 +3,7 @@ import RxSwift
 import SideMenu
 
 
-class AppCoordinator: BaseCoordinator {
+class AppCoordinator: BaseCoordinator<Void> {
     private let sessionService: SessionService
     private var window = UIWindow(frame: UIScreen.main.bounds)
     
@@ -15,7 +15,7 @@ class AppCoordinator: BaseCoordinator {
         self.sessionService = sessionService
     }
     
-    override func start() {
+    override func start() -> Observable<Void> {
         window.makeKeyAndVisible()
         
         sessionService.sessionState == nil
@@ -23,6 +23,7 @@ class AppCoordinator: BaseCoordinator {
             : showRootTabBar()
         
         subscribeToSessionChanges()
+        return Observable.empty()
     }
     
     private func subscribeToSessionChanges() {
@@ -45,7 +46,7 @@ class AppCoordinator: BaseCoordinator {
     }
     
     private func showSignIn() {
-        removeChildCoordinators()
+//        removeChildCoordinators()
         
         let coordinator = AppDelegate.container.resolve(SignInCoordinator.self)!
         start(coordinator: coordinator)
@@ -57,7 +58,7 @@ class AppCoordinator: BaseCoordinator {
     }
     
     private func showRootTabBar() {
-        removeChildCoordinators()
+//        removeChildCoordinators()
         let coordinator = AppDelegate.container.resolve(RootTabBarCoordinator.self)!
         start(coordinator: coordinator)
         ViewControllerUtils.setRootViewController(
@@ -68,11 +69,11 @@ class AppCoordinator: BaseCoordinator {
     
     
     private func showDashboard() {
-        removeChildCoordinators()
+//        removeChildCoordinators()
         
         let coordinator = AppDelegate.container.resolve(DrawerMenuCoordinator.self)!
         coordinator.navigationController = BaseNavigationController()
-        start(coordinator: coordinator)
+        start(coordinator: coordinator).subscribe().disposed(by: disposeBag)
         
         ViewControllerUtils.setRootViewController(
             window: window,

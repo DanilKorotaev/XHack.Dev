@@ -5,5 +5,6 @@ extension Container {
         registerServices()
         registerCoordinators()
         registerViewModels()
+        registerApi()
     }
 }

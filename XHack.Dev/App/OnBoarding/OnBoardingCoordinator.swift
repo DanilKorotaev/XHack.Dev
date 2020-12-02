@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 import UIKit
 
-class OnBoardingCoordinator: BaseCoordinator {
+class OnBoardingCoordinator: BaseCoordinator<Void> {
     var onBoardingViewController: BaseNavigationController!
     
     private let dataManager: DataManager
@@ -16,7 +16,7 @@ class OnBoardingCoordinator: BaseCoordinator {
         self.dataManager = dataManager
     }
     
-    override func start() {
+    override func start() -> Observable<Void>{
         setUpBindings()
         
         let viewController = SetNameViewController.instantiate()
@@ -26,6 +26,7 @@ class OnBoardingCoordinator: BaseCoordinator {
         onBoardingViewController.navigationBar.isHidden = true
         onBoardingViewController.modalPresentationStyle = .fullScreen
         navigationController.topViewController?.presentOnTop(onBoardingViewController, animated: true)
+        return Observable.empty()
     }
     
     private func didSetName() {
@@ -38,7 +39,7 @@ class OnBoardingCoordinator: BaseCoordinator {
     private func didFinishOnBoarding(with data: OnBoardingData) {
         dataManager.set(key: SettingKey.onBoardingData, value: data)
         onBoardingViewController.dismiss(animated: true, completion: nil)
-        parentCoordinator?.didFinish(coordinator: self)
+//        parentCoordinator?.didFinish(coordinator: self)
     }
     
     private func setUpBindings() {

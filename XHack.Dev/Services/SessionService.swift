@@ -15,8 +15,9 @@ class SessionService {
     private let signOutSubject = PublishSubject<Void>()
     private let signInSubject = PublishSubject<Void>()
     private let disposeBag = DisposeBag()
+    private let authApi: AuthApi
     
-    private var token: Token?
+    private var token: Tokens?
     
     // MARK: - Public properties
     
@@ -31,55 +32,60 @@ class SessionService {
     
     // MARK: - Public Methods
     
-    init(dataManager: DataManager, restClient: RestClient, translationsService: TranslationsService, messanger: IMessager) {
+    init(authApi: AuthApi, dataManager: DataManager, restClient: RestClient, translationsService: TranslationsService, messanger: IMessager) {
         self.dataManager = dataManager
         self.restClient = restClient
         self.translationsService = translationsService
         self.messager = messanger
+        self.authApi = authApi
         loadSession()
     }
     
     func signIn(credentials: Credentials) -> Completable {
-        let signIn = restClient.request(SessionEndpoints.SignIn(credentials: credentials))
-        
-        return signIn
-            .do(onSuccess: { [weak self] in
-                try self?.setToken(response: $0)
-                try self?.setSession(email: credentials.email)
-                self?.messager.publish(message: LoginMessage())
-                self?.signInSubject.onNext(Void())
-            })
-            .asCompletable()
+        return Single<Void>.create { (single) -> Disposable in
+            let signIn = self.authApi.singIn(creadential: SignInRequest(email: credentials.email, password: credentials.password))
+            return signIn.do(onNext:{ [weak self] result in
+                    single(.success(()))
+                    guard let content = result.content, result.status == .successful else { return }
+                    try self?.setToken(response: content)
+                    try self?.setSession(email: credentials.email)
+                    self?.messager.publish(message: LoginMessage())
+                    self?.signInSubject.onNext(Void())
+            }).subscribe()
+        }.do().asCompletable()
     }
     
     func signOut() -> Completable {
-        let signOut = restClient.request(SessionEndpoints.SignOut())
-        
-        return signOut
-            .do(onSuccess: { [weak self] _ in
-                self?.removeSession()
-                self?.messager.publish(message: SignOutMessage())
-            })
-            .asCompletable()
+        return Single.create { (single) -> Disposable in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                single(.success(()))
+            }
+            return Disposables.create()
+        }.do(onSuccess: { [weak self] in
+            self?.removeSession()
+            self?.messager.publish(message: SignOutMessage())
+        }).asCompletable()
     }
     
     func signUp(request: SignUpRequest) -> Completable {
-        let signUp = restClient.request(SessionEndpoints.SignUp(content: request))
-        
-        return signUp
-            .do(onSuccess: { [weak self] _ in
-                self?.token = Token(token: "", tokenType: "Bearer")
+        return Single<Void>.create { (single) -> Disposable in
+            let signIn = self.authApi.signUp(request)
+            return signIn.do(onNext:{ [weak self] result in
+                single(.success(()))
+                guard let content = result.content, result.status == .successful else { return }
+                self?.token = Tokens(accessToken: content.token)
+                try self?.setSession(email: request.email)
                 self?.signInSubject.onNext(Void())
-            })
-            .asCompletable()
+            }).subscribe()
+        }.do().asCompletable()
     }
     
-//    func refreshProfile() -> Single<MeResponse> {
-//        let fetchMe = restClient.request(SessionEndpoints.FetchMe())
-//
-//        return fetchMe
-//            .do(onSuccess: { [weak self] in self?.updateProfile(data: $0) })
-//    }
+    //    func refreshProfile() -> Single<MeResponse> {
+    //        let fetchMe = restClient.request(SessionEndpoints.FetchMe())
+    //
+    //        return fetchMe
+    //            .do(onSuccess: { [weak self] in self?.updateProfile(data: $0) })
+    //    }
     
     // MARK: - Session Management
     
@@ -88,7 +94,7 @@ class SessionService {
             throw SessionError.invalidToken
         }
         
-        token = Token(token: accessToken, tokenType: "Bearer")
+        token = Tokens(accessToken: accessToken)
     }
     
     private func setSession(email: String) throws {
@@ -117,7 +123,7 @@ class SessionService {
     }
     
     private func updateProfile(data: MeResponse) {
-//        sessionState?.updateDetails(data)
+        //        sessionState?.updateDetails(data)
         dataManager.set(key: SettingKey.session, value: sessionState)
     }
 }

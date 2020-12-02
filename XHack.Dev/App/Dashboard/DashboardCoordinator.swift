@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import RxSwift
 
-class DashboardCoordinator: BaseCoordinator {
+class DashboardCoordinator: BaseCoordinator<Void> {
     private let dashboardViewModel: DashboardViewModel
     private let dataManager: DataManager
         
@@ -11,7 +11,7 @@ class DashboardCoordinator: BaseCoordinator {
         self.dataManager = dataManager
     }
     
-    override func start() {
+    override func start() -> Observable<Void> {
         let viewController = DashboardViewController.instantiate()
         viewController.viewModel = dashboardViewModel
         
@@ -20,6 +20,7 @@ class DashboardCoordinator: BaseCoordinator {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.showOnBoardingIfNeeded()
         }
+        return Observable.empty()
     }
     
     private func setUpBindings() {
@@ -34,7 +35,7 @@ class DashboardCoordinator: BaseCoordinator {
         let coordinator = AppDelegate.container.resolve(OnBoardingCoordinator.self)!
         coordinator.navigationController = navigationController
         
-        start(coordinator: coordinator)
+        start(coordinator: coordinator).subscribe().disposed(by: disposeBag)
     }
         
     func didSelect(task: String) {
