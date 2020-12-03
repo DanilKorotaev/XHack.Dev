@@ -14,5 +14,9 @@ extension Container {
         autoregister(ApiEndpoints.self, initializer: EndpointsProvider.init)
         autoregister(AuthApi.self, initializer: AuthApiExecuter.init)
         autoregister(IApiTokensHolder.self, initializer: ApiTokensHolder.init)
+        autoregister(ITeamsApi.self, initializer: TeamsApi.init)
+        autoregister(IUserApi.self, initializer: UserApi.init)
+        autoregister(IHackathonsApi.self, initializer: HackathonsApi.init)
+        autoregister(IBookmarksApi.self, initializer: BookmarksApi.init)
     }
 }

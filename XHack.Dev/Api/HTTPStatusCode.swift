@@ -287,3 +287,10 @@ extension HTTPURLResponse {
     }
     
 }
+
+
+extension HTTPStatusCode {
+    var isSuccessful: Bool {
+        return self.responseType == .success
+    }
+}

@@ -11,21 +11,19 @@ import RxSwift
 
 class AuthApiExecuter: AuthApi {
     private let endpointsProvider: ApiEndpoints
-    private let httpClient: HttpClient
     private let apiTokenHolder: IApiTokensHolder
     
-    init(endpointsProvider: ApiEndpoints, httpClient: HttpClient, apiTokenHolder: IApiTokensHolder) {
+    init(endpointsProvider: ApiEndpoints, apiTokenHolder: IApiTokensHolder) {
         self.endpointsProvider = endpointsProvider
-        self.httpClient = httpClient
         self.apiTokenHolder = apiTokenHolder
     }
     
-    func singIn(creadential: SignInRequest) -> Observable<ApiResult<SignInResponse>> {
+    func singIn(creadential: SignInRequest) -> Single<ApiResult<SignInResponse>> {
         let url = endpointsProvider.gatewayUrl + "/api/auth/login"
         return ApiHelpers.executeReliablyPostRequest(apiTokenHolder: apiTokenHolder, url: url, content: creadential)
     }
     
-    func signUp(_ model: SignUpRequest) -> Observable<ApiResult<SignUpResponse>>{
+    func signUp(_ model: SignUpRequest) -> Single<ApiResult<SignUpResponse>>{
         let url = endpointsProvider.gatewayUrl + "/api/auth/register"
         return ApiHelpers.executeReliablyPostRequest(apiTokenHolder: apiTokenHolder, url: url, content: model)
     }

@@ -11,7 +11,9 @@ import Foundation
 protocol IAccountSecureStorage {
     func getLogin() -> String
     func getTokens() -> Tokens
+    @discardableResult
     func saveLogin(login: String) -> Bool
+    @discardableResult
     func saveTokens(token: Tokens) -> Bool
     func clearStorage() 
 }

@@ -59,6 +59,7 @@ class AppCoordinator: BaseCoordinator<Void> {
     
     private func showRootTabBar() {
 //        removeChildCoordinators()
+        
         let coordinator = AppDelegate.container.resolve(RootTabBarCoordinator.self)!
         start(coordinator: coordinator)
         ViewControllerUtils.setRootViewController(

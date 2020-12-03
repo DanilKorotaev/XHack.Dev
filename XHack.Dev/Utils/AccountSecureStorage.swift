@@ -28,10 +28,12 @@ class AccountSecureStorage: IAccountSecureStorage {
         return Tokens(accessToken: accessToken, refreshToken:  refreshToken)
     }
     
+    @discardableResult
     func saveLogin(login: String) -> Bool {
         KeyChainHelper.shared.set(value: login, for: SecurityKey.login.rawValue)
     }
     
+    @discardableResult
     func saveTokens(token: Tokens) -> Bool {
         KeyChainHelper.shared.set(value: token.accessToken, for: SecurityKey.accessToken.rawValue)
         && KeyChainHelper.shared.set(value: token.refreshToken ?? "", for: SecurityKey.refreshToken.rawValue)

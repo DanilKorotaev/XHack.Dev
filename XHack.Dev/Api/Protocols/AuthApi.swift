@@ -10,6 +10,6 @@ import Foundation
 import RxSwift
 
 protocol AuthApi {
-    func singIn(creadential: SignInRequest) -> Observable<ApiResult<SignInResponse>>
-    func signUp(_ model: SignUpRequest) -> Observable<ApiResult<SignUpResponse>>
+    func singIn(creadential: SignInRequest) -> Single<ApiResult<SignInResponse>>
+    func signUp(_ model: SignUpRequest) -> Single<ApiResult<SignUpResponse>>
 }

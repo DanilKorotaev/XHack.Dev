@@ -20,7 +20,7 @@ class HttpClientHelper {
     }
     
     
-    func get(url: String, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Observable<Response<HTTPStatusCode, Data>> {
+    func get(url: String, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Single<Response<HTTPStatusCode, Data>> {
 //        let uniqueId = UUID()
 //        let identity = "\(uniqueId)"
         guard let url = URL(string: url) else { fatalError("Wrong url on \(String(describing: get))") }
@@ -34,7 +34,8 @@ class HttpClientHelper {
         return createDataTask(request: request)
     }
     
-    func post(url: String, postData: Data, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Observable<Response<HTTPStatusCode, Data>>  {
+    
+    func post(url: String, postData: Data, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Single<Response<HTTPStatusCode, Data>>  {
         guard let url = URL(string: url) else { fatalError("Wrong url on \(String(describing: post))") }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -50,8 +51,40 @@ class HttpClientHelper {
     }
     
     
-    private func createDataTask(request: URLRequest) -> Observable<Response<HTTPStatusCode, Data>>  {
-        return Observable.create { (observer) -> Disposable in
+    func patch(url: String, patchData: Data, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Single<Response<HTTPStatusCode, Data>> {
+        guard let url = URL(string: url) else { fatalError("Wrong url on \(String(describing: post))") }
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        request.allHTTPHeaderFields = ["Content-Type": "application/json", "Accept":"application/json"]
+        request.httpBody = patchData
+        let json = String(data: patchData, encoding: .utf8)!
+        print(json)
+        if let accessToken = accessToken {
+            setBearerToken(accessToken, for: &request)
+        }
+        
+        return createDataTask(request: request)
+    }
+    
+    
+    func delete(url: String, deleteData: Data, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Single<Response<HTTPStatusCode, Data>> {
+        guard let url = URL(string: url) else { fatalError("Wrong url on \(String(describing: post))") }
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        request.allHTTPHeaderFields = ["Content-Type": "application/json", "Accept":"application/json"]
+        request.httpBody = deleteData
+        let json = String(data: deleteData, encoding: .utf8)!
+        print(json)
+        if let accessToken = accessToken {
+            setBearerToken(accessToken, for: &request)
+        }
+        
+        return createDataTask(request: request)
+    }
+    
+    
+    private func createDataTask(request: URLRequest) -> Single<Response<HTTPStatusCode, Data>>  {
+        return Single.create { (single) -> Disposable in
             let dataTask = URLSession.shared.dataTask(with: request) { data,  response, error in
                 let httpResponse = response as? HTTPURLResponse
                 var dataString: String?
@@ -59,7 +92,7 @@ class HttpClientHelper {
                     dataString = String(data: data, encoding: .utf8)
                     print(dataString!)
                 }
-                observer.onNext(Response(status: httpResponse?.status ?? .serviceUnavailable, content: data))
+                single(.success(Response(status: httpResponse?.status ?? .serviceUnavailable, content: data)))
             }
             print("Fetching \(request.url?.absoluteString ?? "")...")
             dataTask.resume()

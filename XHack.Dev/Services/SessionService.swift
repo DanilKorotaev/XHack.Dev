@@ -9,6 +9,7 @@ class SessionService {
     // MARK: - Private fields
     
     private let dataManager: DataManager
+    private let accountSecureStorage: IAccountSecureStorage
     private let restClient: RestClient
     private let translationsService: TranslationsService
     private let messager: IMessager
@@ -32,27 +33,25 @@ class SessionService {
     
     // MARK: - Public Methods
     
-    init(authApi: AuthApi, dataManager: DataManager, restClient: RestClient, translationsService: TranslationsService, messanger: IMessager) {
+    init(authApi: AuthApi, dataManager: DataManager, restClient: RestClient, translationsService: TranslationsService, messanger: IMessager, accountSecureStorage: IAccountSecureStorage) {
         self.dataManager = dataManager
         self.restClient = restClient
         self.translationsService = translationsService
         self.messager = messanger
         self.authApi = authApi
+        self.accountSecureStorage = accountSecureStorage
         loadSession()
     }
     
     func signIn(credentials: Credentials) -> Completable {
-        return Single<Void>.create { (single) -> Disposable in
-            let signIn = self.authApi.singIn(creadential: SignInRequest(email: credentials.email, password: credentials.password))
-            return signIn.do(onNext:{ [weak self] result in
-                    single(.success(()))
-                    guard let content = result.content, result.status == .successful else { return }
-                    try self?.setToken(response: content)
-                    try self?.setSession(email: credentials.email)
-                    self?.messager.publish(message: LoginMessage())
-                    self?.signInSubject.onNext(Void())
-            }).subscribe()
-        }.do().asCompletable()
+        let signIn = self.authApi.singIn(creadential: SignInRequest(email: credentials.email, password: credentials.password))
+        return signIn.do(onSuccess:{ [weak self] result in
+            guard let content = result.content, result.status == .successful else { return }
+            try self?.setToken(response: content)
+            try self?.setSession(email: credentials.email)
+            self?.messager.publish(message: LoginMessage())
+            self?.signInSubject.onNext(Void())
+        }).asCompletable()
     }
     
     func signOut() -> Completable {
@@ -68,16 +67,13 @@ class SessionService {
     }
     
     func signUp(request: SignUpRequest) -> Completable {
-        return Single<Void>.create { (single) -> Disposable in
-            let signIn = self.authApi.signUp(request)
-            return signIn.do(onNext:{ [weak self] result in
-                single(.success(()))
-                guard let content = result.content, result.status == .successful else { return }
-                self?.token = Tokens(accessToken: content.token)
-                try self?.setSession(email: request.email)
-                self?.signInSubject.onNext(Void())
-            }).subscribe()
-        }.do().asCompletable()
+        let signIn = self.authApi.signUp(request)
+        return signIn.do(onSuccess:{ [weak self] result in
+            guard let content = result.content, result.status == .successful else { return }
+            self?.token = Tokens(accessToken: content.token)
+            try self?.setSession(email: request.email)
+            self?.signInSubject.onNext(Void())
+        }).asCompletable()
     }
     
     //    func refreshProfile() -> Single<MeResponse> {
@@ -107,7 +103,8 @@ class SessionService {
             email: email.lowercased())
         
         dataManager.set(key: SettingKey.session, value: sessionState)
-        
+        accountSecureStorage.saveLogin(login: email)
+        accountSecureStorage.saveTokens(token: token)
         signInSubject.onNext(Void())
     }
     
