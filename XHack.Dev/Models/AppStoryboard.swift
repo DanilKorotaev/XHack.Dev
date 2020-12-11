@@ -11,4 +11,6 @@ enum AppStoryboard: String {
     case home = "Home"
     case profile = "Profile"
     case hackathonsList = "HackathonsList"
+    case teamList = "TeamList"
+    case createTeam = "CreateTeam"
 }

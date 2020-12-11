@@ -13,5 +13,7 @@ extension Container {
         autoregister(RootTabBarCoordinator.self, initializer: RootTabBarCoordinator.init)
         autoregister(HomeCoordinator.self, initializer: HomeCoordinator.init)
         autoregister(ProfileCoordinator.self, initializer: ProfileCoordinator.init)
+        autoregister(TeamListCoordonator.self, initializer: TeamListCoordonator.init)
+        autoregister(CreateTeamCoordinator.self, initializer: CreateTeamCoordinator.init)
     }
 }

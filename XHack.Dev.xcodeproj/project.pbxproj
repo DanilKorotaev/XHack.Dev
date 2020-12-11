@@ -109,6 +109,12 @@
 		A3231292256F119100D3B97B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231291256F119100D3B97B /* ProfileViewController.swift */; };
 		A3231297256F119E00D3B97B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231296256F119E00D3B97B /* ProfileViewModel.swift */; };
 		A323129C256F11AC00D3B97B /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323129B256F11AC00D3B97B /* ProfileCoordinator.swift */; };
+		A36AF8C52582CCD8000E2852 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36AF8C42582CCD8000E2852 /* Team.swift */; };
+		A36AF8CD2582D17C000E2852 /* CreateTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36AF8CC2582D17C000E2852 /* CreateTeamViewModel.swift */; };
+		A36AF8D52582D187000E2852 /* CreateTeamCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36AF8D42582D187000E2852 /* CreateTeamCoordinator.swift */; };
+		A36AF8DA2582D198000E2852 /* CreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36AF8D92582D198000E2852 /* CreateTeamViewController.swift */; };
+		A36AF8DF2582D1A3000E2852 /* CreateTeam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36AF8DE2582D1A3000E2852 /* CreateTeam.storyboard */; };
+		A374553D257D06F0006F4801 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374553C257D06F0006F4801 /* BaseViewController.swift */; };
 		A3877537256A9BC800F00EB0 /* IPushSubscriptionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3877536256A9BC800F00EB0 /* IPushSubscriptionProvider.swift */; };
 		A387753C256A9C4600F00EB0 /* PushSubscribingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387753B256A9C4600F00EB0 /* PushSubscribingResult.swift */; };
 		A3877541256A9D9A00F00EB0 /* PushSubscriptionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3877540256A9D9A00F00EB0 /* PushSubscriptionProvider.swift */; };
@@ -148,6 +154,10 @@
 		A3961AF325799C5100FC3541 /* BookmarkChatDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961AF225799C5100FC3541 /* BookmarkChatDTO.swift */; };
 		A3961AF825799C8A00FC3541 /* BookmarkMessageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961AF725799C8A00FC3541 /* BookmarkMessageDTO.swift */; };
 		A3961B0025799D2C00FC3541 /* BookmarksApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961AFF25799D2C00FC3541 /* BookmarksApi.swift */; };
+		A3961B11257AE39900FC3541 /* TeamListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961B10257AE39900FC3541 /* TeamListViewModel.swift */; };
+		A3961B1C257AE5F800FC3541 /* TeamListCoordonator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961B1B257AE5F800FC3541 /* TeamListCoordonator.swift */; };
+		A3961B21257AE69600FC3541 /* TeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961B20257AE69600FC3541 /* TeamListViewController.swift */; };
+		A3961B26257AE6A300FC3541 /* TeamList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3961B25257AE6A200FC3541 /* TeamList.storyboard */; };
 		A3BA56312573E896007AD591 /* ApiEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA56302573E896007AD591 /* ApiEndpoints.swift */; };
 		A3BA56362573E906007AD591 /* EndpointsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA56352573E906007AD591 /* EndpointsProvider.swift */; };
 		A3BA563C2573EA20007AD591 /* TestEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA563B2573EA20007AD591 /* TestEndpoints.swift */; };
@@ -305,6 +315,12 @@
 		A3231291256F119100D3B97B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A3231296256F119E00D3B97B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A323129B256F11AC00D3B97B /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		A36AF8C42582CCD8000E2852 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		A36AF8CC2582D17C000E2852 /* CreateTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamViewModel.swift; sourceTree = "<group>"; };
+		A36AF8D42582D187000E2852 /* CreateTeamCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamCoordinator.swift; sourceTree = "<group>"; };
+		A36AF8D92582D198000E2852 /* CreateTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamViewController.swift; sourceTree = "<group>"; };
+		A36AF8DE2582D1A3000E2852 /* CreateTeam.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateTeam.storyboard; sourceTree = "<group>"; };
+		A374553C257D06F0006F4801 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A3877536256A9BC800F00EB0 /* IPushSubscriptionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPushSubscriptionProvider.swift; sourceTree = "<group>"; };
 		A387753B256A9C4600F00EB0 /* PushSubscribingResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSubscribingResult.swift; sourceTree = "<group>"; };
 		A3877540256A9D9A00F00EB0 /* PushSubscriptionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSubscriptionProvider.swift; sourceTree = "<group>"; };
@@ -345,6 +361,10 @@
 		A3961AF225799C5100FC3541 /* BookmarkChatDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkChatDTO.swift; sourceTree = "<group>"; };
 		A3961AF725799C8A00FC3541 /* BookmarkMessageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkMessageDTO.swift; sourceTree = "<group>"; };
 		A3961AFF25799D2C00FC3541 /* BookmarksApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksApi.swift; sourceTree = "<group>"; };
+		A3961B10257AE39900FC3541 /* TeamListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListViewModel.swift; sourceTree = "<group>"; };
+		A3961B1B257AE5F800FC3541 /* TeamListCoordonator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListCoordonator.swift; sourceTree = "<group>"; };
+		A3961B20257AE69600FC3541 /* TeamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListViewController.swift; sourceTree = "<group>"; };
+		A3961B25257AE6A200FC3541 /* TeamList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamList.storyboard; sourceTree = "<group>"; };
 		A3BA56302573E896007AD591 /* ApiEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoints.swift; sourceTree = "<group>"; };
 		A3BA56352573E906007AD591 /* EndpointsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointsProvider.swift; sourceTree = "<group>"; };
 		A3BA563B2573EA20007AD591 /* TestEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEndpoints.swift; sourceTree = "<group>"; };
@@ -403,6 +423,7 @@
 		1657979B22DB8B7A00DA52D2 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				A3961B0F257AE37E00FC3541 /* Teams */,
 				A3961AA12579931D00FC3541 /* HackathonsList */,
 				A323128B256F115600D3B97B /* Profile */,
 				A3231270256F03CB00D3B97B /* Home */,
@@ -446,9 +467,11 @@
 		1657979E22DB8C2200DA52D2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				A3745541257D0778006F4801 /* Protocols */,
 				16A1E5B022DA40C30003F0DF /* BaseCoordinator.swift */,
 				16A1E5BC22DA40C30003F0DF /* BaseNavigationController.swift */,
 				16A1E5C022DA40C30003F0DF /* ViewControllerWithSideMenu.swift */,
+				A374553C257D06F0006F4801 /* BaseViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -678,6 +701,7 @@
 				A387754F256AB0D300F00EB0 /* PushSubscribingResultMessage.swift */,
 				A387755B256B183300F00EB0 /* SignOutMessage.swift */,
 				A3877560256B19A700F00EB0 /* LoginMessage.swift */,
+				A36AF8C42582CCD8000E2852 /* Team.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -786,6 +810,35 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		A36AF8CA2582D13F000E2852 /* TeamList */ = {
+			isa = PBXGroup;
+			children = (
+				A3961B10257AE39900FC3541 /* TeamListViewModel.swift */,
+				A3961B1B257AE5F800FC3541 /* TeamListCoordonator.swift */,
+				A3961B20257AE69600FC3541 /* TeamListViewController.swift */,
+				A3961B25257AE6A200FC3541 /* TeamList.storyboard */,
+			);
+			path = TeamList;
+			sourceTree = "<group>";
+		};
+		A36AF8CB2582D14F000E2852 /* CreateTeam */ = {
+			isa = PBXGroup;
+			children = (
+				A36AF8CC2582D17C000E2852 /* CreateTeamViewModel.swift */,
+				A36AF8D42582D187000E2852 /* CreateTeamCoordinator.swift */,
+				A36AF8D92582D198000E2852 /* CreateTeamViewController.swift */,
+				A36AF8DE2582D1A3000E2852 /* CreateTeam.storyboard */,
+			);
+			path = CreateTeam;
+			sourceTree = "<group>";
+		};
+		A3745541257D0778006F4801 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		A38CDB2C256C19D100E8A732 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -806,6 +859,15 @@
 				A3961AB12579936400FC3541 /* HackathonsListCoordinator.swift */,
 			);
 			path = HackathonsList;
+			sourceTree = "<group>";
+		};
+		A3961B0F257AE37E00FC3541 /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+				A36AF8CB2582D14F000E2852 /* CreateTeam */,
+				A36AF8CA2582D13F000E2852 /* TeamList */,
+			);
+			path = Teams;
 			sourceTree = "<group>";
 		};
 		A3BA56232573E853007AD591 /* Api */ = {
@@ -1015,9 +1077,11 @@
 				A3231284256F057900D3B97B /* Home.storyboard in Resources */,
 				16A1E5EC22DA40C40003F0DF /* SignIn.storyboard in Resources */,
 				A3961AA82579934900FC3541 /* HackathonsList.storyboard in Resources */,
+				A36AF8DF2582D1A3000E2852 /* CreateTeam.storyboard in Resources */,
 				16A1E5ED22DA40C40003F0DF /* Drawer.storyboard in Resources */,
 				16DD9D1922DB314C007D9D2F /* Settings.storyboard in Resources */,
 				16DD9D0622DA8192007D9D2F /* OnBoarding.storyboard in Resources */,
+				A3961B26257AE6A300FC3541 /* TeamList.storyboard in Resources */,
 				A323128D256F118100D3B97B /* Profile.storyboard in Resources */,
 				A38CDB2E256C1A2600E8A732 /* Registration.storyboard in Resources */,
 				16DD9D0922DA8216007D9D2F /* LaunchScreen.storyboard in Resources */,
@@ -1220,6 +1284,7 @@
 				A3231251256DBD6300D3B97B /* RestClient.swift in Sources */,
 				16A1E5F322DA40C40003F0DF /* LocalizationUtils.swift in Sources */,
 				16DD9CFF22DA7508007D9D2F /* UserDataManager.swift in Sources */,
+				A3961B21257AE69600FC3541 /* TeamListViewController.swift in Sources */,
 				16A1E60822DA40C40003F0DF /* LocalizedButton.swift in Sources */,
 				A323127A256F052400D3B97B /* HomeViewModel.swift in Sources */,
 				16A1E63E22DA40C40003F0DF /* AlertMessage.swift in Sources */,
@@ -1228,6 +1293,7 @@
 				16A1E61122DA40C40003F0DF /* Container+ViewModels.swift in Sources */,
 				A3961A79257986A100FC3541 /* ITeamsApi.swift in Sources */,
 				16A1E64222DA40C40003F0DF /* AppStoryboard.swift in Sources */,
+				A36AF8C52582CCD8000E2852 /* Team.swift in Sources */,
 				16A1E61722DA40C40003F0DF /* Storyboarded.swift in Sources */,
 				16A1E62F22DA40C40003F0DF /* SessionService.swift in Sources */,
 				A3877537256A9BC800F00EB0 /* IPushSubscriptionProvider.swift in Sources */,
@@ -1236,6 +1302,7 @@
 				A3961ADF25799A7400FC3541 /* IBookmarksApi.swift in Sources */,
 				A387754B256AA3C600F00EB0 /* Messanger.swift in Sources */,
 				A3961A74257984C600FC3541 /* UserProfileDto.swift in Sources */,
+				A374553D257D06F0006F4801 /* BaseViewController.swift in Sources */,
 				A3961A832579874800FC3541 /* CreateTeamDto.swift in Sources */,
 				A3961A9D25798A9E00FC3541 /* CreateRequestToUserDto.swift in Sources */,
 				16A1E60222DA40C40003F0DF /* LocalizedLabel.swift in Sources */,
@@ -1247,6 +1314,7 @@
 				A3961AAD2579935600FC3541 /* HackathonsListViewController.swift in Sources */,
 				A3BA569625743A2F007AD591 /* KeyChainHelper.swift in Sources */,
 				A3231241256D982300D3B97B /* SignUpResponse.swift in Sources */,
+				A36AF8CD2582D17C000E2852 /* CreateTeamViewModel.swift in Sources */,
 				16A1E62E22DA40C40003F0DF /* BackendRestClient.swift in Sources */,
 				16A1E64822DA40C40003F0DF /* Tokens.swift in Sources */,
 				16DD9CF022DA4981007D9D2F /* HttpClient.swift in Sources */,
@@ -1261,6 +1329,7 @@
 				A3F7BBB12575895D00F18645 /* HttpClientHelper.swift in Sources */,
 				A387755C256B183400F00EB0 /* SignOutMessage.swift in Sources */,
 				16A1E61022DA40C40003F0DF /* DashboardViewModel.swift in Sources */,
+				A3961B11257AE39900FC3541 /* TeamListViewModel.swift in Sources */,
 				16DD9CEF22DA4981007D9D2F /* DataManager.swift in Sources */,
 				16A1E62C22DA40C40003F0DF /* TranslationsService.swift in Sources */,
 				16A1E62822DA40C40003F0DF /* ViewControllerWithSideMenu.swift in Sources */,
@@ -1291,8 +1360,11 @@
 				16DD9D1722DB2871007D9D2F /* TasksEndpoints.swift in Sources */,
 				A3BA565325742BA2007AD591 /* AuthApiExecuter.swift in Sources */,
 				16A1E61D22DA40C40003F0DF /* DashboardCoordinator.swift in Sources */,
+				A36AF8D52582D187000E2852 /* CreateTeamCoordinator.swift in Sources */,
+				A36AF8DA2582D198000E2852 /* CreateTeamViewController.swift in Sources */,
 				A3BA563C2573EA20007AD591 /* TestEndpoints.swift in Sources */,
 				A3961AC2257994E000FC3541 /* ShortHackathonDto.swift in Sources */,
+				A3961B1C257AE5F800FC3541 /* TeamListCoordonator.swift in Sources */,
 				A3BA564B25742A0E007AD591 /* AuthApi.swift in Sources */,
 				A323129C256F11AC00D3B97B /* ProfileCoordinator.swift in Sources */,
 				A3961A88257987E100FC3541 /* TeamsApi.swift in Sources */,

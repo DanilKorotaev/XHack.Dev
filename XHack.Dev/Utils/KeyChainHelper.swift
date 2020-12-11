@@ -18,12 +18,16 @@ class KeyChainHelper {
     
     func getValue(for key: String) -> String {
         let attributes = createRecord(for: key)
-        var result: CFTypeRef? = nil
-        _ = SecItemCopyMatching(attributes, &result)
-        if let result = result, result as! Int32 == errSecSuccess {
+        var dataTypeRef: AnyObject? = nil
+        let status = SecItemCopyMatching(attributes, &dataTypeRef)
+        if status == noErr {
+            guard let data = dataTypeRef as? Data, let value = String(data: data, encoding: .utf8) else {
+                return ""
+            }
+            return value
+        } else {
             return ""
         }
-        return result?.value ?? ""
     }
     
     
@@ -50,6 +54,7 @@ class KeyChainHelper {
         let query = [
             kSecClass as String       : kSecClassGenericPassword,
             kSecAttrAccount as String : key,
+            kSecReturnData as String  : kCFBooleanTrue!,
             kSecAttrService as String : serviceName,
             kSecAttrLabel as String   : key] as [String : Any]
         return query as CFDictionary

@@ -9,5 +9,7 @@
 import Foundation
 
 struct TeamDto: Codable {
-    
+    var name: String
+    var description: String
+    var avatarUrl: String?
 }

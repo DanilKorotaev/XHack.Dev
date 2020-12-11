@@ -14,5 +14,7 @@ extension Container {
         autoregister(TaskDetailViewModel.self, initializer: TaskDetailViewModel.init)
         autoregister(HomeViewModel.self, initializer: HomeViewModel.init)
         autoregister(ProfileViewModel.self, initializer: ProfileViewModel.init)
+        autoregister(TeamListViewModel.self, initializer: TeamListViewModel.init)
+        autoregister(CreateTeamViewModel.self, initializer: CreateTeamViewModel.init)
     }
 }

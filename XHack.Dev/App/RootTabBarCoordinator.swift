@@ -25,8 +25,16 @@ class RootTabBarCoordinator : BaseCoordinator<Void> {
             .subscribe()
             .disposed(by: disposeBag)
         let profileViewController = profileCoordinator.navigationController
-        profileViewController.tabBarItem = UITabBarItem(title: "", image: #imageLiteral(resourceName: "Profile"), selectedImage: #imageLiteral(resourceName: "Profile"))
-        tabBarController.setViewControllers([homeViewController, profileViewController], animated: true)
+        
+        let teamsCoordinator = AppDelegate.container.resolve(TeamListCoordonator.self)!
+        
+        start(coordinator: teamsCoordinator)
+            .subscribe()
+            .disposed(by: disposeBag)
+        let teamViewController = teamsCoordinator.navigationController
+        
+        teamViewController.tabBarItem = UITabBarItem(title: "teams", image: #imageLiteral(resourceName: "Profile"), selectedImage: #imageLiteral(resourceName: "Profile"))
+        tabBarController.setViewControllers([homeViewController, teamViewController, profileViewController], animated: true)
         
         return Observable.empty()
     }

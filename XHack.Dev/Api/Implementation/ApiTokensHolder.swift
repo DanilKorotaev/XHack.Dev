@@ -22,7 +22,8 @@ class ApiTokensHolder: IApiTokensHolder {
     init(accountSecureStorage: IAccountSecureStorage, endpoints: ApiEndpoints) {
         self.accountSecureStorage = accountSecureStorage
         self.endpoints = endpoints
-        tokens = Tokens(accessToken: "")
+        login =  accountSecureStorage.getLogin()
+        tokens = accountSecureStorage.getTokens()        
     }
     
     func updateToken(login: String, password: String) -> Single<LiteApiResult> {
