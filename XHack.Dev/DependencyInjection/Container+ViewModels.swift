@@ -16,5 +16,7 @@ extension Container {
         autoregister(ProfileViewModel.self, initializer: ProfileViewModel.init)
         autoregister(TeamListViewModel.self, initializer: TeamListViewModel.init)
         autoregister(CreateTeamViewModel.self, initializer: CreateTeamViewModel.init)
+        autoregister(HackathonsListViewModel.self, initializer: HackathonsListViewModel.init)
+        autoregister(HackathonDetailViewModel.self, initializer: HackathonDetailViewModel.init)
     }
 }

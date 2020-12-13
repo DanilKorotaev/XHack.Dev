@@ -1,26 +1,26 @@
 import Foundation
 import UIKit
 
-class AlertDispatcher {
-    private var lastError: AlertMessage?
+class AlertDispatcher: IAlertDispatcher {
+    private var message: AlertDialogMessage?
     
-    func dispatch(error: AlertMessage) {
-        guard lastError != error else { return }
-        lastError = error
+    func dispatch(message: AlertDialogMessage) {
+        guard self.message != message else { return }
+        self.message = message
         DispatchQueue.main.sync {
             if let viewController = UIApplication.shared.keyWindow?.rootViewController {
-                showAlert(on: viewController, error: error)
+                showAlert(on: viewController, message: message)
             }
         }        
     }
     
-    private func showAlert(on viewController: UIViewController, error: AlertMessage) {
-        let alert = UIAlertController(title: error.title.localized, message: error.message.localized, preferredStyle: .alert)
+    private func showAlert(on viewController: UIViewController, message: AlertDialogMessage) {
+        let alert = UIAlertController(title: message.title, message: message.message, preferredStyle: .alert)
         
-        for button in error.buttons {
-            let alertAction = UIAlertAction(title: button.localized, style: .default) { [weak self] _ in
-                error.actions[button]?()
-                self?.lastError = nil
+        for button in message.dialogActions {
+            let alertAction = UIAlertAction(title: button.title, style: .default) { [weak self] _ in
+                button.action?()
+                self?.message = nil
             }
             
             alert.addAction(alertAction)

@@ -7,16 +7,28 @@
 //
 
 import UIKit
+import RxSwift
 
-class BaseViewController: UIViewController {
+class BaseViewController<TViewModel>: UIViewController where TViewModel:BaseViewModel {
 
+    private(set) var disposeBag = DisposeBag()
+    
+    var dataContext: TViewModel? {
+        didSet {
+            guard isViewLoaded else { return }
+            disposeBag = DisposeBag()
+            applyBinding()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        completeUi()
         applyBinding()
+        dataContext?.initialize()
     }
     
-    
-    func applyBinding() {
+    func completeUi() { }
         
-    }
+    func applyBinding() { }
 }

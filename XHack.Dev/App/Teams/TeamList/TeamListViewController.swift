@@ -9,27 +9,25 @@
 import UIKit
 import RxSwift
 
-class TeamListViewController: UIViewController, Storyboarded {
+class TeamListViewController: BaseViewController<TeamListViewModel>, Storyboarded {
     static var storyboard = AppStoryboard.teamList
     
-    var viewModel: TeamListViewModel?
-    private let disposeBag = DisposeBag()
     @IBOutlet weak var tableView: UITableView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        
+    override func completeUi() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu"), style: .plain, target: self, action: nil)
-        setupBinding()
-        viewModel?.fetchTeams()
         tableView.tableFooterView = UIView()
     }
     
-    func setupBinding() {
+    override func applyBinding() {
+        guard let dataContext = dataContext else {
+            return
+        }
         navigationItem.leftBarButtonItem!.rx.tap
-            .bind(to: viewModel!.createTask)
+            .bind(to: dataContext.createTask)
             .disposed(by: disposeBag)
         
-        viewModel?.teams
+        dataContext.teams
             .bind(to: tableView.rx.items(cellIdentifier: "teamViewCell")) { row, model, cell in
                 cell.textLabel?.text = model.name
                 cell.detailTextLabel?.text = model.description

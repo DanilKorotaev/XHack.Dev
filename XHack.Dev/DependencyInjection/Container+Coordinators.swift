@@ -15,5 +15,7 @@ extension Container {
         autoregister(ProfileCoordinator.self, initializer: ProfileCoordinator.init)
         autoregister(TeamListCoordonator.self, initializer: TeamListCoordonator.init)
         autoregister(CreateTeamCoordinator.self, initializer: CreateTeamCoordinator.init)
+        autoregister(HackathonsListCoordinator.self, initializer: HackathonsListCoordinator.init)
+        autoregister(HackathonDetailCoordinator.self, initializer: HackathonDetailCoordinator.init)
     }
 }

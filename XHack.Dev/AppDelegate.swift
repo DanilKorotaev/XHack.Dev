@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Login")
         }) )
         
+        subscribeToEvents()
+        
         appCoordinator = AppDelegate.container.resolve(AppCoordinator.self)!
         appCoordinator.start()
 
@@ -64,6 +66,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         let message = PushSubscribingResultMessage(pushToken: nil, error: error.localizedDescription)
         messanger.publish(message: message)
+    }
+    
+    func subscribeToEvents() {
+       _ = messanger.subscribe(AlertDialogMessage.self, completion: MessangerSubcribeComplition<AlertDialogMessage>(comletion: { message in
+        Container.resolve(IAlertDispatcher.self).dispatch(message: message)
+        }))
     }
     
 }

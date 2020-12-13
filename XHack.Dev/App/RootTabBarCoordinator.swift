@@ -26,15 +26,25 @@ class RootTabBarCoordinator : BaseCoordinator<Void> {
             .disposed(by: disposeBag)
         let profileViewController = profileCoordinator.navigationController
         
+        profileViewController.tabBarItem = UITabBarItem(title: "profile", image: #imageLiteral(resourceName: "Profile"), selectedImage: #imageLiteral(resourceName: "Profile"))
+        
         let teamsCoordinator = AppDelegate.container.resolve(TeamListCoordonator.self)!
         
         start(coordinator: teamsCoordinator)
             .subscribe()
             .disposed(by: disposeBag)
         let teamViewController = teamsCoordinator.navigationController
-        
         teamViewController.tabBarItem = UITabBarItem(title: "teams", image: #imageLiteral(resourceName: "Profile"), selectedImage: #imageLiteral(resourceName: "Profile"))
-        tabBarController.setViewControllers([homeViewController, teamViewController, profileViewController], animated: true)
+        
+        let hacksCoordinator = AppDelegate.container.resolve(HackathonsListCoordinator.self)!
+        
+        start(coordinator: hacksCoordinator)
+            .subscribe()
+            .disposed(by: disposeBag)
+        let hacksViewController = hacksCoordinator.navigationController
+        hacksViewController.tabBarItem = UITabBarItem(title: "hacks", image: #imageLiteral(resourceName: "Profile"), selectedImage: #imageLiteral(resourceName: "Profile"))
+        
+        tabBarController.setViewControllers([homeViewController, teamViewController, hacksViewController, profileViewController], animated: true)
         
         return Observable.empty()
     }

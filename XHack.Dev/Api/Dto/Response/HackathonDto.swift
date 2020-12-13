@@ -9,5 +9,6 @@
 import Foundation
 
 struct HackathonDto: Codable {
-    
+    let name: String
+    let description: String
 }

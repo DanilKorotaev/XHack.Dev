@@ -20,7 +20,7 @@ class TeamListCoordonator: BaseCoordinator<Void> {
     override func start() -> Observable<Void> {
         let viewController = TeamListViewController.instantiate()
         navigationController.viewControllers = [viewController]
-        viewController.viewModel = viewModel
+        viewController.dataContext = viewModel
         setUpBinding()
         return Observable.empty()
     }
@@ -39,7 +39,7 @@ class TeamListCoordonator: BaseCoordinator<Void> {
         let coordinator = AppDelegate.container.resolve(CreateTeamCoordinator.self)!
         coordinator.navigationController = navigationController
         start(coordinator: coordinator).subscribe( { (result) in
-            self.viewModel.fetchTeams()
+            self.viewModel.refreshContent()
         }).disposed(by: disposeBag)
     }
 }

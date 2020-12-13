@@ -9,33 +9,33 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Team List View Controller-->
-        <scene sceneID="Ejc-yB-IcO">
+        <!--Hackathons List View Controller-->
+        <scene sceneID="sM4-Kf-NGt">
             <objects>
-                <viewController storyboardIdentifier="TeamListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kP2-DN-MqF" customClass="TeamListViewController" customModule="XHack_Dev" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aut-1q-mnc">
+                <viewController storyboardIdentifier="HackathonsListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1BX-bb-LrC" customClass="HackathonsListViewController" customModule="XHack_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wRE-zr-CaN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="maH-U7-Jv3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z0d-jo-neo" userLabel="TableView">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="teamViewCell" textLabel="Rx5-Iu-rxt" detailTextLabel="2eA-aX-EPR" style="IBUITableViewCellStyleSubtitle" id="uV9-i6-oTa">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="hackViewCell" textLabel="R1T-ji-Knt" detailTextLabel="gng-Ls-jJz" style="IBUITableViewCellStyleSubtitle" id="8cJ-7Z-cDF">
                                         <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uV9-i6-oTa" id="iWM-Cf-N2t">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8cJ-7Z-cDF" id="Bcz-Zp-FVl">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rx5-Iu-rxt">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R1T-ji-Knt">
                                                     <rect key="frame" x="20" y="10" width="33" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2eA-aX-EPR">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gng-Ls-jJz">
                                                     <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -46,24 +46,25 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="0hA-SJ-09t"/>
+                        <viewLayoutGuide key="safeArea" id="oPy-07-pZT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0hA-SJ-09t" firstAttribute="bottom" secondItem="maH-U7-Jv3" secondAttribute="bottom" id="DZQ-uU-u4d"/>
-                            <constraint firstItem="maH-U7-Jv3" firstAttribute="leading" secondItem="0hA-SJ-09t" secondAttribute="leading" id="ZKT-Br-eSo"/>
-                            <constraint firstItem="maH-U7-Jv3" firstAttribute="top" secondItem="0hA-SJ-09t" secondAttribute="top" id="iM9-Ts-ESW"/>
-                            <constraint firstItem="0hA-SJ-09t" firstAttribute="trailing" secondItem="maH-U7-Jv3" secondAttribute="trailing" id="pIX-g5-WXf"/>
+                            <constraint firstItem="oPy-07-pZT" firstAttribute="bottom" secondItem="z0d-jo-neo" secondAttribute="bottom" id="3wD-Qg-DEu"/>
+                            <constraint firstItem="z0d-jo-neo" firstAttribute="top" secondItem="oPy-07-pZT" secondAttribute="top" id="aCR-oW-M4a"/>
+                            <constraint firstItem="oPy-07-pZT" firstAttribute="trailing" secondItem="z0d-jo-neo" secondAttribute="trailing" id="cYx-2b-gQs"/>
+                            <constraint firstItem="z0d-jo-neo" firstAttribute="leading" secondItem="oPy-07-pZT" secondAttribute="leading" id="heV-t5-LdA"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="maH-U7-Jv3" id="jj4-D3-rJc"/>
+                        <outlet property="tableView" destination="z0d-jo-neo" id="7ty-DY-DMk"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hXh-QR-Xag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4FY-Iz-QJ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-430" y="95"/>
+            <point key="canvasLocation" x="-249" y="179"/>
         </scene>
     </scenes>
     <resources>

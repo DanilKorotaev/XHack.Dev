@@ -10,8 +10,6 @@ class SessionService {
     
     private let dataManager: DataManager
     private let accountSecureStorage: IAccountSecureStorage
-    private let restClient: RestClient
-    private let translationsService: TranslationsService
     private let messager: IMessager
     private let signOutSubject = PublishSubject<Void>()
     private let signInSubject = PublishSubject<Void>()
@@ -33,10 +31,8 @@ class SessionService {
     
     // MARK: - Public Methods
     
-    init(authApi: AuthApi, dataManager: DataManager, restClient: RestClient, translationsService: TranslationsService, messanger: IMessager, accountSecureStorage: IAccountSecureStorage) {
+    init(authApi: AuthApi, dataManager: DataManager, messanger: IMessager, accountSecureStorage: IAccountSecureStorage) {
         self.dataManager = dataManager
-        self.restClient = restClient
-        self.translationsService = translationsService
         self.messager = messanger
         self.authApi = authApi
         self.accountSecureStorage = accountSecureStorage

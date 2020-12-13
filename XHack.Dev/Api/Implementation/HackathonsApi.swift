@@ -25,7 +25,7 @@ class HackathonsApi: IHackathonsApi {
     }
     
     func getHackathonDetails(by id: Int) -> Single<ApiResult<HackathonDto>> {
-        let url = endpointsProvider.gatewayUrl + "/api/hackathons/\(id)"
+        let url = endpointsProvider.gatewayUrl + "/api/hackathons/get-by-id/\(id)"
         return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
 }

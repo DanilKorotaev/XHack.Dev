@@ -9,21 +9,18 @@
 import Foundation
 import RxSwift
 
-class TeamListViewModel {
+class TeamListViewModel: BaseViewModel {
     private var teamsApi: ITeamsApi
-    private let disposeBag = DisposeBag()
-
-    let isLoading = BehaviorSubject(value: true)
+    
     var teams = BehaviorSubject(value: [Team]())
     var createTask = PublishSubject<Void>()
     
     init(teamsApi: ITeamsApi) {
         self.teamsApi = teamsApi
-//        fetchTasks()
     }
     
     
-    func fetchTeams() {
+    override func refreshContent() {
         isLoading.onNext(true)
         teamsApi.getTeams()
             .do(onSuccess: {  [weak self] result in

@@ -1,0 +1,41 @@
+//
+//  HackathonsListCoordinator.swift
+//  XHack.Dev
+//
+//  Created by Данил Коротаев on 04.12.2020.
+//  Copyright © 2020 Wojciech Kulik. All rights reserved.
+//
+
+import Foundation
+import RxSwift
+import Swinject
+
+class HackathonsListCoordinator: BaseCoordinator<Void> {
+    
+    let viewModel: HackathonsListViewModel
+    
+    init(viewModel: HackathonsListViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    override func start() -> Observable<Void> {
+        let viewController = HackathonsListViewController.instantiate()
+        viewController.dataContext = viewModel
+        navigationController.pushViewController(viewController, animated: true)
+        setupBinding()
+        return Observable.empty()
+    }
+    
+    func setupBinding() {
+        viewModel.didSelectHack
+            .subscribe(onNext: { [weak self] hack in self?.didSelect(hack: hack) })
+            .disposed(by: disposeBag)
+    }
+    
+    func didSelect(hack: ShortHackathon) {
+        let coordinator = Container.resolve(HackathonDetailCoordinator.self)
+        coordinator.navigationController = navigationController
+        coordinator.viewModel.hackathonId = hack.id
+        start(coordinator: coordinator)
+    }
+}

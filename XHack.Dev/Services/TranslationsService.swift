@@ -3,14 +3,12 @@ import RxSwift
 
 class TranslationsService {
     private let dataManager: DataManager
-    private let restClient: RestClient
     
     private var translations: Languages?
     private(set) var currentLocale: Locale!
     
-    init(dataManager: DataManager, restClient: RestClient) {
+    init(dataManager: DataManager) {
         self.dataManager = dataManager
-        self.restClient = restClient
         loadTranslations()
     }
     
