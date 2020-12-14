@@ -92,6 +92,9 @@
 		16DD9D1F22DB32F2007D9D2F /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DD9D1E22DB32F2007D9D2F /* SettingsViewModel.swift */; };
 		7F77E2E59D3EFE411F241884 /* Pods_XHack_DevTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A819DD399E11BDE308700209 /* Pods_XHack_DevTests.framework */; };
 		8752810C0F882D61DC273874 /* Pods_XHack_Dev_XHack_DevUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E67A2737BFFEBD15B7D401B9 /* Pods_XHack_Dev_XHack_DevUITests.framework */; };
+		A301E33725881DB90088B33A /* ITagsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E33625881DB90088B33A /* ITagsApi.swift */; };
+		A301E33C2588235F0088B33A /* TagsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E33B2588235F0088B33A /* TagsApi.swift */; };
+		A301E3412588238A0088B33A /* AddTagsDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301E3402588238A0088B33A /* AddTagsDto.swift */; };
 		A309624A2569DD86007E366E /* TaskDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30962492569DD86007E366E /* TaskDetail.storyboard */; };
 		A309624F2569DDA4007E366E /* TaskDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A309624E2569DDA4007E366E /* TaskDetailCoordinator.swift */; };
 		A30962542569DDB9007E366E /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30962532569DDB9007E366E /* TaskDetailViewController.swift */; };
@@ -312,6 +315,9 @@
 		33CCDF4C6752E56D0CA9D17E /* Pods-XHack.Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHack.Dev.debug.xcconfig"; path = "Target Support Files/Pods-XHack.Dev/Pods-XHack.Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		42BB3735B157F3B90A915E8E /* Pods-XHack.Dev-XHack.DevUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHack.Dev-XHack.DevUITests.debug.xcconfig"; path = "Target Support Files/Pods-XHack.Dev-XHack.DevUITests/Pods-XHack.Dev-XHack.DevUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E7941C0906478A06204A168 /* Pods-XHack.Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHack.Dev.release.xcconfig"; path = "Target Support Files/Pods-XHack.Dev/Pods-XHack.Dev.release.xcconfig"; sourceTree = "<group>"; };
+		A301E33625881DB90088B33A /* ITagsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITagsApi.swift; sourceTree = "<group>"; };
+		A301E33B2588235F0088B33A /* TagsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsApi.swift; sourceTree = "<group>"; };
+		A301E3402588238A0088B33A /* AddTagsDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagsDto.swift; sourceTree = "<group>"; };
 		A30962492569DD86007E366E /* TaskDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskDetail.storyboard; sourceTree = "<group>"; };
 		A309624E2569DDA4007E366E /* TaskDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailCoordinator.swift; sourceTree = "<group>"; };
 		A30962532569DDB9007E366E /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
@@ -558,6 +564,7 @@
 				A3961AED25799C1700FC3541 /* BookmarkTeamDTO.swift */,
 				A3961AF225799C5100FC3541 /* BookmarkChatDTO.swift */,
 				A3961AF725799C8A00FC3541 /* BookmarkMessageDTO.swift */,
+				A301E3402588238A0088B33A /* AddTagsDto.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1005,6 +1012,7 @@
 				A3961A78257986A100FC3541 /* ITeamsApi.swift */,
 				A3961ABC2579949500FC3541 /* IHackathonsApi.swift */,
 				A3961ADE25799A7400FC3541 /* IBookmarksApi.swift */,
+				A301E33625881DB90088B33A /* ITagsApi.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1018,6 +1026,7 @@
 				A3961A87257987E100FC3541 /* TeamsApi.swift */,
 				A3961ACB2579956600FC3541 /* HackathonsApi.swift */,
 				A3961AFF25799D2C00FC3541 /* BookmarksApi.swift */,
+				A301E33B2588235F0088B33A /* TagsApi.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -1369,6 +1378,7 @@
 				A3BA566B25742F27007AD591 /* ApiActionResult.swift in Sources */,
 				16A1E60B22DA40C40003F0DF /* SessionEndpoints.swift in Sources */,
 				A3231251256DBD6300D3B97B /* RestClient.swift in Sources */,
+				A301E33725881DB90088B33A /* ITagsApi.swift in Sources */,
 				16A1E5F322DA40C40003F0DF /* LocalizationUtils.swift in Sources */,
 				16DD9CFF22DA7508007D9D2F /* UserDataManager.swift in Sources */,
 				A3705608258544E0005650FD /* Hackathon.swift in Sources */,
@@ -1432,6 +1442,7 @@
 				A387753C256A9C4600F00EB0 /* PushSubscribingResult.swift in Sources */,
 				A37055DB25851905005650FD /* BaseViewModel.swift in Sources */,
 				A3BA567F257431D7007AD591 /* Response.swift in Sources */,
+				A301E33C2588235F0088B33A /* TagsApi.swift in Sources */,
 				16DD9CF922DA5522007D9D2F /* Constants.swift in Sources */,
 				A3961A622579802200FC3541 /* IUserApi.swift in Sources */,
 				16A1E62B22DA40C40003F0DF /* AppDelegate.swift in Sources */,
@@ -1479,6 +1490,7 @@
 				16A1E62622DA40C40003F0DF /* DashboardViewController.swift in Sources */,
 				16A1E60A22DA40C40003F0DF /* LocalizedTextField.swift in Sources */,
 				A3961A8D2579897E00FC3541 /* CreateRequestToTeamDto.swift in Sources */,
+				A301E3412588238A0088B33A /* AddTagsDto.swift in Sources */,
 				A3BA567525743048007AD591 /* IErrorResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

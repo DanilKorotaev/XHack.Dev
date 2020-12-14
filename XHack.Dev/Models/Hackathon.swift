@@ -7,15 +7,18 @@
 //
 
 import Foundation
+import RxSwift
 
 class HackathonDetail {
-    var name: String
-    var description: String
-    var isOnline: Bool = false
-    var currentUserWiilGo: Bool = false
+    var name = BehaviorSubject<String>(value: "")
+    var description = BehaviorSubject<String>(value: "")
+    var isOnline = BehaviorSubject<Bool>(value: false)
+    var currentUserWillGo = BehaviorSubject<Bool>(value: false)
     
     init(_ data: HackathonDto) {
-        name = data.name
-        description = data.description
+        name.onNext(data.name)
+        description.onNext(data.description)
+        currentUserWillGo.onNext(data.userWillGo)
+        isOnline.onNext(data.isOnline)
     }
 }

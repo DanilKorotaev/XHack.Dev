@@ -12,18 +12,18 @@ import RxSwift
 class HackathonDetailViewModel: BaseViewModel {
     
     let hackathonsApi: IHackathonsApi
-    var hackathonId: Int?
+    var hackathonId: Int = 0
     
     let hackathon = BehaviorSubject<HackathonDetail?>(value: .none)
+    let didWillGoChanged = PublishSubject<Bool>()
     
     init(hackathonsApi: IHackathonsApi) {
         self.hackathonsApi = hackathonsApi
+        super.init()
+        setupBinding()
     }
     
     override func refreshContent() {
-        guard let hackathonId = hackathonId else {
-            return
-        }
         isLoading.onNext(true)
         hackathonsApi.getHackathonDetails(by: hackathonId)
             .subscribe(onSuccess: { [weak self] result in
@@ -36,5 +36,17 @@ class HackathonDetailViewModel: BaseViewModel {
                 self.hackathon.onNext(HackathonDetail(content))
             })
             .disposed(by: disposeBag)
+    }
+    
+    func setupBinding() {
+        didWillGoChanged.subscribe(onNext: { userWillGo in
+            let changedStatus = userWillGo ? self.hackathonsApi.willGoHackathon(id: self.hackathonId) : self.hackathonsApi.willNotGoHackathon(id: self.hackathonId)
+            changedStatus.subscribe(onSuccess: { (result) in
+                if self.checkAndProcessApiResult(response: result, "") {
+                    return
+                }
+            }).disposed(by: self.disposeBag)
+
+        }).disposed(by: disposeBag)
     }
 }

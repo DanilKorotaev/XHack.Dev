@@ -21,13 +21,16 @@ class ApiHelpers {
     }
     
     
-    static func executeReliablyLitePostRequest<TRequestContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, content: TRequestContent) -> Single<LiteApiResult> {
-        return HttpClientHelper.shared.post(url: url, postData: content.toJson()!, accessToken: apiTokenHolder.accessToken).map(toLiteApiResult)
+    static func executeReliablyLitePostRequest<TRequestContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, content: TRequestContent?) -> Single<LiteApiResult> {
+        return HttpClientHelper.shared.post(url: url, postData: content?.toJson(), accessToken: apiTokenHolder.accessToken).map(toLiteApiResult)
     }
     
+    static func executeReliablyLitePostRequest(apiTokenHolder: IApiTokensHolder, url: String) -> Single<LiteApiResult> {
+        return HttpClientHelper.shared.post(url: url, accessToken: apiTokenHolder.accessToken).map(toLiteApiResult)
+    }
     
     static func executeReliablyPostRequest<TRequestContent: Codable, TResponseContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, content: TRequestContent) -> Single<ApiResult<TResponseContent>> {
-        let json = content.toJson()!
+        let json = content.toJson()
         return HttpClientHelper.shared.post(url: url, postData: json, accessToken: apiTokenHolder.accessToken).map(toApiResult)
     }
     

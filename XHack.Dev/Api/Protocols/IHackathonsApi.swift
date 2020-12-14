@@ -12,4 +12,6 @@ import RxSwift
 protocol IHackathonsApi {
     func getHackatons(by filter: HackathonsFilterDto) -> Single<ApiResult<[ShortHackathonDto]>>
     func getHackathonDetails(by id: Int) -> Single<ApiResult<HackathonDto>>
+    func willGoHackathon(id: Int) -> Single<LiteApiResult>
+    func willNotGoHackathon(id: Int) -> Single<LiteApiResult>
 }

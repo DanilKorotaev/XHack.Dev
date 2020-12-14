@@ -11,5 +11,6 @@ import Foundation
 struct ShortHackathonDto: Codable {
     private(set) var name: String
     private(set) var description: String
+    private(set) var isOnline: Bool
     private(set) var id: Int
 }

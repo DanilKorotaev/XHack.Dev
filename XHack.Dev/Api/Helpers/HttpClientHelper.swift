@@ -35,14 +35,17 @@ class HttpClientHelper {
     }
     
     
-    func post(url: String, postData: Data, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Single<Response<HTTPStatusCode, Data>>  {
+    func post(url: String, postData: Data? = nil, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Single<Response<HTTPStatusCode, Data>>  {
         guard let url = URL(string: url) else { fatalError("Wrong url on \(String(describing: post))") }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = ["Content-Type": "application/json", "Accept":"application/json"]
         request.httpBody = postData
-        let json = String(data: postData, encoding: .utf8)!
-        print(json)
+        if let postData = postData {
+            let json = String(data: postData, encoding: .utf8)!
+            print(json)
+        }
+       
         if let accessToken = accessToken {
             setBearerToken(accessToken, for: &request)
         }

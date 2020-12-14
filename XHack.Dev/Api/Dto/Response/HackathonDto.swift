@@ -11,4 +11,7 @@ import Foundation
 struct HackathonDto: Codable {
     let name: String
     let description: String
+    let isOnline: Bool
+    var userWillGo: Bool
+    let teams: [TeamDto]
 }

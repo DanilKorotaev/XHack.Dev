@@ -17,12 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pK-hT-0ic">
-                                <rect key="frame" x="16" y="440" width="382" height="26.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pK-hT-0ic">
+                                <rect key="frame" x="16" y="453" width="382" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Участвую" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fco-fj-dmg">
+                                <rect key="frame" x="16" y="94" width="323" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8j-8p-6s0">
+                                <rect key="frame" x="349" y="89" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="on9-Fv-REt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -30,10 +39,16 @@
                             <constraint firstItem="6pK-hT-0ic" firstAttribute="centerY" secondItem="on9-Fv-REt" secondAttribute="centerY" id="6sB-be-oQ8"/>
                             <constraint firstItem="6pK-hT-0ic" firstAttribute="leading" secondItem="on9-Fv-REt" secondAttribute="leading" constant="16" id="AvL-6E-IAm"/>
                             <constraint firstItem="on9-Fv-REt" firstAttribute="trailing" secondItem="6pK-hT-0ic" secondAttribute="trailing" constant="16" id="BE2-aj-BuG"/>
+                            <constraint firstItem="C8j-8p-6s0" firstAttribute="centerY" secondItem="Fco-fj-dmg" secondAttribute="centerY" id="NOJ-vA-6Cb"/>
+                            <constraint firstItem="on9-Fv-REt" firstAttribute="trailing" secondItem="C8j-8p-6s0" secondAttribute="trailing" constant="16" id="YhP-N5-xxN"/>
+                            <constraint firstItem="Fco-fj-dmg" firstAttribute="top" secondItem="on9-Fv-REt" secondAttribute="top" constant="50" id="auZ-9i-Udn"/>
+                            <constraint firstItem="Fco-fj-dmg" firstAttribute="leading" secondItem="on9-Fv-REt" secondAttribute="leading" constant="16" id="sJt-Lz-61M"/>
+                            <constraint firstItem="C8j-8p-6s0" firstAttribute="leading" secondItem="Fco-fj-dmg" secondAttribute="trailing" constant="10" id="wsc-7T-bvW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="hackDescriptionLabel" destination="6pK-hT-0ic" id="XtS-MZ-YQb"/>
+                        <outlet property="willGoSwitch" destination="C8j-8p-6s0" id="USt-ik-Nk7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIJ-XW-REe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

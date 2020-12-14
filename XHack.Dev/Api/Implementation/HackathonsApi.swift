@@ -10,7 +10,6 @@ import Foundation
 import RxSwift
 
 class HackathonsApi: IHackathonsApi {
-    
     private let endpointsProvider: ApiEndpoints
     private let apiTokenHolder: IApiTokensHolder
     
@@ -27,5 +26,20 @@ class HackathonsApi: IHackathonsApi {
     func getHackathonDetails(by id: Int) -> Single<ApiResult<HackathonDto>> {
         let url = endpointsProvider.gatewayUrl + "/api/hackathons/get-by-id/\(id)"
         return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
+    
+    func getPossibleHackatons() -> Single<ApiResult<[ShortHackathonDto]>> {
+        let url = endpointsProvider.gatewayUrl + "/api/hackathons/getPossibleHackathons"
+        return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
+    
+    func willGoHackathon(id: Int) -> Single<LiteApiResult> {
+        let url = endpointsProvider.gatewayUrl + "/api/hackathons/willGoHackathon/\(id)"
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
+    
+    func willNotGoHackathon(id: Int) -> Single<LiteApiResult> {
+        let url = endpointsProvider.gatewayUrl + "/api/hackathons/willNotGoHackathon/\(id)"
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
 }
