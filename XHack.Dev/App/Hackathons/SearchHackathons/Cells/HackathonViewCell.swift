@@ -24,7 +24,7 @@ class HackathonViewCell: UITableViewCell {
     
     func set(for model: ShortHackathon) {
         if avatarUrl != model.avatarUrl {
-            hackImageView.downloaded(from: model.avatarUrl)
+            hackImageView.downloaded(from: model.avatarUrl, contentMode: .scaleToFill)
             avatarUrl = model.avatarUrl
         }
         

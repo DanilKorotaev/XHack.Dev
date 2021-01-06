@@ -93,7 +93,7 @@
                                 </collectionViewFlowLayout>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrT-pu-AAq">
-                                <rect key="frame" x="10" y="106" width="292" height="15"/>
+                                <rect key="frame" x="10" y="100" width="292" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -122,7 +122,7 @@
                             <constraint firstItem="usM-JG-Rol" firstAttribute="top" secondItem="0GW-v5-HGB" secondAttribute="top" constant="12" id="r6t-Gd-Ogx"/>
                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Zxa-eU-S8N" secondAttribute="trailing" constant="20" id="rpx-Xu-vaf"/>
                             <constraint firstItem="Zxa-eU-S8N" firstAttribute="centerY" secondItem="2xJ-YC-KkH" secondAttribute="centerY" id="uJu-1t-K0X"/>
-                            <constraint firstItem="xrT-pu-AAq" firstAttribute="top" secondItem="2xJ-YC-KkH" secondAttribute="bottom" constant="14" id="xZ8-qg-yAd"/>
+                            <constraint firstItem="xrT-pu-AAq" firstAttribute="top" secondItem="2xJ-YC-KkH" secondAttribute="bottom" constant="8" id="xZ8-qg-yAd"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

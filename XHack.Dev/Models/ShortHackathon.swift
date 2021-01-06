@@ -30,6 +30,6 @@ class ShortHackathon {
         tags = data.tags.map { Tag($0) }
         startDate = data.startDate
         endDate = data.endDate
-        dateText = "\(startDate.toString("MM.dd.yyyy")) - \(endDate.toString("MM.dd.yyyy"))"
+        dateText = "\(startDate.toString("dd.MM.yyyy")) - \(endDate.toString("dd.MM.yyyy"))"
     }
 }

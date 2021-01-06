@@ -66,6 +66,14 @@ class HackListHeaderView: UITableViewHeaderFooterView {
                 cell.set(for: model)
             }
             .disposed(by: disposeBag)
+        
+        popularHackCollectionView.rx.modelSelected(ShortHackathon.self)
+            .bind(to: dataContext.didSelectHack)
+            .disposed(by: disposeBag)
+        
+        topHacksCollectionView.rx.modelSelected(ShortHackathon.self)
+            .bind(to: dataContext.didSelectHack)
+            .disposed(by: disposeBag)
     }
 }
 
