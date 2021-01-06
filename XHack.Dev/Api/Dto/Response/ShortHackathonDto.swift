@@ -9,8 +9,13 @@
 import Foundation
 
 struct ShortHackathonDto: Codable {
-    private(set) var name: String
-    private(set) var description: String
-    private(set) var isOnline: Bool
-    private(set) var id: Int
+    let name: String
+    let description: String
+    let isOnline: Bool
+    let id: Int
+    let location: String = ""
+    let tags: [TagDto] 
+    let avatarUrl: String
+    let startDate: Date = Date()
+    let endDate: Date = Date()
 }

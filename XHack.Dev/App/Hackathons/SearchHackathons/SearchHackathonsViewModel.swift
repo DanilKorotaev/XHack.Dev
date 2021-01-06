@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-class HackathonsListViewModel: BaseViewModel {
+class SearchHackathonsViewModel: BaseViewModel {
     let hackathonsApi: IHackathonsApi
     let hackathons = BehaviorSubject(value: [ShortHackathon]())
     let didSelectHack = PublishSubject<ShortHackathon>()
@@ -18,7 +18,7 @@ class HackathonsListViewModel: BaseViewModel {
         self.hackathonsApi = hackathonsApi
     }
     
-    override func refreshContent() {
+    override func refreshContent(_ withLoader: Bool = true) {
         isLoading.onNext(true)
         hackathonsApi.getHackatons(by: HackathonsFilterDto())
             .subscribe(onSuccess: { [weak self] result in

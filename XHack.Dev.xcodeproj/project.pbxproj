@@ -99,6 +99,12 @@
 		A309624F2569DDA4007E366E /* TaskDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A309624E2569DDA4007E366E /* TaskDetailCoordinator.swift */; };
 		A30962542569DDB9007E366E /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30962532569DDB9007E366E /* TaskDetailViewController.swift */; };
 		A30962592569DDCA007E366E /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30962582569DDCA007E366E /* TaskDetailViewModel.swift */; };
+		A3196282259A757300D58502 /* HackathonListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319627E259A757300D58502 /* HackathonListCoordinator.swift */; };
+		A3196283259A757300D58502 /* HackathonList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A319627F259A757300D58502 /* HackathonList.storyboard */; };
+		A3196284259A757300D58502 /* HackathonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3196280259A757300D58502 /* HackathonListViewModel.swift */; };
+		A3196285259A757300D58502 /* HackathonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3196281259A757300D58502 /* HackathonListViewController.swift */; };
+		A3196295259A789900D58502 /* HackListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3196293259A789900D58502 /* HackListHeaderView.swift */; };
+		A3196296259A789900D58502 /* HackListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3196294259A789900D58502 /* HackListHeaderView.xib */; };
 		A3231241256D982300D3B97B /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231240256D982300D3B97B /* SignUpResponse.swift */; };
 		A3231249256D9B4600D3B97B /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231248256D9B4600D3B97B /* SignInResponse.swift */; };
 		A3231251256DBD6300D3B97B /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231250256DBD6300D3B97B /* RestClient.swift */; };
@@ -112,6 +118,24 @@
 		A3231292256F119100D3B97B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231291256F119100D3B97B /* ProfileViewController.swift */; };
 		A3231297256F119E00D3B97B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231296256F119E00D3B97B /* ProfileViewModel.swift */; };
 		A323129C256F11AC00D3B97B /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323129B256F11AC00D3B97B /* ProfileCoordinator.swift */; };
+		A3441D2A25963B0900A3BFA5 /* ChatListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3441D2925963B0900A3BFA5 /* ChatListCoordinator.swift */; };
+		A3441D3225963B1900A3BFA5 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3441D3125963B1900A3BFA5 /* ChatListViewModel.swift */; };
+		A3441D3A25963B3200A3BFA5 /* ChatList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3441D3925963B3200A3BFA5 /* ChatList.storyboard */; };
+		A3441D3C25963B4400A3BFA5 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3441D3B25963B4400A3BFA5 /* ChatListViewController.swift */; };
+		A3441D44259658B000A3BFA5 /* RootTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3441D43259658B000A3BFA5 /* RootTabBarViewController.swift */; };
+		A3441D4A25967A4500A3BFA5 /* ChooseSearchCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3441D4925967A4500A3BFA5 /* ChooseSearchCategoryCoordinator.swift */; };
+		A3441D4F25967A7500A3BFA5 /* ChooseSearchCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3441D4E25967A7500A3BFA5 /* ChooseSearchCategoryViewModel.swift */; };
+		A3441D5425967AB400A3BFA5 /* ChooseSearchCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3441D5325967AB400A3BFA5 /* ChooseSearchCategoryViewController.swift */; };
+		A3441D59259681DD00A3BFA5 /* ChooseSearchCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3441D58259681DD00A3BFA5 /* ChooseSearchCategory.storyboard */; };
+		A3441D602597881C00A3BFA5 /* HackathonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3441D5E2597881C00A3BFA5 /* HackathonViewCell.swift */; };
+		A3441D612597881C00A3BFA5 /* HackathonViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3441D5F2597881C00A3BFA5 /* HackathonViewCell.xib */; };
+		A3441D692597920B00A3BFA5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3441D682597920B00A3BFA5 /* Tag.swift */; };
+		A3441D712597C2F400A3BFA5 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3441D702597C2F400A3BFA5 /* UIImageView+Extension.swift */; };
+		A349FB56259BD5BB0038549E /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A349FB55259BD5BB0038549E /* Date+String.swift */; };
+		A349FB5C259BDB2C0038549E /* PopularHackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A349FB5A259BDB2C0038549E /* PopularHackViewCell.swift */; };
+		A349FB5D259BDB2C0038549E /* PopularHackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A349FB5B259BDB2C0038549E /* PopularHackViewCell.xib */; };
+		A349FB64259BE40C0038549E /* TagViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A349FB62259BE40C0038549E /* TagViewCell.swift */; };
+		A349FB65259BE40C0038549E /* TagViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A349FB63259BE40C0038549E /* TagViewCell.xib */; };
 		A36AF8C52582CCD8000E2852 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36AF8C42582CCD8000E2852 /* Team.swift */; };
 		A36AF8CD2582D17C000E2852 /* CreateTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36AF8CC2582D17C000E2852 /* CreateTeamViewModel.swift */; };
 		A36AF8D52582D187000E2852 /* CreateTeamCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36AF8D42582D187000E2852 /* CreateTeamCoordinator.swift */; };
@@ -128,7 +152,7 @@
 		A37055F625852EC8005650FD /* ActionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37055F525852EC8005650FD /* ActionInfo.swift */; };
 		A37055FE25852F5D005650FD /* DialogActionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37055FD25852F5D005650FD /* DialogActionInfo.swift */; };
 		A3705603258534E6005650FD /* Container+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3705602258534E6005650FD /* Container+Extension.swift */; };
-		A3705608258544E0005650FD /* Hackathon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3705607258544E0005650FD /* Hackathon.swift */; };
+		A3705608258544E0005650FD /* HackathonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3705607258544E0005650FD /* HackathonDetail.swift */; };
 		A370560D25857E7D005650FD /* IAlertDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370560C25857E7D005650FD /* IAlertDispatcher.swift */; };
 		A374553D257D06F0006F4801 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374553C257D06F0006F4801 /* BaseViewController.swift */; };
 		A3877537256A9BC800F00EB0 /* IPushSubscriptionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3877536256A9BC800F00EB0 /* IPushSubscriptionProvider.swift */; };
@@ -139,6 +163,13 @@
 		A3877550256AB0D300F00EB0 /* PushSubscribingResultMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387754F256AB0D300F00EB0 /* PushSubscribingResultMessage.swift */; };
 		A387755C256B183400F00EB0 /* SignOutMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387755B256B183300F00EB0 /* SignOutMessage.swift */; };
 		A3877561256B19A700F00EB0 /* LoginMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3877560256B19A700F00EB0 /* LoginMessage.swift */; };
+		A3881419258A9E9D00FFF9A5 /* IRequestsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3881418258A9E9D00FFF9A5 /* IRequestsApi.swift */; };
+		A388141E258A9F6900FFF9A5 /* ActiveIncomingRequestsDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388141D258A9F6900FFF9A5 /* ActiveIncomingRequestsDto.swift */; };
+		A3881423258A9FAA00FFF9A5 /* IncomingRequestDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3881422258A9FAA00FFF9A5 /* IncomingRequestDto.swift */; };
+		A3881428258AA09500FFF9A5 /* RequestsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3881427258AA09500FFF9A5 /* RequestsApi.swift */; };
+		A388142D258AA13600FFF9A5 /* AcceptRequestToUserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388142C258AA13600FFF9A5 /* AcceptRequestToUserDto.swift */; };
+		A3881432258AA1AF00FFF9A5 /* DeclineRequestToUserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3881431258AA1AF00FFF9A5 /* DeclineRequestToUserDto.swift */; };
+		A3881437258AA1D800FFF9A5 /* WithDrawRequestToUserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3881436258AA1D800FFF9A5 /* WithDrawRequestToUserDto.swift */; };
 		A3884C042569624700851886 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3884C032569624700851886 /* Injection.swift */; };
 		A38CDB2E256C1A2600E8A732 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A38CDB2D256C1A2600E8A732 /* Registration.storyboard */; };
 		A38CDB36256C1A3C00E8A732 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38CDB35256C1A3C00E8A732 /* RegistrationViewController.swift */; };
@@ -154,10 +185,10 @@
 		A3961A88257987E100FC3541 /* TeamsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961A87257987E100FC3541 /* TeamsApi.swift */; };
 		A3961A8D2579897E00FC3541 /* CreateRequestToTeamDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961A8C2579897E00FC3541 /* CreateRequestToTeamDto.swift */; };
 		A3961A9D25798A9E00FC3541 /* CreateRequestToUserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961A9C25798A9E00FC3541 /* CreateRequestToUserDto.swift */; };
-		A3961AA32579933400FC3541 /* HackathonsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961AA22579933400FC3541 /* HackathonsListViewModel.swift */; };
-		A3961AA82579934900FC3541 /* HackathonsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3961AA72579934900FC3541 /* HackathonsList.storyboard */; };
-		A3961AAD2579935600FC3541 /* HackathonsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961AAC2579935600FC3541 /* HackathonsListViewController.swift */; };
-		A3961AB22579936400FC3541 /* HackathonsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961AB12579936400FC3541 /* HackathonsListCoordinator.swift */; };
+		A3961AA32579933400FC3541 /* SearchHackathonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961AA22579933400FC3541 /* SearchHackathonsViewModel.swift */; };
+		A3961AA82579934900FC3541 /* SearchHackathons.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3961AA72579934900FC3541 /* SearchHackathons.storyboard */; };
+		A3961AAD2579935600FC3541 /* SearchHackathonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961AAC2579935600FC3541 /* SearchHackathonsViewController.swift */; };
+		A3961AB22579936400FC3541 /* SearchHackathonsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961AB12579936400FC3541 /* SearchHackathonsCoordinator.swift */; };
 		A3961ABD2579949500FC3541 /* IHackathonsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961ABC2579949500FC3541 /* IHackathonsApi.swift */; };
 		A3961AC2257994E000FC3541 /* ShortHackathonDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961AC1257994E000FC3541 /* ShortHackathonDto.swift */; };
 		A3961AC72579953E00FC3541 /* HackathonDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961AC62579953E00FC3541 /* HackathonDto.swift */; };
@@ -174,6 +205,8 @@
 		A3961B1C257AE5F800FC3541 /* TeamListCoordonator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961B1B257AE5F800FC3541 /* TeamListCoordonator.swift */; };
 		A3961B21257AE69600FC3541 /* TeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961B20257AE69600FC3541 /* TeamListViewController.swift */; };
 		A3961B26257AE6A300FC3541 /* TeamList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3961B25257AE6A200FC3541 /* TeamList.storyboard */; };
+		A3A0E941259A8CE100634BED /* TopHackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A0E93F259A8CE100634BED /* TopHackViewCell.swift */; };
+		A3A0E942259A8CE100634BED /* TopHackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3A0E940259A8CE100634BED /* TopHackViewCell.xib */; };
 		A3B80B3C258593D10089E599 /* ShortHackathon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B80B3B258593D10089E599 /* ShortHackathon.swift */; };
 		A3BA56312573E896007AD591 /* ApiEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA56302573E896007AD591 /* ApiEndpoints.swift */; };
 		A3BA56362573E906007AD591 /* EndpointsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA56352573E906007AD591 /* EndpointsProvider.swift */; };
@@ -193,6 +226,8 @@
 		A3BA568925743849007AD591 /* IAccountSecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA568825743849007AD591 /* IAccountSecureStorage.swift */; };
 		A3BA569125743A05007AD591 /* AccountSecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA569025743A05007AD591 /* AccountSecureStorage.swift */; };
 		A3BA569625743A2F007AD591 /* KeyChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA569525743A2F007AD591 /* KeyChainHelper.swift */; };
+		A3DBB80D258ABA5E0078CC4E /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBB80C258ABA5D0078CC4E /* UserProfile.swift */; };
+		A3DBB812258AC22D0078CC4E /* TagDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBB811258AC22D0078CC4E /* TagDto.swift */; };
 		A3F7BBB12575895D00F18645 /* HttpClientHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F7BBB02575895D00F18645 /* HttpClientHelper.swift */; };
 		C5751340814BF2C7C29BE078 /* Pods_XHack_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70DE3EB1E1DBDC0A2BDD1F9 /* Pods_XHack_Dev.framework */; };
 /* End PBXBuildFile section */
@@ -322,6 +357,12 @@
 		A309624E2569DDA4007E366E /* TaskDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailCoordinator.swift; sourceTree = "<group>"; };
 		A30962532569DDB9007E366E /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		A30962582569DDCA007E366E /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewModel.swift; sourceTree = "<group>"; };
+		A319627E259A757300D58502 /* HackathonListCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackathonListCoordinator.swift; sourceTree = "<group>"; };
+		A319627F259A757300D58502 /* HackathonList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HackathonList.storyboard; sourceTree = "<group>"; };
+		A3196280259A757300D58502 /* HackathonListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackathonListViewModel.swift; sourceTree = "<group>"; };
+		A3196281259A757300D58502 /* HackathonListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackathonListViewController.swift; sourceTree = "<group>"; };
+		A3196293259A789900D58502 /* HackListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackListHeaderView.swift; sourceTree = "<group>"; };
+		A3196294259A789900D58502 /* HackListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HackListHeaderView.xib; sourceTree = "<group>"; };
 		A3231240256D982300D3B97B /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		A3231248256D9B4600D3B97B /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		A3231250256DBD6300D3B97B /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
@@ -335,6 +376,24 @@
 		A3231291256F119100D3B97B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A3231296256F119E00D3B97B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A323129B256F11AC00D3B97B /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		A3441D2925963B0900A3BFA5 /* ChatListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCoordinator.swift; sourceTree = "<group>"; };
+		A3441D3125963B1900A3BFA5 /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
+		A3441D3925963B3200A3BFA5 /* ChatList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatList.storyboard; sourceTree = "<group>"; };
+		A3441D3B25963B4400A3BFA5 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		A3441D43259658B000A3BFA5 /* RootTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewController.swift; sourceTree = "<group>"; };
+		A3441D4925967A4500A3BFA5 /* ChooseSearchCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSearchCategoryCoordinator.swift; sourceTree = "<group>"; };
+		A3441D4E25967A7500A3BFA5 /* ChooseSearchCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSearchCategoryViewModel.swift; sourceTree = "<group>"; };
+		A3441D5325967AB400A3BFA5 /* ChooseSearchCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSearchCategoryViewController.swift; sourceTree = "<group>"; };
+		A3441D58259681DD00A3BFA5 /* ChooseSearchCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChooseSearchCategory.storyboard; sourceTree = "<group>"; };
+		A3441D5E2597881C00A3BFA5 /* HackathonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonViewCell.swift; sourceTree = "<group>"; };
+		A3441D5F2597881C00A3BFA5 /* HackathonViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HackathonViewCell.xib; sourceTree = "<group>"; };
+		A3441D682597920B00A3BFA5 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		A3441D702597C2F400A3BFA5 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		A349FB55259BD5BB0038549E /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		A349FB5A259BDB2C0038549E /* PopularHackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularHackViewCell.swift; sourceTree = "<group>"; };
+		A349FB5B259BDB2C0038549E /* PopularHackViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularHackViewCell.xib; sourceTree = "<group>"; };
+		A349FB62259BE40C0038549E /* TagViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewCell.swift; sourceTree = "<group>"; };
+		A349FB63259BE40C0038549E /* TagViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagViewCell.xib; sourceTree = "<group>"; };
 		A36AF8C42582CCD8000E2852 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		A36AF8CC2582D17C000E2852 /* CreateTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamViewModel.swift; sourceTree = "<group>"; };
 		A36AF8D42582D187000E2852 /* CreateTeamCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamCoordinator.swift; sourceTree = "<group>"; };
@@ -351,7 +410,7 @@
 		A37055F525852EC8005650FD /* ActionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionInfo.swift; sourceTree = "<group>"; };
 		A37055FD25852F5D005650FD /* DialogActionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogActionInfo.swift; sourceTree = "<group>"; };
 		A3705602258534E6005650FD /* Container+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Extension.swift"; sourceTree = "<group>"; };
-		A3705607258544E0005650FD /* Hackathon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hackathon.swift; sourceTree = "<group>"; };
+		A3705607258544E0005650FD /* HackathonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonDetail.swift; sourceTree = "<group>"; };
 		A370560C25857E7D005650FD /* IAlertDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAlertDispatcher.swift; sourceTree = "<group>"; };
 		A374553C257D06F0006F4801 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A3877536256A9BC800F00EB0 /* IPushSubscriptionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPushSubscriptionProvider.swift; sourceTree = "<group>"; };
@@ -363,6 +422,13 @@
 		A3877554256ABD4900F00EB0 /* XHack.Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XHack.Dev.entitlements; sourceTree = "<group>"; };
 		A387755B256B183300F00EB0 /* SignOutMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutMessage.swift; sourceTree = "<group>"; };
 		A3877560256B19A700F00EB0 /* LoginMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMessage.swift; sourceTree = "<group>"; };
+		A3881418258A9E9D00FFF9A5 /* IRequestsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRequestsApi.swift; sourceTree = "<group>"; };
+		A388141D258A9F6900FFF9A5 /* ActiveIncomingRequestsDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveIncomingRequestsDto.swift; sourceTree = "<group>"; };
+		A3881422258A9FAA00FFF9A5 /* IncomingRequestDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingRequestDto.swift; sourceTree = "<group>"; };
+		A3881427258AA09500FFF9A5 /* RequestsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsApi.swift; sourceTree = "<group>"; };
+		A388142C258AA13600FFF9A5 /* AcceptRequestToUserDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptRequestToUserDto.swift; sourceTree = "<group>"; };
+		A3881431258AA1AF00FFF9A5 /* DeclineRequestToUserDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclineRequestToUserDto.swift; sourceTree = "<group>"; };
+		A3881436258AA1D800FFF9A5 /* WithDrawRequestToUserDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithDrawRequestToUserDto.swift; sourceTree = "<group>"; };
 		A3884C032569624700851886 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		A38CDB2D256C1A2600E8A732 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		A38CDB35256C1A3C00E8A732 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -378,10 +444,10 @@
 		A3961A87257987E100FC3541 /* TeamsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsApi.swift; sourceTree = "<group>"; };
 		A3961A8C2579897E00FC3541 /* CreateRequestToTeamDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestToTeamDto.swift; sourceTree = "<group>"; };
 		A3961A9C25798A9E00FC3541 /* CreateRequestToUserDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestToUserDto.swift; sourceTree = "<group>"; };
-		A3961AA22579933400FC3541 /* HackathonsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonsListViewModel.swift; sourceTree = "<group>"; };
-		A3961AA72579934900FC3541 /* HackathonsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HackathonsList.storyboard; sourceTree = "<group>"; };
-		A3961AAC2579935600FC3541 /* HackathonsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonsListViewController.swift; sourceTree = "<group>"; };
-		A3961AB12579936400FC3541 /* HackathonsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonsListCoordinator.swift; sourceTree = "<group>"; };
+		A3961AA22579933400FC3541 /* SearchHackathonsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHackathonsViewModel.swift; sourceTree = "<group>"; };
+		A3961AA72579934900FC3541 /* SearchHackathons.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchHackathons.storyboard; sourceTree = "<group>"; };
+		A3961AAC2579935600FC3541 /* SearchHackathonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHackathonsViewController.swift; sourceTree = "<group>"; };
+		A3961AB12579936400FC3541 /* SearchHackathonsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHackathonsCoordinator.swift; sourceTree = "<group>"; };
 		A3961ABC2579949500FC3541 /* IHackathonsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHackathonsApi.swift; sourceTree = "<group>"; };
 		A3961AC1257994E000FC3541 /* ShortHackathonDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortHackathonDto.swift; sourceTree = "<group>"; };
 		A3961AC62579953E00FC3541 /* HackathonDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonDto.swift; sourceTree = "<group>"; };
@@ -398,6 +464,8 @@
 		A3961B1B257AE5F800FC3541 /* TeamListCoordonator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListCoordonator.swift; sourceTree = "<group>"; };
 		A3961B20257AE69600FC3541 /* TeamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListViewController.swift; sourceTree = "<group>"; };
 		A3961B25257AE6A200FC3541 /* TeamList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamList.storyboard; sourceTree = "<group>"; };
+		A3A0E93F259A8CE100634BED /* TopHackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHackViewCell.swift; sourceTree = "<group>"; };
+		A3A0E940259A8CE100634BED /* TopHackViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopHackViewCell.xib; sourceTree = "<group>"; };
 		A3B80B3B258593D10089E599 /* ShortHackathon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortHackathon.swift; sourceTree = "<group>"; };
 		A3BA56302573E896007AD591 /* ApiEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoints.swift; sourceTree = "<group>"; };
 		A3BA56352573E906007AD591 /* EndpointsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointsProvider.swift; sourceTree = "<group>"; };
@@ -417,6 +485,8 @@
 		A3BA568825743849007AD591 /* IAccountSecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAccountSecureStorage.swift; sourceTree = "<group>"; };
 		A3BA569025743A05007AD591 /* AccountSecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSecureStorage.swift; sourceTree = "<group>"; };
 		A3BA569525743A2F007AD591 /* KeyChainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainHelper.swift; sourceTree = "<group>"; };
+		A3DBB80C258ABA5D0078CC4E /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		A3DBB811258AC22D0078CC4E /* TagDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDto.swift; sourceTree = "<group>"; };
 		A3F7BBB02575895D00F18645 /* HttpClientHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientHelper.swift; sourceTree = "<group>"; };
 		A819DD399E11BDE308700209 /* Pods_XHack_DevTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XHack_DevTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56B2DFC45659D8DA3B9C84C /* Pods-XHack.DevTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHack.DevTests.debug.xcconfig"; path = "Target Support Files/Pods-XHack.DevTests/Pods-XHack.DevTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -457,6 +527,9 @@
 		1657979B22DB8B7A00DA52D2 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				A349FB61259BE3F40038549E /* Cells */,
+				A3441D4825967A1600A3BFA5 /* Search */,
+				A3441D2725963AED00A3BFA5 /* Chat */,
 				A37055C125851501005650FD /* Hackathons */,
 				A3961B0F257AE37E00FC3541 /* Teams */,
 				A323128B256F115600D3B97B /* Profile */,
@@ -472,6 +545,7 @@
 				A323126B256F027100D3B97B /* RootTabBarCoordinator.swift */,
 				16DD9D0822DA8216007D9D2F /* LaunchScreen.storyboard */,
 				16A1E5AC22DA40C30003F0DF /* AppCoordinator.swift */,
+				A3441D43259658B000A3BFA5 /* RootTabBarViewController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -545,6 +619,9 @@
 				A3961A7D2579870000FC3541 /* TeamDto.swift */,
 				A3961AC1257994E000FC3541 /* ShortHackathonDto.swift */,
 				A3961AC62579953E00FC3541 /* HackathonDto.swift */,
+				A388141D258A9F6900FFF9A5 /* ActiveIncomingRequestsDto.swift */,
+				A3881422258A9FAA00FFF9A5 /* IncomingRequestDto.swift */,
+				A3DBB811258AC22D0078CC4E /* TagDto.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -565,6 +642,9 @@
 				A3961AF225799C5100FC3541 /* BookmarkChatDTO.swift */,
 				A3961AF725799C8A00FC3541 /* BookmarkMessageDTO.swift */,
 				A301E3402588238A0088B33A /* AddTagsDto.swift */,
+				A388142C258AA13600FFF9A5 /* AcceptRequestToUserDto.swift */,
+				A3881431258AA1AF00FFF9A5 /* DeclineRequestToUserDto.swift */,
+				A3881436258AA1D800FFF9A5 /* WithDrawRequestToUserDto.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -659,6 +739,8 @@
 				16A1E58922DA40C20003F0DF /* String+Localization.swift */,
 				16DD9CE822DA4854007D9D2F /* String+Trim.swift */,
 				16A1E57E22DA40C20003F0DF /* UIViewControllerExtensions.swift */,
+				A3441D702597C2F400A3BFA5 /* UIImageView+Extension.swift */,
+				A349FB55259BD5BB0038549E /* Date+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -728,7 +810,7 @@
 			isa = PBXGroup;
 			children = (
 				A37055EE25852DFC005650FD /* Messages */,
-				A3705607258544E0005650FD /* Hackathon.swift */,
+				A3705607258544E0005650FD /* HackathonDetail.swift */,
 				16A1E5DD22DA40C40003F0DF /* AlertMessage.swift */,
 				16A1E5E122DA40C40003F0DF /* AppStoryboard.swift */,
 				16A1E5E222DA40C40003F0DF /* Credentials.swift */,
@@ -743,6 +825,8 @@
 				A3877560256B19A700F00EB0 /* LoginMessage.swift */,
 				A36AF8C42582CCD8000E2852 /* Team.swift */,
 				A3B80B3B258593D10089E599 /* ShortHackathon.swift */,
+				A3DBB80C258ABA5D0078CC4E /* UserProfile.swift */,
+				A3441D682597920B00A3BFA5 /* Tag.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -829,6 +913,31 @@
 			path = TaskDetail;
 			sourceTree = "<group>";
 		};
+		A3196269259A74B500D58502 /* HacksLIst */ = {
+			isa = PBXGroup;
+			children = (
+				A3196292259A786C00D58502 /* Cells */,
+				A319627F259A757300D58502 /* HackathonList.storyboard */,
+				A319627E259A757300D58502 /* HackathonListCoordinator.swift */,
+				A3196281259A757300D58502 /* HackathonListViewController.swift */,
+				A3196280259A757300D58502 /* HackathonListViewModel.swift */,
+			);
+			path = HacksLIst;
+			sourceTree = "<group>";
+		};
+		A3196292259A786C00D58502 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A3196293259A789900D58502 /* HackListHeaderView.swift */,
+				A3196294259A789900D58502 /* HackListHeaderView.xib */,
+				A3A0E93F259A8CE100634BED /* TopHackViewCell.swift */,
+				A3A0E940259A8CE100634BED /* TopHackViewCell.xib */,
+				A349FB5A259BDB2C0038549E /* PopularHackViewCell.swift */,
+				A349FB5B259BDB2C0038549E /* PopularHackViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		A3231270256F03CB00D3B97B /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -849,6 +958,54 @@
 				A3231296256F119E00D3B97B /* ProfileViewModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		A3441D2725963AED00A3BFA5 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				A3441D2825963AF900A3BFA5 /* ChatList */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		A3441D2825963AF900A3BFA5 /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				A3441D2925963B0900A3BFA5 /* ChatListCoordinator.swift */,
+				A3441D3125963B1900A3BFA5 /* ChatListViewModel.swift */,
+				A3441D3925963B3200A3BFA5 /* ChatList.storyboard */,
+				A3441D3B25963B4400A3BFA5 /* ChatListViewController.swift */,
+			);
+			path = ChatList;
+			sourceTree = "<group>";
+		};
+		A3441D4825967A1600A3BFA5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A3441D4925967A4500A3BFA5 /* ChooseSearchCategoryCoordinator.swift */,
+				A3441D4E25967A7500A3BFA5 /* ChooseSearchCategoryViewModel.swift */,
+				A3441D5325967AB400A3BFA5 /* ChooseSearchCategoryViewController.swift */,
+				A3441D58259681DD00A3BFA5 /* ChooseSearchCategory.storyboard */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A3441D5D259787E600A3BFA5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A3441D5E2597881C00A3BFA5 /* HackathonViewCell.swift */,
+				A3441D5F2597881C00A3BFA5 /* HackathonViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A349FB61259BE3F40038549E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A349FB62259BE40C0038549E /* TagViewCell.swift */,
+				A349FB63259BE40C0038549E /* TagViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		A36AF8CA2582D13F000E2852 /* TeamList */ = {
@@ -876,8 +1033,9 @@
 		A37055C125851501005650FD /* Hackathons */ = {
 			isa = PBXGroup;
 			children = (
+				A3196269259A74B500D58502 /* HacksLIst */,
 				A37055C52585150F005650FD /* HackathonDetail */,
-				A3961AA12579931D00FC3541 /* HackathonsList */,
+				A3961AA12579931D00FC3541 /* SearchHackathons */,
 			);
 			path = Hackathons;
 			sourceTree = "<group>";
@@ -939,15 +1097,16 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
-		A3961AA12579931D00FC3541 /* HackathonsList */ = {
+		A3961AA12579931D00FC3541 /* SearchHackathons */ = {
 			isa = PBXGroup;
 			children = (
-				A3961AA22579933400FC3541 /* HackathonsListViewModel.swift */,
-				A3961AA72579934900FC3541 /* HackathonsList.storyboard */,
-				A3961AAC2579935600FC3541 /* HackathonsListViewController.swift */,
-				A3961AB12579936400FC3541 /* HackathonsListCoordinator.swift */,
+				A3441D5D259787E600A3BFA5 /* Cells */,
+				A3961AA22579933400FC3541 /* SearchHackathonsViewModel.swift */,
+				A3961AA72579934900FC3541 /* SearchHackathons.storyboard */,
+				A3961AAC2579935600FC3541 /* SearchHackathonsViewController.swift */,
+				A3961AB12579936400FC3541 /* SearchHackathonsCoordinator.swift */,
 			);
-			path = HackathonsList;
+			path = SearchHackathons;
 			sourceTree = "<group>";
 		};
 		A3961B0F257AE37E00FC3541 /* Teams */ = {
@@ -1013,6 +1172,7 @@
 				A3961ABC2579949500FC3541 /* IHackathonsApi.swift */,
 				A3961ADE25799A7400FC3541 /* IBookmarksApi.swift */,
 				A301E33625881DB90088B33A /* ITagsApi.swift */,
+				A3881418258A9E9D00FFF9A5 /* IRequestsApi.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1027,6 +1187,7 @@
 				A3961ACB2579956600FC3541 /* HackathonsApi.swift */,
 				A3961AFF25799D2C00FC3541 /* BookmarksApi.swift */,
 				A301E33B2588235F0088B33A /* TagsApi.swift */,
+				A3881427258AA09500FFF9A5 /* RequestsApi.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -1167,19 +1328,27 @@
 				16DD9CFD22DA6587007D9D2F /* Dashboard.storyboard in Resources */,
 				A3231284256F057900D3B97B /* Home.storyboard in Resources */,
 				16A1E5EC22DA40C40003F0DF /* SignIn.storyboard in Resources */,
-				A3961AA82579934900FC3541 /* HackathonsList.storyboard in Resources */,
+				A3961AA82579934900FC3541 /* SearchHackathons.storyboard in Resources */,
 				A36AF8DF2582D1A3000E2852 /* CreateTeam.storyboard in Resources */,
 				A37055C725851526005650FD /* HackathonDetail.storyboard in Resources */,
 				16A1E5ED22DA40C40003F0DF /* Drawer.storyboard in Resources */,
+				A3441D59259681DD00A3BFA5 /* ChooseSearchCategory.storyboard in Resources */,
 				16DD9D1922DB314C007D9D2F /* Settings.storyboard in Resources */,
 				16DD9D0622DA8192007D9D2F /* OnBoarding.storyboard in Resources */,
 				A3961B26257AE6A300FC3541 /* TeamList.storyboard in Resources */,
 				A323128D256F118100D3B97B /* Profile.storyboard in Resources */,
+				A349FB5D259BDB2C0038549E /* PopularHackViewCell.xib in Resources */,
+				A3196283259A757300D58502 /* HackathonList.storyboard in Resources */,
 				A38CDB2E256C1A2600E8A732 /* Registration.storyboard in Resources */,
+				A349FB65259BE40C0038549E /* TagViewCell.xib in Resources */,
+				A3196296259A789900D58502 /* HackListHeaderView.xib in Resources */,
 				16DD9D0922DA8216007D9D2F /* LaunchScreen.storyboard in Resources */,
 				16DD9CF722DA504F007D9D2F /* Assets.xcassets in Resources */,
+				A3A0E942259A8CE100634BED /* TopHackViewCell.xib in Resources */,
+				A3441D612597881C00A3BFA5 /* HackathonViewCell.xib in Resources */,
 				A309624A2569DD86007E366E /* TaskDetail.storyboard in Resources */,
 				16A1E61922DA40C40003F0DF /* translations.json in Resources */,
+				A3441D3A25963B3200A3BFA5 /* ChatList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1339,6 +1508,7 @@
 				16A1E61C22DA40C40003F0DF /* SignInCoordinator.swift in Sources */,
 				16A1E63A22DA40C40003F0DF /* SignUpRequest.swift in Sources */,
 				16A1E60022DA40C40003F0DF /* String+Localization.swift in Sources */,
+				A3196295259A789900D58502 /* HackListHeaderView.swift in Sources */,
 				16A1E61A22DA40C40003F0DF /* AppCoordinator.swift in Sources */,
 				A3231292256F119100D3B97B /* ProfileViewController.swift in Sources */,
 				16A1E60E22DA40C40003F0DF /* SignInViewModel.swift in Sources */,
@@ -1357,8 +1527,12 @@
 				A30962592569DDCA007E366E /* TaskDetailViewModel.swift in Sources */,
 				16A1E60F22DA40C40003F0DF /* DrawerMenuViewModel.swift in Sources */,
 				16DD9D1B22DB3242007D9D2F /* SettingsViewController.swift in Sources */,
+				A3196284259A757300D58502 /* HackathonListViewModel.swift in Sources */,
 				16DD9D0222DA7D5F007D9D2F /* OnBoardingCoordinator.swift in Sources */,
+				A388142D258AA13600FFF9A5 /* AcceptRequestToUserDto.swift in Sources */,
+				A3881423258A9FAA00FFF9A5 /* IncomingRequestDto.swift in Sources */,
 				A37055E225852A35005650FD /* BaseViewModel+ApiResult.swift in Sources */,
+				A3881432258AA1AF00FFF9A5 /* DeclineRequestToUserDto.swift in Sources */,
 				A3BA566625742EFA007AD591 /* IApiResult.swift in Sources */,
 				A38CDB36256C1A3C00E8A732 /* RegistrationViewController.swift in Sources */,
 				16DD9D1322DA861F007D9D2F /* SetOptionsViewModel.swift in Sources */,
@@ -1368,20 +1542,24 @@
 				A3961B0025799D2C00FC3541 /* BookmarksApi.swift in Sources */,
 				A3BA567025743025007AD591 /* HTTPStatusCode.swift in Sources */,
 				16A1E5F522DA40C40003F0DF /* UIViewControllerExtensions.swift in Sources */,
+				A3441D4A25967A4500A3BFA5 /* ChooseSearchCategoryCoordinator.swift in Sources */,
 				16A1E61422DA40C40003F0DF /* Container+Coordinators.swift in Sources */,
 				16A1E61B22DA40C40003F0DF /* DrawerMenuCoordinator.swift in Sources */,
 				16A1E62422DA40C40003F0DF /* SignInViewController.swift in Sources */,
 				16DD9CE522DA47D3007D9D2F /* ApiResponse.swift in Sources */,
 				16A1E64722DA40C40003F0DF /* HttpStatusCode.swift in Sources */,
 				16A1E5FE22DA40C40003F0DF /* Data+Json.swift in Sources */,
+				A3441D44259658B000A3BFA5 /* RootTabBarViewController.swift in Sources */,
+				A3196282259A757300D58502 /* HackathonListCoordinator.swift in Sources */,
 				A3BA56362573E906007AD591 /* EndpointsProvider.swift in Sources */,
 				A3BA566B25742F27007AD591 /* ApiActionResult.swift in Sources */,
 				16A1E60B22DA40C40003F0DF /* SessionEndpoints.swift in Sources */,
 				A3231251256DBD6300D3B97B /* RestClient.swift in Sources */,
 				A301E33725881DB90088B33A /* ITagsApi.swift in Sources */,
 				16A1E5F322DA40C40003F0DF /* LocalizationUtils.swift in Sources */,
+				A3DBB812258AC22D0078CC4E /* TagDto.swift in Sources */,
 				16DD9CFF22DA7508007D9D2F /* UserDataManager.swift in Sources */,
-				A3705608258544E0005650FD /* Hackathon.swift in Sources */,
+				A3705608258544E0005650FD /* HackathonDetail.swift in Sources */,
 				A3961B21257AE69600FC3541 /* TeamListViewController.swift in Sources */,
 				16A1E60822DA40C40003F0DF /* LocalizedButton.swift in Sources */,
 				A323127A256F052400D3B97B /* HomeViewModel.swift in Sources */,
@@ -1391,8 +1569,11 @@
 				16A1E61122DA40C40003F0DF /* Container+ViewModels.swift in Sources */,
 				A3961A79257986A100FC3541 /* ITeamsApi.swift in Sources */,
 				16A1E64222DA40C40003F0DF /* AppStoryboard.swift in Sources */,
+				A3441D3225963B1900A3BFA5 /* ChatListViewModel.swift in Sources */,
+				A3881437258AA1D800FFF9A5 /* WithDrawRequestToUserDto.swift in Sources */,
 				A36AF8C52582CCD8000E2852 /* Team.swift in Sources */,
 				16A1E61722DA40C40003F0DF /* Storyboarded.swift in Sources */,
+				A3DBB80D258ABA5E0078CC4E /* UserProfile.swift in Sources */,
 				16A1E62F22DA40C40003F0DF /* SessionService.swift in Sources */,
 				A3B80B3C258593D10089E599 /* ShortHackathon.swift in Sources */,
 				A3877537256A9BC800F00EB0 /* IPushSubscriptionProvider.swift in Sources */,
@@ -1401,6 +1582,7 @@
 				A3961ADF25799A7400FC3541 /* IBookmarksApi.swift in Sources */,
 				A387754B256AA3C600F00EB0 /* Messanger.swift in Sources */,
 				A3961A74257984C600FC3541 /* UserProfileDto.swift in Sources */,
+				A3881419258A9E9D00FFF9A5 /* IRequestsApi.swift in Sources */,
 				A374553D257D06F0006F4801 /* BaseViewController.swift in Sources */,
 				A370560D25857E7D005650FD /* IAlertDispatcher.swift in Sources */,
 				A3961A832579874800FC3541 /* CreateTeamDto.swift in Sources */,
@@ -1412,13 +1594,14 @@
 				A323126C256F027300D3B97B /* RootTabBarCoordinator.swift in Sources */,
 				A38CDB40256C1A6E00E8A732 /* RegistrationCoordinator.swift in Sources */,
 				16A1E60322DA40C40003F0DF /* FancyButton.swift in Sources */,
-				A3961AAD2579935600FC3541 /* HackathonsListViewController.swift in Sources */,
+				A3961AAD2579935600FC3541 /* SearchHackathonsViewController.swift in Sources */,
 				A3BA569625743A2F007AD591 /* KeyChainHelper.swift in Sources */,
 				A3231241256D982300D3B97B /* SignUpResponse.swift in Sources */,
 				A36AF8CD2582D17C000E2852 /* CreateTeamViewModel.swift in Sources */,
 				16A1E62E22DA40C40003F0DF /* BackendRestClient.swift in Sources */,
 				16A1E64822DA40C40003F0DF /* Tokens.swift in Sources */,
 				16DD9CF022DA4981007D9D2F /* HttpClient.swift in Sources */,
+				A349FB5C259BDB2C0038549E /* PopularHackViewCell.swift in Sources */,
 				A3961ABD2579949500FC3541 /* IHackathonsApi.swift in Sources */,
 				A3961A6A257980EA00FC3541 /* UpdateProfileDtoRequest.swift in Sources */,
 				16A1E63C22DA40C40003F0DF /* ErrorResponse.swift in Sources */,
@@ -1427,6 +1610,7 @@
 				A3BA569125743A05007AD591 /* AccountSecureStorage.swift in Sources */,
 				16A1E61E22DA40C40003F0DF /* BaseCoordinator.swift in Sources */,
 				16A1E64022DA40C40003F0DF /* DrawerMenuScreen.swift in Sources */,
+				A3441D692597920B00A3BFA5 /* Tag.swift in Sources */,
 				A3F7BBB12575895D00F18645 /* HttpClientHelper.swift in Sources */,
 				A387755C256B183400F00EB0 /* SignOutMessage.swift in Sources */,
 				16A1E61022DA40C40003F0DF /* DashboardViewModel.swift in Sources */,
@@ -1445,11 +1629,13 @@
 				A301E33C2588235F0088B33A /* TagsApi.swift in Sources */,
 				16DD9CF922DA5522007D9D2F /* Constants.swift in Sources */,
 				A3961A622579802200FC3541 /* IUserApi.swift in Sources */,
+				A388141E258A9F6900FFF9A5 /* ActiveIncomingRequestsDto.swift in Sources */,
 				16A1E62B22DA40C40003F0DF /* AppDelegate.swift in Sources */,
 				16A1E61322DA40C40003F0DF /* Container+Services.swift in Sources */,
-				A3961AA32579933400FC3541 /* HackathonsListViewModel.swift in Sources */,
+				A3961AA32579933400FC3541 /* SearchHackathonsViewModel.swift in Sources */,
 				A3705603258534E6005650FD /* Container+Extension.swift in Sources */,
 				16A1E64522DA40C40003F0DF /* Session.swift in Sources */,
+				A349FB56259BD5BB0038549E /* Date+String.swift in Sources */,
 				A3961AEE25799C1700FC3541 /* BookmarkTeamDTO.swift in Sources */,
 				A37055D625851554005650FD /* HackathonDetailCoordinator.swift in Sources */,
 				16DD9CE022DA47AB007D9D2F /* FileUtils.swift in Sources */,
@@ -1459,37 +1645,47 @@
 				A3961A7E2579870000FC3541 /* TeamDto.swift in Sources */,
 				16A1E63622DA40C40003F0DF /* TranslationsResponse.swift in Sources */,
 				16A1E5FF22DA40C40003F0DF /* Encodable+Json.swift in Sources */,
+				A3196285259A757300D58502 /* HackathonListViewController.swift in Sources */,
 				16DD9D0D22DA8557007D9D2F /* SetNameViewController.swift in Sources */,
 				A3BA566125742D6C007AD591 /* IApiTokensHolder.swift in Sources */,
 				16A1E63122DA40C40003F0DF /* HttpClientMock.swift in Sources */,
 				16A1E60D22DA40C40003F0DF /* GeneralEndpoints.swift in Sources */,
 				A3877561256B19A700F00EB0 /* LoginMessage.swift in Sources */,
+				A3441D602597881C00A3BFA5 /* HackathonViewCell.swift in Sources */,
 				16DD9D1722DB2871007D9D2F /* TasksEndpoints.swift in Sources */,
 				A3BA565325742BA2007AD591 /* AuthApiExecuter.swift in Sources */,
+				A3A0E941259A8CE100634BED /* TopHackViewCell.swift in Sources */,
 				16A1E61D22DA40C40003F0DF /* DashboardCoordinator.swift in Sources */,
 				A36AF8D52582D187000E2852 /* CreateTeamCoordinator.swift in Sources */,
 				A36AF8DA2582D198000E2852 /* CreateTeamViewController.swift in Sources */,
 				A3BA563C2573EA20007AD591 /* TestEndpoints.swift in Sources */,
 				A3961AC2257994E000FC3541 /* ShortHackathonDto.swift in Sources */,
+				A3441D712597C2F400A3BFA5 /* UIImageView+Extension.swift in Sources */,
 				A3961B1C257AE5F800FC3541 /* TeamListCoordonator.swift in Sources */,
+				A3441D5425967AB400A3BFA5 /* ChooseSearchCategoryViewController.swift in Sources */,
 				A3BA564B25742A0E007AD591 /* AuthApi.swift in Sources */,
 				A323129C256F11AC00D3B97B /* ProfileCoordinator.swift in Sources */,
 				A3961A88257987E100FC3541 /* TeamsApi.swift in Sources */,
+				A3881428258AA09500FFF9A5 /* RequestsApi.swift in Sources */,
 				A3877541256A9D9A00F00EB0 /* PushSubscriptionProvider.swift in Sources */,
 				16A1E64422DA40C40003F0DF /* SettingKey.swift in Sources */,
 				A3961AF325799C5100FC3541 /* BookmarkChatDTO.swift in Sources */,
 				A3961ACC2579956600FC3541 /* HackathonsApi.swift in Sources */,
 				A3BA568925743849007AD591 /* IAccountSecureStorage.swift in Sources */,
 				A3231297256F119E00D3B97B /* ProfileViewModel.swift in Sources */,
+				A3441D3C25963B4400A3BFA5 /* ChatListViewController.swift in Sources */,
 				16DD9CE222DA47AB007D9D2F /* Logger.swift in Sources */,
 				A3231259256DBDF000D3B97B /* HttpRequestExecutor.swift in Sources */,
 				16DD9D1D22DB32AA007D9D2F /* SettingsCoordinator.swift in Sources */,
 				A3877550256AB0D300F00EB0 /* PushSubscribingResultMessage.swift in Sources */,
-				A3961AB22579936400FC3541 /* HackathonsListCoordinator.swift in Sources */,
+				A3961AB22579936400FC3541 /* SearchHackathonsCoordinator.swift in Sources */,
 				16A1E62522DA40C40003F0DF /* BaseNavigationController.swift in Sources */,
+				A3441D2A25963B0900A3BFA5 /* ChatListCoordinator.swift in Sources */,
 				16A1E62622DA40C40003F0DF /* DashboardViewController.swift in Sources */,
 				16A1E60A22DA40C40003F0DF /* LocalizedTextField.swift in Sources */,
+				A349FB64259BE40C0038549E /* TagViewCell.swift in Sources */,
 				A3961A8D2579897E00FC3541 /* CreateRequestToTeamDto.swift in Sources */,
+				A3441D4F25967A7500A3BFA5 /* ChooseSearchCategoryViewModel.swift in Sources */,
 				A301E3412588238A0088B33A /* AddTagsDto.swift in Sources */,
 				A3BA567525743048007AD591 /* IErrorResult.swift in Sources */,
 			);

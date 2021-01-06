@@ -9,8 +9,13 @@
 import Foundation
 
 struct UserProfileDto: Codable {
-    private(set) var id: Int
-    private(set) var name: String
-    private(set) var email: String
-    private(set) var isAvailableForSearching: Bool
+    let id: Int
+    let name: String
+    let email: String
+    let isAvailableForSearching: Bool
+    let tags: [TagDto]
+    let description: String
+    let githubLink: String
+    let telegramLink: String
+    let linkedInLink: String
 }

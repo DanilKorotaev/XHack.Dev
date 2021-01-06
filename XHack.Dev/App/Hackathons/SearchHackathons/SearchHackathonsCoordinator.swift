@@ -10,16 +10,16 @@ import Foundation
 import RxSwift
 import Swinject
 
-class HackathonsListCoordinator: BaseCoordinator<Void> {
+class SearchHackathonsCoordinator: BaseCoordinator<Void> {
     
-    let viewModel: HackathonsListViewModel
+    let viewModel: SearchHackathonsViewModel
     
-    init(viewModel: HackathonsListViewModel) {
+    init(viewModel: SearchHackathonsViewModel) {
         self.viewModel = viewModel
     }
     
     override func start() -> Observable<Void> {
-        let viewController = HackathonsListViewController.instantiate()
+        let viewController = SearchHackathonsViewController.instantiate()
         viewController.dataContext = viewModel
         navigationController.pushViewController(viewController, animated: true)
         setupBinding()

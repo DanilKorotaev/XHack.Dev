@@ -23,7 +23,7 @@ class HackathonDetailViewModel: BaseViewModel {
         setupBinding()
     }
     
-    override func refreshContent() {
+    override func refreshContent(_ withLoader: Bool = true) {
         isLoading.onNext(true)
         hackathonsApi.getHackathonDetails(by: hackathonId)
             .subscribe(onSuccess: { [weak self] result in

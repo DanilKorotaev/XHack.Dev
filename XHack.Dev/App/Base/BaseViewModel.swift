@@ -17,5 +17,5 @@ class BaseViewModel {
         refreshContent()
     }
     
-    func refreshContent() { }
+    func refreshContent(_ withLoader: Bool = true) { }
 }

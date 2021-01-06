@@ -2,24 +2,29 @@
 import UIKit
 import RxSwift
 
-class ProfileViewController: UIViewController, Storyboarded {
+class ProfileViewController: BaseViewController<ProfileViewModel>, Storyboarded {
     static var storyboard = AppStoryboard.profile
     
+    @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var signOutButton: LocalizedButton!
-    var viewModel: ProfileViewModel?
-    private let disposeBag = DisposeBag()
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var specializationLabel: UILabel!
+    @IBOutlet weak var socialsTextView: UITextView!
+    @IBOutlet weak var aboutUserTextView: UITextView!
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setUpBindings()
-    }
-    
-    private func setUpBindings() {
-        guard let viewModel = viewModel else { return }
+    override func applyBinding() {
+        guard let dataContext = dataContext else { return }
+        
+        dataContext.profile.subscribe(onNext: { profile in
+            guard let profile = profile else { return }
+            profile.description.bind(to: self.aboutUserTextView.rx.text).disposed(by: self.disposeBag)
+            profile.name.bind(to: self.nameLabel.rx.text).disposed(by: self.disposeBag)
+            profile.socialLinks.bind(to: self.socialsTextView.rx.text).disposed(by: self.disposeBag)
+        }).disposed(by: disposeBag)
         
         signOutButton.rx.tap
-            .bind(to: viewModel.signOut)
+            .bind(to: dataContext.signOut)
             .disposed(by: disposeBag)
     }
 }

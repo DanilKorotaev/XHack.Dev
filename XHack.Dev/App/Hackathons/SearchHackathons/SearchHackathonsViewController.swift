@@ -8,13 +8,19 @@
 
 import UIKit
 
-class HackathonsListViewController: BaseViewController<HackathonsListViewModel>, Storyboarded {
-    static var storyboard =  AppStoryboard.hackathonsList
+class SearchHackathonsViewController: BaseViewController<SearchHackathonsViewModel>, Storyboarded {
+    static var storyboard =  AppStoryboard.searchHackathons
     
     @IBOutlet weak var tableView: UITableView!
         
     override func completeUi() {
         tableView.tableFooterView = UIView()
+        tableView.register(UINib(nibName: "HackathonViewCell", bundle: nil), forCellReuseIdentifier: "HackathonViewCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
     }
     
     
@@ -23,9 +29,9 @@ class HackathonsListViewController: BaseViewController<HackathonsListViewModel>,
             return
         }
         dataContext.hackathons
-            .bind(to: tableView.rx.items(cellIdentifier: "hackViewCell")) { row, model, cell in
-                cell.textLabel?.text = model.name
-                cell.detailTextLabel?.text = model.description
+            .bind(to: tableView.rx.items(cellIdentifier: "HackathonViewCell")) { row, model, cell in
+                guard let cell = cell as? HackathonViewCell else { return }
+                cell.set(for: model)
             }
             .disposed(by: disposeBag)
         

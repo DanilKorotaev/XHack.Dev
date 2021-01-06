@@ -14,14 +14,23 @@ class TeamListViewModel: BaseViewModel {
     
     var teams = BehaviorSubject(value: [Team]())
     var createTask = PublishSubject<Void>()
+    var requestRefreshContent = PublishSubject<Void>()
+    var isRefreshing = BehaviorSubject(value: false)
     
     init(teamsApi: ITeamsApi) {
         self.teamsApi = teamsApi
+        super.init()
+        requestRefreshContent.subscribe(onNext: {
+            self.refreshContent()
+        }).disposed(by: disposeBag)
     }
     
     
-    override func refreshContent() {
-        isLoading.onNext(true)
+    override func refreshContent(_ withLoader: Bool = true) {
+        if withLoader {
+            isLoading.onNext(true)
+        }
+        
         teamsApi.getTeams()
             .do(onSuccess: {  [weak self] result in
                 self?.isLoading.onNext(false)

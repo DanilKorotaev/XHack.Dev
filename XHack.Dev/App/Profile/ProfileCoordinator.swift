@@ -14,7 +14,7 @@ class ProfileCoordinator: BaseCoordinator<Void> {
         let viewController = ProfileViewController.instantiate()
         navigationController.navigationBar.isHidden = true
         navigationController.viewControllers = [viewController]
-        viewController.viewModel = viewModel
+        viewController.dataContext = viewModel
         setUpBinding()
         return Observable.empty()
     }
@@ -24,12 +24,6 @@ class ProfileCoordinator: BaseCoordinator<Void> {
             .subscribe(onNext: { [weak self] in
                 guard let self = self else {return}
                 self.sessionService.signOut().subscribe().disposed(by: self.disposeBag)
-            },
-            onError: { (error) in
-                print(error)
-            },
-            onDisposed: {
-                print("onDisposed")
             })
             .disposed(by: disposeBag)
     }

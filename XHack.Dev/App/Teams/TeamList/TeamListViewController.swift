@@ -13,16 +13,21 @@ class TeamListViewController: BaseViewController<TeamListViewModel>, Storyboarde
     static var storyboard = AppStoryboard.teamList
     
     @IBOutlet weak var tableView: UITableView!
-        
+    let refreshControll = UIRefreshControl()
+    
     override func completeUi() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu"), style: .plain, target: self, action: nil)
         tableView.tableFooterView = UIView()
+        tableView.refreshControl = refreshControll
     }
     
     override func applyBinding() {
         guard let dataContext = dataContext else {
             return
         }
+        dataContext.isRefreshing
+            .bind(to: refreshControll.rx.isRefreshing)
+            .disposed(by: disposeBag)
         navigationItem.leftBarButtonItem!.rx.tap
             .bind(to: dataContext.createTask)
             .disposed(by: disposeBag)
