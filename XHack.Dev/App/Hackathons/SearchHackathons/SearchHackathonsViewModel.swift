@@ -18,7 +18,7 @@ class SearchHackathonsViewModel: BaseViewModel {
         self.hackathonsApi = hackathonsApi
     }
     
-    override func refreshContent(_ withLoader: Bool = true) {
+    override func refreshContent(operationArgs: IOperationStateControl) {
         isLoading.onNext(true)
         hackathonsApi.getHackatons(by: HackathonsFilterDto())
             .subscribe(onSuccess: { [weak self] result in

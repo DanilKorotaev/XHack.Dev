@@ -13,7 +13,7 @@ class ProfileViewModel: BaseViewModel {
         self.userApi = userApi
     }
     
-    override func refreshContent(_ withLoader: Bool = true) {
+    override func refreshContent(operationArgs: IOperationStateControl) {
         userApi.getProfile().do(onSuccess: { result in
             if self.checkAndProcessApiResult(response: result, "загрузить информацию по пользователю") {
                 return

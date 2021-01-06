@@ -39,7 +39,7 @@ class TeamListCoordonator: BaseCoordinator<Void> {
         let coordinator = AppDelegate.container.resolve(CreateTeamCoordinator.self)!
         coordinator.navigationController = navigationController
         start(coordinator: coordinator).subscribe( { (result) in
-            self.viewModel.refreshContent()
+            self.viewModel.forceContentRefreshingAsync(operationArgs: nil)
         }).disposed(by: disposeBag)
     }
 }

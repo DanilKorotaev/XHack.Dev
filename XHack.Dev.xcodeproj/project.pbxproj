@@ -105,6 +105,13 @@
 		A3196285259A757300D58502 /* HackathonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3196281259A757300D58502 /* HackathonListViewController.swift */; };
 		A3196295259A789900D58502 /* HackListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3196293259A789900D58502 /* HackListHeaderView.swift */; };
 		A3196296259A789900D58502 /* HackListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3196294259A789900D58502 /* HackListHeaderView.xib */; };
+		A31F572C25A5E3DE00759B61 /* RefreshHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F572B25A5E3DE00759B61 /* RefreshHandler.swift */; };
+		A31F573125A5E6D900759B61 /* RefreshableContentHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F573025A5E6D900759B61 /* RefreshableContentHost.swift */; };
+		A31F573625A5E7CB00759B61 /* IOperationStateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F573525A5E7CB00759B61 /* IOperationStateHolder.swift */; };
+		A31F573B25A5E87100759B61 /* IOperationControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F573A25A5E87100759B61 /* IOperationControl.swift */; };
+		A31F574025A5E90400759B61 /* ICacheRetrievingStateControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F573F25A5E90400759B61 /* ICacheRetrievingStateControl.swift */; };
+		A31F574525A5E95300759B61 /* IOperationStateControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F574425A5E95300759B61 /* IOperationStateControl.swift */; };
+		A31F574B25A5EAD500759B61 /* OperationStateControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F574A25A5EAD500759B61 /* OperationStateControl.swift */; };
 		A3231241256D982300D3B97B /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231240256D982300D3B97B /* SignUpResponse.swift */; };
 		A3231249256D9B4600D3B97B /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231248256D9B4600D3B97B /* SignInResponse.swift */; };
 		A3231251256DBD6300D3B97B /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231250256DBD6300D3B97B /* RestClient.swift */; };
@@ -363,6 +370,13 @@
 		A3196281259A757300D58502 /* HackathonListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackathonListViewController.swift; sourceTree = "<group>"; };
 		A3196293259A789900D58502 /* HackListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackListHeaderView.swift; sourceTree = "<group>"; };
 		A3196294259A789900D58502 /* HackListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HackListHeaderView.xib; sourceTree = "<group>"; };
+		A31F572B25A5E3DE00759B61 /* RefreshHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshHandler.swift; sourceTree = "<group>"; };
+		A31F573025A5E6D900759B61 /* RefreshableContentHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableContentHost.swift; sourceTree = "<group>"; };
+		A31F573525A5E7CB00759B61 /* IOperationStateHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOperationStateHolder.swift; sourceTree = "<group>"; };
+		A31F573A25A5E87100759B61 /* IOperationControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOperationControl.swift; sourceTree = "<group>"; };
+		A31F573F25A5E90400759B61 /* ICacheRetrievingStateControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICacheRetrievingStateControl.swift; sourceTree = "<group>"; };
+		A31F574425A5E95300759B61 /* IOperationStateControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOperationStateControl.swift; sourceTree = "<group>"; };
+		A31F574A25A5EAD500759B61 /* OperationStateControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationStateControl.swift; sourceTree = "<group>"; };
 		A3231240256D982300D3B97B /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		A3231248256D9B4600D3B97B /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		A3231250256DBD6300D3B97B /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
@@ -675,6 +689,7 @@
 		16A1E53822DA3F140003F0DF /* XHack.Dev */ = {
 			isa = PBXGroup;
 			children = (
+				A31F574925A5EAC300759B61 /* Primitives */,
 				A3BA56232573E853007AD591 /* Api */,
 				A3877554256ABD4900F00EB0 /* XHack.Dev.entitlements */,
 				16DD9CF622DA504F007D9D2F /* Assets.xcassets */,
@@ -725,6 +740,7 @@
 				A3877540256A9D9A00F00EB0 /* PushSubscriptionProvider.swift */,
 				A3BA569025743A05007AD591 /* AccountSecureStorage.swift */,
 				A3BA569525743A2F007AD591 /* KeyChainHelper.swift */,
+				A31F572B25A5E3DE00759B61 /* RefreshHandler.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -790,6 +806,11 @@
 				A3231250256DBD6300D3B97B /* RestClient.swift */,
 				A3BA568825743849007AD591 /* IAccountSecureStorage.swift */,
 				A370560C25857E7D005650FD /* IAlertDispatcher.swift */,
+				A31F573025A5E6D900759B61 /* RefreshableContentHost.swift */,
+				A31F573525A5E7CB00759B61 /* IOperationStateHolder.swift */,
+				A31F573A25A5E87100759B61 /* IOperationControl.swift */,
+				A31F573F25A5E90400759B61 /* ICacheRetrievingStateControl.swift */,
+				A31F574425A5E95300759B61 /* IOperationStateControl.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -936,6 +957,14 @@
 				A349FB5B259BDB2C0038549E /* PopularHackViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A31F574925A5EAC300759B61 /* Primitives */ = {
+			isa = PBXGroup;
+			children = (
+				A31F574A25A5EAD500759B61 /* OperationStateControl.swift */,
+			);
+			path = Primitives;
 			sourceTree = "<group>";
 		};
 		A3231270256F03CB00D3B97B /* Home */ = {
@@ -1495,6 +1524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3BA565C25742D1E007AD591 /* ApiHelpers.swift in Sources */,
+				A31F572C25A5E3DE00759B61 /* RefreshHandler.swift in Sources */,
 				16A1E5F222DA40C40003F0DF /* ViewControllerUtils.swift in Sources */,
 				A37055F025852E06005650FD /* AlertDialogMessage.swift in Sources */,
 				16A1E61222DA40C40003F0DF /* Container+RegisterDependencies.swift in Sources */,
@@ -1512,6 +1542,7 @@
 				16A1E61A22DA40C40003F0DF /* AppCoordinator.swift in Sources */,
 				A3231292256F119100D3B97B /* ProfileViewController.swift in Sources */,
 				16A1E60E22DA40C40003F0DF /* SignInViewModel.swift in Sources */,
+				A31F573125A5E6D900759B61 /* RefreshableContentHost.swift in Sources */,
 				16DD9D1F22DB32F2007D9D2F /* SettingsViewModel.swift in Sources */,
 				A37055CC25851535005650FD /* HackathonDetailViewModel.swift in Sources */,
 				A3961AC72579953E00FC3541 /* HackathonDto.swift in Sources */,
@@ -1543,6 +1574,7 @@
 				A3BA567025743025007AD591 /* HTTPStatusCode.swift in Sources */,
 				16A1E5F522DA40C40003F0DF /* UIViewControllerExtensions.swift in Sources */,
 				A3441D4A25967A4500A3BFA5 /* ChooseSearchCategoryCoordinator.swift in Sources */,
+				A31F574525A5E95300759B61 /* IOperationStateControl.swift in Sources */,
 				16A1E61422DA40C40003F0DF /* Container+Coordinators.swift in Sources */,
 				16A1E61B22DA40C40003F0DF /* DrawerMenuCoordinator.swift in Sources */,
 				16A1E62422DA40C40003F0DF /* SignInViewController.swift in Sources */,
@@ -1554,9 +1586,11 @@
 				A3BA56362573E906007AD591 /* EndpointsProvider.swift in Sources */,
 				A3BA566B25742F27007AD591 /* ApiActionResult.swift in Sources */,
 				16A1E60B22DA40C40003F0DF /* SessionEndpoints.swift in Sources */,
+				A31F574025A5E90400759B61 /* ICacheRetrievingStateControl.swift in Sources */,
 				A3231251256DBD6300D3B97B /* RestClient.swift in Sources */,
 				A301E33725881DB90088B33A /* ITagsApi.swift in Sources */,
 				16A1E5F322DA40C40003F0DF /* LocalizationUtils.swift in Sources */,
+				A31F573B25A5E87100759B61 /* IOperationControl.swift in Sources */,
 				A3DBB812258AC22D0078CC4E /* TagDto.swift in Sources */,
 				16DD9CFF22DA7508007D9D2F /* UserDataManager.swift in Sources */,
 				A3705608258544E0005650FD /* HackathonDetail.swift in Sources */,
@@ -1587,6 +1621,7 @@
 				A370560D25857E7D005650FD /* IAlertDispatcher.swift in Sources */,
 				A3961A832579874800FC3541 /* CreateTeamDto.swift in Sources */,
 				A37055FE25852F5D005650FD /* DialogActionInfo.swift in Sources */,
+				A31F574B25A5EAD500759B61 /* OperationStateControl.swift in Sources */,
 				A3961A9D25798A9E00FC3541 /* CreateRequestToUserDto.swift in Sources */,
 				16A1E60222DA40C40003F0DF /* LocalizedLabel.swift in Sources */,
 				A30962542569DDB9007E366E /* TaskDetailViewController.swift in Sources */,
@@ -1687,6 +1722,7 @@
 				A3961A8D2579897E00FC3541 /* CreateRequestToTeamDto.swift in Sources */,
 				A3441D4F25967A7500A3BFA5 /* ChooseSearchCategoryViewModel.swift in Sources */,
 				A301E3412588238A0088B33A /* AddTagsDto.swift in Sources */,
+				A31F573625A5E7CB00759B61 /* IOperationStateHolder.swift in Sources */,
 				A3BA567525743048007AD591 /* IErrorResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

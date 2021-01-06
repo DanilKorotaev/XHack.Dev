@@ -14,8 +14,38 @@ class BaseViewModel {
     let disposeBag = DisposeBag()
     
     func initialize() {
-        refreshContent()
+        applyBinding()
+        tryRefreshContentAsync()
     }
     
-    func refreshContent(_ withLoader: Bool = true) { }
+    func refreshContent(operationArgs: IOperationStateControl) { }
+    
+    func createDefaultRefreshingArgs() -> IOperationStateControl {
+        OperationStateControl(isManuallyTriggered: false)
+    }
+    
+    func forceContentRefreshingAsync(operationArgs: IOperationStateControl? = nil) {
+        tryRefreshContentAsync(operationArgs: operationArgs)
+    }
+    
+    func tryRefreshContentAsync(operationArgs: IOperationStateControl? = nil) {
+        let operationArgs = operationArgs ?? createDefaultRefreshingArgs()
+        if operationArgs.isCancelled {
+            return
+        }
+        refreshContent(operationArgs: operationArgs)
+        if operationArgs.isCancelled {
+            return
+        }
+        if operationArgs.isFailed {
+            clearContent(operationArgs: operationArgs)
+            applyCache(operationArgs: operationArgs)
+        }
+    }
+    
+    func clearContent(operationArgs: IOperationStateControl) { }
+    
+    func applyCache(operationArgs: IOperationStateControl) { }
+    
+    func applyBinding() {}
 }

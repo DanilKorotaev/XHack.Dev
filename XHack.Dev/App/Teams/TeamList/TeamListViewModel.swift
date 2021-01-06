@@ -21,16 +21,16 @@ class TeamListViewModel: BaseViewModel {
         self.teamsApi = teamsApi
         super.init()
         requestRefreshContent.subscribe(onNext: {
-            self.refreshContent()
+            
         }).disposed(by: disposeBag)
     }
     
     
-    override func refreshContent(_ withLoader: Bool = true) {
-        if withLoader {
-            isLoading.onNext(true)
-        }
-        
+    override func refreshContent(operationArgs: IOperationStateControl) {
+//        if withLoader {
+//            isLoading.onNext(true)
+//        }
+//
         teamsApi.getTeams()
             .do(onSuccess: {  [weak self] result in
                 self?.isLoading.onNext(false)
