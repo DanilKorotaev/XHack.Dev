@@ -112,6 +112,10 @@
 		A31F574025A5E90400759B61 /* ICacheRetrievingStateControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F573F25A5E90400759B61 /* ICacheRetrievingStateControl.swift */; };
 		A31F574525A5E95300759B61 /* IOperationStateControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F574425A5E95300759B61 /* IOperationStateControl.swift */; };
 		A31F574B25A5EAD500759B61 /* OperationStateControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F574A25A5EAD500759B61 /* OperationStateControl.swift */; };
+		A31F575225A6640A00759B61 /* TeamSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F575125A6640A00759B61 /* TeamSearchCoordinator.swift */; };
+		A31F575A25A6641500759B61 /* TeamSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F575925A6641500759B61 /* TeamSearchViewModel.swift */; };
+		A31F575F25A6641E00759B61 /* TeamSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31F575E25A6641E00759B61 /* TeamSearch.storyboard */; };
+		A31F576425A6643100759B61 /* TeamSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31F576325A6643100759B61 /* TeamSearchViewController.swift */; };
 		A3231241256D982300D3B97B /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231240256D982300D3B97B /* SignUpResponse.swift */; };
 		A3231249256D9B4600D3B97B /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231248256D9B4600D3B97B /* SignInResponse.swift */; };
 		A3231251256DBD6300D3B97B /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231250256DBD6300D3B97B /* RestClient.swift */; };
@@ -235,6 +239,10 @@
 		A3BA569625743A2F007AD591 /* KeyChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA569525743A2F007AD591 /* KeyChainHelper.swift */; };
 		A3DBB80D258ABA5E0078CC4E /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBB80C258ABA5D0078CC4E /* UserProfile.swift */; };
 		A3DBB812258AC22D0078CC4E /* TagDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBB811258AC22D0078CC4E /* TagDto.swift */; };
+		A3DD556F25A668720095A130 /* TeammateSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3DD556B25A668720095A130 /* TeammateSearch.storyboard */; };
+		A3DD557025A668720095A130 /* TeammateSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DD556C25A668720095A130 /* TeammateSearchViewController.swift */; };
+		A3DD557125A668720095A130 /* TeammateSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DD556D25A668720095A130 /* TeammateSearchCoordinator.swift */; };
+		A3DD557225A668720095A130 /* TeammateSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DD556E25A668720095A130 /* TeammateSearchViewModel.swift */; };
 		A3F7BBB12575895D00F18645 /* HttpClientHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F7BBB02575895D00F18645 /* HttpClientHelper.swift */; };
 		C5751340814BF2C7C29BE078 /* Pods_XHack_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70DE3EB1E1DBDC0A2BDD1F9 /* Pods_XHack_Dev.framework */; };
 /* End PBXBuildFile section */
@@ -377,6 +385,10 @@
 		A31F573F25A5E90400759B61 /* ICacheRetrievingStateControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICacheRetrievingStateControl.swift; sourceTree = "<group>"; };
 		A31F574425A5E95300759B61 /* IOperationStateControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOperationStateControl.swift; sourceTree = "<group>"; };
 		A31F574A25A5EAD500759B61 /* OperationStateControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationStateControl.swift; sourceTree = "<group>"; };
+		A31F575125A6640A00759B61 /* TeamSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSearchCoordinator.swift; sourceTree = "<group>"; };
+		A31F575925A6641500759B61 /* TeamSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSearchViewModel.swift; sourceTree = "<group>"; };
+		A31F575E25A6641E00759B61 /* TeamSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamSearch.storyboard; sourceTree = "<group>"; };
+		A31F576325A6643100759B61 /* TeamSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSearchViewController.swift; sourceTree = "<group>"; };
 		A3231240256D982300D3B97B /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		A3231248256D9B4600D3B97B /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
 		A3231250256DBD6300D3B97B /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
@@ -501,6 +513,10 @@
 		A3BA569525743A2F007AD591 /* KeyChainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainHelper.swift; sourceTree = "<group>"; };
 		A3DBB80C258ABA5D0078CC4E /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		A3DBB811258AC22D0078CC4E /* TagDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDto.swift; sourceTree = "<group>"; };
+		A3DD556B25A668720095A130 /* TeammateSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TeammateSearch.storyboard; sourceTree = "<group>"; };
+		A3DD556C25A668720095A130 /* TeammateSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeammateSearchViewController.swift; sourceTree = "<group>"; };
+		A3DD556D25A668720095A130 /* TeammateSearchCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeammateSearchCoordinator.swift; sourceTree = "<group>"; };
+		A3DD556E25A668720095A130 /* TeammateSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeammateSearchViewModel.swift; sourceTree = "<group>"; };
 		A3F7BBB02575895D00F18645 /* HttpClientHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientHelper.swift; sourceTree = "<group>"; };
 		A819DD399E11BDE308700209 /* Pods_XHack_DevTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XHack_DevTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56B2DFC45659D8DA3B9C84C /* Pods-XHack.DevTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHack.DevTests.debug.xcconfig"; path = "Target Support Files/Pods-XHack.DevTests/Pods-XHack.DevTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -967,6 +983,28 @@
 			path = Primitives;
 			sourceTree = "<group>";
 		};
+		A31F574F25A6637500759B61 /* ChooseCategory */ = {
+			isa = PBXGroup;
+			children = (
+				A3441D4925967A4500A3BFA5 /* ChooseSearchCategoryCoordinator.swift */,
+				A3441D4E25967A7500A3BFA5 /* ChooseSearchCategoryViewModel.swift */,
+				A3441D5325967AB400A3BFA5 /* ChooseSearchCategoryViewController.swift */,
+				A3441D58259681DD00A3BFA5 /* ChooseSearchCategory.storyboard */,
+			);
+			path = ChooseCategory;
+			sourceTree = "<group>";
+		};
+		A31F575025A6638B00759B61 /* TeamSearch */ = {
+			isa = PBXGroup;
+			children = (
+				A31F575125A6640A00759B61 /* TeamSearchCoordinator.swift */,
+				A31F575925A6641500759B61 /* TeamSearchViewModel.swift */,
+				A31F575E25A6641E00759B61 /* TeamSearch.storyboard */,
+				A31F576325A6643100759B61 /* TeamSearchViewController.swift */,
+			);
+			path = TeamSearch;
+			sourceTree = "<group>";
+		};
 		A3231270256F03CB00D3B97B /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -1011,10 +1049,9 @@
 		A3441D4825967A1600A3BFA5 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				A3441D4925967A4500A3BFA5 /* ChooseSearchCategoryCoordinator.swift */,
-				A3441D4E25967A7500A3BFA5 /* ChooseSearchCategoryViewModel.swift */,
-				A3441D5325967AB400A3BFA5 /* ChooseSearchCategoryViewController.swift */,
-				A3441D58259681DD00A3BFA5 /* ChooseSearchCategory.storyboard */,
+				A3DD556A25A668330095A130 /* TeammateSearch */,
+				A31F575025A6638B00759B61 /* TeamSearch */,
+				A31F574F25A6637500759B61 /* ChooseCategory */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1230,6 +1267,17 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		A3DD556A25A668330095A130 /* TeammateSearch */ = {
+			isa = PBXGroup;
+			children = (
+				A3DD556D25A668720095A130 /* TeammateSearchCoordinator.swift */,
+				A3DD556C25A668720095A130 /* TeammateSearchViewController.swift */,
+				A3DD556E25A668720095A130 /* TeammateSearchViewModel.swift */,
+				A3DD556B25A668720095A130 /* TeammateSearch.storyboard */,
+			);
+			path = TeammateSearch;
+			sourceTree = "<group>";
+		};
 		C0750BE775EAB41437CE6852 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1358,6 +1406,8 @@
 				A3231284256F057900D3B97B /* Home.storyboard in Resources */,
 				16A1E5EC22DA40C40003F0DF /* SignIn.storyboard in Resources */,
 				A3961AA82579934900FC3541 /* SearchHackathons.storyboard in Resources */,
+				A3DD556F25A668720095A130 /* TeammateSearch.storyboard in Resources */,
+				A31F575F25A6641E00759B61 /* TeamSearch.storyboard in Resources */,
 				A36AF8DF2582D1A3000E2852 /* CreateTeam.storyboard in Resources */,
 				A37055C725851526005650FD /* HackathonDetail.storyboard in Resources */,
 				16A1E5ED22DA40C40003F0DF /* Drawer.storyboard in Resources */,
@@ -1530,6 +1580,7 @@
 				16A1E61222DA40C40003F0DF /* Container+RegisterDependencies.swift in Sources */,
 				16DD9CEB22DA4854007D9D2F /* String+Trim.swift in Sources */,
 				A3961AE925799BA000FC3541 /* BookmarkUserDTO.swift in Sources */,
+				A3DD557225A668720095A130 /* TeammateSearchViewModel.swift in Sources */,
 				16A1E64622DA40C40003F0DF /* ApiError.swift in Sources */,
 				A3961AD12579961900FC3541 /* HackathonsFilterDto.swift in Sources */,
 				16A1E63B22DA40C40003F0DF /* MeResponse.swift in Sources */,
@@ -1614,7 +1665,9 @@
 				A3BA56442573EAA2007AD591 /* Container+Api.swift in Sources */,
 				A309624F2569DDA4007E366E /* TaskDetailCoordinator.swift in Sources */,
 				A3961ADF25799A7400FC3541 /* IBookmarksApi.swift in Sources */,
+				A31F575225A6640A00759B61 /* TeamSearchCoordinator.swift in Sources */,
 				A387754B256AA3C600F00EB0 /* Messanger.swift in Sources */,
+				A31F576425A6643100759B61 /* TeamSearchViewController.swift in Sources */,
 				A3961A74257984C600FC3541 /* UserProfileDto.swift in Sources */,
 				A3881419258A9E9D00FFF9A5 /* IRequestsApi.swift in Sources */,
 				A374553D257D06F0006F4801 /* BaseViewController.swift in Sources */,
@@ -1632,6 +1685,7 @@
 				A3961AAD2579935600FC3541 /* SearchHackathonsViewController.swift in Sources */,
 				A3BA569625743A2F007AD591 /* KeyChainHelper.swift in Sources */,
 				A3231241256D982300D3B97B /* SignUpResponse.swift in Sources */,
+				A3DD557025A668720095A130 /* TeammateSearchViewController.swift in Sources */,
 				A36AF8CD2582D17C000E2852 /* CreateTeamViewModel.swift in Sources */,
 				16A1E62E22DA40C40003F0DF /* BackendRestClient.swift in Sources */,
 				16A1E64822DA40C40003F0DF /* Tokens.swift in Sources */,
@@ -1707,6 +1761,7 @@
 				A3961AF325799C5100FC3541 /* BookmarkChatDTO.swift in Sources */,
 				A3961ACC2579956600FC3541 /* HackathonsApi.swift in Sources */,
 				A3BA568925743849007AD591 /* IAccountSecureStorage.swift in Sources */,
+				A31F575A25A6641500759B61 /* TeamSearchViewModel.swift in Sources */,
 				A3231297256F119E00D3B97B /* ProfileViewModel.swift in Sources */,
 				A3441D3C25963B4400A3BFA5 /* ChatListViewController.swift in Sources */,
 				16DD9CE222DA47AB007D9D2F /* Logger.swift in Sources */,
@@ -1721,6 +1776,7 @@
 				A349FB64259BE40C0038549E /* TagViewCell.swift in Sources */,
 				A3961A8D2579897E00FC3541 /* CreateRequestToTeamDto.swift in Sources */,
 				A3441D4F25967A7500A3BFA5 /* ChooseSearchCategoryViewModel.swift in Sources */,
+				A3DD557125A668720095A130 /* TeammateSearchCoordinator.swift in Sources */,
 				A301E3412588238A0088B33A /* AddTagsDto.swift in Sources */,
 				A31F573625A5E7CB00759B61 /* IOperationStateHolder.swift in Sources */,
 				A3BA567525743048007AD591 /* IErrorResult.swift in Sources */,

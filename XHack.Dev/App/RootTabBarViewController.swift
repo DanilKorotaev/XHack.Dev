@@ -14,21 +14,21 @@ class RootTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupMiddleButton()
-        // Do any additional setup after loading the view.
         self.tabBar.isTranslucent = false
         tabBar.backgroundColor = .white
         self.tabBar.layer.borderWidth = 1
         self.tabBar.layer.borderColor = UIColor.clear.cgColor
         self.tabBar.clipsToBounds = true
         tabBar.shadowImage = UIImage()
-        tabBar.backgroundImage = UIImage()
-       
+        tabBar.backgroundImage = UIImage()       
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupMiddleButton()
+        tabBar.items?.forEach({ (item) in
+            item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.red], for:.selected)
+        })
     }
     
     func setupMiddleButton() {
@@ -37,11 +37,10 @@ class RootTabBarViewController: UITabBarController {
         }
         menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 53, height: 53))
         var menuButtonFrame = menuButton.frame
-        menuButtonFrame.origin.y = self.tabBar.frame.minY - 7// - menuButtonFrame.size.height / 2
+        menuButtonFrame.origin.y = self.tabBar.frame.minY - 7
         menuButtonFrame.origin.x = self.view.bounds.width / 2 - menuButtonFrame.size.width / 2
         menuButton.frame = menuButtonFrame
-//        menuButton.clipsToBounds = true
-//        menuButton.backgroundColor = UIColor.red
+        
         menuButton.layer.cornerRadius = menuButtonFrame.height/2
         menuButton.alpha = 0
         self.view.addSubview(menuButton)
@@ -83,7 +82,7 @@ class RootTabBarViewController: UITabBarController {
         shapes.clipsToBounds = true
         shapes.layer.cornerRadius = 27
         shapes.isUserInteractionEnabled = false
-        menuButton.insertSubview(shapes, at: 0)// .addSubview(shapes)
+        menuButton.insertSubview(shapes, at: 0)
 
         let layer2 = CAGradientLayer()
         layer2.colors = [
@@ -100,12 +99,6 @@ class RootTabBarViewController: UITabBarController {
         
         menuButton.bringSubviewToFront(menuButton.imageView!)
         menuButton.addTarget(self, action: #selector(menuButtonDidTap), for: .touchUpInside)
-//        let tapGesture = UITapGestureRecognizer(target: self, action:  #selector(handleTapGesture))
-//        menuButton.addGestureRecognizer(tapGesture)
-//        shapes.addGestureRecognizer(tapGesture)
-//        shadows.addGestureRecognizer(tapGesture)
-//        menuButton.imageView?.addGestureRecognizer(tapGesture)
-//        self.view.layoutIfNeeded()
     }
 
     
@@ -113,10 +106,5 @@ class RootTabBarViewController: UITabBarController {
     @objc func menuButtonDidTap(sender: Any) {
         self.selectedIndex = -1
         middleButtonTap?()
-        // console print to verify the button works
    }
-    
-    @objc func menuButtonTap(sender: Any) {
-        
-    }
 }

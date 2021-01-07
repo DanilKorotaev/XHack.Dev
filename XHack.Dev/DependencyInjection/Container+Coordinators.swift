@@ -20,5 +20,7 @@ extension Container {
         autoregister(ChatListCoordinator.self, initializer: ChatListCoordinator.init)
         autoregister(ChooseSearchCategoryCoordinator.self, initializer: ChooseSearchCategoryCoordinator.init)
         autoregister(HackathonListCoordinator.self, initializer: HackathonListCoordinator.init)
+        autoregister(TeamSearchCoordinator.self, initializer: TeamSearchCoordinator.init)
+        autoregister(TeammateSearchCoordinator.self, initializer: TeammateSearchCoordinator.init)
     }
 }

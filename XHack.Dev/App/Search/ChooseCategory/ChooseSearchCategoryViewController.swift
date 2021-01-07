@@ -15,8 +15,7 @@ class ChooseSearchCategoryViewController: BaseViewController<ChooseSearchCategor
     @IBOutlet weak var teamView: UIView!
     @IBOutlet weak var teammateView: UIView!
     @IBOutlet weak var blurView: UIVisualEffectView!
-    
-    var dismissRequested: (() -> Void)?
+       
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,19 +24,18 @@ class ChooseSearchCategoryViewController: BaseViewController<ChooseSearchCategor
         teamView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(teamTap)))
     }
     
+    
     @objc func teamMateTap(_ gesture: UITapGestureRecognizer) {
-        print("Kek")
-        dismissRequested?()
+        dataContext?.didTeammateSearchRequested.onNext(())
     }
     
     
     @objc func teamTap(_ gesture: UITapGestureRecognizer) {
-        print("mem")
-        dismissRequested?()
+        dataContext?.didTeamSearchRequested.onNext(())
     }
     
     
     @objc func handleDismiss(_ gesture: UITapGestureRecognizer) {
-        dismissRequested?()
+        dataContext?.dismissRequested.onNext(())
     }
 }

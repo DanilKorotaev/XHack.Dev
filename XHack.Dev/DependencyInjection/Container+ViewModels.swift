@@ -21,5 +21,7 @@ extension Container {
         autoregister(ChatListViewModel.self, initializer: ChatListViewModel.init)
         autoregister(ChooseSearchCategoryViewModel.self, initializer: ChooseSearchCategoryViewModel.init)
         autoregister(HackathonListViewModel.self, initializer: HackathonListViewModel.init)
+        autoregister(TeamSearchViewModel.self, initializer: TeamSearchViewModel.init)
+        autoregister(TeammateSearchViewModel.self, initializer: TeammateSearchViewModel.init)
     }
 }

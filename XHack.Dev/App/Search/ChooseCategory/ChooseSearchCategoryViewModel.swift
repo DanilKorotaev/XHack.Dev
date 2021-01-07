@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import RxSwift
 
 class ChooseSearchCategoryViewModel: BaseViewModel {
-    
+    let didTeamSearchRequested = PublishSubject<Void>()
+    let didTeammateSearchRequested = PublishSubject<Void>()
+    let dismissRequested = PublishSubject<Void>()    
 }

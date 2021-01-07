@@ -15,6 +15,7 @@ class ProfileCoordinator: BaseCoordinator<Void> {
         navigationController.navigationBar.isHidden = true
         navigationController.viewControllers = [viewController]
         viewController.dataContext = viewModel
+        navigationController.tabBarItem = UITabBarItem(title: "profile", image: #imageLiteral(resourceName: "Profile"), selectedImage: #imageLiteral(resourceName: "Profile_tap").withRenderingMode(.alwaysOriginal))
         setUpBinding()
         return Observable.empty()
     }

@@ -12,6 +12,7 @@ class ChatListCoordinator: BaseCoordinator<Void> {
         let vc = ChatListViewController.instantiate()
         vc.dataContext = viewModel
         navigationController.viewControllers = [vc]
+        navigationController.tabBarItem = UITabBarItem(title: "messanger", image: #imageLiteral(resourceName: "Messanger"), selectedImage: #imageLiteral(resourceName: "Messanger_tap").withRenderingMode(.alwaysOriginal))
         return Observable.empty()
     }
 }
