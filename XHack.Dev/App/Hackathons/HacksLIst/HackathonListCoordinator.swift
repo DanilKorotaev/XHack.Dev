@@ -14,6 +14,8 @@ class HackathonListCoordinator: BaseCoordinator<Void> {
     
     let viewModel: HackathonListViewModel
     
+    var rootNavigationController: UINavigationController?
+    
     init(viewModel: HackathonListViewModel) {
         self.viewModel = viewModel
     }
@@ -33,7 +35,7 @@ class HackathonListCoordinator: BaseCoordinator<Void> {
             .disposed(by: disposeBag)
         
         viewModel.seachRequsted
-            .subscribe(onNext: { [weak self] hack in self?.toHackSearch() })
+            .subscribe(onNext: { [weak self] hack in self?.toSelectHackFilters() })
             .disposed(by: disposeBag)
         
     }
@@ -44,11 +46,33 @@ class HackathonListCoordinator: BaseCoordinator<Void> {
         coordinator.viewModel.hackathonId = hack.id
         start(coordinator: coordinator)
     }
-    
-    
-    func toHackSearch() {
-        let coordinator = Container.resolve(SearchHackathonsCoordinator.self)
-        coordinator.navigationController = navigationController
+        
+    func toSelectHackFilters() {
+        let coordinator = Container.resolve(HackFilterDialogCoordinator.self)
+        let navController = rootNavigationController ?? navigationController
+        coordinator.navigationController = navController       
         start(coordinator: coordinator)
+            .subscribe(onNext: { [weak self] result in
+                self?.toHackSearch(result)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    
+    func toHackSearch(_ params: HackFilterResult) {
+        let filterParameter: SearchHackathonParameter?
+        switch params {
+        case .rejected:
+            return
+        case .success:
+            filterParameter = nil
+        case .skip:
+            filterParameter = nil
+        }
+        
+        let coordinator = Container.resolve(SearchHackathonsCoordinator.self)
+        coordinator.navigationController = self.navigationController
+        coordinator.filterParameters = filterParameter
+        self.start(coordinator: coordinator)
     }
 }

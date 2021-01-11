@@ -10,5 +10,18 @@ import UIKit
 
 class TeamSearchViewController: BaseViewController<TeamSearchViewModel>, Storyboarded {
     static var storyboard = AppStoryboard.teamSearch    
+    @IBOutlet weak var bottomTriggerView: UIView!
+    
+    let transition = TeamToHackDetailsTransitionCoordinator()
+    
+    
+}
 
+extension TeamSearchViewController: InteractiveTransitionableViewController {
+    var interactivePresentTransition: MiniToLargeViewInteractiveAnimator? {
+        return transition.interactivePresentTransition
+    }
+    var interactiveDismissTransition: MiniToLargeViewInteractiveAnimator? {
+        return transition.interactiveDismissTransition
+    }
 }

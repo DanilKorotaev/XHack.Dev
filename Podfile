@@ -9,6 +9,7 @@ target 'XHack.Dev' do
   pod 'Swinject'
   pod 'SwinjectAutoregistration'
   pod 'SwiftLint'
+  pod 'SkeletonView'
 
   target 'XHack.DevTests' do
     inherit! :search_paths

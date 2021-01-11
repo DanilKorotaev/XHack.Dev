@@ -10,9 +10,17 @@ import Foundation
 import RxSwift
 import Swinject
 
+
+struct SearchHackathonParameter {
+    
+}
+
+
 class SearchHackathonsCoordinator: BaseCoordinator<Void> {
     
     let viewModel: SearchHackathonsViewModel
+    
+    var filterParameters: SearchHackathonParameter?
     
     init(viewModel: SearchHackathonsViewModel) {
         self.viewModel = viewModel

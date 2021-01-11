@@ -34,7 +34,7 @@ class RootTabBarCoordinator : BaseCoordinator<Void> {
         let chatListViewController = chatListCoordinator.navigationController
         
         let hacksCoordinator = AppDelegate.container.resolve(HackathonListCoordinator.self)!
-        
+        hacksCoordinator.rootNavigationController = navigationController
         start(coordinator: hacksCoordinator)
             .subscribe()
             .disposed(by: disposeBag)

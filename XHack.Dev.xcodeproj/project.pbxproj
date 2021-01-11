@@ -129,6 +129,17 @@
 		A3231292256F119100D3B97B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231291256F119100D3B97B /* ProfileViewController.swift */; };
 		A3231297256F119E00D3B97B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231296256F119E00D3B97B /* ProfileViewModel.swift */; };
 		A323129C256F11AC00D3B97B /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323129B256F11AC00D3B97B /* ProfileCoordinator.swift */; };
+		A33F448425A7A55200C16624 /* HackFilterDialogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F448325A7A55200C16624 /* HackFilterDialogCoordinator.swift */; };
+		A33F448925A7A55F00C16624 /* HackFilterDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33F448825A7A55F00C16624 /* HackFilterDialog.storyboard */; };
+		A33F448E25A7A56A00C16624 /* HackFilterDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F448D25A7A56A00C16624 /* HackFilterDialogViewController.swift */; };
+		A33F449325A7A57300C16624 /* HackFilterDialogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F449225A7A57300C16624 /* HackFilterDialogViewModel.swift */; };
+		A33F449D25A88F7100C16624 /* HackFilterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F449C25A88F7100C16624 /* HackFilterItem.swift */; };
+		A33F44A825A8D48A00C16624 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F44A725A8D48900C16624 /* ReusableView.swift */; };
+		A33F44B125A8E9CD00C16624 /* MiniToLargePresentingViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F44AD25A8E9CC00C16624 /* MiniToLargePresentingViewAnimator.swift */; };
+		A33F44B225A8E9CD00C16624 /* MiniToLargeDismissingViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F44AE25A8E9CD00C16624 /* MiniToLargeDismissingViewAnimator.swift */; };
+		A33F44B325A8E9CD00C16624 /* MiniToLargeViewInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F44AF25A8E9CD00C16624 /* MiniToLargeViewInteractiveAnimator.swift */; };
+		A33F44B425A8E9CD00C16624 /* TeamToHackDetailsTransitionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F44B025A8E9CD00C16624 /* TeamToHackDetailsTransitionCoordinator.swift */; };
+		A33F44B925A8EB4800C16624 /* InteractiveTransitionableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F44B825A8EB4800C16624 /* InteractiveTransitionableViewController.swift */; };
 		A3441D2A25963B0900A3BFA5 /* ChatListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3441D2925963B0900A3BFA5 /* ChatListCoordinator.swift */; };
 		A3441D3225963B1900A3BFA5 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3441D3125963B1900A3BFA5 /* ChatListViewModel.swift */; };
 		A3441D3A25963B3200A3BFA5 /* ChatList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3441D3925963B3200A3BFA5 /* ChatList.storyboard */; };
@@ -402,6 +413,17 @@
 		A3231291256F119100D3B97B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A3231296256F119E00D3B97B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A323129B256F11AC00D3B97B /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		A33F448325A7A55200C16624 /* HackFilterDialogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFilterDialogCoordinator.swift; sourceTree = "<group>"; };
+		A33F448825A7A55F00C16624 /* HackFilterDialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HackFilterDialog.storyboard; sourceTree = "<group>"; };
+		A33F448D25A7A56A00C16624 /* HackFilterDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFilterDialogViewController.swift; sourceTree = "<group>"; };
+		A33F449225A7A57300C16624 /* HackFilterDialogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFilterDialogViewModel.swift; sourceTree = "<group>"; };
+		A33F449C25A88F7100C16624 /* HackFilterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFilterItem.swift; sourceTree = "<group>"; };
+		A33F44A725A8D48900C16624 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		A33F44AD25A8E9CC00C16624 /* MiniToLargePresentingViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniToLargePresentingViewAnimator.swift; sourceTree = "<group>"; };
+		A33F44AE25A8E9CD00C16624 /* MiniToLargeDismissingViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniToLargeDismissingViewAnimator.swift; sourceTree = "<group>"; };
+		A33F44AF25A8E9CD00C16624 /* MiniToLargeViewInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniToLargeViewInteractiveAnimator.swift; sourceTree = "<group>"; };
+		A33F44B025A8E9CD00C16624 /* TeamToHackDetailsTransitionCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamToHackDetailsTransitionCoordinator.swift; sourceTree = "<group>"; };
+		A33F44B825A8EB4800C16624 /* InteractiveTransitionableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveTransitionableViewController.swift; sourceTree = "<group>"; };
 		A3441D2925963B0900A3BFA5 /* ChatListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCoordinator.swift; sourceTree = "<group>"; };
 		A3441D3125963B1900A3BFA5 /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 		A3441D3925963B3200A3BFA5 /* ChatList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatList.storyboard; sourceTree = "<group>"; };
@@ -705,6 +727,7 @@
 		16A1E53822DA3F140003F0DF /* XHack.Dev */ = {
 			isa = PBXGroup;
 			children = (
+				A33F44AC25A8E9B200C16624 /* DraggableViewControllerAnimator */,
 				A31F574925A5EAC300759B61 /* Primitives */,
 				A3BA56232573E853007AD591 /* Api */,
 				A3877554256ABD4900F00EB0 /* XHack.Dev.entitlements */,
@@ -814,6 +837,8 @@
 		16A1E5A422DA40C30003F0DF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				A33F44B825A8EB4800C16624 /* InteractiveTransitionableViewController.swift */,
+				A33F44A725A8D48900C16624 /* ReusableView.swift */,
 				16DD9CED22DA4981007D9D2F /* DataManager.swift */,
 				16DD9CEE22DA4981007D9D2F /* HttpClient.swift */,
 				16A1E5A722DA40C30003F0DF /* Storyboarded.swift */,
@@ -846,6 +871,7 @@
 		16A1E5D022DA40C40003F0DF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A33F449B25A88F4900C16624 /* HackFilters */,
 				A37055EE25852DFC005650FD /* Messages */,
 				A3705607258544E0005650FD /* HackathonDetail.swift */,
 				16A1E5DD22DA40C40003F0DF /* AlertMessage.swift */,
@@ -997,6 +1023,7 @@
 		A31F575025A6638B00759B61 /* TeamSearch */ = {
 			isa = PBXGroup;
 			children = (
+				A33F44B025A8E9CD00C16624 /* TeamToHackDetailsTransitionCoordinator.swift */,
 				A31F575125A6640A00759B61 /* TeamSearchCoordinator.swift */,
 				A31F575925A6641500759B61 /* TeamSearchViewModel.swift */,
 				A31F575E25A6641E00759B61 /* TeamSearch.storyboard */,
@@ -1025,6 +1052,43 @@
 				A3231296256F119E00D3B97B /* ProfileViewModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		A33F448225A7A53400C16624 /* HackFilterDialog */ = {
+			isa = PBXGroup;
+			children = (
+				A33F449725A7AEB100C16624 /* Cells */,
+				A33F448325A7A55200C16624 /* HackFilterDialogCoordinator.swift */,
+				A33F448825A7A55F00C16624 /* HackFilterDialog.storyboard */,
+				A33F448D25A7A56A00C16624 /* HackFilterDialogViewController.swift */,
+				A33F449225A7A57300C16624 /* HackFilterDialogViewModel.swift */,
+			);
+			path = HackFilterDialog;
+			sourceTree = "<group>";
+		};
+		A33F449725A7AEB100C16624 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A33F449B25A88F4900C16624 /* HackFilters */ = {
+			isa = PBXGroup;
+			children = (
+				A33F449C25A88F7100C16624 /* HackFilterItem.swift */,
+			);
+			path = HackFilters;
+			sourceTree = "<group>";
+		};
+		A33F44AC25A8E9B200C16624 /* DraggableViewControllerAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				A33F44AE25A8E9CD00C16624 /* MiniToLargeDismissingViewAnimator.swift */,
+				A33F44AD25A8E9CC00C16624 /* MiniToLargePresentingViewAnimator.swift */,
+				A33F44AF25A8E9CD00C16624 /* MiniToLargeViewInteractiveAnimator.swift */,
+			);
+			path = DraggableViewControllerAnimator;
 			sourceTree = "<group>";
 		};
 		A3441D2725963AED00A3BFA5 /* Chat */ = {
@@ -1099,6 +1163,7 @@
 		A37055C125851501005650FD /* Hackathons */ = {
 			isa = PBXGroup;
 			children = (
+				A33F448225A7A53400C16624 /* HackFilterDialog */,
 				A3196269259A74B500D58502 /* HacksLIst */,
 				A37055C52585150F005650FD /* HackathonDetail */,
 				A3961AA12579931D00FC3541 /* SearchHackathons */,
@@ -1428,6 +1493,7 @@
 				A309624A2569DD86007E366E /* TaskDetail.storyboard in Resources */,
 				16A1E61922DA40C40003F0DF /* translations.json in Resources */,
 				A3441D3A25963B3200A3BFA5 /* ChatList.storyboard in Resources */,
+				A33F448925A7A55F00C16624 /* HackFilterDialog.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1588,12 +1654,14 @@
 				16A1E62D22DA40C40003F0DF /* AlertDispatcher.swift in Sources */,
 				16A1E61C22DA40C40003F0DF /* SignInCoordinator.swift in Sources */,
 				16A1E63A22DA40C40003F0DF /* SignUpRequest.swift in Sources */,
+				A33F44A825A8D48A00C16624 /* ReusableView.swift in Sources */,
 				16A1E60022DA40C40003F0DF /* String+Localization.swift in Sources */,
 				A3196295259A789900D58502 /* HackListHeaderView.swift in Sources */,
 				16A1E61A22DA40C40003F0DF /* AppCoordinator.swift in Sources */,
 				A3231292256F119100D3B97B /* ProfileViewController.swift in Sources */,
 				16A1E60E22DA40C40003F0DF /* SignInViewModel.swift in Sources */,
 				A31F573125A5E6D900759B61 /* RefreshableContentHost.swift in Sources */,
+				A33F449325A7A57300C16624 /* HackFilterDialogViewModel.swift in Sources */,
 				16DD9D1F22DB32F2007D9D2F /* SettingsViewModel.swift in Sources */,
 				A37055CC25851535005650FD /* HackathonDetailViewModel.swift in Sources */,
 				A3961AC72579953E00FC3541 /* HackathonDto.swift in Sources */,
@@ -1644,6 +1712,7 @@
 				A31F573B25A5E87100759B61 /* IOperationControl.swift in Sources */,
 				A3DBB812258AC22D0078CC4E /* TagDto.swift in Sources */,
 				16DD9CFF22DA7508007D9D2F /* UserDataManager.swift in Sources */,
+				A33F448E25A7A56A00C16624 /* HackFilterDialogViewController.swift in Sources */,
 				A3705608258544E0005650FD /* HackathonDetail.swift in Sources */,
 				A3961B21257AE69600FC3541 /* TeamListViewController.swift in Sources */,
 				16A1E60822DA40C40003F0DF /* LocalizedButton.swift in Sources */,
@@ -1653,6 +1722,7 @@
 				A3BA56842574380D007AD591 /* ApiTokensHolder.swift in Sources */,
 				16A1E61122DA40C40003F0DF /* Container+ViewModels.swift in Sources */,
 				A3961A79257986A100FC3541 /* ITeamsApi.swift in Sources */,
+				A33F44B425A8E9CD00C16624 /* TeamToHackDetailsTransitionCoordinator.swift in Sources */,
 				16A1E64222DA40C40003F0DF /* AppStoryboard.swift in Sources */,
 				A3441D3225963B1900A3BFA5 /* ChatListViewModel.swift in Sources */,
 				A3881437258AA1D800FFF9A5 /* WithDrawRequestToUserDto.swift in Sources */,
@@ -1676,6 +1746,8 @@
 				A37055FE25852F5D005650FD /* DialogActionInfo.swift in Sources */,
 				A31F574B25A5EAD500759B61 /* OperationStateControl.swift in Sources */,
 				A3961A9D25798A9E00FC3541 /* CreateRequestToUserDto.swift in Sources */,
+				A33F448425A7A55200C16624 /* HackFilterDialogCoordinator.swift in Sources */,
+				A33F44B325A8E9CD00C16624 /* MiniToLargeViewInteractiveAnimator.swift in Sources */,
 				16A1E60222DA40C40003F0DF /* LocalizedLabel.swift in Sources */,
 				A30962542569DDB9007E366E /* TaskDetailViewController.swift in Sources */,
 				A3231249256D9B4600D3B97B /* SignInResponse.swift in Sources */,
@@ -1683,18 +1755,22 @@
 				A38CDB40256C1A6E00E8A732 /* RegistrationCoordinator.swift in Sources */,
 				16A1E60322DA40C40003F0DF /* FancyButton.swift in Sources */,
 				A3961AAD2579935600FC3541 /* SearchHackathonsViewController.swift in Sources */,
+				A33F44B925A8EB4800C16624 /* InteractiveTransitionableViewController.swift in Sources */,
 				A3BA569625743A2F007AD591 /* KeyChainHelper.swift in Sources */,
 				A3231241256D982300D3B97B /* SignUpResponse.swift in Sources */,
 				A3DD557025A668720095A130 /* TeammateSearchViewController.swift in Sources */,
 				A36AF8CD2582D17C000E2852 /* CreateTeamViewModel.swift in Sources */,
 				16A1E62E22DA40C40003F0DF /* BackendRestClient.swift in Sources */,
+				A33F44B125A8E9CD00C16624 /* MiniToLargePresentingViewAnimator.swift in Sources */,
 				16A1E64822DA40C40003F0DF /* Tokens.swift in Sources */,
+				A33F44B225A8E9CD00C16624 /* MiniToLargeDismissingViewAnimator.swift in Sources */,
 				16DD9CF022DA4981007D9D2F /* HttpClient.swift in Sources */,
 				A349FB5C259BDB2C0038549E /* PopularHackViewCell.swift in Sources */,
 				A3961ABD2579949500FC3541 /* IHackathonsApi.swift in Sources */,
 				A3961A6A257980EA00FC3541 /* UpdateProfileDtoRequest.swift in Sources */,
 				16A1E63C22DA40C40003F0DF /* ErrorResponse.swift in Sources */,
 				A3BA567A25743166007AD591 /* ApiResult.swift in Sources */,
+				A33F449D25A88F7100C16624 /* HackFilterItem.swift in Sources */,
 				A323127F256F056D00D3B97B /* HomeViewController.swift in Sources */,
 				A3BA569125743A05007AD591 /* AccountSecureStorage.swift in Sources */,
 				16A1E61E22DA40C40003F0DF /* BaseCoordinator.swift in Sources */,
