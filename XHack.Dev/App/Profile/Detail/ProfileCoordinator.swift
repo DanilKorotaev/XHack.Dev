@@ -1,5 +1,6 @@
 import Foundation
 import RxSwift
+import Swinject
 
 class ProfileCoordinator: BaseCoordinator<Void> {
     let viewModel: ProfileViewModel
@@ -27,5 +28,18 @@ class ProfileCoordinator: BaseCoordinator<Void> {
                 self.sessionService.signOut().subscribe().disposed(by: self.disposeBag)
             })
             .disposed(by: disposeBag)
+        
+        viewModel.edit
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else {return}
+                self.editProfile()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func editProfile() {
+        var coordinator = Container.resolve(EditProfileCoordinator.self)
+        coordinator.navigationController = navigationController
+        start(coordinator: coordinator)
     }
 }

@@ -7,11 +7,11 @@ class AlertDispatcher: IAlertDispatcher {
     func dispatch(message: AlertDialogMessage) {
         guard self.message != message else { return }
         self.message = message
-        DispatchQueue.main.sync {
+        onMainThread {
             if let viewController = UIApplication.shared.keyWindow?.rootViewController {
                 showAlert(on: viewController, message: message)
             }
-        }        
+        }
     }
     
     private func showAlert(on viewController: UIViewController, message: AlertDialogMessage) {

@@ -7,6 +7,7 @@ class ProfileViewModel: BaseViewModel {
     let userApi: IUserApi
     let profile = BehaviorSubject<UserProfile?>(value: nil)
     let signOut = PublishSubject<Void>()
+    let edit = PublishSubject<Void>()
     
     init(sessionService: SessionService, userApi: IUserApi) {
         self.sessionService = sessionService

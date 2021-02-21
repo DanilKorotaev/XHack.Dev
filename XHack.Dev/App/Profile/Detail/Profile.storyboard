@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,24 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2KH-WE-qzx" customClass="LocalizedButton" customModule="XHack_Dev" customModuleProvider="target">
-                                <rect key="frame" x="138.5" y="796" width="137" height="36"/>
-                                <state key="normal" title="Sign out"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationKey" value="SignOut"/>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0Q-Jf-veP">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFm-xB-miV">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="431"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="497"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8uC-bx-FVd">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="431"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="497"/>
                                                 <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBL-7W-EnW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTW-sP-yaM">
+                                                                <rect key="frame" x="370" y="-3" width="34" height="36"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <state key="normal" title="Edit">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="YTW-sP-yaM" secondAttribute="trailing" constant="10" id="Xry-sf-6gc"/>
+                                                            <constraint firstItem="YTW-sP-yaM" firstAttribute="centerY" secondItem="WBL-7W-EnW" secondAttribute="centerY" id="eNv-we-rGA"/>
+                                                            <constraint firstAttribute="height" constant="30" id="vn6-jA-Cwp"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GH6-ei-Fda" userLabel="AvatarView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
+                                                        <rect key="frame" x="0.0" y="30" width="414" height="190"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sDT-4s-t6d">
                                                                 <rect key="frame" x="122" y="20" width="170" height="170"/>
@@ -53,7 +64,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1j-rD-FpQ" userLabel="NameView">
-                                                        <rect key="frame" x="0.0" y="190" width="414" height="43"/>
+                                                        <rect key="frame" x="0.0" y="220" width="414" height="43"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D. Drew" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZ4-0K-cfQ">
                                                                 <rect key="frame" x="16" y="16" width="382" height="27"/>
@@ -74,7 +85,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v8d-Ha-ARs" userLabel="SpecializationView">
-                                                        <rect key="frame" x="0.0" y="233" width="414" height="20"/>
+                                                        <rect key="frame" x="0.0" y="263" width="414" height="20"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Web designer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kW2-ri-Q9Q">
                                                                 <rect key="frame" x="16" y="0.0" width="382" height="20"/>
@@ -95,7 +106,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3NY-ez-LXk" userLabel="AboutUserView">
-                                                        <rect key="frame" x="0.0" y="253" width="414" height="50"/>
+                                                        <rect key="frame" x="0.0" y="283" width="414" height="50"/>
                                                         <subviews>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YdE-oD-3qM">
                                                                 <rect key="frame" x="16" y="10" width="382" height="35"/>
@@ -117,7 +128,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fha-Dm-aZr" userLabel="SocialView">
-                                                        <rect key="frame" x="0.0" y="303" width="414" height="128"/>
+                                                        <rect key="frame" x="0.0" y="333" width="414" height="128"/>
                                                         <subviews>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-OM-4Be">
                                                                 <rect key="frame" x="16" y="10" width="382" height="108"/>
@@ -133,6 +144,24 @@
                                                             <constraint firstItem="nS0-OM-4Be" firstAttribute="leading" secondItem="Fha-Dm-aZr" secondAttribute="leading" constant="16" id="bmw-Kc-l5i"/>
                                                             <constraint firstAttribute="trailing" secondItem="nS0-OM-4Be" secondAttribute="trailing" constant="16" id="xbw-6k-KrZ"/>
                                                             <constraint firstAttribute="bottom" secondItem="nS0-OM-4Be" secondAttribute="bottom" constant="10" id="xva-VV-nac"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uC7-6l-sFz">
+                                                        <rect key="frame" x="0.0" y="461" width="414" height="36"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2KH-WE-qzx" customClass="LocalizedButton" customModule="XHack_Dev" customModuleProvider="target">
+                                                                <rect key="frame" x="138.5" y="0.0" width="137" height="36"/>
+                                                                <state key="normal" title="Sign out"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizationKey" value="SignOut"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="2KH-WE-qzx" firstAttribute="centerX" secondItem="uC7-6l-sFz" secondAttribute="centerX" id="IS3-Wk-iE6"/>
+                                                            <constraint firstAttribute="height" constant="36" id="Jba-L1-ksK"/>
+                                                            <constraint firstItem="2KH-WE-qzx" firstAttribute="centerY" secondItem="uC7-6l-sFz" secondAttribute="centerY" id="ryP-Cg-abT"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -160,9 +189,7 @@
                         <viewLayoutGuide key="safeArea" id="J3i-qb-CZs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="J3i-qb-CZs" firstAttribute="bottom" secondItem="2KH-WE-qzx" secondAttribute="bottom" constant="30" id="FBN-SB-1b6"/>
                             <constraint firstItem="J3i-qb-CZs" firstAttribute="bottom" secondItem="V0Q-Jf-veP" secondAttribute="bottom" id="HnL-M2-B3K"/>
-                            <constraint firstItem="2KH-WE-qzx" firstAttribute="centerX" secondItem="J3i-qb-CZs" secondAttribute="centerX" id="Sd1-0u-tYE"/>
                             <constraint firstItem="J3i-qb-CZs" firstAttribute="trailing" secondItem="V0Q-Jf-veP" secondAttribute="trailing" id="UKQ-4y-a1e"/>
                             <constraint firstItem="V0Q-Jf-veP" firstAttribute="top" secondItem="J3i-qb-CZs" secondAttribute="top" id="p9A-J9-Ofw"/>
                             <constraint firstItem="V0Q-Jf-veP" firstAttribute="leading" secondItem="J3i-qb-CZs" secondAttribute="leading" id="qxI-Ik-H9C"/>
@@ -171,6 +198,7 @@
                     <connections>
                         <outlet property="aboutUserTextView" destination="YdE-oD-3qM" id="h0p-nd-bRp"/>
                         <outlet property="avatarImageView" destination="sDT-4s-t6d" id="rQy-ze-nD8"/>
+                        <outlet property="editButton" destination="YTW-sP-yaM" id="d1Z-Ei-1cb"/>
                         <outlet property="nameLabel" destination="nZ4-0K-cfQ" id="h4t-fL-IRy"/>
                         <outlet property="signOutButton" destination="2KH-WE-qzx" id="mqB-eG-rN9"/>
                         <outlet property="socialsTextView" destination="nS0-OM-4Be" id="Tld-kv-yq6"/>

@@ -5,8 +5,8 @@ import RxCocoa
 class SignInViewController: UIViewController, Storyboarded {
     static var storyboard = AppStoryboard.signIn
 
-    @IBOutlet weak var usernameTextField: LocalizedTextField!
-    @IBOutlet weak var passwordTextField: LocalizedTextField!
+    @IBOutlet weak var usernameTextField: CustomShadowTextField!
+    @IBOutlet weak var passwordTextField: CustomShadowTextField!
     @IBOutlet weak var signInButton: ButtonWithProgress!
     @IBOutlet weak var signUpButton: UIButton!
     

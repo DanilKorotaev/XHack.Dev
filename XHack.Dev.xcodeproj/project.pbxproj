@@ -129,6 +129,12 @@
 		A3231292256F119100D3B97B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231291256F119100D3B97B /* ProfileViewController.swift */; };
 		A3231297256F119E00D3B97B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3231296256F119E00D3B97B /* ProfileViewModel.swift */; };
 		A323129C256F11AC00D3B97B /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323129B256F11AC00D3B97B /* ProfileCoordinator.swift */; };
+		A32D3C9A25E2BD14002633B8 /* EditProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32D3C9925E2BD14002633B8 /* EditProfileCoordinator.swift */; };
+		A32D3C9F25E2BD41002633B8 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A32D3C9E25E2BD40002633B8 /* EditProfile.storyboard */; };
+		A32D3CA425E2BD6E002633B8 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32D3CA325E2BD6E002633B8 /* EditProfileViewModel.swift */; };
+		A32D3CAF25E2BDD6002633B8 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32D3CAE25E2BDD6002633B8 /* EditProfileViewController.swift */; };
+		A32D3CC425E2C66D002633B8 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32D3CC325E2C66C002633B8 /* Common.swift */; };
+		A32D3CCC25E2CA53002633B8 /* CustomShadowTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32D3CCB25E2CA53002633B8 /* CustomShadowTextField.swift */; };
 		A33F448425A7A55200C16624 /* HackFilterDialogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F448325A7A55200C16624 /* HackFilterDialogCoordinator.swift */; };
 		A33F448925A7A55F00C16624 /* HackFilterDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33F448825A7A55F00C16624 /* HackFilterDialog.storyboard */; };
 		A33F448E25A7A56A00C16624 /* HackFilterDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F448D25A7A56A00C16624 /* HackFilterDialogViewController.swift */; };
@@ -413,6 +419,12 @@
 		A3231291256F119100D3B97B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A3231296256F119E00D3B97B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A323129B256F11AC00D3B97B /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		A32D3C9925E2BD14002633B8 /* EditProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileCoordinator.swift; sourceTree = "<group>"; };
+		A32D3C9E25E2BD40002633B8 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
+		A32D3CA325E2BD6E002633B8 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		A32D3CAE25E2BDD6002633B8 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		A32D3CC325E2C66C002633B8 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		A32D3CCB25E2CA53002633B8 /* CustomShadowTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShadowTextField.swift; sourceTree = "<group>"; };
 		A33F448325A7A55200C16624 /* HackFilterDialogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFilterDialogCoordinator.swift; sourceTree = "<group>"; };
 		A33F448825A7A55F00C16624 /* HackFilterDialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HackFilterDialog.storyboard; sourceTree = "<group>"; };
 		A33F448D25A7A56A00C16624 /* HackFilterDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFilterDialogViewController.swift; sourceTree = "<group>"; };
@@ -727,6 +739,7 @@
 		16A1E53822DA3F140003F0DF /* XHack.Dev */ = {
 			isa = PBXGroup;
 			children = (
+				A32D3CC225E2C654002633B8 /* Helpers */,
 				A33F44AC25A8E9B200C16624 /* DraggableViewControllerAnimator */,
 				A31F574925A5EAC300759B61 /* Primitives */,
 				A3BA56232573E853007AD591 /* Api */,
@@ -808,6 +821,7 @@
 				16A1E59222DA40C20003F0DF /* LocalizedButton.swift */,
 				16A1E58C22DA40C20003F0DF /* LocalizedLabel.swift */,
 				16A1E59422DA40C20003F0DF /* LocalizedTextField.swift */,
+				A32D3CCB25E2CA53002633B8 /* CustomShadowTextField.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -1046,12 +1060,40 @@
 		A323128B256F115600D3B97B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				A323128C256F118100D3B97B /* Profile.storyboard */,
-				A323129B256F11AC00D3B97B /* ProfileCoordinator.swift */,
-				A3231291256F119100D3B97B /* ProfileViewController.swift */,
-				A3231296256F119E00D3B97B /* ProfileViewModel.swift */,
+				A32D3C9525E2BCD4002633B8 /* Edit */,
+				A32D3C9125E2BC9E002633B8 /* Detail */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		A32D3C9125E2BC9E002633B8 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A3231296256F119E00D3B97B /* ProfileViewModel.swift */,
+				A3231291256F119100D3B97B /* ProfileViewController.swift */,
+				A323129B256F11AC00D3B97B /* ProfileCoordinator.swift */,
+				A323128C256F118100D3B97B /* Profile.storyboard */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		A32D3C9525E2BCD4002633B8 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				A32D3C9925E2BD14002633B8 /* EditProfileCoordinator.swift */,
+				A32D3C9E25E2BD40002633B8 /* EditProfile.storyboard */,
+				A32D3CA325E2BD6E002633B8 /* EditProfileViewModel.swift */,
+				A32D3CAE25E2BDD6002633B8 /* EditProfileViewController.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		A32D3CC225E2C654002633B8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A32D3CC325E2C66C002633B8 /* Common.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		A33F448225A7A53400C16624 /* HackFilterDialog */ = {
@@ -1430,7 +1472,7 @@
 				TargetAttributes = {
 					16A1E53522DA3F140003F0DF = {
 						CreatedOnToolsVersion = 10.2.1;
-						LastSwiftMigration = 1020;
+						LastSwiftMigration = 1240;
 					};
 					16A1E54922DA3F170003F0DF = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -1475,6 +1517,7 @@
 				A31F575F25A6641E00759B61 /* TeamSearch.storyboard in Resources */,
 				A36AF8DF2582D1A3000E2852 /* CreateTeam.storyboard in Resources */,
 				A37055C725851526005650FD /* HackathonDetail.storyboard in Resources */,
+				A32D3C9F25E2BD41002633B8 /* EditProfile.storyboard in Resources */,
 				16A1E5ED22DA40C40003F0DF /* Drawer.storyboard in Resources */,
 				A3441D59259681DD00A3BFA5 /* ChooseSearchCategory.storyboard in Resources */,
 				16DD9D1922DB314C007D9D2F /* Settings.storyboard in Resources */,
@@ -1687,6 +1730,7 @@
 				A38CDB36256C1A3C00E8A732 /* RegistrationViewController.swift in Sources */,
 				16DD9D1322DA861F007D9D2F /* SetOptionsViewModel.swift in Sources */,
 				16A1E64322DA40C40003F0DF /* Credentials.swift in Sources */,
+				A32D3CA425E2BD6E002633B8 /* EditProfileViewModel.swift in Sources */,
 				A3BA56312573E896007AD591 /* ApiEndpoints.swift in Sources */,
 				A3961AF825799C8A00FC3541 /* BookmarkMessageDTO.swift in Sources */,
 				A3961B0025799D2C00FC3541 /* BookmarksApi.swift in Sources */,
@@ -1702,6 +1746,7 @@
 				16A1E5FE22DA40C40003F0DF /* Data+Json.swift in Sources */,
 				A3441D44259658B000A3BFA5 /* RootTabBarViewController.swift in Sources */,
 				A3196282259A757300D58502 /* HackathonListCoordinator.swift in Sources */,
+				A32D3CCC25E2CA53002633B8 /* CustomShadowTextField.swift in Sources */,
 				A3BA56362573E906007AD591 /* EndpointsProvider.swift in Sources */,
 				A3BA566B25742F27007AD591 /* ApiActionResult.swift in Sources */,
 				16A1E60B22DA40C40003F0DF /* SessionEndpoints.swift in Sources */,
@@ -1726,6 +1771,7 @@
 				16A1E64222DA40C40003F0DF /* AppStoryboard.swift in Sources */,
 				A3441D3225963B1900A3BFA5 /* ChatListViewModel.swift in Sources */,
 				A3881437258AA1D800FFF9A5 /* WithDrawRequestToUserDto.swift in Sources */,
+				A32D3CAF25E2BDD6002633B8 /* EditProfileViewController.swift in Sources */,
 				A36AF8C52582CCD8000E2852 /* Team.swift in Sources */,
 				16A1E61722DA40C40003F0DF /* Storyboarded.swift in Sources */,
 				A3DBB80D258ABA5E0078CC4E /* UserProfile.swift in Sources */,
@@ -1747,6 +1793,7 @@
 				A31F574B25A5EAD500759B61 /* OperationStateControl.swift in Sources */,
 				A3961A9D25798A9E00FC3541 /* CreateRequestToUserDto.swift in Sources */,
 				A33F448425A7A55200C16624 /* HackFilterDialogCoordinator.swift in Sources */,
+				A32D3C9A25E2BD14002633B8 /* EditProfileCoordinator.swift in Sources */,
 				A33F44B325A8E9CD00C16624 /* MiniToLargeViewInteractiveAnimator.swift in Sources */,
 				16A1E60222DA40C40003F0DF /* LocalizedLabel.swift in Sources */,
 				A30962542569DDB9007E366E /* TaskDetailViewController.swift in Sources */,
@@ -1755,6 +1802,7 @@
 				A38CDB40256C1A6E00E8A732 /* RegistrationCoordinator.swift in Sources */,
 				16A1E60322DA40C40003F0DF /* FancyButton.swift in Sources */,
 				A3961AAD2579935600FC3541 /* SearchHackathonsViewController.swift in Sources */,
+				A32D3CC425E2C66D002633B8 /* Common.swift in Sources */,
 				A33F44B925A8EB4800C16624 /* InteractiveTransitionableViewController.swift in Sources */,
 				A3BA569625743A2F007AD591 /* KeyChainHelper.swift in Sources */,
 				A3231241256D982300D3B97B /* SignUpResponse.swift in Sources */,

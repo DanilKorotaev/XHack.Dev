@@ -5,6 +5,7 @@ import RxSwift
 class ProfileViewController: BaseViewController<ProfileViewModel>, Storyboarded {
     static var storyboard = AppStoryboard.profile
     
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var signOutButton: LocalizedButton!
     @IBOutlet weak var nameLabel: UILabel!
@@ -25,6 +26,10 @@ class ProfileViewController: BaseViewController<ProfileViewModel>, Storyboarded 
         
         signOutButton.rx.tap
             .bind(to: dataContext.signOut)
+            .disposed(by: disposeBag)
+        
+        editButton.rx.tap
+            .bind(to: dataContext.edit)
             .disposed(by: disposeBag)
     }
 }

@@ -20,4 +20,5 @@ enum AppStoryboard: String {
     case teamSearch = "TeamSearch"
     case teammateSearch = "TeammateSearch"
     case hackFilterDialog = "HackFilterDialog"
+    case editProfile = "EditProfile"
 }
