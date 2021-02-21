@@ -8,8 +8,9 @@
 
 import Foundation
 import RxSwift
+import PromiseKit
 
 protocol IUserApi {
-    func getProfile() -> Single<ApiResult<UserProfileDto>>
-    func updateProfile(_ data: UpdateProfileDtoRequest) -> Single<LiteApiResult>
+    func getProfile() -> Promise<ApiResult<UserProfileDto>>
+    func updateProfile(_ data: UpdateProfileDtoRequest) -> Promise<LiteApiResult>
 }

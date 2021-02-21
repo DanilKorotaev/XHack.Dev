@@ -21,7 +21,7 @@ class SearchHackathonsViewModel: BaseViewModel {
     override func refreshContent(operationArgs: IOperationStateControl) {
         isLoading.onNext(true)
         hackathonsApi.getHackatons(by: HackathonsFilterDto())
-            .subscribe(onSuccess: { [weak self] result in
+            .done { [weak self] result in
                 guard let self = self else { return }
                 self.isLoading.onNext(false)
                 if self.checkAndProcessApiResult(response: result, "загрузить список хакатонов") {
@@ -29,7 +29,6 @@ class SearchHackathonsViewModel: BaseViewModel {
                 }
                 guard let content = result.content else { self.showMessage(title: "Ошибка", message: "Не удалось загрузить список хакатонов"); return}
                 self.hackathons.onNext(content.map({ShortHackathon($0)}))
-            })
-            .disposed(by: disposeBag)
+            }
     }
 }

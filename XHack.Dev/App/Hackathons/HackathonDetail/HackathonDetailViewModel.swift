@@ -26,7 +26,7 @@ class HackathonDetailViewModel: BaseViewModel {
     override func refreshContent(operationArgs: IOperationStateControl) {
         isLoading.onNext(true)
         hackathonsApi.getHackathonDetails(by: hackathonId)
-            .subscribe(onSuccess: { [weak self] result in
+            .done { [weak self] result in
                 guard let self = self else { return }
                 self.isLoading.onNext(false)
                 if self.checkAndProcessApiResult(response: result, "загрузить детальную информацию") {
@@ -34,19 +34,17 @@ class HackathonDetailViewModel: BaseViewModel {
                 }
                 guard let content = result.content else { self.showMessage(title: "Ошибка", message: "Не удалось загрузить детальную информацию"); return}
                 self.hackathon.onNext(HackathonDetail(content))
-            })
-            .disposed(by: disposeBag)
+            }
     }
     
     func setupBinding() {
         didWillGoChanged.subscribe(onNext: { userWillGo in
             let changedStatus = userWillGo ? self.hackathonsApi.willGoHackathon(id: self.hackathonId) : self.hackathonsApi.willNotGoHackathon(id: self.hackathonId)
-            changedStatus.subscribe(onSuccess: { (result) in
+            changedStatus.done { (result) in
                 if self.checkAndProcessApiResult(response: result, "") {
                     return
                 }
-            }).disposed(by: self.disposeBag)
-
+            }
         }).disposed(by: disposeBag)
     }
 }

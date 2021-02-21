@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import PromiseKit
 
 class TagsApi: ITagsApi {
     
@@ -19,7 +20,7 @@ class TagsApi: ITagsApi {
         self.apiTokenHolder = apiTokenHolder
     }
     
-    func addTags(_ tagIds: [Int]) -> Single<LiteApiResult> {
+    func addTags(_ tagIds: [Int]) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/tags/addTagsForUser"
         return ApiHelpers.executeReliablyLiteDeleteRequest(apiTokenHolder: apiTokenHolder, url: url, content: AddTagsDto(tagIds: tagIds))
     }

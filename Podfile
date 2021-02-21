@@ -10,7 +10,8 @@ target 'XHack.Dev' do
   pod 'SwinjectAutoregistration'
   pod 'SwiftLint'
   pod 'SkeletonView'
-
+  pod "PromiseKit", "~> 6.8"
+  
   target 'XHack.DevTests' do
     inherit! :search_paths
     # Pods for testing

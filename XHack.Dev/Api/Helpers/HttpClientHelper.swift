@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import PromiseKit
 
 class HttpClientHelper {
     
@@ -20,7 +21,7 @@ class HttpClientHelper {
     }
     
     
-    func get(url: String, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Single<Response<HTTPStatusCode, Data>> {
+    func get(url: String, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Promise<Response<HTTPStatusCode, Data>> {
 //        let uniqueId = UUID()
 //        let identity = "\(uniqueId)"
         guard let url = URL(string: url) else { fatalError("Wrong url on \(String(describing: get))") }
@@ -35,7 +36,7 @@ class HttpClientHelper {
     }
     
     
-    func post(url: String, postData: Data? = nil, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Single<Response<HTTPStatusCode, Data>>  {
+    func post(url: String, postData: Data? = nil, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Promise<Response<HTTPStatusCode, Data>>  {
         guard let url = URL(string: url) else { fatalError("Wrong url on \(String(describing: post))") }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -54,7 +55,7 @@ class HttpClientHelper {
     }
     
     
-    func patch(url: String, patchData: Data, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Single<Response<HTTPStatusCode, Data>> {
+    func patch(url: String, patchData: Data, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Promise<Response<HTTPStatusCode, Data>> {
         guard let url = URL(string: url) else { fatalError("Wrong url on \(String(describing: post))") }
         var request = URLRequest(url: url)
         request.httpMethod = "PATCH"
@@ -70,7 +71,7 @@ class HttpClientHelper {
     }
     
     
-    func delete(url: String, deleteData: Data, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Single<Response<HTTPStatusCode, Data>> {
+    func delete(url: String, deleteData: Data, accessToken: String? = nil, requestHeaders: [String:String]? = nil) -> Promise<Response<HTTPStatusCode, Data>> {
         guard let url = URL(string: url) else { fatalError("Wrong url on \(String(describing: post))") }
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
@@ -86,8 +87,8 @@ class HttpClientHelper {
     }
     
     
-    private func createDataTask(request: URLRequest) -> Single<Response<HTTPStatusCode, Data>>  {
-        return Single.create { (single) -> Disposable in
+    private func createDataTask(request: URLRequest) -> Promise<Response<HTTPStatusCode, Data>>  {
+        return Promise() { promise in
             let dataTask = URLSession.shared.dataTask(with: request) { data,  response, error in
                 let httpResponse = response as? HTTPURLResponse
                 var dataString: String?
@@ -95,13 +96,10 @@ class HttpClientHelper {
                     dataString = String(data: data, encoding: .utf8)
                     print(dataString!)
                 }
-                single(.success(Response(status: httpResponse?.status ?? .serviceUnavailable, content: data)))
+                promise.fulfill(Response(status: httpResponse?.status ?? .serviceUnavailable, content: data))
             }
             print("Fetching \(request.url?.absoluteString ?? "")...")
             dataTask.resume()
-            return Disposables.create {
-                dataTask.cancel()
-            }
         }
     }
     

@@ -8,21 +8,22 @@
 
 import Foundation
 import RxSwift
+import PromiseKit
 
 protocol IBookmarksApi {
-    func getBookmarkedHackathons() -> Single<LiteApiResult>
-    func getBookmarkedTeams() -> Single<LiteApiResult>
-    func getBookmarkedUsers() -> Single<LiteApiResult>
-    func getBookmarkedChats() -> Single<LiteApiResult>
-    func getBookmarkedMessages() -> Single<LiteApiResult>
-    func bookmark(hackathon: BookmarkHackathonDTO) -> Single<LiteApiResult>
-    func bookmark(user: BookmarkUserDTO) -> Single<LiteApiResult>
-    func bookmark(team: BookmarkTeamDTO) -> Single<LiteApiResult>
-    func bookmark(chat: BookmarkChatDTO) -> Single<LiteApiResult>
-    func bookmark(message: BookmarkMessageDTO) -> Single<LiteApiResult>
-    func removeBookmark(hackathon: BookmarkHackathonDTO) -> Single<LiteApiResult>
-    func removeBookmark(user: BookmarkUserDTO) -> Single<LiteApiResult>
-    func removeBookmark(team: BookmarkTeamDTO) -> Single<LiteApiResult>
-    func removeBookmark(message: BookmarkMessageDTO) -> Single<LiteApiResult>
-    func removeBookmark(chat: BookmarkChatDTO) -> Single<LiteApiResult>
+    func getBookmarkedHackathons() -> Promise<LiteApiResult>
+    func getBookmarkedTeams() -> Promise<LiteApiResult>
+    func getBookmarkedUsers() -> Promise<LiteApiResult>
+    func getBookmarkedChats() -> Promise<LiteApiResult>
+    func getBookmarkedMessages() -> Promise<LiteApiResult>
+    func bookmark(hackathon: BookmarkHackathonDTO) -> Promise<LiteApiResult>
+    func bookmark(user: BookmarkUserDTO) -> Promise<LiteApiResult>
+    func bookmark(team: BookmarkTeamDTO) -> Promise<LiteApiResult>
+    func bookmark(chat: BookmarkChatDTO) -> Promise<LiteApiResult>
+    func bookmark(message: BookmarkMessageDTO) -> Promise<LiteApiResult>
+    func removeBookmark(hackathon: BookmarkHackathonDTO) -> Promise<LiteApiResult>
+    func removeBookmark(user: BookmarkUserDTO) -> Promise<LiteApiResult>
+    func removeBookmark(team: BookmarkTeamDTO) -> Promise<LiteApiResult>
+    func removeBookmark(message: BookmarkMessageDTO) -> Promise<LiteApiResult>
+    func removeBookmark(chat: BookmarkChatDTO) -> Promise<LiteApiResult>
 }

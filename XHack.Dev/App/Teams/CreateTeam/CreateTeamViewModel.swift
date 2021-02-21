@@ -36,17 +36,17 @@ class CreateTeamViewModel {
     func createTeam() {
         isLoading.onNext(true)
         
-        Observable
-            .combineLatest(teamName, teamDescription, canCreateTeam)
-            .take(1)
-            .filter { _, _, active in active }
-            .map { teamName, teamDescription, _ in CreateTeamDto(name: teamName, description: teamDescription)  }
-            .flatMapLatest { [weak self] in self!.teamsApi.create(team: $0) }
-            .subscribe { [weak self] _ in
-                self?.isLoading.onNext(false)
-                self?.taskCreated.onNext(())
-            }
-            .disposed(by: disposeBag)
+//        Observable
+//            .combineLatest(teamName, teamDescription, canCreateTeam)
+//            .take(1)
+//            .filter { _, _, active in active }
+//            .map { teamName, teamDescription, _ in CreateTeamDto(name: teamName, description: teamDescription)  }
+//            .flatMapLatest { [weak self] in self!.teamsApi.create(team: $0) }
+//            .subscribe { [weak self] _ in
+//                self?.isLoading.onNext(false)
+//                self?.taskCreated.onNext(())
+//            }
+//            .disposed(by: disposeBag)
     }
     
 }

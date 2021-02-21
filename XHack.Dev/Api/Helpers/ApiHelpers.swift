@@ -8,50 +8,51 @@
 
 import Foundation
 import RxSwift
+import PromiseKit
 
 class ApiHelpers {
     
-    static func executeReliablyEmptyGetRequest(apiTokenHolder: IApiTokensHolder, url: String) -> Single<LiteApiResult> {
+    static func executeReliablyEmptyGetRequest(apiTokenHolder: IApiTokensHolder, url: String) -> Promise<LiteApiResult> {
         return HttpClientHelper.shared.get(url: url, accessToken: apiTokenHolder.accessToken).map(toLiteApiResult)
     }
     
     
-    static func executeReliablyGetRequest<TContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String) -> Single<ApiResult<TContent>> {
+    static func executeReliablyGetRequest<TContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String) -> Promise<ApiResult<TContent>> {
         return HttpClientHelper.shared.get(url: url, accessToken: apiTokenHolder.accessToken).map(toApiResult)
     }
     
     
-    static func executeReliablyLitePostRequest<TRequestContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, content: TRequestContent?) -> Single<LiteApiResult> {
+    static func executeReliablyLitePostRequest<TRequestContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, content: TRequestContent?) -> Promise<LiteApiResult> {
         return HttpClientHelper.shared.post(url: url, postData: content?.toJson(), accessToken: apiTokenHolder.accessToken).map(toLiteApiResult)
     }
     
-    static func executeReliablyLitePostRequest(apiTokenHolder: IApiTokensHolder, url: String) -> Single<LiteApiResult> {
+    static func executeReliablyLitePostRequest(apiTokenHolder: IApiTokensHolder, url: String) -> Promise<LiteApiResult> {
         return HttpClientHelper.shared.post(url: url, accessToken: apiTokenHolder.accessToken).map(toLiteApiResult)
     }
     
-    static func executeReliablyPostRequest<TRequestContent: Codable, TResponseContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, content: TRequestContent) -> Single<ApiResult<TResponseContent>> {
+    static func executeReliablyPostRequest<TRequestContent: Codable, TResponseContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, content: TRequestContent) -> Promise<ApiResult<TResponseContent>> {
         let json = content.toJson()
         return HttpClientHelper.shared.post(url: url, postData: json, accessToken: apiTokenHolder.accessToken).map(toApiResult)
     }
     
     
-    static func executeReliablyPatchRequest<TRequestContent: Codable, TResponseContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, content: TRequestContent) -> Single<ApiResult<TResponseContent>> {
+    static func executeReliablyPatchRequest<TRequestContent: Codable, TResponseContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, content: TRequestContent) -> Promise<ApiResult<TResponseContent>> {
         let json = content.toJson()!
         return HttpClientHelper.shared.patch(url: url, patchData: json, accessToken: apiTokenHolder.accessToken).map(toApiResult)
     }
         
     
-    static func executeReliablyLitePatchRequest<TRequestContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, content: TRequestContent) -> Single<LiteApiResult> {
+    static func executeReliablyLitePatchRequest<TRequestContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, content: TRequestContent) -> Promise<LiteApiResult> {
         return HttpClientHelper.shared.patch(url: url, patchData: content.toJson()!, accessToken: apiTokenHolder.accessToken).map(toLiteApiResult)
     }
     
     
-    static func executeReliablyLiteDeleteRequest<TRequestContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, content: TRequestContent) -> Single<LiteApiResult> {
+    static func executeReliablyLiteDeleteRequest<TRequestContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, content: TRequestContent) -> Promise<LiteApiResult> {
         return HttpClientHelper.shared.delete(url: url, deleteData: content.toJson()!, accessToken: apiTokenHolder.accessToken).map(toLiteApiResult)
     }
     
     
-    static func executeReliablyDeleteRequest<TRequestContent: Codable, TResponseContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, content: TRequestContent) -> Single<ApiResult<TResponseContent>> {
+    static func executeReliablyDeleteRequest<TRequestContent: Codable, TResponseContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, content: TRequestContent) -> Promise<ApiResult<TResponseContent>> {
         return HttpClientHelper.shared.delete(url: url, deleteData: content.toJson()!, accessToken: apiTokenHolder.accessToken).map(toApiResult)
     }
     

@@ -8,8 +8,9 @@
 
 import Foundation
 import RxSwift
+import PromiseKit
 
 protocol AuthApi {
-    func singIn(creadential: SignInRequest) -> Single<ApiResult<SignInResponse>>
-    func signUp(_ model: SignUpRequest) -> Single<ApiResult<SignUpResponse>>
+    func singIn(creadential: SignInRequest) -> Promise<ApiResult<SignInResponse>>
+    func signUp(_ model: SignUpRequest) -> Promise<ApiResult<SignUpResponse>>
 }

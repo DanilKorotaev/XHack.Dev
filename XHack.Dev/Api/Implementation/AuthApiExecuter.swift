@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import PromiseKit
 
 class AuthApiExecuter: AuthApi {
     private let endpointsProvider: ApiEndpoints
@@ -18,12 +19,12 @@ class AuthApiExecuter: AuthApi {
         self.apiTokenHolder = apiTokenHolder
     }
     
-    func singIn(creadential: SignInRequest) -> Single<ApiResult<SignInResponse>> {
+    func singIn(creadential: SignInRequest) -> Promise<ApiResult<SignInResponse>> {
         let url = endpointsProvider.gatewayUrl + "/api/auth/login"
         return ApiHelpers.executeReliablyPostRequest(apiTokenHolder: apiTokenHolder, url: url, content: creadential)
     }
     
-    func signUp(_ model: SignUpRequest) -> Single<ApiResult<SignUpResponse>>{
+    func signUp(_ model: SignUpRequest) -> Promise<ApiResult<SignUpResponse>>{
         let url = endpointsProvider.gatewayUrl + "/api/auth/register"
         return ApiHelpers.executeReliablyPostRequest(apiTokenHolder: apiTokenHolder, url: url, content: model)
     }

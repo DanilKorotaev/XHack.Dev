@@ -14,12 +14,13 @@ class ProfileViewModel: BaseViewModel {
     }
     
     override func refreshContent(operationArgs: IOperationStateControl) {
-        userApi.getProfile().do(onSuccess: { result in
-            if self.checkAndProcessApiResult(response: result, "загрузить информацию по пользователю") {
-                return
-            }
-//            guard let content = result.content else { return }
-            self.profile.onNext(UserProfile(result.content!))
-        }).subscribe().disposed(by: disposeBag)
+        userApi.getProfile()
+            .done { result in
+                if self.checkAndProcessApiResult(response: result, "загрузить информацию по пользователю") {
+                    return
+                }
+                guard let content = result.content else { return }
+                self.profile.onNext(UserProfile(content))
+        }
     }
 }

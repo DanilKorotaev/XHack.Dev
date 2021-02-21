@@ -32,12 +32,9 @@ class TeamListViewModel: BaseViewModel {
 //        }
 //
         teamsApi.getTeams()
-            .do(onSuccess: {  [weak self] result in
+            .done {  [weak self] result in
                 self?.isLoading.onNext(false)
                 self?.teams.onNext(result.content?.map({Team(data: $0)}) ?? [])
-            }).subscribe({ _ in
-                
-            })
-            .disposed(by: disposeBag)
+            }
     }
 }

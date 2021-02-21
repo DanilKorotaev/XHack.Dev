@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import PromiseKit
 
 class RequestsApi: IRequestsApi {
     
@@ -19,22 +20,22 @@ class RequestsApi: IRequestsApi {
         self.apiTokenHolder = apiTokenHolder
     }
     
-    func acceptRequestToUser(requestId: Int) -> Single<LiteApiResult> {
+    func acceptRequestToUser(requestId: Int) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/teams/acceptRequestToUser"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: AcceptRequestToUser(requestId: requestId))
     }
     
-    func declineRequestToUser(requestId: Int) -> Single<LiteApiResult> {
+    func declineRequestToUser(requestId: Int) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/teams/declineRequestToUser"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: DeclineRequestToUserDto(requestId: requestId))
     }
     
-    func withDrawRequestToUser(requestId: Int) -> Single<LiteApiResult> {
+    func withDrawRequestToUser(requestId: Int) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/teams/withDrawRequestToUser"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: WithDrawRequestToUserDto(requestId: requestId))
     }
     
-    func getActiveIncomingRequests() -> Single<ApiResult<ActiveIncomingRequestsDto>> {
+    func getActiveIncomingRequests() -> Promise<ApiResult<ActiveIncomingRequestsDto>> {
         let url = endpointsProvider.gatewayUrl + "/api/teams/getActiveIncomingRequests"
         return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
     }

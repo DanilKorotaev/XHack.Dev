@@ -8,10 +8,11 @@
 
 import Foundation
 import RxSwift
+import PromiseKit
 
 protocol ITeamsApi {
-    func getTeams() -> Single<ApiResult<[TeamDto]>>
-    func create(team: CreateTeamDto) -> Single<LiteApiResult>
-    func sendRequest(to team: CreateRequestToTeamDto) -> Single<LiteApiResult>
-    func sendRequest(to user: CreateRequestToUserDto) -> Single<LiteApiResult>
+    func getTeams() -> Promise<ApiResult<[TeamDto]>>
+    func create(team: CreateTeamDto) -> Promise<LiteApiResult>
+    func sendRequest(to team: CreateRequestToTeamDto) -> Promise<LiteApiResult>
+    func sendRequest(to user: CreateRequestToUserDto) -> Promise<LiteApiResult>
 }

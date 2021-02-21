@@ -8,7 +8,8 @@
 
 import Foundation
 import RxSwift
+import PromiseKit
 
 protocol ITagsApi {
-    func addTags(_ tagIds:[Int]) -> Single<LiteApiResult>
+    func addTags(_ tagIds:[Int]) -> Promise<LiteApiResult>
 }

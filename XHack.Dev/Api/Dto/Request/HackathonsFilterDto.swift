@@ -9,5 +9,7 @@
 import Foundation
 
 struct HackathonsFilterDto: Codable {
-    
+    var filter: String? = ""
+    var take: Int = 200
+    var page: Int = 0
 }

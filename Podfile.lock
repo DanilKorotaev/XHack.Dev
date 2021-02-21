@@ -1,4 +1,13 @@
 PODS:
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -13,6 +22,7 @@ PODS:
     - Swinject (~> 2.7)
 
 DEPENDENCIES:
+  - PromiseKit (~> 6.8)
   - RxCocoa
   - RxSwift
   - SideMenu
@@ -23,6 +33,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - PromiseKit
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -33,6 +44,7 @@ SPEC REPOS:
     - SwinjectAutoregistration
 
 SPEC CHECKSUMS:
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
@@ -42,6 +54,6 @@ SPEC CHECKSUMS:
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectAutoregistration: 330f5012642a8b5c89a8a4adb0c5e52df07382c0
 
-PODFILE CHECKSUM: de968c0b87941cae2e63d2541073d35c7fdfbf43
+PODFILE CHECKSUM: b05226cde04b6cd2f816e9c84743015bdda9ce9a
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.1

@@ -8,10 +8,11 @@
 
 import Foundation
 import RxSwift
+import PromiseKit
 
 protocol IRequestsApi {
-    func acceptRequestToUser(requestId: Int) -> Single<LiteApiResult>
-    func declineRequestToUser(requestId: Int) -> Single<LiteApiResult>
-    func withDrawRequestToUser(requestId: Int) -> Single<LiteApiResult>
-    func getActiveIncomingRequests() -> Single<ApiResult<ActiveIncomingRequestsDto>>
+    func acceptRequestToUser(requestId: Int) -> Promise<LiteApiResult>
+    func declineRequestToUser(requestId: Int) -> Promise<LiteApiResult>
+    func withDrawRequestToUser(requestId: Int) -> Promise<LiteApiResult>
+    func getActiveIncomingRequests() -> Promise<ApiResult<ActiveIncomingRequestsDto>>
 }

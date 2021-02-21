@@ -13,8 +13,9 @@ struct ShortHackathonDto: Codable {
     let description: String
     let isOnline: Bool
     let id: Int
-    let location: String = ""
-    let tags: [TagDto] 
+    let location: String
+    let siteUrl: String
+    let tags: [TagDto] = []
     let avatarUrl: String
     let startDate: Date
     let endDate: Date

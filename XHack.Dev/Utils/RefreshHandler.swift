@@ -36,8 +36,14 @@ class RefreshHandler: NSObject {
     }
     
     func end() {
-        DispatchQueue.main.sync {
-            refreshControl.endRefreshing()
-        }        
+        if refreshControl.isRefreshing {
+            if Thread.isMainThread {
+                refreshControl.endRefreshing()
+            } else {
+                DispatchQueue.main.sync {
+                    refreshControl.endRefreshing()
+                }
+            }
+        }
     }
 }

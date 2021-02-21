@@ -30,7 +30,7 @@ class HackathonListViewModel: BaseViewModel, RefreshableContentHost {
         }
         
         hackathonsApi.getHackatons(by: HackathonsFilterDto())
-            .subscribe(onSuccess: { [weak self] result in
+            .done { [weak self] result in
                 guard let self = self else { return }
                 self.isLoading.onNext(false)
                 self.isRefreshing.onNext(false)
@@ -39,8 +39,7 @@ class HackathonListViewModel: BaseViewModel, RefreshableContentHost {
                 }
                 guard let content = result.content else { self.showMessage(title: "Ошибка", message: "Не удалось загрузить список хакатонов"); return}
                 self.hackathons.onNext(content.map({ShortHackathon($0)}))
-            })
-            .disposed(by: disposeBag)
+            }
     }
     
     override func applyBinding() {

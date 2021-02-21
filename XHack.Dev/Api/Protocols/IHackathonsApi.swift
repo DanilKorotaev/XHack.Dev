@@ -8,10 +8,11 @@
 
 import Foundation
 import RxSwift
+import PromiseKit
 
 protocol IHackathonsApi {
-    func getHackatons(by filter: HackathonsFilterDto) -> Single<ApiResult<[ShortHackathonDto]>>
-    func getHackathonDetails(by id: Int) -> Single<ApiResult<HackathonDto>>
-    func willGoHackathon(id: Int) -> Single<LiteApiResult>
-    func willNotGoHackathon(id: Int) -> Single<LiteApiResult>
+    func getHackatons(by filter: HackathonsFilterDto) -> Promise<ApiResult<[ShortHackathonDto]>>
+    func getHackathonDetails(by id: Int) -> Promise<ApiResult<HackathonDto>>
+    func willGoHackathon(id: Int) -> Promise<LiteApiResult>
+    func willNotGoHackathon(id: Int) -> Promise<LiteApiResult>
 }

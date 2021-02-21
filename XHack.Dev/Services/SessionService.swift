@@ -41,13 +41,14 @@ class SessionService {
     
     func signIn(credentials: Credentials) -> Completable {
         let signIn = self.authApi.singIn(creadential: SignInRequest(email: credentials.email, password: credentials.password))
-        return signIn.do(onSuccess:{ [weak self] result in
+        signIn.done{ [weak self] result in
             guard let content = result.content, result.status == .successful else { return }
             try self?.setToken(response: content)
             try self?.setSession(email: credentials.email)
             self?.messager.publish(message: LoginMessage())
             self?.signInSubject.onNext(Void())
-        }).asCompletable()
+        }
+        return Completable.empty()
     }
     
     func signOut() -> Completable {
@@ -64,12 +65,17 @@ class SessionService {
     
     func signUp(request: SignUpRequest) -> Completable {
         let signIn = self.authApi.signUp(request)
-        return signIn.do(onSuccess:{ [weak self] result in
-            guard let content = result.content, result.status == .successful else { return }
-            self?.token = Tokens(accessToken: content.token)
-            try self?.setSession(email: request.email)
-            self?.signInSubject.onNext(Void())
-        }).asCompletable()
+        return Single<Any>.create { (single) -> Disposable in
+            signIn.done{ [weak self] result in
+                single(.success(()))
+                guard let content = result.content, result.status == .successful else { return }
+                self?.token = Tokens(accessToken: content.token)
+                try self?.setSession(email: request.email)
+                self?.signInSubject.onNext(Void())
+            }
+            return Disposables.create()
+        }.asCompletable()
+        
     }
     
     //    func refreshProfile() -> Single<MeResponse> {

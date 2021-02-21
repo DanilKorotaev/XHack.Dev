@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import PromiseKit
 
 class UserApi: IUserApi {
     
@@ -19,13 +20,13 @@ class UserApi: IUserApi {
         self.apiTokenHolder = apiTokenHolder
     }
     
-    func getProfile() -> Single<ApiResult<UserProfileDto>> {
+    func getProfile() -> Promise<ApiResult<UserProfileDto>> {
         let url = endpointsProvider.gatewayUrl + "/api/users/profile"
         return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
     
     
-    func updateProfile(_ data: UpdateProfileDtoRequest) -> Single<LiteApiResult> {
+    func updateProfile(_ data: UpdateProfileDtoRequest) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/users/profile"
         return ApiHelpers.executeReliablyLitePatchRequest(apiTokenHolder: apiTokenHolder, url: url, content: data)
     }

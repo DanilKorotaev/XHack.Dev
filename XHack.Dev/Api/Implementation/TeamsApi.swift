@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import PromiseKit
 
 class TeamsApi: ITeamsApi {
     
@@ -19,24 +20,24 @@ class TeamsApi: ITeamsApi {
         self.apiTokenHolder = apiTokenHolder
     }
     
-    func getTeams() -> Single<ApiResult<[TeamDto]>> {
+    func getTeams() -> Promise<ApiResult<[TeamDto]>> {
         let url = endpointsProvider.gatewayUrl + "/api/teams/get-my-teams"
         return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
     
     
-    func create(team: CreateTeamDto) -> Single<LiteApiResult> {
+    func create(team: CreateTeamDto) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/teams/create-team"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: team)
     }
     
     
-    func sendRequest(to team: CreateRequestToTeamDto) -> Single<LiteApiResult> {
+    func sendRequest(to team: CreateRequestToTeamDto) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/teams/send-request-to-team"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: team)
     }
     
-    func sendRequest(to user: CreateRequestToUserDto) -> Single<LiteApiResult> {
+    func sendRequest(to user: CreateRequestToUserDto) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/teams/send-request-to-user"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: user)
     }
