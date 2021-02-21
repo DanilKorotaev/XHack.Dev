@@ -7,7 +7,7 @@ class SignInViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var usernameTextField: CustomShadowTextField!
     @IBOutlet weak var passwordTextField: CustomShadowTextField!
-    @IBOutlet weak var signInButton: ButtonWithProgress!
+    @IBOutlet weak var signInButton: PrimaryButton!
     @IBOutlet weak var signUpButton: UIButton!
     
     private let disposeBag = DisposeBag()
@@ -45,17 +45,12 @@ class SignInViewController: UIViewController, Storyboarded {
             .bind { [weak self] in self?.viewModel?.signIn() }
             .disposed(by: disposeBag)
         
-        viewModel.isSignInActive
-            .bind(to: signInButton.rx.isEnabled)
-            .disposed(by: disposeBag)
-        
         viewModel.isLoading
             .observeOn(MainScheduler.instance)            
             .bind { [weak self] in
                 guard let self = self else { return }
                 self.usernameTextField.isEnabled = !$0
                 self.passwordTextField.isEnabled = !$0
-                self.signInButton.isInProgress = $0
             }
             .disposed(by: disposeBag)
         

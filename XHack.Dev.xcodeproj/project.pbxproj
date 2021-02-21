@@ -135,6 +135,9 @@
 		A32D3CAF25E2BDD6002633B8 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32D3CAE25E2BDD6002633B8 /* EditProfileViewController.swift */; };
 		A32D3CC425E2C66D002633B8 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32D3CC325E2C66C002633B8 /* Common.swift */; };
 		A32D3CCC25E2CA53002633B8 /* CustomShadowTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32D3CCB25E2CA53002633B8 /* CustomShadowTextField.swift */; };
+		A32D3CD625E2E53A002633B8 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32D3CD525E2E539002633B8 /* PrimaryButton.swift */; };
+		A32D3CDB25E2E69D002633B8 /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32D3CDA25E2E69D002633B8 /* UIView+Gradient.swift */; };
+		A32D3CE025E2E824002633B8 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32D3CDF25E2E824002633B8 /* UIColor+Extensions.swift */; };
 		A33F448425A7A55200C16624 /* HackFilterDialogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F448325A7A55200C16624 /* HackFilterDialogCoordinator.swift */; };
 		A33F448925A7A55F00C16624 /* HackFilterDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33F448825A7A55F00C16624 /* HackFilterDialog.storyboard */; };
 		A33F448E25A7A56A00C16624 /* HackFilterDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F448D25A7A56A00C16624 /* HackFilterDialogViewController.swift */; };
@@ -235,6 +238,7 @@
 		A3961B26257AE6A300FC3541 /* TeamList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3961B25257AE6A200FC3541 /* TeamList.storyboard */; };
 		A3A0E941259A8CE100634BED /* TopHackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A0E93F259A8CE100634BED /* TopHackViewCell.swift */; };
 		A3A0E942259A8CE100634BED /* TopHackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3A0E940259A8CE100634BED /* TopHackViewCell.xib */; };
+		A3AD07A525E2F58300DA0785 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD07A425E2F58300DA0785 /* SecondaryButton.swift */; };
 		A3B80B3C258593D10089E599 /* ShortHackathon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B80B3B258593D10089E599 /* ShortHackathon.swift */; };
 		A3BA56312573E896007AD591 /* ApiEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA56302573E896007AD591 /* ApiEndpoints.swift */; };
 		A3BA56362573E906007AD591 /* EndpointsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA56352573E906007AD591 /* EndpointsProvider.swift */; };
@@ -425,6 +429,9 @@
 		A32D3CAE25E2BDD6002633B8 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		A32D3CC325E2C66C002633B8 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		A32D3CCB25E2CA53002633B8 /* CustomShadowTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShadowTextField.swift; sourceTree = "<group>"; };
+		A32D3CD525E2E539002633B8 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		A32D3CDA25E2E69D002633B8 /* UIView+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gradient.swift"; sourceTree = "<group>"; };
+		A32D3CDF25E2E824002633B8 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		A33F448325A7A55200C16624 /* HackFilterDialogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFilterDialogCoordinator.swift; sourceTree = "<group>"; };
 		A33F448825A7A55F00C16624 /* HackFilterDialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HackFilterDialog.storyboard; sourceTree = "<group>"; };
 		A33F448D25A7A56A00C16624 /* HackFilterDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFilterDialogViewController.swift; sourceTree = "<group>"; };
@@ -526,6 +533,7 @@
 		A3961B25257AE6A200FC3541 /* TeamList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamList.storyboard; sourceTree = "<group>"; };
 		A3A0E93F259A8CE100634BED /* TopHackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHackViewCell.swift; sourceTree = "<group>"; };
 		A3A0E940259A8CE100634BED /* TopHackViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopHackViewCell.xib; sourceTree = "<group>"; };
+		A3AD07A425E2F58300DA0785 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		A3B80B3B258593D10089E599 /* ShortHackathon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortHackathon.swift; sourceTree = "<group>"; };
 		A3BA56302573E896007AD591 /* ApiEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoints.swift; sourceTree = "<group>"; };
 		A3BA56352573E906007AD591 /* EndpointsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointsProvider.swift; sourceTree = "<group>"; };
@@ -809,6 +817,8 @@
 				16A1E57E22DA40C20003F0DF /* UIViewControllerExtensions.swift */,
 				A3441D702597C2F400A3BFA5 /* UIImageView+Extension.swift */,
 				A349FB55259BD5BB0038549E /* Date+String.swift */,
+				A32D3CDA25E2E69D002633B8 /* UIView+Gradient.swift */,
+				A32D3CDF25E2E824002633B8 /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -822,6 +832,8 @@
 				16A1E58C22DA40C20003F0DF /* LocalizedLabel.swift */,
 				16A1E59422DA40C20003F0DF /* LocalizedTextField.swift */,
 				A32D3CCB25E2CA53002633B8 /* CustomShadowTextField.swift */,
+				A32D3CD525E2E539002633B8 /* PrimaryButton.swift */,
+				A3AD07A425E2F58300DA0785 /* SecondaryButton.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -1727,6 +1739,7 @@
 				A37055E225852A35005650FD /* BaseViewModel+ApiResult.swift in Sources */,
 				A3881432258AA1AF00FFF9A5 /* DeclineRequestToUserDto.swift in Sources */,
 				A3BA566625742EFA007AD591 /* IApiResult.swift in Sources */,
+				A32D3CD625E2E53A002633B8 /* PrimaryButton.swift in Sources */,
 				A38CDB36256C1A3C00E8A732 /* RegistrationViewController.swift in Sources */,
 				16DD9D1322DA861F007D9D2F /* SetOptionsViewModel.swift in Sources */,
 				16A1E64322DA40C40003F0DF /* Credentials.swift in Sources */,
@@ -1754,6 +1767,7 @@
 				A3231251256DBD6300D3B97B /* RestClient.swift in Sources */,
 				A301E33725881DB90088B33A /* ITagsApi.swift in Sources */,
 				16A1E5F322DA40C40003F0DF /* LocalizationUtils.swift in Sources */,
+				A32D3CE025E2E824002633B8 /* UIColor+Extensions.swift in Sources */,
 				A31F573B25A5E87100759B61 /* IOperationControl.swift in Sources */,
 				A3DBB812258AC22D0078CC4E /* TagDto.swift in Sources */,
 				16DD9CFF22DA7508007D9D2F /* UserDataManager.swift in Sources */,
@@ -1843,6 +1857,7 @@
 				16DD9CF922DA5522007D9D2F /* Constants.swift in Sources */,
 				A3961A622579802200FC3541 /* IUserApi.swift in Sources */,
 				A388141E258A9F6900FFF9A5 /* ActiveIncomingRequestsDto.swift in Sources */,
+				A32D3CDB25E2E69D002633B8 /* UIView+Gradient.swift in Sources */,
 				16A1E62B22DA40C40003F0DF /* AppDelegate.swift in Sources */,
 				16A1E61322DA40C40003F0DF /* Container+Services.swift in Sources */,
 				A3961AA32579933400FC3541 /* SearchHackathonsViewModel.swift in Sources */,
@@ -1869,6 +1884,7 @@
 				A3BA565325742BA2007AD591 /* AuthApiExecuter.swift in Sources */,
 				A3A0E941259A8CE100634BED /* TopHackViewCell.swift in Sources */,
 				16A1E61D22DA40C40003F0DF /* DashboardCoordinator.swift in Sources */,
+				A3AD07A525E2F58300DA0785 /* SecondaryButton.swift in Sources */,
 				A36AF8D52582D187000E2852 /* CreateTeamCoordinator.swift in Sources */,
 				A36AF8DA2582D198000E2852 /* CreateTeamViewController.swift in Sources */,
 				A3BA563C2573EA20007AD591 /* TestEndpoints.swift in Sources */,
