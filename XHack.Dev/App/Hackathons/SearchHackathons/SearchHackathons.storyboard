@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z0d-jo-neo" userLabel="TableView">
-                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <rect key="frame" x="0.0" y="174" width="414" height="722"/>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <sections/>
                             </tableView>
@@ -54,20 +54,44 @@
                                     <constraint firstAttribute="trailing" secondItem="fJ3-Yq-lj1" secondAttribute="trailing" constant="36" id="qyK-Il-0Gv"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wr-vk-tEG">
+                                <rect key="frame" x="0.0" y="104" width="414" height="70"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search hacks" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYh-Sc-1vB" customClass="CustomShadowTextField" customModule="XHack_Dev" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="10" width="334" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ncg-DP-Ngi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="eYh-Sc-1vB" firstAttribute="leading" secondItem="3wr-vk-tEG" secondAttribute="leading" constant="40" id="06q-Ye-lNz"/>
+                                    <constraint firstAttribute="height" constant="70" id="0p7-Ck-kn7"/>
+                                    <constraint firstAttribute="trailing" secondItem="eYh-Sc-1vB" secondAttribute="trailing" constant="40" id="hu7-rV-WTv"/>
+                                    <constraint firstItem="eYh-Sc-1vB" firstAttribute="top" secondItem="3wr-vk-tEG" secondAttribute="top" constant="10" id="k48-gP-6bf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oPy-07-pZT"/>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="oPy-07-pZT" firstAttribute="bottom" secondItem="z0d-jo-neo" secondAttribute="bottom" id="3wD-Qg-DEu"/>
+                            <constraint firstAttribute="bottom" secondItem="z0d-jo-neo" secondAttribute="bottom" id="3wD-Qg-DEu"/>
+                            <constraint firstItem="3wr-vk-tEG" firstAttribute="leading" secondItem="oPy-07-pZT" secondAttribute="leading" id="5Ef-Vw-7BJ"/>
                             <constraint firstItem="s2M-gy-yVP" firstAttribute="leading" secondItem="oPy-07-pZT" secondAttribute="leading" id="78F-DV-PXz"/>
+                            <constraint firstItem="oPy-07-pZT" firstAttribute="trailing" secondItem="3wr-vk-tEG" secondAttribute="trailing" id="LLf-Ud-USh"/>
+                            <constraint firstItem="3wr-vk-tEG" firstAttribute="top" secondItem="s2M-gy-yVP" secondAttribute="bottom" id="QmT-h6-04A"/>
+                            <constraint firstItem="z0d-jo-neo" firstAttribute="top" secondItem="3wr-vk-tEG" secondAttribute="bottom" id="UEu-9e-hIX"/>
                             <constraint firstItem="s2M-gy-yVP" firstAttribute="top" secondItem="oPy-07-pZT" secondAttribute="top" id="Uml-eo-e9v"/>
                             <constraint firstItem="oPy-07-pZT" firstAttribute="trailing" secondItem="s2M-gy-yVP" secondAttribute="trailing" id="XeQ-nV-gzl"/>
                             <constraint firstItem="oPy-07-pZT" firstAttribute="trailing" secondItem="z0d-jo-neo" secondAttribute="trailing" id="cYx-2b-gQs"/>
                             <constraint firstItem="z0d-jo-neo" firstAttribute="leading" secondItem="oPy-07-pZT" secondAttribute="leading" id="heV-t5-LdA"/>
-                            <constraint firstItem="z0d-jo-neo" firstAttribute="top" secondItem="s2M-gy-yVP" secondAttribute="bottom" id="lJl-qb-kbn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchTextField" destination="eYh-Sc-1vB" id="8Tz-vt-Vzp"/>
                         <outlet property="tableView" destination="z0d-jo-neo" id="7ty-DY-DMk"/>
                     </connections>
                 </viewController>

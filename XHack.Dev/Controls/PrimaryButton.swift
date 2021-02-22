@@ -40,7 +40,7 @@ class PrimaryButton: UIButton {
         gradientView.layer.cornerRadius = layer.cornerRadius
         insertSubview(gradientView, at: 0)
         gradient = gradientView.applyGradient(colours: [UIColor(hex: "#FF005C"), UIColor(hex: "#F55800")])
-        
+        gradientView.isUserInteractionEnabled = false
         layer.shadowOpacity = 1
         layer.shadowRadius = 10
         layer.shadowOffset = CGSize(width: 0, height: 4)

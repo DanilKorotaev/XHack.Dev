@@ -42,8 +42,10 @@ class SignInViewController: UIViewController, Storyboarded {
             .disposed(by: disposeBag)
         
         signInButton.rx.tap
-            .bind { [weak self] in self?.viewModel?.signIn() }
-            .disposed(by: disposeBag)
+            .throttle(RxTimeInterval.seconds(3), scheduler: MainScheduler.instance)
+            .bind { [weak self] _ in
+                self?.viewModel?.signIn()
+            }.disposed(by: disposeBag)
         
         viewModel.isLoading
             .observeOn(MainScheduler.instance)            

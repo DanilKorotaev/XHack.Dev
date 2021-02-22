@@ -12,7 +12,8 @@ class SearchHackathonsViewController: BaseViewController<SearchHackathonsViewMod
     static var storyboard =  AppStoryboard.searchHackathons
     
     @IBOutlet weak var tableView: UITableView!
-        
+    @IBOutlet weak var searchTextField: CustomShadowTextField!
+    
     override func completeUi() {
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "HackathonViewCell", bundle: nil), forCellReuseIdentifier: "HackathonViewCell")
@@ -37,6 +38,15 @@ class SearchHackathonsViewController: BaseViewController<SearchHackathonsViewMod
         
         tableView.rx.modelSelected(ShortHackathon.self)
             .bind(to: dataContext.didSelectHack)
+            .disposed(by: disposeBag)
+        
+        searchTextField.rx.text.orEmpty
+            .asDriver()
+            .debounce(2)
+            .distinctUntilChanged()
+            .drive(onNext: {value in
+                dataContext.filterBy.onNext(value)
+            })
             .disposed(by: disposeBag)
     }
 }
