@@ -19,6 +19,7 @@ struct HackathonDto: Codable {
     let avatarUrl: String
     let startDate: Date
     let endDate: Date
+    let isBookmarked: Bool
     let tags: [TagDto]
     let teams: [ShortTeamDto]
     let members : [ShortUserDto] = []

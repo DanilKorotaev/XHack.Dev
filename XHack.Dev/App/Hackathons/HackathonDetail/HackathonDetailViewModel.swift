@@ -8,10 +8,12 @@
 
 import Foundation
 import RxSwift
+import PromiseKit
 
 class HackathonDetailViewModel: BaseViewModel {
     
     let hackathonsApi: IHackathonsApi
+    let bookmarksApi: IBookmarksApi
     var hackathonId: Int = 0
     
     let hackathon = BehaviorSubject<HackathonDetail?>(value: .none)
@@ -24,8 +26,9 @@ class HackathonDetailViewModel: BaseViewModel {
     let memberSearch = PublishSubject<Void>()
     let teamSearch = PublishSubject<Void>()
     
-    init(hackathonsApi: IHackathonsApi) {
+    init(hackathonsApi: IHackathonsApi, bookmarksApi: IBookmarksApi) {
         self.hackathonsApi = hackathonsApi
+        self.bookmarksApi = bookmarksApi
     }
     
     override func refreshContent(operationArgs: IOperationStateControl) {
@@ -67,6 +70,18 @@ class HackathonDetailViewModel: BaseViewModel {
     }
     
     private func bookmarkHack() {
-        
+        guard let hack = self.hackathon.value else { return }
+        let dto = BookmarkHackathonDTO(hackathonId: hackathonId)
+        let method = hack.isBookmarked.value ?             bookmarksApi.removeBookmark(hackathon: dto) :
+            bookmarksApi.bookmark(hackathon: dto)
+            
+        method.done { [weak self] (result) in
+            guard let self = self, let hack = self.hackathon.value else { return }
+            let message = hack.isBookmarked.value ? "удалить из закладок" : "добавить в закладки"
+            if self.checkAndProcessApiResult(response: result, message) {
+                return
+            }
+            hack.isBookmarked.invert()
+        }
     }
 }

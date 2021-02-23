@@ -35,9 +35,9 @@ class SearchHackathonsCoordinator: BaseCoordinator<Void> {
     }
     
     func setupBinding() {
-        viewModel.didSelectHack
-            .subscribe(onNext: { [weak self] hack in self?.didSelect(hack: hack) })
-            .disposed(by: disposeBag)
+        viewModel.didSelectHack.subscribe(onNext: { [weak self] hack in
+            self?.didSelect(hack: hack)
+        }).disposed(by: disposeBag)
         
         viewModel.back.subscribe(onNext: { [weak self] _ in
             self?.navigationController.popViewController(animated: true)

@@ -29,3 +29,16 @@ extension Array: DefaultValuable {
         return []
     }
 }
+
+
+extension Bool: DefaultValuable {
+    static func defaultValue() -> Bool {
+        return false
+    }
+}
+
+extension Optional: DefaultValuable {
+    static func defaultValue() -> Optional {
+        return nil
+    }
+}

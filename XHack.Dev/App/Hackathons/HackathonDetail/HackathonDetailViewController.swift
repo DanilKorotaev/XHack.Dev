@@ -14,7 +14,7 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
     private let allDescriptionCollapsedLines = 3
     private let allDescriptionExpandedLines = 999
     static var storyboard = AppStoryboard.hackathonDetail
-    
+    private var hackDisposeBag = DisposeBag()
     private var isAllDescriptionShown = false
     
     @IBOutlet weak var hackNameLabel: UILabel!
@@ -49,6 +49,8 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
         dataContext.hackathon
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self](hackDetail) in
+                self?.hackDisposeBag = DisposeBag()
+                
                 guard let self = self, let hackDetail = hackDetail else { return }
                 self.hackNameLabel.text = hackDetail.name.value
                 self.hackDescriptionTextView.text = hackDetail.description.value
@@ -57,20 +59,25 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
                 self.hackLinkButton.setTitle(hackDetail.siteUrl, for: .normal)
                 self.searchTeamContainerView.isHidden = hackDetail.teams.value.isEmpty
                 self.searchMemberContainerView.isHidden = hackDetail.members.value.isEmpty
-
+                
+                hackDetail.isBookmarked.bind(onNext: { [weak self] value in
+                    let bookmarkImage = value ? #imageLiteral(resourceName: "Star") : #imageLiteral(resourceName: "unselected_star")
+                    self?.bookmarkButton.setImage(bookmarkImage, for: .normal)
+                }).disposed(by: self.hackDisposeBag)
+                
                 hackDetail.members
                     .bind(to: self.searchMemberCollectionView.rx.items(cellIdentifier: ShortUserViewCell.reuseIdentifier)) { row, model, cell in
                         guard let cell = cell as? ShortUserViewCell else { return }
                         cell.set(for: model)
                     }
-                    .disposed(by: self.disposeBag)
+                    .disposed(by: self.hackDisposeBag)
                 
                 hackDetail.teams
                     .bind(to: self.seachTeamCollectionView.rx.items(cellIdentifier: ShortTeamViewCell.reuseIdentifier)) { row, model, cell in
                         guard let cell = cell as? ShortTeamViewCell else { return }
                         cell.set(for: model)
                     }
-                    .disposed(by: self.disposeBag)
+                    .disposed(by: self.hackDisposeBag)
             }).disposed(by: disposeBag)
         
         joinButton.rx.tap

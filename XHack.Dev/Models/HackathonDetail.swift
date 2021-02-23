@@ -22,6 +22,7 @@ class HackathonDetail {
     let dateText: String
     let avatarUrl: String
     let siteUrl: String
+    let isBookmarked: BehaviorSubject<Bool>
     
     init(_ data: HackathonDto) {
         name.onNext(data.name)
@@ -33,6 +34,7 @@ class HackathonDetail {
         location = data.location
         avatarUrl = data.avatarUrl
         siteUrl = data.siteUrl
+        isBookmarked = BehaviorSubject<Bool>(value: data.isBookmarked)
         teams.onNext(data.teams.map {ShortTeam($0) })
         members.onNext(data.members.map {ShortUser($0) })
         dateText = "\(startDate.toString("dd.MM.yyyy")) - \(endDate.toString("dd.MM.yyyy"))"

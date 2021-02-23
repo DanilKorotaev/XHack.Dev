@@ -14,3 +14,14 @@ extension BehaviorSubject where Element: DefaultValuable {
         return (try? self.value()) ?? Element.defaultValue()
     }
 }
+
+
+extension BehaviorSubject where Element == Bool {
+    func invert() {
+        self.onNext(self.invertValue)
+    }
+    
+    var invertValue: Bool {
+        return !self.value
+    }
+}

@@ -73,26 +73,26 @@ class BookmarksApi: IBookmarksApi {
     
     func removeBookmark(hackathon: BookmarkHackathonDTO) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/bookmarks/remove-hackathon-bookmark"
-        return ApiHelpers.executeReliablyLiteDeleteRequest(apiTokenHolder: apiTokenHolder, url: url, content: hackathon)
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: hackathon)
     }
     
     func removeBookmark(user: BookmarkUserDTO) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/bookmarks/remove-hackathon-user"
-        return ApiHelpers.executeReliablyLiteDeleteRequest(apiTokenHolder: apiTokenHolder, url: url, content: user)
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: user)
     }
     
     func removeBookmark(team: BookmarkTeamDTO) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/bookmarks/remove-hackathon-team"
-        return ApiHelpers.executeReliablyLiteDeleteRequest(apiTokenHolder: apiTokenHolder, url: url, content: team)
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: team)
     }
     
     func removeBookmark(message: BookmarkMessageDTO) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/bookmarks/remove-hackathon-message"
-        return ApiHelpers.executeReliablyLiteDeleteRequest(apiTokenHolder: apiTokenHolder, url: url, content: message)
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: message)
     }
     
     func removeBookmark(chat: BookmarkChatDTO) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/bookmarks/remove-hackathon-chat"
-        return ApiHelpers.executeReliablyLiteDeleteRequest(apiTokenHolder: apiTokenHolder, url: url, content: chat)
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: chat)
     }
 }

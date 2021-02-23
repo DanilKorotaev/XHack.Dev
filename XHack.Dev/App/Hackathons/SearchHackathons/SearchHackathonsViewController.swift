@@ -32,12 +32,10 @@ class SearchHackathonsViewController: BaseViewController<SearchHackathonsViewMod
         guard let dataContext = dataContext else {
             return
         }
-        dataContext.hackathons
-            .bind(to: tableView.rx.items(cellIdentifier: HackathonViewCell.reuseIdentifier)) { row, model, cell in
+        dataContext.hackathons.bind(to: tableView.rx.items(cellIdentifier: HackathonViewCell.reuseIdentifier)) { row, model, cell in
                 guard let cell = cell as? HackathonViewCell else { return }
                 cell.set(for: model)
-            }
-            .disposed(by: disposeBag)
+        }.disposed(by: disposeBag)
         
         tableView.rx.modelSelected(ShortHackathon.self)
             .bind(to: dataContext.didSelectHack)

@@ -19,12 +19,12 @@ class HackathonListViewController: BaseViewController<HackathonListViewModel>, S
         tableView.tableFooterView = UIView()
         setupHeaderView()
         refreshHandler = RefreshHandler(view: tableView)
-        tableView.register(UINib(nibName: "HackathonViewCell", bundle: nil), forCellReuseIdentifier: "HackathonViewCell")
+        tableView.register(HackathonViewCell.nib, forCellReuseIdentifier: HackathonViewCell.reuseIdentifier)
     }
     
     func setupHeaderView() {
-        tableView.register(UINib(nibName: "HackListHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "HackListHeaderView")
-        tableHeaderView = (tableView.dequeueReusableHeaderFooterView(withIdentifier: "HackListHeaderView") as! HackListHeaderView)
+        tableView.register(HackListHeaderView.nib, forHeaderFooterViewReuseIdentifier: HackListHeaderView.reuseIdentifier)
+        tableHeaderView = (tableView.dequeueReusableHeaderFooterView(withIdentifier: HackListHeaderView.reuseIdentifier) as! HackListHeaderView)
         tableView.tableHeaderView = tableHeaderView
         tableView.separatorStyle = .none
     }
@@ -49,7 +49,7 @@ class HackathonListViewController: BaseViewController<HackathonListViewModel>, S
         
         tableHeaderView.dataContext = dataContext
         dataContext.hackathons
-            .bind(to: tableView.rx.items(cellIdentifier: "HackathonViewCell")) { row, model, cell in
+            .bind(to: tableView.rx.items(cellIdentifier: HackathonViewCell.reuseIdentifier)) { row, model, cell in
                 guard let cell = cell as? HackathonViewCell else { return }
                 cell.set(for: model)
             }
