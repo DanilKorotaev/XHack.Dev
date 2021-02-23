@@ -26,6 +26,7 @@ class HackathonListViewController: BaseViewController<HackathonListViewModel>, S
         tableView.register(UINib(nibName: "HackListHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "HackListHeaderView")
         tableHeaderView = (tableView.dequeueReusableHeaderFooterView(withIdentifier: "HackListHeaderView") as! HackListHeaderView)
         tableView.tableHeaderView = tableHeaderView
+        tableView.separatorStyle = .none
     }
     
     override func viewWillAppear(_ animated: Bool) {

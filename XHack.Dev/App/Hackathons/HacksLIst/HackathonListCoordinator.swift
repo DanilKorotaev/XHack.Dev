@@ -48,14 +48,17 @@ class HackathonListCoordinator: BaseCoordinator<Void> {
     }
         
     func toSelectHackFilters() {
-        let coordinator = Container.resolve(HackFilterDialogCoordinator.self)
-        let navController = rootNavigationController ?? navigationController
-        coordinator.navigationController = navController       
-        start(coordinator: coordinator)
-            .subscribe(onNext: { [weak self] result in
-                self?.toHackSearch(result)
-            })
-            .disposed(by: disposeBag)
+        let coordinator = Container.resolve(SearchHackathonsCoordinator.self)
+        coordinator.navigationController = self.navigationController
+        self.start(coordinator: coordinator)
+//        let coordinator = Container.resolve(HackFilterDialogCoordinator.self)
+//        let navController = rootNavigationController ?? navigationController
+//        coordinator.navigationController = navController
+//        start(coordinator: coordinator)
+//            .subscribe(onNext: { [weak self] result in
+//                self?.toHackSearch(result)
+//            })
+//            .disposed(by: disposeBag)
     }
     
     

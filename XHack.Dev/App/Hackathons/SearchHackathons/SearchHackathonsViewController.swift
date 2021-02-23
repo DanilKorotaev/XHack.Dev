@@ -13,10 +13,13 @@ class SearchHackathonsViewController: BaseViewController<SearchHackathonsViewMod
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: CustomShadowTextField!
-    
+    @IBOutlet weak var backButton: UIButton!
+        
     override func completeUi() {
+        configureDismissKeyboard()
         tableView.tableFooterView = UIView()
-        tableView.register(UINib(nibName: "HackathonViewCell", bundle: nil), forCellReuseIdentifier: "HackathonViewCell")
+        tableView.separatorStyle = .none
+        tableView.register(HackathonViewCell.nib, forCellReuseIdentifier: HackathonViewCell.reuseIdentifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,7 +33,7 @@ class SearchHackathonsViewController: BaseViewController<SearchHackathonsViewMod
             return
         }
         dataContext.hackathons
-            .bind(to: tableView.rx.items(cellIdentifier: "HackathonViewCell")) { row, model, cell in
+            .bind(to: tableView.rx.items(cellIdentifier: HackathonViewCell.reuseIdentifier)) { row, model, cell in
                 guard let cell = cell as? HackathonViewCell else { return }
                 cell.set(for: model)
             }
@@ -42,11 +45,16 @@ class SearchHackathonsViewController: BaseViewController<SearchHackathonsViewMod
         
         searchTextField.rx.text.orEmpty
             .asDriver()
+            .skip(3)
             .debounce(2)
             .distinctUntilChanged()
             .drive(onNext: {value in
                 dataContext.filterBy.onNext(value)
             })
             .disposed(by: disposeBag)
+        
+        backButton.rx.tap
+            .bind(to: dataContext.back)
+            .disposed(by: disposeBag)        
     }
 }

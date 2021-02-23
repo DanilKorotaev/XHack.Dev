@@ -1,20 +1,19 @@
 import Foundation
 import RxSwift
 
-class RegistrationViewModel {
+class RegistrationViewModel: BaseViewModel {
     private let sessionService: SessionService
-    private let disposeBag = DisposeBag()
     
     let email = BehaviorSubject<String>(value: "")
     let firstName = BehaviorSubject<String>(value: "")
     let password = BehaviorSubject<String>(value: "")
     let canContinue = BehaviorSubject<Bool>(value: false)
-    let isLoading = BehaviorSubject<Bool>(value: false)
+    let back = PublishSubject<Void>()
     
     init(sessionService: SessionService) {
         self.sessionService = sessionService
-        setUpBindings()
     }
+    
     
     func signUp() {
         isLoading.onNext(true)
@@ -29,7 +28,8 @@ class RegistrationViewModel {
             .disposed(by: disposeBag)
     }
     
-    private func setUpBindings() {
+    
+    override func applyBinding() {
         Observable
             .combineLatest(email, password)
             .map { $0.hasNonEmptyValue() && $1.hasNonEmptyValue() }

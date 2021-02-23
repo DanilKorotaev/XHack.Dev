@@ -32,7 +32,7 @@ class HackListHeaderView: UITableViewHeaderFooterView {
     
     
     func setupTopCollectionView() {
-        topHacksCollectionView.register(UINib(nibName: "TopHackViewCell", bundle: nil), forCellWithReuseIdentifier: "TopHackViewCell")
+        topHacksCollectionView.register(TopHackViewCell.nib, forCellWithReuseIdentifier: TopHackViewCell.reuseIdentifier)
         let width = UIApplication.shared.keyWindow?.frame.width ?? frame.width - 30
         let cellSize = CGSize(width: width, height:220)
         let layout = UICollectionViewFlowLayout()
@@ -45,7 +45,7 @@ class HackListHeaderView: UITableViewHeaderFooterView {
     }
     
     func setupPopularCollectionView() {
-        popularHackCollectionView.register(UINib(nibName: "PopularHackViewCell", bundle: nil), forCellWithReuseIdentifier: "PopularHackViewCell")
+        popularHackCollectionView.register(PopularHackViewCell.nib, forCellWithReuseIdentifier: PopularHackViewCell.reuseIdentifier)
     }
     
     func applyBindings() {

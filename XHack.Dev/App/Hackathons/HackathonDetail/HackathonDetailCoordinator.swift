@@ -21,10 +21,18 @@ class HackathonDetailCoordinator: BaseCoordinator<Void> {
     override func start() -> Observable<Void> {
         let viewController = HackathonDetailViewController.instantiate()
         viewController.dataContext = viewModel
+        applyBindings()
         navigationController.isNavigationBarHidden = false
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.pushViewController(viewController, animated: true)
         
         return Observable.empty()
+    }
+    
+    
+    private func applyBindings() {
+        viewModel.back.subscribe(onNext: { [weak self] in
+            self?.navigationController.popViewController(animated: true)
+        }).disposed(by: disposeBag)
     }
 }

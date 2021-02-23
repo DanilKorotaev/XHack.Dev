@@ -13,7 +13,8 @@ class SearchHackathonsViewModel: BaseViewModel {
     let hackathonsApi: IHackathonsApi
     let hackathons = BehaviorSubject(value: [ShortHackathon]())
     let didSelectHack = PublishSubject<ShortHackathon>()
-    var filterBy = BehaviorSubject<String>(value: "")
+    let filterBy = BehaviorSubject<String>(value: "")
+    let back = PublishSubject<Void>()
     
     init(hackathonsApi: IHackathonsApi) {
         self.hackathonsApi = hackathonsApi

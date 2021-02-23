@@ -9,9 +9,17 @@
 import Foundation
 
 struct HackathonDto: Codable {
+    let id: Int
     let name: String
     let description: String
     let isOnline: Bool
     var userWillGo: Bool
-    let teams: [TeamDto]
+    let location: String
+    let siteUrl: String
+    let avatarUrl: String
+    let startDate: Date
+    let endDate: Date
+    let tags: [TagDto]
+    let teams: [ShortTeamDto]
+    let members : [ShortUserDto] = []
 }

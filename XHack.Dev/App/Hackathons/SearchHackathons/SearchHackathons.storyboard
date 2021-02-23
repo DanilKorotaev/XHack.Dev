@@ -91,6 +91,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="TIa-A9-Ast" id="DQl-di-DBw"/>
                         <outlet property="searchTextField" destination="eYh-Sc-1vB" id="8Tz-vt-Vzp"/>
                         <outlet property="tableView" destination="z0d-jo-neo" id="7ty-DY-DMk"/>
                     </connections>

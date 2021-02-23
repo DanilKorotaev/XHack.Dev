@@ -38,6 +38,10 @@ class SearchHackathonsCoordinator: BaseCoordinator<Void> {
         viewModel.didSelectHack
             .subscribe(onNext: { [weak self] hack in self?.didSelect(hack: hack) })
             .disposed(by: disposeBag)
+        
+        viewModel.back.subscribe(onNext: { [weak self] _ in
+            self?.navigationController.popViewController(animated: true)
+        })
     }
     
     func didSelect(hack: ShortHackathon) {

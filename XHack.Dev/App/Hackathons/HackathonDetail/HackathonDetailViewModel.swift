@@ -16,6 +16,9 @@ class HackathonDetailViewModel: BaseViewModel {
     
     let hackathon = BehaviorSubject<HackathonDetail?>(value: .none)
     let didWillGoChanged = PublishSubject<Bool>()
+    let join = PublishSubject<Void>()
+    let bookmark = PublishSubject<Void>()
+    let back = PublishSubject<Void>()
     
     init(hackathonsApi: IHackathonsApi) {
         self.hackathonsApi = hackathonsApi
@@ -46,5 +49,22 @@ class HackathonDetailViewModel: BaseViewModel {
                 }
             }
         }).disposed(by: disposeBag)
+        
+        join.subscribe(onNext: { [weak self] in
+            self?.joinToHack()
+        }).disposed(by: disposeBag)
+        
+        bookmark.subscribe(onNext: { [weak self] in
+            self?.bookmarkHack()
+        }).disposed(by: disposeBag)
+    }
+    
+    
+    private func joinToHack() {
+        
+    }
+    
+    private func bookmarkHack() {
+        
     }
 }
