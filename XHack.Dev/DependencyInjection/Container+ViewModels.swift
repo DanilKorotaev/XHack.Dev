@@ -25,5 +25,7 @@ extension Container {
         autoregister(TeammateSearchViewModel.self, initializer: TeammateSearchViewModel.init)
         autoregister(HackFilterDialogViewModel.self, initializer: HackFilterDialogViewModel.init)
         autoregister(EditProfileViewModel.self, initializer: EditProfileViewModel.init)
+        autoregister(HackMemberListViewModel.self, initializer: HackMemberListViewModel.init)
+        autoregister(HackTeamListViewModel.self, initializer: HackTeamListViewModel.init)
     }
 }

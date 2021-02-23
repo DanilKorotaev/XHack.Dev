@@ -138,6 +138,15 @@
 		A32D3CD625E2E53A002633B8 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32D3CD525E2E539002633B8 /* PrimaryButton.swift */; };
 		A32D3CDB25E2E69D002633B8 /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32D3CDA25E2E69D002633B8 /* UIView+Gradient.swift */; };
 		A32D3CE025E2E824002633B8 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32D3CDF25E2E824002633B8 /* UIColor+Extensions.swift */; };
+		A33579BD25E5610D00297E22 /* HackMemberListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33579BC25E5610D00297E22 /* HackMemberListViewModel.swift */; };
+		A33579C525E5611F00297E22 /* HackMemberListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33579C425E5611F00297E22 /* HackMemberListCoordinator.swift */; };
+		A33579CA25E5613C00297E22 /* HackMemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33579C925E5613C00297E22 /* HackMemberListViewController.swift */; };
+		A33579CF25E5614A00297E22 /* HackMemberList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33579CE25E5614A00297E22 /* HackMemberList.storyboard */; };
+		A33579D425E56E2200297E22 /* HackMemberListFilterDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33579D325E56E2200297E22 /* HackMemberListFilterDto.swift */; };
+		A33579E225E5729200297E22 /* HackTeamListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33579E125E5729200297E22 /* HackTeamListViewModel.swift */; };
+		A33579E725E5729D00297E22 /* HackTeamListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33579E625E5729C00297E22 /* HackTeamListCoordinator.swift */; };
+		A33579EC25E572AB00297E22 /* HackTeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33579EB25E572AB00297E22 /* HackTeamListViewController.swift */; };
+		A33579F125E5741900297E22 /* HackTeamListFilterDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33579F025E5741900297E22 /* HackTeamListFilterDto.swift */; };
 		A33F448425A7A55200C16624 /* HackFilterDialogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F448325A7A55200C16624 /* HackFilterDialogCoordinator.swift */; };
 		A33F448925A7A55F00C16624 /* HackFilterDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33F448825A7A55F00C16624 /* HackFilterDialog.storyboard */; };
 		A33F448E25A7A56A00C16624 /* HackFilterDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F448D25A7A56A00C16624 /* HackFilterDialogViewController.swift */; };
@@ -277,6 +286,7 @@
 		A3DD557025A668720095A130 /* TeammateSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DD556C25A668720095A130 /* TeammateSearchViewController.swift */; };
 		A3DD557125A668720095A130 /* TeammateSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DD556D25A668720095A130 /* TeammateSearchCoordinator.swift */; };
 		A3DD557225A668720095A130 /* TeammateSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DD556E25A668720095A130 /* TeammateSearchViewModel.swift */; };
+		A3E627E525E57B1900C1FBB7 /* HackTeamList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E627E425E57B1800C1FBB7 /* HackTeamList.storyboard */; };
 		A3F7BBB12575895D00F18645 /* HttpClientHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F7BBB02575895D00F18645 /* HttpClientHelper.swift */; };
 		C5751340814BF2C7C29BE078 /* Pods_XHack_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70DE3EB1E1DBDC0A2BDD1F9 /* Pods_XHack_Dev.framework */; };
 /* End PBXBuildFile section */
@@ -445,6 +455,15 @@
 		A32D3CD525E2E539002633B8 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		A32D3CDA25E2E69D002633B8 /* UIView+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gradient.swift"; sourceTree = "<group>"; };
 		A32D3CDF25E2E824002633B8 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		A33579BC25E5610D00297E22 /* HackMemberListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackMemberListViewModel.swift; sourceTree = "<group>"; };
+		A33579C425E5611F00297E22 /* HackMemberListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackMemberListCoordinator.swift; sourceTree = "<group>"; };
+		A33579C925E5613C00297E22 /* HackMemberListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackMemberListViewController.swift; sourceTree = "<group>"; };
+		A33579CE25E5614A00297E22 /* HackMemberList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HackMemberList.storyboard; sourceTree = "<group>"; };
+		A33579D325E56E2200297E22 /* HackMemberListFilterDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackMemberListFilterDto.swift; sourceTree = "<group>"; };
+		A33579E125E5729200297E22 /* HackTeamListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackTeamListViewModel.swift; sourceTree = "<group>"; };
+		A33579E625E5729C00297E22 /* HackTeamListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackTeamListCoordinator.swift; sourceTree = "<group>"; };
+		A33579EB25E572AB00297E22 /* HackTeamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackTeamListViewController.swift; sourceTree = "<group>"; };
+		A33579F025E5741900297E22 /* HackTeamListFilterDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackTeamListFilterDto.swift; sourceTree = "<group>"; };
 		A33F448325A7A55200C16624 /* HackFilterDialogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFilterDialogCoordinator.swift; sourceTree = "<group>"; };
 		A33F448825A7A55F00C16624 /* HackFilterDialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HackFilterDialog.storyboard; sourceTree = "<group>"; };
 		A33F448D25A7A56A00C16624 /* HackFilterDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFilterDialogViewController.swift; sourceTree = "<group>"; };
@@ -585,6 +604,7 @@
 		A3DD556C25A668720095A130 /* TeammateSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeammateSearchViewController.swift; sourceTree = "<group>"; };
 		A3DD556D25A668720095A130 /* TeammateSearchCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeammateSearchCoordinator.swift; sourceTree = "<group>"; };
 		A3DD556E25A668720095A130 /* TeammateSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeammateSearchViewModel.swift; sourceTree = "<group>"; };
+		A3E627E425E57B1800C1FBB7 /* HackTeamList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HackTeamList.storyboard; sourceTree = "<group>"; };
 		A3F7BBB02575895D00F18645 /* HttpClientHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientHelper.swift; sourceTree = "<group>"; };
 		A819DD399E11BDE308700209 /* Pods_XHack_DevTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XHack_DevTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56B2DFC45659D8DA3B9C84C /* Pods-XHack.DevTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHack.DevTests.debug.xcconfig"; path = "Target Support Files/Pods-XHack.DevTests/Pods-XHack.DevTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -625,6 +645,7 @@
 		1657979B22DB8B7A00DA52D2 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				A33579BA25E560DB00297E22 /* Members */,
 				A349FB61259BE3F40038549E /* Cells */,
 				A3441D4825967A1600A3BFA5 /* Search */,
 				A3441D2725963AED00A3BFA5 /* Chat */,
@@ -745,6 +766,8 @@
 				A388142C258AA13600FFF9A5 /* AcceptRequestToUserDto.swift */,
 				A3881431258AA1AF00FFF9A5 /* DeclineRequestToUserDto.swift */,
 				A3881436258AA1D800FFF9A5 /* WithDrawRequestToUserDto.swift */,
+				A33579D325E56E2200297E22 /* HackMemberListFilterDto.swift */,
+				A33579F025E5741900297E22 /* HackTeamListFilterDto.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1141,6 +1164,37 @@
 				A32D3CC325E2C66C002633B8 /* Common.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A33579BA25E560DB00297E22 /* Members */ = {
+			isa = PBXGroup;
+			children = (
+				A33579D825E5726E00297E22 /* TeamList */,
+				A33579BB25E560E400297E22 /* MemberList */,
+			);
+			path = Members;
+			sourceTree = "<group>";
+		};
+		A33579BB25E560E400297E22 /* MemberList */ = {
+			isa = PBXGroup;
+			children = (
+				A33579BC25E5610D00297E22 /* HackMemberListViewModel.swift */,
+				A33579C425E5611F00297E22 /* HackMemberListCoordinator.swift */,
+				A33579C925E5613C00297E22 /* HackMemberListViewController.swift */,
+				A33579CE25E5614A00297E22 /* HackMemberList.storyboard */,
+			);
+			path = MemberList;
+			sourceTree = "<group>";
+		};
+		A33579D825E5726E00297E22 /* TeamList */ = {
+			isa = PBXGroup;
+			children = (
+				A33579E125E5729200297E22 /* HackTeamListViewModel.swift */,
+				A33579E625E5729C00297E22 /* HackTeamListCoordinator.swift */,
+				A33579EB25E572AB00297E22 /* HackTeamListViewController.swift */,
+				A3E627E425E57B1800C1FBB7 /* HackTeamList.storyboard */,
+			);
+			path = TeamList;
 			sourceTree = "<group>";
 		};
 		A33F448225A7A53400C16624 /* HackFilterDialog */ = {
@@ -1576,6 +1630,7 @@
 				A31F575F25A6641E00759B61 /* TeamSearch.storyboard in Resources */,
 				A36AF8DF2582D1A3000E2852 /* CreateTeam.storyboard in Resources */,
 				A37055C725851526005650FD /* HackathonDetail.storyboard in Resources */,
+				A3E627E525E57B1900C1FBB7 /* HackTeamList.storyboard in Resources */,
 				A32D3C9F25E2BD41002633B8 /* EditProfile.storyboard in Resources */,
 				16A1E5ED22DA40C40003F0DF /* Drawer.storyboard in Resources */,
 				A3441D59259681DD00A3BFA5 /* ChooseSearchCategory.storyboard in Resources */,
@@ -1596,6 +1651,7 @@
 				A3DC593725E45984009DA204 /* ShortUserViewCell.xib in Resources */,
 				A309624A2569DD86007E366E /* TaskDetail.storyboard in Resources */,
 				16A1E61922DA40C40003F0DF /* translations.json in Resources */,
+				A33579CF25E5614A00297E22 /* HackMemberList.storyboard in Resources */,
 				A3441D3A25963B3200A3BFA5 /* ChatList.storyboard in Resources */,
 				A33F448925A7A55F00C16624 /* HackFilterDialog.storyboard in Resources */,
 			);
@@ -1752,6 +1808,7 @@
 				A3961AE925799BA000FC3541 /* BookmarkUserDTO.swift in Sources */,
 				A3DD557225A668720095A130 /* TeammateSearchViewModel.swift in Sources */,
 				16A1E64622DA40C40003F0DF /* ApiError.swift in Sources */,
+				A33579E225E5729200297E22 /* HackTeamListViewModel.swift in Sources */,
 				A3961AD12579961900FC3541 /* HackathonsFilterDto.swift in Sources */,
 				16A1E63B22DA40C40003F0DF /* MeResponse.swift in Sources */,
 				A3231275256F04CA00D3B97B /* HomeCoordinator.swift in Sources */,
@@ -1760,9 +1817,11 @@
 				16A1E63A22DA40C40003F0DF /* SignUpRequest.swift in Sources */,
 				A33F44A825A8D48A00C16624 /* ReusableView.swift in Sources */,
 				16A1E60022DA40C40003F0DF /* String+Localization.swift in Sources */,
+				A33579F125E5741900297E22 /* HackTeamListFilterDto.swift in Sources */,
 				A3196295259A789900D58502 /* HackListHeaderView.swift in Sources */,
 				16A1E61A22DA40C40003F0DF /* AppCoordinator.swift in Sources */,
 				A3231292256F119100D3B97B /* ProfileViewController.swift in Sources */,
+				A33579EC25E572AB00297E22 /* HackTeamListViewController.swift in Sources */,
 				16A1E60E22DA40C40003F0DF /* SignInViewModel.swift in Sources */,
 				A31F573125A5E6D900759B61 /* RefreshableContentHost.swift in Sources */,
 				A33F449325A7A57300C16624 /* HackFilterDialogViewModel.swift in Sources */,
@@ -1787,6 +1846,7 @@
 				A388142D258AA13600FFF9A5 /* AcceptRequestToUserDto.swift in Sources */,
 				A3881423258A9FAA00FFF9A5 /* IncomingRequestDto.swift in Sources */,
 				A37055E225852A35005650FD /* BaseViewModel+ApiResult.swift in Sources */,
+				A33579CA25E5613C00297E22 /* HackMemberListViewController.swift in Sources */,
 				A3881432258AA1AF00FFF9A5 /* DeclineRequestToUserDto.swift in Sources */,
 				A3BA566625742EFA007AD591 /* IApiResult.swift in Sources */,
 				A32D3CD625E2E53A002633B8 /* PrimaryButton.swift in Sources */,
@@ -1800,6 +1860,7 @@
 				A3961B0025799D2C00FC3541 /* BookmarksApi.swift in Sources */,
 				A3BA567025743025007AD591 /* HTTPStatusCode.swift in Sources */,
 				16A1E5F522DA40C40003F0DF /* UIViewControllerExtensions.swift in Sources */,
+				A33579C525E5611F00297E22 /* HackMemberListCoordinator.swift in Sources */,
 				A3441D4A25967A4500A3BFA5 /* ChooseSearchCategoryCoordinator.swift in Sources */,
 				A31F574525A5E95300759B61 /* IOperationStateControl.swift in Sources */,
 				16A1E61422DA40C40003F0DF /* Container+Coordinators.swift in Sources */,
@@ -1839,6 +1900,7 @@
 				A3441D3225963B1900A3BFA5 /* ChatListViewModel.swift in Sources */,
 				A3881437258AA1D800FFF9A5 /* WithDrawRequestToUserDto.swift in Sources */,
 				A32D3CAF25E2BDD6002633B8 /* EditProfileViewController.swift in Sources */,
+				A33579D425E56E2200297E22 /* HackMemberListFilterDto.swift in Sources */,
 				A36AF8C52582CCD8000E2852 /* Team.swift in Sources */,
 				16A1E61722DA40C40003F0DF /* Storyboarded.swift in Sources */,
 				A3DBB80D258ABA5E0078CC4E /* UserProfile.swift in Sources */,
@@ -1939,6 +2001,7 @@
 				A3DC592225E42D2B009DA204 /* UIHackLinkButton.swift in Sources */,
 				16A1E60D22DA40C40003F0DF /* GeneralEndpoints.swift in Sources */,
 				A3877561256B19A700F00EB0 /* LoginMessage.swift in Sources */,
+				A33579BD25E5610D00297E22 /* HackMemberListViewModel.swift in Sources */,
 				A3441D602597881C00A3BFA5 /* HackathonViewCell.swift in Sources */,
 				16DD9D1722DB2871007D9D2F /* TasksEndpoints.swift in Sources */,
 				A3BA565325742BA2007AD591 /* AuthApiExecuter.swift in Sources */,
@@ -1949,6 +2012,7 @@
 				A36AF8DA2582D198000E2852 /* CreateTeamViewController.swift in Sources */,
 				A3BA563C2573EA20007AD591 /* TestEndpoints.swift in Sources */,
 				A3961AC2257994E000FC3541 /* ShortHackathonDto.swift in Sources */,
+				A33579E725E5729D00297E22 /* HackTeamListCoordinator.swift in Sources */,
 				A3441D712597C2F400A3BFA5 /* UIImageView+Extension.swift in Sources */,
 				A3961B1C257AE5F800FC3541 /* TeamListCoordonator.swift in Sources */,
 				A3441D5425967AB400A3BFA5 /* ChooseSearchCategoryViewController.swift in Sources */,

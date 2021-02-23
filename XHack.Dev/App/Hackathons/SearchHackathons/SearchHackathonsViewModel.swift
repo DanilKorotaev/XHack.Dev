@@ -13,8 +13,9 @@ class SearchHackathonsViewModel: BaseViewModel {
     let hackathonsApi: IHackathonsApi
     let hackathons = BehaviorSubject(value: [ShortHackathon]())
     let didSelectHack = PublishSubject<ShortHackathon>()
-    let filterBy = BehaviorSubject<String>(value: "")
+    let filterBy = PublishSubject<String>()
     let back = PublishSubject<Void>()
+    private var filter = ""
     
     init(hackathonsApi: IHackathonsApi) {
         self.hackathonsApi = hackathonsApi
@@ -22,7 +23,7 @@ class SearchHackathonsViewModel: BaseViewModel {
     
     override func refreshContent(operationArgs: IOperationStateControl) {
         isLoading.onNext(true)
-        hackathonsApi.getHackatons(by: HackathonsFilterDto(filter: (try? filterBy.value()) ?? ""))
+        hackathonsApi.getHackatons(by: HackathonsFilterDto(filter: filter))
             .done { [weak self] result in
                 guard let self = self else { return }
                 self.isLoading.onNext(false)
@@ -37,6 +38,7 @@ class SearchHackathonsViewModel: BaseViewModel {
     override func applyBinding() {
         filterBy.subscribe(onNext: { [weak self] result in
             guard let self = self else { return }
+            self.filter = result
             self.forceContentRefreshingAsync()
         }).disposed(by: disposeBag)
     }

@@ -43,4 +43,14 @@ class HackathonsApi: IHackathonsApi {
         let url = endpointsProvider.gatewayUrl + "/api/hackathons/willNotGoHackathon/\(id)"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
+    
+    func getUsersForHackathon(by filter: HackMemberListFilterDto, for hackID: Int) -> Promise<ApiResult<[ShortUserDto]>> {
+        let url = endpointsProvider.gatewayUrl + "/api/hackathons/getUsersForHackathon/\(hackID)"
+        return ApiHelpers.executeReliablyPostRequest(apiTokenHolder: apiTokenHolder, url: url, content: filter)
+    }
+    
+    func getTeamsForHackathon(by filter: HackTeamListFilterDto, for hackID: Int) -> Promise<ApiResult<[TeamDto]>> {
+        let url = endpointsProvider.gatewayUrl + "/api/hackathons/getTeamsForHackathon/\(hackID)"
+        return ApiHelpers.executeReliablyPostRequest(apiTokenHolder: apiTokenHolder, url: url, content: filter)
+    }
 }

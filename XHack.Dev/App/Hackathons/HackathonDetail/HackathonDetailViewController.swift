@@ -85,6 +85,21 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
             .bind(to: dataContext.back)
             .disposed(by: disposeBag)
         
+        seachTeamCollectionView.rx.modelSelected(ShortTeam.self)
+            .bind(to: dataContext.teamSelected)
+            .disposed(by: disposeBag)
+        
+        searchMemberCollectionView.rx.modelSelected(ShortUser.self)
+            .bind(to: dataContext.memberSelected)
+            .disposed(by: disposeBag)
+        
+        searchMemberButton.rx.tap
+            .bind(to: dataContext.memberSearch)
+            .disposed(by: disposeBag)
+        
+        searchTeamButton.rx.tap
+            .bind(to: dataContext.teamSearch)
+            .disposed(by: disposeBag)
     }
     
     @IBAction func showAllTaped(_ sender: UIButton) {
@@ -104,7 +119,7 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
         
         let layout = UICollectionViewFlowLayout()
             layout.scrollDirection = .horizontal
-            layout.itemSize = CGSize(width: 55, height: 90)
+        layout.itemSize = CGSize(width: 55, height: seachTeamCollectionView.frame.height)
         seachTeamCollectionView.setCollectionViewLayout(layout, animated: true)
     }
     

@@ -19,11 +19,13 @@ class HackathonDetailViewModel: BaseViewModel {
     let join = PublishSubject<Void>()
     let bookmark = PublishSubject<Void>()
     let back = PublishSubject<Void>()
+    let memberSelected = PublishSubject<ShortUser>()
+    let teamSelected = PublishSubject<ShortTeam>()
+    let memberSearch = PublishSubject<Void>()
+    let teamSearch = PublishSubject<Void>()
     
     init(hackathonsApi: IHackathonsApi) {
         self.hackathonsApi = hackathonsApi
-        super.init()
-        setupBinding()
     }
     
     override func refreshContent(operationArgs: IOperationStateControl) {
@@ -40,7 +42,7 @@ class HackathonDetailViewModel: BaseViewModel {
             }
     }
     
-    func setupBinding() {
+    override func applyBinding() {
         didWillGoChanged.subscribe(onNext: { userWillGo in
             let changedStatus = userWillGo ? self.hackathonsApi.willGoHackathon(id: self.hackathonId) : self.hackathonsApi.willNotGoHackathon(id: self.hackathonId)
             changedStatus.done { (result) in

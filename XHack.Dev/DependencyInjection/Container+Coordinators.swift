@@ -24,5 +24,7 @@ extension Container {
         autoregister(TeammateSearchCoordinator.self, initializer: TeammateSearchCoordinator.init)
         autoregister(HackFilterDialogCoordinator.self, initializer: HackFilterDialogCoordinator.init)
         autoregister(EditProfileCoordinator.self, initializer: EditProfileCoordinator.init)
+        autoregister(HackMemberListCoordinator.self, initializer: HackMemberListCoordinator.init)
+        autoregister(HackTeamListCoordinator.self, initializer: HackTeamListCoordinator.init)
     }
 }

@@ -15,4 +15,6 @@ protocol IHackathonsApi {
     func getHackathonDetails(by id: Int) -> Promise<ApiResult<HackathonDto>>
     func willGoHackathon(id: Int) -> Promise<LiteApiResult>
     func willNotGoHackathon(id: Int) -> Promise<LiteApiResult>
+    func getUsersForHackathon(by filter: HackMemberListFilterDto, for hackID: Int) -> Promise<ApiResult<[ShortUserDto]>>
+    func getTeamsForHackathon(by filter: HackTeamListFilterDto, for hackID: Int) -> Promise<ApiResult<[TeamDto]>>
 }
