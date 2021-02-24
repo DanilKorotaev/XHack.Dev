@@ -20,6 +20,7 @@ class HackMemberListCoordinator: BaseCoordinator<Void> {
         let viewController = HackMemberListViewController.instantiate()
         viewController.dataContext = viewModel
         navigationController.pushViewController(viewController, animated: true)
+        applyBindings()
         
         return Observable.empty()
     }

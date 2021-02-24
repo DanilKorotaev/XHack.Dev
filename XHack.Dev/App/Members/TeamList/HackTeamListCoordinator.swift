@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import Swinject
 
 class HackTeamListCoordinator: BaseCoordinator<Void> {
     let viewModel: HackTeamListViewModel
@@ -36,7 +37,10 @@ class HackTeamListCoordinator: BaseCoordinator<Void> {
         }).disposed(by: disposeBag)
     }
     
-    private func toTeamProfile(_ member: Team) {
-        // TODO
+    private func toTeamProfile(_ team: Team) {
+        let coordinator = Container.resolve(HackTeamDetailsCoordinator.self)
+        coordinator.navigationController = self.navigationController
+        coordinator.teamId = team.id
+        self.start(coordinator: coordinator)
     }
 }

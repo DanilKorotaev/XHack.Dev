@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hack Team Details View Controller-->
+        <scene sceneID="WqD-39-1tM">
+            <objects>
+                <viewController storyboardIdentifier="HackTeamDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PYo-Kk-jzh" customClass="HackTeamDetailsViewController" customModule="XHack_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8SM-fK-CLt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRH-Sc-qdJ" userLabel="HeaderView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6h-ee-pMd">
+                                        <rect key="frame" x="51" y="15" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAa-rf-cxQ">
+                                        <rect key="frame" x="20" y="10.5" width="18" height="9"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="18" id="az5-KX-bYZ"/>
+                                            <constraint firstAttribute="height" constant="9" id="maZ-ie-l2U"/>
+                                        </constraints>
+                                        <state key="normal" image="left_arrow"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="cAa-rf-cxQ" firstAttribute="centerY" secondItem="KRH-Sc-qdJ" secondAttribute="centerY" id="8yF-I1-0cD"/>
+                                    <constraint firstItem="v6h-ee-pMd" firstAttribute="leading" secondItem="cAa-rf-cxQ" secondAttribute="trailing" constant="13" id="RXW-up-gT1"/>
+                                    <constraint firstItem="cAa-rf-cxQ" firstAttribute="leading" secondItem="KRH-Sc-qdJ" secondAttribute="leading" constant="20" id="Rac-tB-49s"/>
+                                    <constraint firstAttribute="bottom" secondItem="v6h-ee-pMd" secondAttribute="bottom" constant="15" id="TYi-OS-s8H"/>
+                                    <constraint firstItem="v6h-ee-pMd" firstAttribute="top" secondItem="KRH-Sc-qdJ" secondAttribute="top" constant="15" id="Upr-V8-hlO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZmJ-OJ-qjT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KRH-Sc-qdJ" firstAttribute="leading" secondItem="ZmJ-OJ-qjT" secondAttribute="leading" id="a3Z-IQ-gLI"/>
+                            <constraint firstItem="KRH-Sc-qdJ" firstAttribute="trailing" secondItem="ZmJ-OJ-qjT" secondAttribute="trailing" id="n3k-kx-MQa"/>
+                            <constraint firstItem="KRH-Sc-qdJ" firstAttribute="top" secondItem="ZmJ-OJ-qjT" secondAttribute="top" id="xDY-3p-6hI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="cAa-rf-cxQ" id="nLw-mI-wi8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SyK-zz-8WU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4" y="109"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="left_arrow" width="18.5" height="8"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -45,4 +45,9 @@ class TeamsApi: ITeamsApi {
         let url = endpointsProvider.gatewayUrl + "/api/teams/send-request-to-user"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: user)
     }
+    
+    func getDetail(for teamId: Int) -> Promise<ApiResult<TeamDto>> {
+        let url = endpointsProvider.gatewayUrl + "/api/teams/getDetails/\(teamId)"
+        return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
 }
