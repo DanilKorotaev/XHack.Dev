@@ -17,6 +17,7 @@ enum CreateTeamCoordinatorResult {
 class CreateTeamCoordinator : BaseCoordinator<CreateTeamCoordinatorResult> {
     private let viewModel: CreateTeamViewModel
     private let result = PublishSubject<CreateTeamCoordinatorResult>()
+    var hackId: Int?
     
     init(viewModel: CreateTeamViewModel) {
         self.viewModel = viewModel
@@ -25,7 +26,7 @@ class CreateTeamCoordinator : BaseCoordinator<CreateTeamCoordinatorResult> {
     override func start() -> Observable<CreateTeamCoordinatorResult> {
         let viewController = CreateTeamViewController.instantiate()
         viewController.viewModel = viewModel
-        
+        viewModel.hackId = hackId
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.pushViewController(viewController, animated: true)
         setUpBinding()
@@ -34,7 +35,7 @@ class CreateTeamCoordinator : BaseCoordinator<CreateTeamCoordinatorResult> {
     
     
     func setUpBinding() {
-        viewModel.taskCreated
+        viewModel.teamCreated
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in
                 self?.navigationController.popViewController(animated: true)

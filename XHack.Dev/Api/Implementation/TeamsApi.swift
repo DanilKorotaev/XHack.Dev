@@ -31,6 +31,10 @@ class TeamsApi: ITeamsApi {
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: team)
     }
     
+    func create(for hackId: Int, team: CreateTeamDto) -> Promise<LiteApiResult> {
+        let url = endpointsProvider.gatewayUrl + "/api/teams/createTeamForHack/\(hackId)"
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: team)
+    }
     
     func sendRequest(to team: CreateRequestToTeamDto) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/teams/send-request-to-team"

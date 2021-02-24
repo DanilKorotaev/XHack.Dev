@@ -43,7 +43,7 @@ class HackathonListCoordinator: BaseCoordinator<Void> {
     func didSelect(hack: ShortHackathon) {
         let coordinator = Container.resolve(HackathonDetailCoordinator.self)
         coordinator.navigationController = navigationController
-        coordinator.viewModel.hackathonId = hack.id
+        coordinator.hackId = hack.id
         start(coordinator: coordinator)
     }
         

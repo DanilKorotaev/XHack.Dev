@@ -15,10 +15,11 @@ class AlertDispatcher: IAlertDispatcher {
     }
     
     private func showAlert(on viewController: UIViewController, message: AlertDialogMessage) {
-        let alert = UIAlertController(title: message.title, message: message.message, preferredStyle: .alert)
+        let alert = UIAlertController(title: message.title, message: message.message, preferredStyle: message.style)
         
         for button in message.dialogActions {
-            let alertAction = UIAlertAction(title: button.title, style: .default) { [weak self] _ in
+            let style: UIAlertAction.Style = button.isAccented ? .default : .cancel
+            let alertAction = UIAlertAction(title: button.title, style:  style) { [weak self] _ in
                 button.action?()
                 self?.message = nil
             }

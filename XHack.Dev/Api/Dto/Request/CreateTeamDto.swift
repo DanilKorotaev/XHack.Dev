@@ -9,6 +9,7 @@
 import Foundation
 
 struct CreateTeamDto: Codable {
-    private(set) var name: String
-    private(set) var description: String
+    let name: String
+    let description: String
+    let avatarUrl: String?
 }

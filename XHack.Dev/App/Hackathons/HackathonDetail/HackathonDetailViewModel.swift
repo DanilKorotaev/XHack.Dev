@@ -14,6 +14,7 @@ class HackathonDetailViewModel: BaseViewModel {
     
     let hackathonsApi: IHackathonsApi
     let bookmarksApi: IBookmarksApi
+    let messanger: IMessager
     var hackathonId: Int = 0
     
     let hackathon = BehaviorSubject<HackathonDetail?>(value: .none)
@@ -25,10 +26,12 @@ class HackathonDetailViewModel: BaseViewModel {
     let teamSelected = PublishSubject<ShortTeam>()
     let memberSearch = PublishSubject<Void>()
     let teamSearch = PublishSubject<Void>()
+    let createTeam = PublishSubject<Void>()
     
-    init(hackathonsApi: IHackathonsApi, bookmarksApi: IBookmarksApi) {
+    init(hackathonsApi: IHackathonsApi, bookmarksApi: IBookmarksApi, messanger: IMessager) {
         self.hackathonsApi = hackathonsApi
         self.bookmarksApi = bookmarksApi
+        self.messanger = messanger
     }
     
     override func refreshContent(operationArgs: IOperationStateControl) {
@@ -66,7 +69,25 @@ class HackathonDetailViewModel: BaseViewModel {
     
     
     private func joinToHack() {
+        let likeTeam = DialogActionInfo(title: "Team") { [weak self] in
+            self?.createTeam.onNext(())
+        }
         
+        let likeMember = DialogActionInfo(title: "Member") { [weak self] in
+            guard let self = self else { return }
+            self.hackathonsApi.willGoHackathon(id: self.hackathonId)
+                .done { (result) in
+                    if self.checkAndProcessApiResult(response: result, "пойти на хакатон") {
+                        return
+                    }
+                }
+        }
+        
+        let cancel = DialogActionInfo(title: "Cancel", isAccented: false)
+        
+        let message = AlertDialogMessage(title: "", message: "Как хотите участвовать?", dialogActions: [likeTeam, likeMember, cancel], style: .actionSheet)
+        
+        messanger.publish(message: message)
     }
     
     private func bookmarkHack() {

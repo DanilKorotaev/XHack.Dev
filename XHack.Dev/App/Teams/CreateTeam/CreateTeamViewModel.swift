@@ -9,22 +9,20 @@
 import Foundation
 import RxSwift
 
-class CreateTeamViewModel {
+class CreateTeamViewModel: BaseViewModel {
     private var teamsApi: ITeamsApi
-    private let disposeBag = DisposeBag()
 
-    let isLoading = BehaviorSubject(value: true)
+    var hackId: Int?
     var teamName = BehaviorSubject(value: "")
     var teamDescription = BehaviorSubject(value: "")
     let canCreateTeam = BehaviorSubject<Bool>(value: false)
-    let taskCreated = PublishSubject<Void>()
+    let teamCreated = PublishSubject<Void>()
     
     init(teamsApi: ITeamsApi) {
         self.teamsApi = teamsApi
-        setupBinding()
     }
     
-    func setupBinding() {
+    override func applyBinding () {
         Observable
             .combineLatest(teamName, teamDescription)
             .map { $0.hasNonEmptyValue() && $1.hasNonEmptyValue() }
@@ -35,18 +33,17 @@ class CreateTeamViewModel {
     
     func createTeam() {
         isLoading.onNext(true)
+        let model = CreateTeamDto(name: teamName.value, description: teamDescription.value, avatarUrl: nil)
+        let method = hackId != nil ? teamsApi.create(for: hackId!, team: model) :
+            teamsApi.create(team: model)
         
-//        Observable
-//            .combineLatest(teamName, teamDescription, canCreateTeam)
-//            .take(1)
-//            .filter { _, _, active in active }
-//            .map { teamName, teamDescription, _ in CreateTeamDto(name: teamName, description: teamDescription)  }
-//            .flatMapLatest { [weak self] in self!.teamsApi.create(team: $0) }
-//            .subscribe { [weak self] _ in
-//                self?.isLoading.onNext(false)
-//                self?.taskCreated.onNext(())
-//            }
-//            .disposed(by: disposeBag)
+        method.done { [weak self] (result) in
+            guard let self = self else { return }
+            self.isLoading.onNext(false)
+            if self.checkAndProcessApiResult(response: result, "создать команду") {
+                return
+            }
+            self.teamCreated.onNext(())
+        }
     }
-    
 }
