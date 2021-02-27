@@ -13,7 +13,6 @@ struct HackathonDto: Codable {
     let name: String
     let description: String
     let isOnline: Bool
-    var userWillGo: Bool
     let location: String
     let siteUrl: String
     let avatarUrl: String
@@ -23,4 +22,5 @@ struct HackathonDto: Codable {
     let tags: [TagDto]
     let teams: [ShortTeamDto]
     let members : [ShortUserDto] = []
+    let participationType: String
 }

@@ -26,13 +26,18 @@ class UIHackLinkButton: UIButton {
         layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
     }
     
+    override func setTitle(_ title: String?, for state: UIControl.State) {
+        super.setTitle(title, for: state)
+        invalidateIntrinsicContentSize()
+    }
+    
     
     private func setUpView() {
         self.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
         setImage(#imageLiteral(resourceName: "link"), for: .normal)
         titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-        setTitleColor(UIColor(hex: "#0CC5FF"), for: .normal)
-        
+        setTitleColor(.blue, for: .normal)
+//        UIColor(hex: "#0CC5FF")
         self.backgroundColor = .white
         layer.cornerRadius = frame.size.height / 2
         clipsToBounds = false

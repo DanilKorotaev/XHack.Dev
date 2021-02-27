@@ -115,6 +115,7 @@ class SessionService {
     }
     
     private func removeSession() {
+        accountSecureStorage.clearStorage()
         dataManager.clear()
         token = nil
         sessionState = nil

@@ -39,4 +39,14 @@ class RequestsApi: IRequestsApi {
         let url = endpointsProvider.gatewayUrl + "/api/teams/getActiveIncomingRequests"
         return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
+
+    func withDrawRequestToTeam(teamId: Int) -> Promise<LiteApiResult> {
+        let url = endpointsProvider.gatewayUrl + "/api/teams/withDrawRequestToTeam/\(teamId)"
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
+    
+    func acceptRequestFromTeam(teamId: Int) -> Promise<LiteApiResult> {
+        let url = endpointsProvider.gatewayUrl + "/api/teams/acceptRequestFromTeam/\(teamId)"
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
 }

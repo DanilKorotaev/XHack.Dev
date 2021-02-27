@@ -84,12 +84,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRV-cr-vUc" customClass="UIHackLinkButton" customModule="XHack_Dev" customModuleProvider="target">
-                                                                <rect key="frame" x="150" y="70" width="89.5" height="35"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRV-cr-vUc" customClass="UIHackLinkButton" customModule="XHack_Dev" customModuleProvider="target">
+                                                                <rect key="frame" x="150" y="70" width="173.5" height="35"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="35" id="ixt-1i-THg"/>
                                                                 </constraints>
-                                                                <state key="normal" title="Hack link" image="link">
+                                                                <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                <state key="normal" title="11111111111111111111" image="link">
                                                                     <color key="titleColor" systemColor="linkColor"/>
                                                                 </state>
                                                             </button>
@@ -98,7 +99,6 @@
                                                         <constraints>
                                                             <constraint firstItem="bRV-cr-vUc" firstAttribute="top" secondItem="Xvx-A5-w9l" secondAttribute="bottom" constant="30" id="ARs-y5-Y6H"/>
                                                             <constraint firstItem="BxE-iI-slQ" firstAttribute="top" secondItem="k3d-9e-1KU" secondAttribute="top" constant="15" id="GAT-Z9-BoE"/>
-                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bRV-cr-vUc" secondAttribute="trailing" constant="10" id="MKL-t8-ZvM"/>
                                                             <constraint firstItem="bRV-cr-vUc" firstAttribute="leading" secondItem="BxE-iI-slQ" secondAttribute="trailing" constant="15" id="Mkd-DQ-dse"/>
                                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bRV-cr-vUc" secondAttribute="bottom" constant="50" id="RJC-LB-AEm"/>
                                                             <constraint firstItem="BxE-iI-slQ" firstAttribute="leading" secondItem="k3d-9e-1KU" secondAttribute="leading" constant="15" id="STW-fm-L5y"/>
@@ -161,6 +161,7 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="72" id="2JF-vD-zyD"/>
                                                                         </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                         <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                                     </textView>
@@ -374,6 +375,7 @@
                         <outlet property="hackLinkButton" destination="bRV-cr-vUc" id="Kxw-wv-pgh"/>
                         <outlet property="hackNameLabel" destination="Xvx-A5-w9l" id="2Jf-qE-zOX"/>
                         <outlet property="joinButton" destination="hKl-wG-TS7" id="DBd-u9-wVg"/>
+                        <outlet property="scrollView" destination="JuS-Vq-hmM" id="TY2-a2-TV5"/>
                         <outlet property="seachTeamCollectionView" destination="sUL-O9-R5H" id="Vod-bT-BUg"/>
                         <outlet property="searchMemberButton" destination="NHu-vZ-s9E" id="w3q-2r-gEx"/>
                         <outlet property="searchMemberCollectionView" destination="Hx9-oh-kx5" id="EVN-bP-pZq"/>

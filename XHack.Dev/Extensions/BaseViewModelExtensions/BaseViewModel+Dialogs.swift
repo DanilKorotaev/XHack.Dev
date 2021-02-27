@@ -25,7 +25,8 @@ fileprivate let ServerErrorMessage = "На сервере произошла о�
 extension BaseViewModel {
     
     func showMessage(title: String, message: String? = nil, closingActionName: String = DefaultClosingActionName) {
-        
+        let errorMessage = AlertDialogMessage(title: title, message: message, dialogActions: [DialogActionInfo(title: DefaultClosingActionName)])
+        Container.resolve(IMessager.self).publish(message: errorMessage)
     }
     
     func showRejectedMessage(prefixMessage: String = "") {

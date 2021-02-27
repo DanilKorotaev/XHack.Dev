@@ -12,7 +12,6 @@ import RxSwift
 class HackathonDetail {
     var name = BehaviorSubject<String>(value: "")
     var description = BehaviorSubject<String>(value: "")
-    var currentUserWillGo = BehaviorSubject<Bool>(value: false)
     let teams = BehaviorSubject<[ShortTeam]>(value:[])
     let members = BehaviorSubject<[ShortUser]>(value:[])
     let startDate: Date
@@ -23,16 +22,17 @@ class HackathonDetail {
     let avatarUrl: String
     let siteUrl: String
     let isBookmarked: BehaviorSubject<Bool>
+    let participationType: HackParticipationType
     
     init(_ data: HackathonDto) {
         name.onNext(data.name)
         description.onNext(data.description)
-        currentUserWillGo.onNext(data.userWillGo)
         isOnline = data.isOnline
         startDate = data.startDate
         endDate = data.endDate
         location = data.location
         avatarUrl = data.avatarUrl
+        participationType = HackParticipationType(rawValue: data.participationType) ?? .none
         siteUrl = data.siteUrl
         isBookmarked = BehaviorSubject<Bool>(value: data.isBookmarked)
         teams.onNext(data.teams.map {ShortTeam($0) })

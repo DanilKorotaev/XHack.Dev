@@ -17,4 +17,5 @@ protocol ITeamsApi {
     func sendRequest(to user: CreateRequestToUserDto) -> Promise<LiteApiResult>
     func create(for hackId: Int, team: CreateTeamDto) -> Promise<LiteApiResult>
     func getDetail(for teamId: Int) -> Promise<ApiResult<TeamDto>>
+    func leave(teamId: Int) -> Promise<LiteApiResult>
 }

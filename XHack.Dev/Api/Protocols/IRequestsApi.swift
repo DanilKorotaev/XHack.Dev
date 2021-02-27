@@ -15,4 +15,6 @@ protocol IRequestsApi {
     func declineRequestToUser(requestId: Int) -> Promise<LiteApiResult>
     func withDrawRequestToUser(requestId: Int) -> Promise<LiteApiResult>
     func getActiveIncomingRequests() -> Promise<ApiResult<ActiveIncomingRequestsDto>>
+    func acceptRequestFromTeam(teamId: Int) -> Promise<LiteApiResult>
+    func withDrawRequestToTeam(teamId: Int) -> Promise<LiteApiResult>
 }

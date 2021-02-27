@@ -17,6 +17,7 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
     private var hackDisposeBag = DisposeBag()
     private var isAllDescriptionShown = false
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var hackNameLabel: UILabel!
     @IBOutlet weak var bookmarkButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
@@ -50,7 +51,7 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self](hackDetail) in
                 self?.hackDisposeBag = DisposeBag()
-                
+                self?.scrollView.isHidden = hackDetail == nil
                 guard let self = self, let hackDetail = hackDetail else { return }
                 self.hackNameLabel.text = hackDetail.name.value
                 self.hackDescriptionTextView.text = hackDetail.description.value

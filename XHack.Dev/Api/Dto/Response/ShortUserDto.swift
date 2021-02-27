@@ -11,5 +11,5 @@ import Foundation
 struct ShortUserDto : Codable  {
     let id: Int
     let name: String
-    let avatarUrl: String
+    let avatarUrl: String?
 }
