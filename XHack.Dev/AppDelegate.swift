@@ -5,7 +5,7 @@ import SideMenu
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    private var appCoordinator: AppCoordinator!
+    private var appCoordinator: StartUpScreenCoordinator!
     private var messanger: IMessager!
     
     static let container = Container()
@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Container.loggingFunction = nil
         AppDelegate.container.registerDependencies()
         
-        setUpSideMenu()
         messanger = AppDelegate.container.resolve(IMessager.self)!
         AppDelegate.container.resolve(IPushSubscriptionProvider.self)!.subscribeOnRecievePushNotifications { (result) in
             guard result.__conversion() else { return }
@@ -30,32 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         subscribeToEvents()
         
-        appCoordinator = AppDelegate.container.resolve(AppCoordinator.self)!
+        appCoordinator = AppDelegate.container.resolve(StartUpScreenCoordinator.self)!
         appCoordinator.start()
 
         return true
-    }
-    
-    private func setUpSideMenu() {
-        // Define the menus
-        let leftMenuNavigationController = SideMenuNavigationController(rootViewController: DrawerMenuViewController.instantiate())
-        SideMenuManager.default.leftMenuNavigationController = leftMenuNavigationController
-        leftMenuNavigationController.navigationBar.isHidden = true
-
-        let style = SideMenuPresentationStyle.menuSlideIn
-        style.backgroundColor = .black
-        style.presentingEndAlpha = 0.32
-        style.onTopShadowColor = .black
-        style.onTopShadowRadius = 4.0
-        style.onTopShadowOpacity = 0.2
-        style.onTopShadowOffset = CGSize(width: 2.0, height: 0.0)
-
-        var settings = SideMenuSettings()
-        settings.presentationStyle = style
-        settings.menuWidth = max(round(min((UIScreen.main.bounds.width), (UIScreen.main.bounds.height)) * 0.75), 240)
-        settings.statusBarEndAlpha = 0.0
-
-        leftMenuNavigationController.settings = settings
     }
         
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -73,5 +50,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Container.resolve(IAlertDispatcher.self).dispatch(message: message)
         }))
     }
-    
 }

@@ -13,4 +13,5 @@ import PromiseKit
 protocol IUserApi {
     func getProfile() -> Promise<ApiResult<UserProfileDto>>
     func updateProfile(_ data: UpdateProfileDtoRequest) -> Promise<LiteApiResult>
+    func setSearchingStatus(_ status: Bool) -> Promise<LiteApiResult>
 }

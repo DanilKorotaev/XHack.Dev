@@ -11,6 +11,7 @@ target 'XHack.Dev' do
   pod 'SwiftLint'
   pod 'SkeletonView'
   pod "PromiseKit", "~> 6.8"
+  pod 'RxDataSources', '~> 4.0'
   
   target 'XHack.DevTests' do
     inherit! :search_paths

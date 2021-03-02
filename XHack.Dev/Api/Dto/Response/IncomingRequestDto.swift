@@ -8,15 +8,10 @@
 
 import Foundation
 
-enum RequestType: String, Codable {
-    case teamToUser = "TeamToUser"
-    case userToTeam = "UserToTeam"
-}
-
 
 struct IncomingRequestDto: Codable {
     let id: Int
-    let team: TeamDto
-    let user: UserProfileDto
-    let requestType: RequestType
+    let team: ShortTeamDto
+    let user: ShortUserDto
+    let type: String
 }

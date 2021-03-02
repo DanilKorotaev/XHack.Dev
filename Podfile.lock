@@ -1,4 +1,5 @@
 PODS:
+  - Differentiator (4.0.1)
   - PromiseKit (6.13.1):
     - PromiseKit/CorePromise (= 6.13.1)
     - PromiseKit/Foundation (= 6.13.1)
@@ -11,6 +12,10 @@ PODS:
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
@@ -24,6 +29,7 @@ PODS:
 DEPENDENCIES:
   - PromiseKit (~> 6.8)
   - RxCocoa
+  - RxDataSources (~> 4.0)
   - RxSwift
   - SideMenu
   - SkeletonView
@@ -33,8 +39,10 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Differentiator
     - PromiseKit
     - RxCocoa
+    - RxDataSources
     - RxRelay
     - RxSwift
     - SideMenu
@@ -44,8 +52,10 @@ SPEC REPOS:
     - SwinjectAutoregistration
 
 SPEC CHECKSUMS:
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
@@ -54,6 +64,6 @@ SPEC CHECKSUMS:
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectAutoregistration: 330f5012642a8b5c89a8a4adb0c5e52df07382c0
 
-PODFILE CHECKSUM: b05226cde04b6cd2f816e9c84743015bdda9ce9a
+PODFILE CHECKSUM: b2c9f33ec7cec788111c5d9e2531d34fcba92ace
 
 COCOAPODS: 1.10.1

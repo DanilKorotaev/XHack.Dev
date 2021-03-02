@@ -21,6 +21,6 @@ struct HackathonDto: Codable {
     let isBookmarked: Bool
     let tags: [TagDto]
     let teams: [ShortTeamDto]
-    let members : [ShortUserDto] = []
+    let members : [ShortUserDto]
     let participationType: String
 }

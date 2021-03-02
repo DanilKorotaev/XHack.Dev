@@ -15,7 +15,5 @@ struct UserProfileDto: Codable {
     let isAvailableForSearching: Bool
     let tags: [TagDto]
     let description: String
-    let githubLink: String
-    let telegramLink: String
-    let linkedInLink: String
+    let networks: [String]
 }

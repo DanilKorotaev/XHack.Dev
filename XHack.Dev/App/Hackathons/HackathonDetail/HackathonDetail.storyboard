@@ -367,6 +367,8 @@
                     <connections>
                         <outlet property="backButton" destination="w58-hC-zcy" id="7mk-7s-S9F"/>
                         <outlet property="bookmarkButton" destination="3J6-at-seN" id="HK8-tX-ca2"/>
+                        <outlet property="changeParticipantStateButton" destination="hKl-wG-TS7" id="DBd-u9-wVg"/>
+                        <outlet property="changeParticipantStateContainerView" destination="Ck2-6S-a7M" id="OS2-eB-uI7"/>
                         <outlet property="dateContainerView" destination="Z8O-4b-Ly8" id="tTN-oy-DvD"/>
                         <outlet property="dateLabel" destination="ODa-PJ-cb4" id="l8a-1q-LzS"/>
                         <outlet property="hackAvatarImageView" destination="BxE-iI-slQ" id="A5X-qq-7se"/>
@@ -374,7 +376,6 @@
                         <outlet property="hackDescriptionTextView" destination="Hmw-x7-6xK" id="4Vh-fg-udx"/>
                         <outlet property="hackLinkButton" destination="bRV-cr-vUc" id="Kxw-wv-pgh"/>
                         <outlet property="hackNameLabel" destination="Xvx-A5-w9l" id="2Jf-qE-zOX"/>
-                        <outlet property="joinButton" destination="hKl-wG-TS7" id="DBd-u9-wVg"/>
                         <outlet property="scrollView" destination="JuS-Vq-hmM" id="TY2-a2-TV5"/>
                         <outlet property="seachTeamCollectionView" destination="sUL-O9-R5H" id="Vod-bT-BUg"/>
                         <outlet property="searchMemberButton" destination="NHu-vZ-s9E" id="w3q-2r-gEx"/>

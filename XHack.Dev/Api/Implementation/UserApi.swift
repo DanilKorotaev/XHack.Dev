@@ -30,4 +30,9 @@ class UserApi: IUserApi {
         let url = endpointsProvider.gatewayUrl + "/api/users/profile"
         return ApiHelpers.executeReliablyLitePatchRequest(apiTokenHolder: apiTokenHolder, url: url, content: data)
     }
+    
+    func setSearchingStatus(_ status: Bool) -> Promise<LiteApiResult> {
+        let url = endpointsProvider.gatewayUrl + "/api/users/setSearchingStatus/\(status)"
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
 }

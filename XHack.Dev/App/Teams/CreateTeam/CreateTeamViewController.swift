@@ -10,42 +10,37 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class CreateTeamViewController: UIViewController, Storyboarded {
+class CreateTeamViewController: BaseViewController<CreateTeamViewModel>, Storyboarded {
     static var storyboard =  AppStoryboard.createTeam
     
-    @IBOutlet weak var teamNameTextField: UITextField!
-    @IBOutlet weak var teamDescriptionTextFiled: UITextField!
-    @IBOutlet weak var createTeamButton: UIButton!
-    var viewModel: CreateTeamViewModel!
+    @IBOutlet weak var teamNameTextField: CustomShadowTextField!
+    @IBOutlet weak var teamDescriptionTextFiled: CustomShadowTextField!
+    @IBOutlet weak var createTeamButton: PrimaryButton!
+    @IBOutlet weak var backButton: UIButton!
+
     
-    private let disposeBag = DisposeBag()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func completeUi() {
         configureDismissKeyboard()
-        setUpBindings()
     }
     
-    private func setUpBindings() {
-        guard let viewModel = viewModel else { return }
-        
-        Observable.of(teamNameTextField, teamDescriptionTextFiled)
-            .flatMap { $0.rx.controlEvent(.editingDidEndOnExit) }
-            .withLatestFrom(viewModel.canCreateTeam)
-            .filter { $0 }
-            .bind { [weak self] _ in self?.viewModel?.createTeam() }
-            .disposed(by: disposeBag)
+    override func applyBinding() {
+        guard let dataContext = dataContext else { return }
         
         teamNameTextField.rx.text.orEmpty
-            .bind(to: viewModel.teamName)
+            .bind(to: dataContext.teamName)
             .disposed(by: disposeBag)
         
         teamDescriptionTextFiled.rx.text.orEmpty
-            .bind(to: viewModel.teamDescription)
+            .bind(to: dataContext.teamDescription)
             .disposed(by: disposeBag)
         
         createTeamButton.rx.tap
-            .bind { [weak self] in self?.viewModel?.createTeam() }
+            .bind {
+                dataContext.createTeam()
+            }.disposed(by: disposeBag)
+        
+        backButton.rx.tap
+            .bind(to: dataContext.back)
             .disposed(by: disposeBag)
     }
 }

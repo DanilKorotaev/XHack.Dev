@@ -27,5 +27,6 @@ extension Container {
         autoregister(HackMemberListCoordinator.self, initializer: HackMemberListCoordinator.init)
         autoregister(HackTeamListCoordinator.self, initializer: HackTeamListCoordinator.init)
         autoregister(HackTeamDetailsCoordinator.self, initializer: HackTeamDetailsCoordinator.init)
+        autoregister(StartUpScreenCoordinator.self, initializer: StartUpScreenCoordinator.init)
     }
 }

@@ -25,7 +25,7 @@ class CreateTeamCoordinator : BaseCoordinator<CreateTeamCoordinatorResult> {
     
     override func start() -> Observable<CreateTeamCoordinatorResult> {
         let viewController = CreateTeamViewController.instantiate()
-        viewController.viewModel = viewModel
+        viewController.dataContext = viewModel
         viewModel.hackId = hackId
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.pushViewController(viewController, animated: true)
@@ -42,5 +42,10 @@ class CreateTeamCoordinator : BaseCoordinator<CreateTeamCoordinatorResult> {
                 self?.result.onNext(.teamCreated)
             })
             .disposed(by: disposeBag)
+        
+        viewModel.back.subscribe(onNext: { [weak self] in
+            self?.navigationController.popViewController(animated: true)
+            self?.result.onNext(.rejected)
+        }).disposed(by: disposeBag)
     }
 }

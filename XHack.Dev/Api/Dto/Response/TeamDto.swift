@@ -14,7 +14,5 @@ struct TeamDto: Codable {
     var description: String
     var avatarUrl: String?
     let members : [ShortUserDto]
-    var isBookmarked: Bool = true
-    let participantType: String
     let tags: [TagDto] = []
 }

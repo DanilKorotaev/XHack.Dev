@@ -21,7 +21,7 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
     @IBOutlet weak var hackNameLabel: UILabel!
     @IBOutlet weak var bookmarkButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var joinButton: SecondaryButton!
+    @IBOutlet weak var changeParticipantStateButton: SecondaryButton!
     @IBOutlet weak var showAllDescriptionButton: SecondaryButton!
     @IBOutlet weak var hackLinkButton: UIHackLinkButton!
     @IBOutlet weak var hackAvatarImageView: UIImageView!
@@ -35,6 +35,7 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var hackDescriptionTextView: UITextView!
     @IBOutlet weak var hackDescriptionContainerView: UIView!
+    @IBOutlet weak var changeParticipantStateContainerView: UIView!
     
     override func completeUi() {
         hackDescriptionTextView.textContainer.maximumNumberOfLines = allDescriptionCollapsedLines
@@ -60,6 +61,7 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
                 self.hackLinkButton.setTitle(hackDetail.siteUrl, for: .normal)
                 self.searchTeamContainerView.isHidden = hackDetail.teams.value.isEmpty
                 self.searchMemberContainerView.isHidden = hackDetail.members.value.isEmpty
+                self.setChangeParticipantStateButtonTitle(participantType: hackDetail.participationType)
                 
                 hackDetail.isBookmarked.bind(onNext: { [weak self] value in
                     let bookmarkImage = value ? #imageLiteral(resourceName: "Star") : #imageLiteral(resourceName: "unselected_star")
@@ -81,8 +83,8 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
                     .disposed(by: self.hackDisposeBag)
             }).disposed(by: disposeBag)
         
-        joinButton.rx.tap
-            .bind(to: dataContext.join)
+        changeParticipantStateButton.rx.tap
+            .bind(to: dataContext.changeParticipantState)
             .disposed(by: disposeBag)
         
         bookmarkButton.rx.tap
@@ -138,5 +140,23 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
             layout.scrollDirection = .horizontal
             layout.itemSize = CGSize(width: 55, height: 90)
         searchMemberCollectionView.setCollectionViewLayout(layout, animated: true)
+    }
+    
+    
+    func setChangeParticipantStateButtonTitle(participantType: HackParticipationType) {
+        var text = ""
+        switch(participantType) {
+            case .none:
+                text = "Join"
+            case .teamMember:
+                text = "Leave team"
+            case .single:
+                text = "Cancel participation"
+            case .teamCaptain:
+                text = "Cancel team participation"
+            default:
+                text = ""
+        }
+        changeParticipantStateButton.setTitle(text, for: .normal)
     }
 }

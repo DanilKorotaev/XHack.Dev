@@ -53,4 +53,9 @@ class HackathonsApi: IHackathonsApi {
         let url = endpointsProvider.gatewayUrl + "/api/hackathons/getTeamsForHackathon/\(hackID)"
         return ApiHelpers.executeReliablyPostRequest(apiTokenHolder: apiTokenHolder, url: url, content: filter)
     }
+    
+    func leaveTeam(for hackId: Int) -> Promise<LiteApiResult> {
+        let url = endpointsProvider.gatewayUrl + "/api/hackathons/leaveHackTeam/\(hackId)"
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
 }

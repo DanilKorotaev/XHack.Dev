@@ -17,6 +17,7 @@ class CreateTeamViewModel: BaseViewModel {
     var teamDescription = BehaviorSubject(value: "")
     let canCreateTeam = BehaviorSubject<Bool>(value: false)
     let teamCreated = PublishSubject<Void>()
+    let back = PublishSubject<Void>()
     
     init(teamsApi: ITeamsApi) {
         self.teamsApi = teamsApi

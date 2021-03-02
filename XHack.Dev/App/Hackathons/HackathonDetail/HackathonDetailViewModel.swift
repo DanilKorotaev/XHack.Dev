@@ -19,7 +19,7 @@ class HackathonDetailViewModel: BaseViewModel {
     
     let hackathon = BehaviorSubject<HackathonDetail?>(value: .none)
     let didWillGoChanged = PublishSubject<Bool>()
-    let join = PublishSubject<Void>()
+    let changeParticipantState = PublishSubject<Void>()
     let bookmark = PublishSubject<Void>()
     let back = PublishSubject<Void>()
     let memberSelected = PublishSubject<ShortUser>()
@@ -58,8 +58,8 @@ class HackathonDetailViewModel: BaseViewModel {
             }
         }).disposed(by: disposeBag)
         
-        join.subscribe(onNext: { [weak self] in
-            self?.joinToHack()
+        changeParticipantState.subscribe(onNext: { [weak self] in
+            self?.changeParticipantStateExecute()
         }).disposed(by: disposeBag)
         
         bookmark.subscribe(onNext: { [weak self] in
@@ -67,6 +67,44 @@ class HackathonDetailViewModel: BaseViewModel {
         }).disposed(by: disposeBag)
     }
     
+    
+    private func changeParticipantStateExecute() {
+        guard let hack = hackathon.value else { return }
+        switch(hack.participationType) {
+        case .teamMember:
+            leaveFromTeam()
+        case .none:
+            joinToHack()
+        case .single:
+            cancelSingleParticitation()
+        case .teamCaptain:
+            cancelTeamParticitation()
+        }
+    }
+    
+    private func cancelSingleParticitation() {
+        hackathonsApi.willNotGoHackathon(id: hackathonId).done { [weak self] (result) in
+            guard let self = self else { return }
+            if self.checkAndProcessApiResult(response: result, "отменить участие в хакатоне") {
+                return
+            }
+            self.forceContentRefreshingAsync()
+        }
+    }
+    
+    private func cancelTeamParticitation() {
+        
+    }
+    
+    private func leaveFromTeam() {
+        hackathonsApi.leaveTeam(for: hackathonId).done { [weak self] (result) in
+            guard let self = self else { return }
+            if self.checkAndProcessApiResult(response: result, "выйти из команды") {
+                return
+            }
+            self.forceContentRefreshingAsync()
+        }
+    }
     
     private func joinToHack() {
         let likeTeam = DialogActionInfo(title: "Team") { [weak self] in
@@ -80,6 +118,7 @@ class HackathonDetailViewModel: BaseViewModel {
                     if self.checkAndProcessApiResult(response: result, "пойти на хакатон") {
                         return
                     }
+                    self.forceContentRefreshingAsync()
                 }
         }
         

@@ -1,54 +1,59 @@
+//
+//  StartUpScreenCoordinator.swift
+//  XHack.Dev
+//
+//  Created by Данил Коротаев on 02.03.2021.
+//  Copyright © 2021 Wojciech Kulik. All rights reserved.
+//
+
 import Foundation
 import RxSwift
-import SideMenu
 
-class AppCoordinator: BaseCoordinator<Void> {
+class StartUpScreenCoordinator: BaseCoordinator<Void> {
+    private let viewModel: StartUpScreenViewModel
     private let sessionService: SessionService
     private var window = UIWindow(frame: UIScreen.main.bounds)
     private let context: IAppContext
     
-    private var drawerMenu: SideMenuNavigationController? {
-        return SideMenuManager.default.leftMenuNavigationController
-    }
-        
-    init(sessionService: SessionService, context: IAppContext) {
+    init(sessionService: SessionService, context: IAppContext, viewModel: StartUpScreenViewModel) {
         self.sessionService = sessionService
         self.context = context
+        self.viewModel = viewModel
     }
     
     override func start() -> Observable<Void> {
         window.makeKeyAndVisible()
+        let viewController = StartUpScreenViewController.instantiate()
+        viewController.dataContext = viewModel
+        navigationController.pushViewController(viewController, animated: false)
+        navigationController.navigationBar.isHidden = true
+        applyBindings()
+        subscribeToSessionChanges()
+        ViewControllerUtils.setRootViewController(
+            window: window,
+            viewController: navigationController,
+            withAnimation: false)
         
         sessionService.sessionState == nil
             ? showSignIn()
             : showRootTabBar()
         
-        subscribeToSessionChanges()
         return Observable.empty()
     }
+    
+    func applyBindings() {
+        
+    }
+    
     
     private func subscribeToSessionChanges() {
         sessionService.didSignIn
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in self?.showRootTabBar() })
             .disposed(by: disposeBag)
-        
-        sessionService.didSignOut
-            .subscribe(onNext: { [weak self] in
-                guard let self = self else { return }
-                
-                if self.drawerMenu?.isHidden ?? true {
-                    self.showSignIn()
-                } else {
-                    self.drawerMenu?.dismiss(animated: true, completion: self.showSignIn)
-                }
-            })
-            .disposed(by: disposeBag)
     }
     
     private func showSignIn() {
-//        removeChildCoordinators()
-        
         let coordinator = AppDelegate.container.resolve(SignInCoordinator.self)!
         start(coordinator: coordinator)
         
@@ -59,7 +64,6 @@ class AppCoordinator: BaseCoordinator<Void> {
     }
     
     private func showRootTabBar() {
-//        removeChildCoordinators()
         context.updateUserData().done { (result) in
             let coordinator = AppDelegate.container.resolve(RootTabBarCoordinator.self)!
             self.start(coordinator: coordinator)
@@ -68,19 +72,5 @@ class AppCoordinator: BaseCoordinator<Void> {
                 viewController: coordinator.navigationController,
                 withAnimation: true)
         }
-    }
-    
-    
-    private func showDashboard() {
-//        removeChildCoordinators()
-        
-        let coordinator = AppDelegate.container.resolve(DrawerMenuCoordinator.self)!
-        coordinator.navigationController = BaseNavigationController()
-        start(coordinator: coordinator).subscribe().disposed(by: disposeBag)
-        
-        ViewControllerUtils.setRootViewController(
-            window: window,
-            viewController: coordinator.navigationController,
-            withAnimation: true)
     }
 }
