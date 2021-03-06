@@ -20,5 +20,6 @@ extension Container {
         autoregister(IBookmarksApi.self, initializer: BookmarksApi.init)
         autoregister(ITagsApi.self, initializer: TagsApi.init)
         autoregister(IRequestsApi.self, initializer: RequestsApi.init)
+        autoregister(IChatsApi.self, initializer: ChatsApi.init)
     }
 }
