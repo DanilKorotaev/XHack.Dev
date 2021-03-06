@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import Swinject
 
 class HackTeamDetailsCoordinator: BaseCoordinator<Void> {
     let viewModel: HackTeamDetailsViewModel
@@ -30,5 +31,17 @@ class HackTeamDetailsCoordinator: BaseCoordinator<Void> {
         viewModel.back.subscribe(onNext: { [weak self] in
             self?.navigationController.popViewController(animated: true)
         }).disposed(by: disposeBag)
+        
+        viewModel.memberSelected.bind { [weak self] member in
+            self?.toUserProfile(member.id)
+        }.disposed(by: disposeBag)
+    }
+    
+    
+    func toUserProfile(_ id: Int) {
+        let coordinator = Container.resolve(UserDetailsCoordinator.self)
+        coordinator.navigationController = self.navigationController
+        coordinator.userId = id
+        self.start(coordinator: coordinator)
     }
 }

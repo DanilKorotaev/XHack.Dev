@@ -42,6 +42,9 @@ class HomeCoordinator: BaseCoordinator<Void> {
     }
     
     func toUserProfile(_ id: Int) {
-        
+        let coordinator = Container.resolve(UserDetailsCoordinator.self)
+        coordinator.navigationController = self.navigationController
+        coordinator.userId = id
+        self.start(coordinator: coordinator)
     }
 }

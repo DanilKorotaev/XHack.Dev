@@ -118,7 +118,7 @@ class HackTeamDetailsViewModel: BaseViewModel {
     }
     
     private func sendRequestExecute() {
-        teamsApi.sendRequest(to: CreateRequestToTeamDto(teamId: teamId)).done { [weak self] (result) in
+        requestsApi.sendRequest(to: CreateRequestToTeamDto(teamId: teamId)).done { [weak self] (result) in
             guard let self = self else { return }
             if self.checkAndProcessApiResult(response: result, "отправить запрос") {
                 return

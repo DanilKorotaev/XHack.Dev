@@ -61,7 +61,10 @@ class HackathonDetailCoordinator: BaseCoordinator<Void> {
     
     
     private func toMemberProfile(_ member: ShortUser) {
-        // TODO
+        let coordinator = Container.resolve(UserDetailsCoordinator.self)
+        coordinator.navigationController = self.navigationController
+        coordinator.userId = member.id
+        self.start(coordinator: coordinator)
     }
     
     private func toTeamProfile(_ team: ShortTeam) {

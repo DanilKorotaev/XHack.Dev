@@ -51,6 +51,13 @@ class StartUpScreenCoordinator: BaseCoordinator<Void> {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in self?.showRootTabBar() })
             .disposed(by: disposeBag)
+        
+        sessionService.didSignOut
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.showSignIn()
+            })
+            .disposed(by: disposeBag)
     }
     
     private func showSignIn() {

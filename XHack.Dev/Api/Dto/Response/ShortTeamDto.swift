@@ -12,4 +12,5 @@ struct ShortTeamDto : Codable  {
     let id: Int
     let name: String
     let avatarUrl: String?
+    let captain: Int
 }

@@ -10,8 +10,6 @@ import Foundation
 import RxSwift
 
 class UserProfile {
-    private let disposeBag = DisposeBag()
-    
     private(set) var id: Int = 0
     let name = BehaviorSubject(value:"")
     let email = BehaviorSubject(value:"")

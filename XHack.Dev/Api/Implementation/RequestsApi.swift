@@ -30,9 +30,9 @@ class RequestsApi: IRequestsApi {
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: DeclineRequestToUserDto(requestId: requestId))
     }
     
-    func withDrawRequestToUser(requestId: Int) -> Promise<LiteApiResult> {
-        let url = endpointsProvider.gatewayUrl + "/api/teams/withDrawRequestToUser"
-        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: WithDrawRequestToUserDto(requestId: requestId))
+    func withDrawRequestToUser(userId: Int) -> Promise<LiteApiResult> {
+        let url = endpointsProvider.gatewayUrl + "/api/teams/withDrawRequestToUser/\(userId)"
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
     
     func getActiveIncomingRequests() -> Promise<ApiResult<ActiveIncomingRequestsDto>> {
@@ -48,5 +48,15 @@ class RequestsApi: IRequestsApi {
     func acceptRequestFromTeam(teamId: Int) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/teams/acceptRequestFromTeam/\(teamId)"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
+    
+    func sendRequest(to team: CreateRequestToTeamDto) -> Promise<LiteApiResult> {
+        let url = endpointsProvider.gatewayUrl + "/api/teams/send-request-to-team"
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: team)
+    }
+    
+    func sendRequest(to user: CreateRequestToUserDto) -> Promise<LiteApiResult> {
+        let url = endpointsProvider.gatewayUrl + "/api/teams/send-request-to-user"
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: user)
     }
 }

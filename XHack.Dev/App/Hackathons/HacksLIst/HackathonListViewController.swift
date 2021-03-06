@@ -17,7 +17,7 @@ class HackathonListViewController: BaseViewController<HackathonListViewModel>, S
     
     override func completeUi() {
         tableView.tableFooterView = UIView()
-        setupHeaderView()
+//        setupHeaderView()
         refreshHandler = RefreshHandler(view: tableView)
         tableView.register(HackathonViewCell.nib, forCellReuseIdentifier: HackathonViewCell.reuseIdentifier)
     }
@@ -47,7 +47,7 @@ class HackathonListViewController: BaseViewController<HackathonListViewModel>, S
             .bind(to: dataContext.refresh)
             .disposed(by: disposeBag)
         
-        tableHeaderView.dataContext = dataContext
+//        tableHeaderView.dataContext = dataContext
         dataContext.hackathons
             .bind(to: tableView.rx.items(cellIdentifier: HackathonViewCell.reuseIdentifier)) { row, model, cell in
                 guard let cell = cell as? HackathonViewCell else { return }

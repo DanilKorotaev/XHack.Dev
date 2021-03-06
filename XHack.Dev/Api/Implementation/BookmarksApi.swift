@@ -77,22 +77,22 @@ class BookmarksApi: IBookmarksApi {
     }
     
     func removeBookmark(user: BookmarkUserDTO) -> Promise<LiteApiResult> {
-        let url = endpointsProvider.gatewayUrl + "/api/bookmarks/remove-hackathon-user"
+        let url = endpointsProvider.gatewayUrl + "/api/bookmarks/remove-user-bookmark"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: user)
     }
     
     func removeBookmark(team: BookmarkTeamDTO) -> Promise<LiteApiResult> {
-        let url = endpointsProvider.gatewayUrl + "/api/bookmarks/remove-hackathon-team"
+        let url = endpointsProvider.gatewayUrl + "/api/bookmarks/remove-team-bookmark"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: team)
     }
     
     func removeBookmark(message: BookmarkMessageDTO) -> Promise<LiteApiResult> {
-        let url = endpointsProvider.gatewayUrl + "/api/bookmarks/remove-hackathon-message"
+        let url = endpointsProvider.gatewayUrl + "/api/bookmarks/remove-message-bookmark"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: message)
     }
     
     func removeBookmark(chat: BookmarkChatDTO) -> Promise<LiteApiResult> {
-        let url = endpointsProvider.gatewayUrl + "/api/bookmarks/remove-hackathon-chat"
+        let url = endpointsProvider.gatewayUrl + "/api/bookmarks/remove-chat-bookmark"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: chat)
     }
 }

@@ -35,4 +35,9 @@ class UserApi: IUserApi {
         let url = endpointsProvider.gatewayUrl + "/api/users/setSearchingStatus/\(status)"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
+    
+    func getProfile(id: Int) -> Promise<ApiResult<UserDetailsDto>> {
+        let url = endpointsProvider.gatewayUrl + "/api/users/\(id)"
+        return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
 }

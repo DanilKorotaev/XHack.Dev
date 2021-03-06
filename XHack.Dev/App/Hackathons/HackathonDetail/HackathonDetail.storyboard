@@ -27,7 +27,7 @@
                                         </constraints>
                                         <state key="normal" image="left_arrow"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hack Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oW-8j-sXG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hackathon Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oW-8j-sXG">
                                         <rect key="frame" x="51" y="7" width="307" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                         <nil key="textColor"/>
