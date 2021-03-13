@@ -17,7 +17,8 @@ class OperationStateControl:
     internal init(isManuallyTriggered: Bool) {
         self.isManuallyTriggered = isManuallyTriggered
     }
-        
+    
+    
     var isManuallyTriggered: Bool
     
     var isCancelled: Bool = false
@@ -28,12 +29,20 @@ class OperationStateControl:
     
     var hasCacheApplied: Bool = false
     
+    var isPaging: Bool = false
+    
     static var Default: OperationStateControl {
         OperationStateControl(isManuallyTriggered: false)
     }
     
     static var ManuallyTriggered: OperationStateControl {
         OperationStateControl(isManuallyTriggered: true)
+    }
+    
+    static var Paging: OperationStateControl {
+       let control =  OperationStateControl(isManuallyTriggered: false)
+        control.isPaging = true
+        return control
     }
     
     func markAsFailed() {

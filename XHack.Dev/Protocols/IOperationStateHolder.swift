@@ -12,4 +12,5 @@ protocol IOperationStateHolder {
     var isManuallyTriggered: Bool { get }
     var isCancelled: Bool { get }
     var isFailed: Bool { get }
+    var isPaging: Bool { get }
 }

@@ -42,8 +42,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34y-Hj-LLn">
                                 <rect key="frame" x="274" y="25" width="21" height="20"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5v3-In-4Pg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5v3-In-4Pg">
                                         <rect key="frame" x="5" y="3" width="11" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="11" id="TCa-rY-m5N"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -63,6 +66,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJV-Uh-HRq">
+                                <rect key="frame" x="259" y="5" width="36" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -75,7 +84,9 @@
                             <constraint firstAttribute="bottom" secondItem="IQg-08-EiC" secondAttribute="bottom" constant="10" id="QmZ-BE-Lbc"/>
                             <constraint firstItem="34y-Hj-LLn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dNh-bq-F9I" secondAttribute="trailing" constant="5" id="R3Q-Wv-CFq"/>
                             <constraint firstItem="IQg-08-EiC" firstAttribute="leading" secondItem="Gcx-Sa-s9w" secondAttribute="leading" constant="10" id="Wdu-T2-mjc"/>
+                            <constraint firstItem="TJV-Uh-HRq" firstAttribute="top" secondItem="Gcx-Sa-s9w" secondAttribute="top" constant="5" id="bmn-3q-8rl"/>
                             <constraint firstItem="dNh-bq-F9I" firstAttribute="top" secondItem="UHh-b1-gac" secondAttribute="bottom" constant="5" id="byp-yC-9kz"/>
+                            <constraint firstAttribute="trailing" secondItem="TJV-Uh-HRq" secondAttribute="trailing" constant="5" id="j4k-tD-L62"/>
                             <constraint firstItem="UHh-b1-gac" firstAttribute="top" secondItem="IQg-08-EiC" secondAttribute="firstBaseline" id="uZO-Ws-u8O"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -95,6 +106,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="avatarImageView" destination="IQg-08-EiC" id="QTf-8M-7rX"/>
+                <outlet property="dateLabel" destination="TJV-Uh-HRq" id="ngE-1B-auY"/>
                 <outlet property="lastMessageLabel" destination="dNh-bq-F9I" id="zcM-V2-I2c"/>
                 <outlet property="nameLabel" destination="UHh-b1-gac" id="Kla-U2-vUf"/>
                 <outlet property="unreadCountLabel" destination="5v3-In-4Pg" id="TI8-PP-CSJ"/>

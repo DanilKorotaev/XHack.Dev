@@ -10,4 +10,5 @@ import Foundation
 
 protocol ApiEndpoints {
     var gatewayUrl: String { get }
+    var chatSocketIoUrl: String { get }
 }

@@ -14,6 +14,10 @@ class EndpointsProvider: ApiEndpoints {
         endpoints.gatewayUrl
     }
     
+    var chatSocketIoUrl: String {
+        endpoints.chatSocketIoUrl
+    }
+    
     private let endpoints: ApiEndpoints
     
     init() {

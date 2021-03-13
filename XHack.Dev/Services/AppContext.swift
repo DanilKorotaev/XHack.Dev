@@ -39,6 +39,10 @@ class AppContext: IAppContext {
         }
     }
     
+    func getShortUser() -> ShortUser {
+        ShortUser(id: currentUser!.id, name: currentUser!.name.value, avatarUrl: currentUser!.avatarUrl)
+    }
+    
     func clearContext() {
         currentUser = nil
     }

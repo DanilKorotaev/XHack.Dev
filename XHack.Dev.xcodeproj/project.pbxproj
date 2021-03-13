@@ -147,6 +147,8 @@
 		A33579E725E5729D00297E22 /* HackTeamListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33579E625E5729C00297E22 /* HackTeamListCoordinator.swift */; };
 		A33579EC25E572AB00297E22 /* HackTeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33579EB25E572AB00297E22 /* HackTeamListViewController.swift */; };
 		A33579F125E5741900297E22 /* HackTeamListFilterDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33579F025E5741900297E22 /* HackTeamListFilterDto.swift */; };
+		A33CC1DB25F96136004CD16B /* ChatProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33CC1DA25F96134004CD16B /* ChatProcessor.swift */; };
+		A33CC1E325F96152004CD16B /* ChatProccessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33CC1E225F96151004CD16B /* ChatProccessable.swift */; };
 		A33F448425A7A55200C16624 /* HackFilterDialogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F448325A7A55200C16624 /* HackFilterDialogCoordinator.swift */; };
 		A33F448925A7A55F00C16624 /* HackFilterDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33F448825A7A55F00C16624 /* HackFilterDialog.storyboard */; };
 		A33F448E25A7A56A00C16624 /* HackFilterDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F448D25A7A56A00C16624 /* HackFilterDialogViewController.swift */; };
@@ -268,6 +270,16 @@
 		A3961B26257AE6A300FC3541 /* TeamList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3961B25257AE6A200FC3541 /* TeamList.storyboard */; };
 		A3A0E941259A8CE100634BED /* TopHackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A0E93F259A8CE100634BED /* TopHackViewCell.swift */; };
 		A3A0E942259A8CE100634BED /* TopHackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3A0E940259A8CE100634BED /* TopHackViewCell.xib */; };
+		A3A6F38825F6719700DCD778 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6F38725F6719700DCD778 /* Date+Extensions.swift */; };
+		A3A6F38D25F6903C00DCD778 /* BaseCoordinator+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6F38C25F6903C00DCD778 /* BaseCoordinator+Navigation.swift */; };
+		A3A6F39525F6A34C00DCD778 /* ChatMessageDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6F39425F6A34C00DCD778 /* ChatMessageDto.swift */; };
+		A3A6F39A25F6A3F400DCD778 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6F39925F6A3F400DCD778 /* ChatMessage.swift */; };
+		A3A6F3A025F6BD0400DCD778 /* IncomingMessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6F39E25F6BD0400DCD778 /* IncomingMessageViewCell.swift */; };
+		A3A6F3A125F6BD0500DCD778 /* IncomingMessageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3A6F39F25F6BD0400DCD778 /* IncomingMessageViewCell.xib */; };
+		A3A6F3A725F6BD1B00DCD778 /* OutgoingMessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6F3A525F6BD1B00DCD778 /* OutgoingMessageViewCell.swift */; };
+		A3A6F3A825F6BD1B00DCD778 /* OutgoingMessageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3A6F3A625F6BD1B00DCD778 /* OutgoingMessageViewCell.xib */; };
+		A3A6F3AD25F7FA8E00DCD778 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6F3AC25F7FA8C00DCD778 /* UIView+Extensions.swift */; };
+		A3A6F3B225F8106500DCD778 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6F3B125F8106100DCD778 /* UITextView+Extension.swift */; };
 		A3AD07A525E2F58300DA0785 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD07A425E2F58300DA0785 /* SecondaryButton.swift */; };
 		A3AD07AA25E3EB1700DA0785 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AD07A925E3EB1700DA0785 /* UITableViewCell+Extensions.swift */; };
 		A3B7639125FD0B20006D31D7 /* PageLoadingBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B7639025FD0B20006D31D7 /* PageLoadingBehaviour.swift */; };
@@ -294,6 +306,14 @@
 		A3BA569625743A2F007AD591 /* KeyChainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA569525743A2F007AD591 /* KeyChainHelper.swift */; };
 		A3BDB5FF25F41E5D006CD2DC /* ShortChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BDB5FE25F41E5C006CD2DC /* ShortChatMessage.swift */; };
 		A3BDB60425F41ED2006CD2DC /* ShortChatMessageDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BDB60325F41ED2006CD2DC /* ShortChatMessageDto.swift */; };
+		A3C2B29025FAA9DE00BA103F /* ServerEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B28F25FAA9DE00BA103F /* ServerEvents.swift */; };
+		A3C2B29525FAAA2900BA103F /* ClientEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B29425FAAA2900BA103F /* ClientEvents.swift */; };
+		A3C2B29B25FAAAB800BA103F /* SendMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B29A25FAAAB800BA103F /* SendMessageData.swift */; };
+		A3C2B2B325FBEB9700BA103F /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B2B225FBEB9700BA103F /* ObservableArray.swift */; };
+		A3C2B2B825FBEF6F00BA103F /* UITableView+RxExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B2B725FBEF6F00BA103F /* UITableView+RxExtension.swift */; };
+		A3C2B2BD25FC073400BA103F /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B2BC25FC073400BA103F /* String+Size.swift */; };
+		A3C2B2C225FC15D100BA103F /* Dictionary+JsonParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B2C125FC15D100BA103F /* Dictionary+JsonParse.swift */; };
+		A3C2B2C725FC16FB00BA103F /* NewMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B2C625FC16FB00BA103F /* NewMessageData.swift */; };
 		A3C2B2CD25FCC6F600BA103F /* ActionBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B2CC25FCC6F500BA103F /* ActionBehavior.swift */; };
 		A3C2B2D225FCC7F100BA103F /* ScrolledToBottomActionBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B2D125FCC7F100BA103F /* ScrolledToBottomActionBehaviour.swift */; };
 		A3C2B2D725FCC8A800BA103F /* SmartScrollBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B2D625FCC8A800BA103F /* SmartScrollBehaviour.swift */; };
@@ -513,6 +533,8 @@
 		A33579E625E5729C00297E22 /* HackTeamListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackTeamListCoordinator.swift; sourceTree = "<group>"; };
 		A33579EB25E572AB00297E22 /* HackTeamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackTeamListViewController.swift; sourceTree = "<group>"; };
 		A33579F025E5741900297E22 /* HackTeamListFilterDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackTeamListFilterDto.swift; sourceTree = "<group>"; };
+		A33CC1DA25F96134004CD16B /* ChatProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProcessor.swift; sourceTree = "<group>"; };
+		A33CC1E225F96151004CD16B /* ChatProccessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProccessable.swift; sourceTree = "<group>"; };
 		A33F448325A7A55200C16624 /* HackFilterDialogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFilterDialogCoordinator.swift; sourceTree = "<group>"; };
 		A33F448825A7A55F00C16624 /* HackFilterDialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HackFilterDialog.storyboard; sourceTree = "<group>"; };
 		A33F448D25A7A56A00C16624 /* HackFilterDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFilterDialogViewController.swift; sourceTree = "<group>"; };
@@ -635,6 +657,16 @@
 		A3961B25257AE6A200FC3541 /* TeamList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamList.storyboard; sourceTree = "<group>"; };
 		A3A0E93F259A8CE100634BED /* TopHackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHackViewCell.swift; sourceTree = "<group>"; };
 		A3A0E940259A8CE100634BED /* TopHackViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopHackViewCell.xib; sourceTree = "<group>"; };
+		A3A6F38725F6719700DCD778 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		A3A6F38C25F6903C00DCD778 /* BaseCoordinator+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseCoordinator+Navigation.swift"; sourceTree = "<group>"; };
+		A3A6F39425F6A34C00DCD778 /* ChatMessageDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageDto.swift; sourceTree = "<group>"; };
+		A3A6F39925F6A3F400DCD778 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		A3A6F39E25F6BD0400DCD778 /* IncomingMessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingMessageViewCell.swift; sourceTree = "<group>"; };
+		A3A6F39F25F6BD0400DCD778 /* IncomingMessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomingMessageViewCell.xib; sourceTree = "<group>"; };
+		A3A6F3A525F6BD1B00DCD778 /* OutgoingMessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingMessageViewCell.swift; sourceTree = "<group>"; };
+		A3A6F3A625F6BD1B00DCD778 /* OutgoingMessageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OutgoingMessageViewCell.xib; sourceTree = "<group>"; };
+		A3A6F3AC25F7FA8C00DCD778 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		A3A6F3B125F8106100DCD778 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		A3AD07A425E2F58300DA0785 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		A3AD07A925E3EB1700DA0785 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		A3B7639025FD0B20006D31D7 /* PageLoadingBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageLoadingBehaviour.swift; sourceTree = "<group>"; };
@@ -661,6 +693,14 @@
 		A3BA569525743A2F007AD591 /* KeyChainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainHelper.swift; sourceTree = "<group>"; };
 		A3BDB5FE25F41E5C006CD2DC /* ShortChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortChatMessage.swift; sourceTree = "<group>"; };
 		A3BDB60325F41ED2006CD2DC /* ShortChatMessageDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortChatMessageDto.swift; sourceTree = "<group>"; };
+		A3C2B28F25FAA9DE00BA103F /* ServerEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEvents.swift; sourceTree = "<group>"; };
+		A3C2B29425FAAA2900BA103F /* ClientEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientEvents.swift; sourceTree = "<group>"; };
+		A3C2B29A25FAAAB800BA103F /* SendMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageData.swift; sourceTree = "<group>"; };
+		A3C2B2B225FBEB9700BA103F /* ObservableArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableArray.swift; sourceTree = "<group>"; };
+		A3C2B2B725FBEF6F00BA103F /* UITableView+RxExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+RxExtension.swift"; sourceTree = "<group>"; };
+		A3C2B2BC25FC073400BA103F /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
+		A3C2B2C125FC15D100BA103F /* Dictionary+JsonParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+JsonParse.swift"; sourceTree = "<group>"; };
+		A3C2B2C625FC16FB00BA103F /* NewMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageData.swift; sourceTree = "<group>"; };
 		A3C2B2CC25FCC6F500BA103F /* ActionBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionBehavior.swift; sourceTree = "<group>"; };
 		A3C2B2D125FCC7F100BA103F /* ScrolledToBottomActionBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrolledToBottomActionBehaviour.swift; sourceTree = "<group>"; };
 		A3C2B2D625FCC8A800BA103F /* SmartScrollBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartScrollBehaviour.swift; sourceTree = "<group>"; };
@@ -848,6 +888,7 @@
 				A3F3D7F025F384F700DACC7A /* TeamRequest.swift */,
 				A3F3D82725F3C41700DACC7A /* ShortChatDto.swift */,
 				A3BDB60325F41ED2006CD2DC /* ShortChatMessageDto.swift */,
+				A3A6F39425F6A34C00DCD778 /* ChatMessageDto.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -903,6 +944,7 @@
 		16A1E53822DA3F140003F0DF /* XHack.Dev */ = {
 			isa = PBXGroup;
 			children = (
+				A33CC1D925F96114004CD16B /* Socket.io */,
 				A32D3CC225E2C654002633B8 /* Helpers */,
 				A33F44AC25A8E9B200C16624 /* DraggableViewControllerAnimator */,
 				A31F574925A5EAC300759B61 /* Primitives */,
@@ -924,6 +966,7 @@
 				16A1E5AA22DA40C30003F0DF /* translations.json */,
 				16A1E54522DA3F170003F0DF /* Info.plist */,
 				A3884C032569624700851886 /* Injection.swift */,
+				A3C2B2B225FBEB9700BA103F /* ObservableArray.swift */,
 			);
 			path = XHack.Dev;
 			sourceTree = "<group>";
@@ -980,6 +1023,12 @@
 				A3AD07A925E3EB1700DA0785 /* UITableViewCell+Extensions.swift */,
 				A3DC595625E45DCE009DA204 /* UICollectionViewCell+Extension.swift */,
 				A3E627F825E59B9E00C1FBB7 /* UITableViewHeaderFooterView+Extensions.swift */,
+				A3A6F38725F6719700DCD778 /* Date+Extensions.swift */,
+				A3A6F3AC25F7FA8C00DCD778 /* UIView+Extensions.swift */,
+				A3A6F3B125F8106100DCD778 /* UITextView+Extension.swift */,
+				A3C2B2B725FBEF6F00BA103F /* UITableView+RxExtension.swift */,
+				A3C2B2BC25FC073400BA103F /* String+Size.swift */,
+				A3C2B2C125FC15D100BA103F /* Dictionary+JsonParse.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1090,6 +1139,7 @@
 				A39299B025EEDBD30031C5B9 /* UserDetails.swift */,
 				A3F3D82C25F3D08300DACC7A /* ShortChat.swift */,
 				A3BDB5FE25F41E5C006CD2DC /* ShortChatMessage.swift */,
+				A3A6F39925F6A3F400DCD778 /* ChatMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1097,6 +1147,7 @@
 		16A1E5D122DA40C40003F0DF /* Dto */ = {
 			isa = PBXGroup;
 			children = (
+				A3C2B29925FAAAA500BA103F /* Socket.io */,
 				1671DCDE22DCFD1D00A0ED62 /* Request */,
 				1671DCDD22DCFD1100A0ED62 /* Response */,
 			);
@@ -1204,6 +1255,7 @@
 		A31F574925A5EAC300759B61 /* Primitives */ = {
 			isa = PBXGroup;
 			children = (
+				A3C2B28E25FAA9BF00BA103F /* Socket.io */,
 				A31F574A25A5EAD500759B61 /* OperationStateControl.swift */,
 				A3C2B2DB25FCFCFD00BA103F /* ScrollDirection.swift */,
 				A3C2B2E025FCFD7200BA103F /* SmartScrollArgs.swift */,
@@ -1315,6 +1367,23 @@
 				A3E627E425E57B1800C1FBB7 /* HackTeamList.storyboard */,
 			);
 			path = TeamList;
+			sourceTree = "<group>";
+		};
+		A33CC1D925F96114004CD16B /* Socket.io */ = {
+			isa = PBXGroup;
+			children = (
+				A33CC1E725F96192004CD16B /* Protocols */,
+				A33CC1DA25F96134004CD16B /* ChatProcessor.swift */,
+			);
+			path = Socket.io;
+			sourceTree = "<group>";
+		};
+		A33CC1E725F96192004CD16B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A33CC1E225F96151004CD16B /* ChatProccessable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		A33F448225A7A53400C16624 /* HackFilterDialog */ = {
@@ -1488,6 +1557,7 @@
 				A37055E925852D6E005650FD /* BaseViewModel+Dialogs.swift */,
 				A3705602258534E6005650FD /* Container+Extension.swift */,
 				A36BFE3025F2B21000272E1D /* BaseViewModel+Teams.swift */,
+				A3A6F38C25F6903C00DCD778 /* BaseCoordinator+Navigation.swift */,
 			);
 			path = BaseViewModelExtensions;
 			sourceTree = "<group>";
@@ -1655,6 +1725,24 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		A3C2B28E25FAA9BF00BA103F /* Socket.io */ = {
+			isa = PBXGroup;
+			children = (
+				A3C2B28F25FAA9DE00BA103F /* ServerEvents.swift */,
+				A3C2B29425FAAA2900BA103F /* ClientEvents.swift */,
+			);
+			path = Socket.io;
+			sourceTree = "<group>";
+		};
+		A3C2B29925FAAAA500BA103F /* Socket.io */ = {
+			isa = PBXGroup;
+			children = (
+				A3C2B29A25FAAAB800BA103F /* SendMessageData.swift */,
+				A3C2B2C625FC16FB00BA103F /* NewMessageData.swift */,
+			);
+			path = Socket.io;
+			sourceTree = "<group>";
+		};
 		A3C2B2CB25FCB5D800BA103F /* Behaviours */ = {
 			isa = PBXGroup;
 			children = (
@@ -1713,6 +1801,10 @@
 			children = (
 				A3F3D84025F3D56300DACC7A /* ChatViewCell.swift */,
 				A3F3D84125F3D56300DACC7A /* ChatViewCell.xib */,
+				A3A6F39E25F6BD0400DCD778 /* IncomingMessageViewCell.swift */,
+				A3A6F39F25F6BD0400DCD778 /* IncomingMessageViewCell.xib */,
+				A3A6F3A525F6BD1B00DCD778 /* OutgoingMessageViewCell.swift */,
+				A3A6F3A625F6BD1B00DCD778 /* OutgoingMessageViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1857,11 +1949,13 @@
 				16A1E5ED22DA40C40003F0DF /* Drawer.storyboard in Resources */,
 				A3441D59259681DD00A3BFA5 /* ChooseSearchCategory.storyboard in Resources */,
 				16DD9D1922DB314C007D9D2F /* Settings.storyboard in Resources */,
+				A3A6F3A825F6BD1B00DCD778 /* OutgoingMessageViewCell.xib in Resources */,
 				16DD9D0622DA8192007D9D2F /* OnBoarding.storyboard in Resources */,
 				A3961B26257AE6A300FC3541 /* TeamList.storyboard in Resources */,
 				A323128D256F118100D3B97B /* Profile.storyboard in Resources */,
 				A349FB5D259BDB2C0038549E /* PopularHackViewCell.xib in Resources */,
 				A3196283259A757300D58502 /* HackathonList.storyboard in Resources */,
+				A3A6F3A125F6BD0500DCD778 /* IncomingMessageViewCell.xib in Resources */,
 				A38CDB2E256C1A2600E8A732 /* Registration.storyboard in Resources */,
 				A349FB65259BE40C0038549E /* TagViewCell.xib in Resources */,
 				A3196296259A789900D58502 /* HackListHeaderView.xib in Resources */,
@@ -2027,6 +2121,7 @@
 				A3BA565C25742D1E007AD591 /* ApiHelpers.swift in Sources */,
 				A362EED125EC2BA300AC147F /* IncomingRequest.swift in Sources */,
 				A31F572C25A5E3DE00759B61 /* RefreshHandler.swift in Sources */,
+				A33CC1E325F96152004CD16B /* ChatProccessable.swift in Sources */,
 				16A1E5F222DA40C40003F0DF /* ViewControllerUtils.swift in Sources */,
 				A37055F025852E06005650FD /* AlertDialogMessage.swift in Sources */,
 				16A1E61222DA40C40003F0DF /* Container+RegisterDependencies.swift in Sources */,
@@ -2054,6 +2149,7 @@
 				16A1E60E22DA40C40003F0DF /* SignInViewModel.swift in Sources */,
 				A31F573125A5E6D900759B61 /* RefreshableContentHost.swift in Sources */,
 				A33F449325A7A57300C16624 /* HackFilterDialogViewModel.swift in Sources */,
+				A3C2B29025FAA9DE00BA103F /* ServerEvents.swift in Sources */,
 				16DD9D1F22DB32F2007D9D2F /* SettingsViewModel.swift in Sources */,
 				A37055CC25851535005650FD /* HackathonDetailViewModel.swift in Sources */,
 				A3961AC72579953E00FC3541 /* HackathonDto.swift in Sources */,
@@ -2065,6 +2161,7 @@
 				16A1E5EF22DA40C40003F0DF /* Json.swift in Sources */,
 				A3E627FF25E6EB0E00C1FBB7 /* HackTeamDetailsViewModel.swift in Sources */,
 				A3961AE425799B4000FC3541 /* BookmarkHackathonDTO.swift in Sources */,
+				A3A6F38825F6719700DCD778 /* Date+Extensions.swift in Sources */,
 				16DD9D0422DA7D92007D9D2F /* OnBoardingData.swift in Sources */,
 				16A1E60422DA40C40003F0DF /* ButtonWithProgress.swift in Sources */,
 				A37055EA25852D6E005650FD /* BaseViewModel+Dialogs.swift in Sources */,
@@ -2072,6 +2169,7 @@
 				A30962592569DDCA007E366E /* TaskDetailViewModel.swift in Sources */,
 				A3E627F925E59B9E00C1FBB7 /* UITableViewHeaderFooterView+Extensions.swift in Sources */,
 				16A1E60F22DA40C40003F0DF /* DrawerMenuViewModel.swift in Sources */,
+				A3C2B2B825FBEF6F00BA103F /* UITableView+RxExtension.swift in Sources */,
 				16DD9D1B22DB3242007D9D2F /* SettingsViewController.swift in Sources */,
 				A3196284259A757300D58502 /* HackathonListViewModel.swift in Sources */,
 				16DD9D0222DA7D5F007D9D2F /* OnBoardingCoordinator.swift in Sources */,
@@ -2083,6 +2181,7 @@
 				A3F3D82325F3B23A00DACC7A /* ChatsApi.swift in Sources */,
 				A3BA566625742EFA007AD591 /* IApiResult.swift in Sources */,
 				A362EEE325ED6DED00AC147F /* RequestSection.swift in Sources */,
+				A3A6F3B225F8106500DCD778 /* UITextView+Extension.swift in Sources */,
 				A32D3CD625E2E53A002633B8 /* PrimaryButton.swift in Sources */,
 				A38CDB36256C1A3C00E8A732 /* RegistrationViewController.swift in Sources */,
 				16DD9D1322DA861F007D9D2F /* SetOptionsViewModel.swift in Sources */,
@@ -2139,9 +2238,12 @@
 				A3BA56842574380D007AD591 /* ApiTokensHolder.swift in Sources */,
 				16A1E61122DA40C40003F0DF /* Container+ViewModels.swift in Sources */,
 				A3961A79257986A100FC3541 /* ITeamsApi.swift in Sources */,
+				A33CC1DB25F96136004CD16B /* ChatProcessor.swift in Sources */,
+				A3A6F38D25F6903C00DCD778 /* BaseCoordinator+Navigation.swift in Sources */,
 				A33F44B425A8E9CD00C16624 /* TeamToHackDetailsTransitionCoordinator.swift in Sources */,
 				16A1E64222DA40C40003F0DF /* AppStoryboard.swift in Sources */,
 				A3441D3225963B1900A3BFA5 /* ChatListViewModel.swift in Sources */,
+				A3A6F39A25F6A3F400DCD778 /* ChatMessage.swift in Sources */,
 				A3881437258AA1D800FFF9A5 /* WithDrawRequestToUserDto.swift in Sources */,
 				A32D3CAF25E2BDD6002633B8 /* EditProfileViewController.swift in Sources */,
 				A33579D425E56E2200297E22 /* HackMemberListFilterDto.swift in Sources */,
@@ -2178,6 +2280,7 @@
 				16A1E60322DA40C40003F0DF /* FancyButton.swift in Sources */,
 				A3961AAD2579935600FC3541 /* SearchHackathonsViewController.swift in Sources */,
 				A3DC592825E4464E009DA204 /* BehaviourSubject+Extensions.swift in Sources */,
+				A3C2B2C225FC15D100BA103F /* Dictionary+JsonParse.swift in Sources */,
 				A32D3CC425E2C66D002633B8 /* Common.swift in Sources */,
 				A33F44B925A8EB4800C16624 /* InteractiveTransitionableViewController.swift in Sources */,
 				A3BA569625743A2F007AD591 /* KeyChainHelper.swift in Sources */,
@@ -2191,6 +2294,7 @@
 				16A1E64822DA40C40003F0DF /* Tokens.swift in Sources */,
 				A33F44B225A8E9CD00C16624 /* MiniToLargeDismissingViewAnimator.swift in Sources */,
 				16DD9CF022DA4981007D9D2F /* HttpClient.swift in Sources */,
+				A3C2B29B25FAAAB800BA103F /* SendMessageData.swift in Sources */,
 				A349FB5C259BDB2C0038549E /* PopularHackViewCell.swift in Sources */,
 				A3961ABD2579949500FC3541 /* IHackathonsApi.swift in Sources */,
 				A3961A6A257980EA00FC3541 /* UpdateProfileDtoRequest.swift in Sources */,
@@ -2239,7 +2343,9 @@
 				A3961AA32579933400FC3541 /* SearchHackathonsViewModel.swift in Sources */,
 				A3705603258534E6005650FD /* Container+Extension.swift in Sources */,
 				A392999725EEC6870031C5B9 /* AppContext.swift in Sources */,
+				A3C2B2C725FC16FB00BA103F /* NewMessageData.swift in Sources */,
 				A3DC594C25E45C43009DA204 /* ShortTeamViewCell.swift in Sources */,
+				A3A6F3A025F6BD0400DCD778 /* IncomingMessageViewCell.swift in Sources */,
 				16A1E64522DA40C40003F0DF /* Session.swift in Sources */,
 				A349FB56259BD5BB0038549E /* Date+String.swift in Sources */,
 				A3961AEE25799C1700FC3541 /* BookmarkTeamDTO.swift in Sources */,
@@ -2274,12 +2380,15 @@
 				A3BA563C2573EA20007AD591 /* TestEndpoints.swift in Sources */,
 				A3961AC2257994E000FC3541 /* ShortHackathonDto.swift in Sources */,
 				A33579E725E5729D00297E22 /* HackTeamListCoordinator.swift in Sources */,
+				A3A6F39525F6A34C00DCD778 /* ChatMessageDto.swift in Sources */,
 				A3441D712597C2F400A3BFA5 /* UIImageView+Extension.swift in Sources */,
 				A3961B1C257AE5F800FC3541 /* TeamListCoordonator.swift in Sources */,
 				A3B7639C25FD0C7D006D31D7 /* TableViewLoadingTarget.swift in Sources */,
 				A3441D5425967AB400A3BFA5 /* ChooseSearchCategoryViewController.swift in Sources */,
+				A3A6F3AD25F7FA8E00DCD778 /* UIView+Extensions.swift in Sources */,
 				A39299A225EED99C0031C5B9 /* UserDetailsViewController.swift in Sources */,
 				A3BA564B25742A0E007AD591 /* AuthApi.swift in Sources */,
+				A3C2B2BD25FC073400BA103F /* String+Size.swift in Sources */,
 				A323129C256F11AC00D3B97B /* ProfileCoordinator.swift in Sources */,
 				A3961A88257987E100FC3541 /* TeamsApi.swift in Sources */,
 				A3881428258AA09500FFF9A5 /* RequestsApi.swift in Sources */,
@@ -2287,6 +2396,7 @@
 				A3877541256A9D9A00F00EB0 /* PushSubscriptionProvider.swift in Sources */,
 				16A1E64422DA40C40003F0DF /* SettingKey.swift in Sources */,
 				A3961AF325799C5100FC3541 /* BookmarkChatDTO.swift in Sources */,
+				A3C2B2B325FBEB9700BA103F /* ObservableArray.swift in Sources */,
 				A3961ACC2579956600FC3541 /* HackathonsApi.swift in Sources */,
 				A3BA568925743849007AD591 /* IAccountSecureStorage.swift in Sources */,
 				A3BDB5FF25F41E5D006CD2DC /* ShortChatMessage.swift in Sources */,
@@ -2300,6 +2410,7 @@
 				16DD9D1D22DB32AA007D9D2F /* SettingsCoordinator.swift in Sources */,
 				A3877550256AB0D300F00EB0 /* PushSubscribingResultMessage.swift in Sources */,
 				A3961AB22579936400FC3541 /* SearchHackathonsCoordinator.swift in Sources */,
+				A3A6F3A725F6BD1B00DCD778 /* OutgoingMessageViewCell.swift in Sources */,
 				A3C2B2E125FCFD7200BA103F /* SmartScrollArgs.swift in Sources */,
 				16A1E62522DA40C40003F0DF /* BaseNavigationController.swift in Sources */,
 				A3441D2A25963B0900A3BFA5 /* ChatListCoordinator.swift in Sources */,
@@ -2310,6 +2421,7 @@
 				A3441D4F25967A7500A3BFA5 /* ChooseSearchCategoryViewModel.swift in Sources */,
 				A3DD557125A668720095A130 /* TeammateSearchCoordinator.swift in Sources */,
 				A301E3412588238A0088B33A /* AddTagsDto.swift in Sources */,
+				A3C2B29525FAAA2900BA103F /* ClientEvents.swift in Sources */,
 				A31F573625A5E7CB00759B61 /* IOperationStateHolder.swift in Sources */,
 				A3BA567525743048007AD591 /* IErrorResult.swift in Sources */,
 			);

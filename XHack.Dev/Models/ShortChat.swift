@@ -18,6 +18,7 @@ class ShortChat {
     let avatarUrl: String
     let lastMessage: ShortChatMessage?
     let unreadCount: Int
+    private(set) var lastMessageDate: String = ""
     
     init(_ data: ShortChatDto) {
         id = data.id
@@ -29,6 +30,7 @@ class ShortChat {
         avatarUrl = data.avatarUrl ?? ""
         if let lasMessageDto = data.messages.first {
             self.lastMessage = ShortChatMessage(lasMessageDto)
+            self.lastMessageDate = lasMessageDto.createdAt.applyChatDateTimeMask()
         }else {
             self.lastMessage = .none
         }

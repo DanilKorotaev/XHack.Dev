@@ -10,4 +10,5 @@ import Foundation
 
 class TestEndpoints : ApiEndpoints {
     var gatewayUrl: String = "http://localhost:3000"
+    var chatSocketIoUrl: String = "http://localhost:3000"
 }

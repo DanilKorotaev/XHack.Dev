@@ -9,6 +9,6 @@
 import Foundation
 
 enum ChatType: String {
-    case p2p
-    case group
+    case p2p = "P2P"
+    case group = "GROUP"
 }

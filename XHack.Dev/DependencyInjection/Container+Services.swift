@@ -13,5 +13,6 @@ extension Container {
         autoregister(NotificationCenter.self, initializer: {() in return NotificationCenter.default}).inObjectScope(.container)
         autoregister(IAccountSecureStorage.self, initializer: AccountSecureStorage.init).inObjectScope(.container)
         autoregister(IAppContext.self, initializer: AppContext.init).inObjectScope(.container)
+        autoregister(ChatProccessable.self, initializer: ChatProcessor.init).inObjectScope(.container)
     }
 }

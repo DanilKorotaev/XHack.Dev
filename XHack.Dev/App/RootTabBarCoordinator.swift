@@ -27,6 +27,7 @@ class RootTabBarCoordinator : BaseCoordinator<Void> {
         let profileViewController = profileCoordinator.navigationController
         
         let chatListCoordinator = AppDelegate.container.resolve(ChatListCoordinator.self)!
+        chatListCoordinator.mainNavigationController = self.navigationController
         
         start(coordinator: chatListCoordinator)
             .subscribe()

@@ -18,6 +18,7 @@ class ChatViewCell: UITableViewCell {
     @IBOutlet weak var lastMessageLabel: UILabel!
     @IBOutlet weak var unreadCountLabel: UILabel!
     @IBOutlet weak var unreadCountView: UIView!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,5 +31,6 @@ class ChatViewCell: UITableViewCell {
         lastMessageLabel.text = model.lastMessage?.text
         unreadCountView.isHidden = model.unreadCount <= 0
         unreadCountLabel.text = "\(model.unreadCount)"
+        dateLabel.text = model.lastMessageDate
     }
 }

@@ -16,6 +16,7 @@ class UserProfile {
     let isAvailableForSearching = BehaviorSubject(value: false)
     let description = BehaviorSubject(value:"")
     let tags = BehaviorSubject<[TagDto]>(value:[])
+    let avatarUrl: String
     
     init(_ data: UserProfileDto) {
         id = data.id
@@ -23,5 +24,6 @@ class UserProfile {
         isAvailableForSearching.onNext(data.isAvailableForSearching)
         description.onNext(data.description)
         tags.onNext(data.tags)
+        avatarUrl = data.avatarUrl ?? ""
     }
 }

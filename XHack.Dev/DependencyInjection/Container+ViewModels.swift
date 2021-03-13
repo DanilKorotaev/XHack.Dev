@@ -30,5 +30,6 @@ extension Container {
         autoregister(HackTeamDetailsViewModel.self, initializer: HackTeamDetailsViewModel.init)
         autoregister(StartUpScreenViewModel.self, initializer: StartUpScreenViewModel.init)
         autoregister(UserDetailsViewModel.self, initializer: UserDetailsViewModel.init)
+        autoregister(ChatViewModel.self, initializer: ChatViewModel.init)
     }
 }

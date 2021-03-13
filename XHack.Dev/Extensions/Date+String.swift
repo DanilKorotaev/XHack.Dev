@@ -10,9 +10,20 @@ import Foundation
 
 extension Date {
     
-    func toString(_ format: String) -> String {
+    func toString(_ format: String, timeZone: TimeZone = .current) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
+        formatter.timeZone = timeZone
         return formatter.string(from: self)
+    }
+    
+    func applyChatDateTimeMask() -> String {
+        if Calendar.current.isDateInToday(self) {
+            return self.toString("HH:mm")
+        }
+        if Calendar.current.isDateInYesterday(self) {
+            return "ВЧЕРА"
+        }
+        return self.toString("dd.MM.yyyy")
     }
 }

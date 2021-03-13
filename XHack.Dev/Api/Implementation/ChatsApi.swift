@@ -23,4 +23,10 @@ class ChatsApi: IChatsApi {
         let url = endpointsProvider.gatewayUrl + "/api/chat/chats"
         return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
+    
+    func getHistorySince(chatId: Int, messageId: Int?, take: Int = 20) -> Promise<ApiResult<[ChatMessageDto]>> {
+        let message = messageId != nil ? "\(messageId!)" : "null"
+        let url = endpointsProvider.gatewayUrl + "/api/chat/getHistorySince/\(chatId)/\(message)/\(take)"
+        return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
 }

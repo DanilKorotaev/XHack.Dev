@@ -13,4 +13,6 @@ protocol IAppContext {
     var currentUser: UserProfile? { get }
     
     func updateUserData() -> Promise<Bool>
+    
+    func getShortUser() -> ShortUser
 }

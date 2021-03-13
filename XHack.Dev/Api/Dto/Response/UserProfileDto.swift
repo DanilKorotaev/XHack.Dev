@@ -12,6 +12,7 @@ struct UserProfileDto: Codable {
     let id: Int
     let name: String
     let email: String
+    let avatarUrl: String?
     let isAvailableForSearching: Bool
     let tags: [TagDto]
     let description: String

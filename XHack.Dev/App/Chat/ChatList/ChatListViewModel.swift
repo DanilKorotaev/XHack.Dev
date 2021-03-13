@@ -39,7 +39,5 @@ class ChatListViewModel: BaseViewModel, RefreshableContentHost {
         refresh.bind { [weak self] in
             self?.forceContentRefreshingAsync(operationArgs: OperationStateControl.ManuallyTriggered)
         }.disposed(by: disposeBag)
-    }
-    
-    
+    }    
 }
