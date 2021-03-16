@@ -19,8 +19,8 @@ class HackMemberListCoordinator: BaseCoordinator<Void> {
     override func start() -> Observable<Void> {
         let viewController = HackMemberListViewController.instantiate()
         viewController.dataContext = viewModel
-        navigationController.pushViewController(viewController, animated: true)
         applyBindings()
+        navigationController.pushViewController(viewController, animated: true)
         
         return Observable.empty()
     }
@@ -30,12 +30,12 @@ class HackMemberListCoordinator: BaseCoordinator<Void> {
             self?.navigationController.popViewController(animated: true)
         }).disposed(by: disposeBag)
         
-        viewModel.memberSelected.subscribe(onNext: {  [weak self] member in
-            self?.toMemberProfile(member)
-        }).disposed(by: disposeBag)
+        viewModel.memberSelected.bind { member in
+            self.toMemberProfile(member)
+        }.disposed(by: disposeBag)
     }
     
     private func toMemberProfile(_ member: ShortUser) {
-        // TODO
+        self.toUserDetails(for: member.id)
     }
 }

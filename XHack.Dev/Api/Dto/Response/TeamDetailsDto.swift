@@ -15,6 +15,7 @@ struct TeamDetailsDto: Codable {
     var avatarUrl: String?
     let members : [ShortUserDto]
     var isBookmarked: Bool = true
+    let chat: Int?
     let participantType: String
     let tags: [TagDto] = []
 }

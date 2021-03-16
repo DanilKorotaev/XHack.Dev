@@ -70,13 +70,16 @@ class UserDetailsViewController: BaseViewController<UserDetailsViewModel>, Story
         self.changeRelationStateView.isHidden = false
         if requests.isEmpty {
             text = "Send request"
-        } else if requests.contains(where: { $0.type == .teamToUser}) {
-            text = "Withdraw request"
-        } else if requests.contains(where: { $0.type == .userToTeam}) {
-            text = "Apply request"
         } else {
-            self.changeRelationStateView.isHidden = true
+            text = "Show requests"
         }
+//        else if requests.contains(where: { $0.type == .teamToUser}) {
+//            text = "Withdraw request"
+//        } else if requests.contains(where: { $0.type == .userToTeam}) {
+//            text = "Apply request"
+//        } else {
+//            self.changeRelationStateView.isHidden = true
+//        }
         changeRelationStateButton.setTitle(text, for: .normal)
     }
 }

@@ -14,6 +14,7 @@ struct TeamDetails {
     var name: String
     var description: String
     var avatarUrl: String?
+    let chatId: Int?
     let participantType: TeamParticipantType
     let members: BehaviorSubject<[ShortUser]>
     let tags: BehaviorSubject<[Tag]>
@@ -28,5 +29,6 @@ struct TeamDetails {
         isBookmarked = BehaviorSubject<Bool>(value: data.isBookmarked)
         members = BehaviorSubject(value: data.members.map {ShortUser($0) })
         tags = BehaviorSubject(value: data.tags.map {Tag($0) })
+        chatId = data.chat
     }
 }

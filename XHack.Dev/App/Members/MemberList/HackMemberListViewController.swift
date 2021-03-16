@@ -17,6 +17,16 @@ class HackMemberListViewController: BaseViewController<HackMemberListViewModel>,
     
     override func completeUi() {
         configureDismissKeyboard()
+        collectionView.register(ShortUserViewCell.nib, forCellWithReuseIdentifier: ShortUserViewCell.reuseIdentifier)
+        let sideInset: CGFloat = 20
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: sideInset, bottom: 0, right: sideInset)
+        let cellSize = CGSize(width: 95, height: 126)
+        let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = .vertical
+            layout.itemSize = cellSize
+            layout.minimumLineSpacing = 15
+            layout.minimumInteritemSpacing = 10
+        collectionView.setCollectionViewLayout(layout, animated: true)
     }
     
     override func applyBinding() {
@@ -32,6 +42,32 @@ class HackMemberListViewController: BaseViewController<HackMemberListViewModel>,
                 dataContext.filterBy.onNext(value)
             })
             .disposed(by: disposeBag)
+        
+//        collectionView.rx.modelSelected(Any.self)
+//            .asDriver()
+//            .drive(onNext: { [unowned self] user in
+//                print(user)
+////                dataContext.memberSelected.onNext(user)
+//            })
+//            .disposed(by: disposeBag)
+        
+//        collectionView.rx.modelSelected(ShortUser.self)
+//            .subscribe(onNext: { user in
+//                print("\(user.name)")
+//            })
+////            .bind(to: dataContext.memberSelected)
+//            .disposed(by: disposeBag)
+        
+        collectionView.rx.itemSelected.bind { index in
+            print(index)
+        }.disposed(by: disposeBag)
+        
+        dataContext.members
+            .bind(to: collectionView.rx.items(cellIdentifier: ShortUserViewCell.reuseIdentifier)) { row, model, cell in
+                guard let cell = cell as? ShortUserViewCell else { return }
+                cell.set(for: model)
+            }.disposed(by: disposeBag)
+        
         
         backButton.rx.tap
             .bind(to: dataContext.back)

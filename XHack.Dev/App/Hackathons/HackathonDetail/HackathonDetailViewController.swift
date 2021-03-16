@@ -36,6 +36,7 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
     @IBOutlet weak var hackDescriptionTextView: UITextView!
     @IBOutlet weak var hackDescriptionContainerView: UIView!
     @IBOutlet weak var changeParticipantStateContainerView: UIView!
+    @IBOutlet weak var descriptionTextViewHeightConstraint: NSLayoutConstraint!
     
     override func completeUi() {
         hackDescriptionTextView.textContainer.maximumNumberOfLines = allDescriptionCollapsedLines
@@ -62,7 +63,8 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
                 self.searchTeamContainerView.isHidden = hackDetail.teams.value.isEmpty
                 self.searchMemberContainerView.isHidden = hackDetail.members.value.isEmpty
                 self.setChangeParticipantStateButtonTitle(participantType: hackDetail.participationType)
-                
+                self.updateDescriptionHeight()
+                self.updateVisibilityShowAllButton()
                 hackDetail.isBookmarked.bind(onNext: { [weak self] value in
                     let bookmarkImage = value ? #imageLiteral(resourceName: "Star") : #imageLiteral(resourceName: "unselected_star")
                     self?.bookmarkButton.setImage(bookmarkImage, for: .normal)
@@ -116,13 +118,30 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
         isAllDescriptionShown = !isAllDescriptionShown
         let title = isAllDescriptionShown ? "Collapse" : "Show All"
         showAllDescriptionButton.setTitle(title, for: .normal)
-        if isAllDescriptionShown {
-            hackDescriptionTextView.textContainer.maximumNumberOfLines = allDescriptionCollapsedLines
-            return
+        updateDescriptionHeight()
+    }
+
+    private func updateDescriptionHeight() {
+        let textSize = hackDescriptionTextView.getRequiredTextSize()
+        let lineHeight = hackDescriptionTextView.font!.lineHeight
+        let maxLines = isAllDescriptionShown ?  allDescriptionExpandedLines : allDescriptionCollapsedLines
+        let maxHeight = lineHeight * CGFloat(maxLines)
+        let textHeight = (maxHeight > textSize.height ? textSize.height : maxHeight) + lineHeight / 2
+
+            self.hackDescriptionTextView.textContainer.maximumNumberOfLines = maxLines
+
+        UIView.animate(withDuration: 0.3) {
+            self.descriptionTextViewHeightConstraint.constant = textHeight
+            self.view.layoutIfNeeded()
         }
-        hackDescriptionTextView.textContainer.maximumNumberOfLines = allDescriptionExpandedLines
     }
     
+    private func updateVisibilityShowAllButton() {
+        let textSize = hackDescriptionTextView.getRequiredTextSize()
+        let lineHeight = hackDescriptionTextView.font!.lineHeight
+        let maxHeight = lineHeight * CGFloat(allDescriptionCollapsedLines)
+        showAllDescriptionButton.isHidden = textSize.height <= maxHeight
+    }
     
     private func setTeamCollectionView() {
         seachTeamCollectionView.register(ShortTeamViewCell.nib, forCellWithReuseIdentifier: ShortTeamViewCell.reuseIdentifier)
@@ -154,7 +173,7 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
                 text = "Cancel participation"
             case .teamCaptain:
                 text = "Cancel team participation"
-            default:
+            @unknown default:
                 text = ""
         }
         changeParticipantStateButton.setTitle(text, for: .normal)

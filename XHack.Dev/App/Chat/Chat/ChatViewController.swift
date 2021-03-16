@@ -16,7 +16,7 @@ class ChatViewController: BaseViewController<ChatViewModel>, Storyboarded {
     lazy var pageLoadingBehavior: PageLoadingBehaviour = {
         return PageLoadingBehaviour(TableViewLoadingTarget(tableView))
     }()
-    
+    private var textObserver:  NSKeyValueObservation!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -37,6 +37,9 @@ class ChatViewController: BaseViewController<ChatViewModel>, Storyboarded {
         tableView.setRotation(180)
         messageTextView.textContainerInset = UIEdgeInsets(top: 7, left: 15, bottom: 7, right: 15)
         messageTextView.delegate = self
+        textObserver = messageTextView.observe(\UITextView.text) { (_, _) in
+            self.setTextInputHeight()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

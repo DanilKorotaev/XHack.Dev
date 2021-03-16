@@ -31,5 +31,7 @@ extension Container {
         autoregister(StartUpScreenViewModel.self, initializer: StartUpScreenViewModel.init)
         autoregister(UserDetailsViewModel.self, initializer: UserDetailsViewModel.init)
         autoregister(ChatViewModel.self, initializer: ChatViewModel.init)
+        autoregister(UserRequestsViewModel.self, initializer: UserRequestsViewModel.init)
+        autoregister(SelectTeamViewModel.self, initializer: SelectTeamViewModel.init)
     }
 }

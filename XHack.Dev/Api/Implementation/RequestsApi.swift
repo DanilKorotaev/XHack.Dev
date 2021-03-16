@@ -20,9 +20,9 @@ class RequestsApi: IRequestsApi {
         self.apiTokenHolder = apiTokenHolder
     }
     
-    func acceptRequestToUser(requestId: Int) -> Promise<LiteApiResult> {
-        let url = endpointsProvider.gatewayUrl + "/api/teams/acceptRequestToUser"
-        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: AcceptRequestToUser(requestId: requestId))
+    func acceptRequestUserToTeam(requestId: Int) -> Promise<LiteApiResult> {
+        let url = endpointsProvider.gatewayUrl + "/api/teams/acceptRequestUserToTeam/\(requestId)"
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
     
     func declineRequestToUser(requestId: Int) -> Promise<LiteApiResult> {
@@ -58,5 +58,15 @@ class RequestsApi: IRequestsApi {
     func sendRequest(to user: CreateRequestToUserDto) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/teams/send-request-to-user"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: user)
+    }
+    
+    func withdrawRequest(requestId: Int) -> Promise<LiteApiResult> {
+        let url = endpointsProvider.gatewayUrl + "/api/teams/withdrawRequest/\(requestId)"
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
+    
+    func declineRequestUserToTeam(requestId: Int) -> Promise<LiteApiResult> {
+        let url = endpointsProvider.gatewayUrl + "/api/teams/declineRequestUserToTeam/\(requestId)"
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
 }

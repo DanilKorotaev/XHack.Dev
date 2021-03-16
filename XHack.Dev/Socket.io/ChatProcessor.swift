@@ -46,7 +46,7 @@ class ChatProcessor: ChatProccessable {
         }
     }
     
-    func sendMessage(chatId: Int, message: String) {
-        socket.emit(ClientEvents.sendMessage.rawValue, SendMessageData(chatId: chatId, message: message))
+    func sendMessage(chatId: Int? = .none, message: String, teamId: Int? = .none, secondUserId: Int? = .none) {
+        socket.emit(ClientEvents.sendMessage.rawValue, SendMessageData(chatId: chatId, message: message, teamId: teamId, secondUserId: secondUserId))
     }
 }

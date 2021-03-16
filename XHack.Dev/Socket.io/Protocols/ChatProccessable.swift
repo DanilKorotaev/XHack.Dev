@@ -11,6 +11,6 @@ import RxSwift
 
 protocol ChatProccessable {
     func connect()
-    func sendMessage(chatId: Int, message: String)
+    func sendMessage(chatId: Int?, message: String, teamId: Int?, secondUserId: Int?)
     var newMessageRecived: PublishSubject<NewMessageData> { get }
 }

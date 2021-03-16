@@ -35,6 +35,10 @@ class HackTeamDetailsCoordinator: BaseCoordinator<Void> {
         viewModel.memberSelected.bind { [weak self] member in
             self?.toUserProfile(member.id)
         }.disposed(by: disposeBag)
+        
+        viewModel.chat.subscribe(onNext: { [weak self] _ in
+            self?.toChat(for: self!.viewModel.team.value!)
+        }).disposed(by: disposeBag)
     }
     
     
@@ -43,5 +47,14 @@ class HackTeamDetailsCoordinator: BaseCoordinator<Void> {
         coordinator.navigationController = self.navigationController
         coordinator.userId = id
         self.start(coordinator: coordinator)
+    }
+    
+    func toChat(for team: TeamDetails) {
+        let coordinator = Container.resolve(ChatCoordinator.self)
+        coordinator.navigationController = Container.resolve(MainScreeenProvider.self).navigationController
+        coordinator.shortChat = ShortChat(id: team.chatId, team: ShortTeam(id: team.id, name: team.name, avatarUrl: team.avatarUrl))
+        coordinator.start().subscribe(onNext: { _ in
+            
+        }).disposed(by: disposeBag)
     }
 }

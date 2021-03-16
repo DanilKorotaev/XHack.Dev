@@ -8,26 +8,42 @@
 
 import Foundation
 import PromiseKit
+import RxSwift
 import Swinject
 
+fileprivate var disposedBags: [DisposeBag] = []
+
 extension BaseViewModel {
-    func selectTeam() -> Promise<Team?> {
+    func selectTeam() -> Promise<SelectTeamResult> {
         Promise() { promise in
             let teamsApi = Container.resolve(ITeamsApi.self)
             teamsApi.getTeams().done { (result) in
                 if self.checkAndProcessApiResult(response: result, "") {
-                    promise.fulfill(.none)
+                    promise.fulfill(.rejected)
                     return
                 }
-                guard let teams = result.content  else {
-                    promise.fulfill(.none)
+                guard let teamsDto = result.content  else {
+                    promise.fulfill(.rejected)
                     return
                 }
-                if let team = teams.first {
-                    promise.fulfill(Team(data: team))
+                if teamsDto.count == 0 {
+                    promise.fulfill(.noTeams)
                     return
                 }
-                promise.fulfill(.none)
+                let teams = teamsDto.map { ShortTeam(id: $0.id, name: $0.name, avatarUrl: $0.avatarUrl ?? "")}
+                if teams.count == 1,  let team = teams.first {
+                    promise.fulfill(.successful(team))
+                    return
+                }
+                let provider = Container.resolve(MainScreeenProvider.self)
+                let coordinator = Container.resolve(SelectTeamCoordinator.self)
+                coordinator.navigationController = provider.navigationController
+                coordinator.parameter = SelectTeamParameter(teams: teams)
+                let disposedBag = DisposeBag()
+                disposedBags.append(disposedBag)
+                coordinator.start().subscribe(onNext: { result in
+                    promise.fulfill(result)
+                }).disposed(by: disposedBag)
             }
         }
     }

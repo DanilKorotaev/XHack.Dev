@@ -15,3 +15,9 @@ enum TeamParticipantType: String {
     case outgoingRequest = "OutgoingRequest"
     case incomingRequest = "IncomingRequest"
 }
+
+extension TeamParticipantType {
+    var isMember: Bool {
+        self == .captaint || self == .member
+    }
+}

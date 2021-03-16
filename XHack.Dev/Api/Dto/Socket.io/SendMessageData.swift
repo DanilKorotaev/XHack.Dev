@@ -10,10 +10,16 @@ import Foundation
 import SocketIO
 
 struct SendMessageData: SocketData {
-    let chatId: Int
+    let chatId: Int?
     let message: String
+    let teamId: Int?
+    let secondUserId: Int?
     
     func socketRepresentation() -> SocketData {
-        return ["chatId": chatId, "message": message]
+        return ["chatId": chatId,
+                "message": message,
+                "teamId": teamId,
+                "secondUserId": secondUserId,
+        ]
     }
 }

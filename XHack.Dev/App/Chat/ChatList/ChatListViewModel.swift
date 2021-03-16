@@ -7,7 +7,7 @@ class ChatListViewModel: BaseViewModel, RefreshableContentHost {
     let chatsApi: IChatsApi
     
     var refresh =  PublishSubject<Void>()
-    var isRefreshing = PublishSubject<Bool>()
+    var isRefreshing = BehaviorSubject<Bool>(value: false)
     
     let chats = BehaviorSubject<[ShortChat]>(value: [])
     let chatSelect = PublishSubject<ShortChat>()

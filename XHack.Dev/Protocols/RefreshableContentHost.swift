@@ -12,5 +12,5 @@ import RxSwift
 
 protocol RefreshableContentHost {
     var refresh: PublishSubject<Void> { get }
-    var isRefreshing: PublishSubject<Bool> { get }
+    var isRefreshing: BehaviorSubject<Bool> { get }
 }

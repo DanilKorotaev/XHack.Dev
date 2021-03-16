@@ -3,7 +3,17 @@ import Swinject
 import SideMenu
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MainScreeenProvider {
+    
+    var navigationController: UINavigationController {
+        let rootViewController = UIApplication.shared.windows[0].rootViewController
+        if let navController = rootViewController as? UINavigationController {
+            return navController
+        }
+        
+        return rootViewController!.navigationController!
+    }
+    
     var window: UIWindow?
     private var appCoordinator: StartUpScreenCoordinator!
     private var messanger: IMessager!
@@ -13,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Container.loggingFunction = nil
         AppDelegate.container.registerDependencies()
-        
+        AppDelegate.container.register(MainScreeenProvider.self, factory: { (_) in self })
         messanger = AppDelegate.container.resolve(IMessager.self)!
         AppDelegate.container.resolve(IPushSubscriptionProvider.self)!.subscribeOnRecievePushNotifications { (result) in
             guard result.__conversion() else { return }

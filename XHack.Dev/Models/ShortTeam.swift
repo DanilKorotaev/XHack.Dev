@@ -13,7 +13,7 @@ class ShortTeam {
     let name: String
     let avatarUrl: String?
     
-    init(id: Int, name: String, avatarUrl: String) {
+    init(id: Int, name: String, avatarUrl: String?) {
         self.id = id
         self.name = name
         self.avatarUrl = avatarUrl

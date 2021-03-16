@@ -150,7 +150,7 @@
                                                         <rect key="frame" x="0.0" y="461" width="414" height="36"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2KH-WE-qzx" customClass="LocalizedButton" customModule="XHack_Dev" customModuleProvider="target">
-                                                                <rect key="frame" x="138.5" y="0.0" width="137" height="36"/>
+                                                                <rect key="frame" x="178.5" y="3" width="57" height="30"/>
                                                                 <state key="normal" title="Sign out"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="localizationKey" value="SignOut"/>
@@ -212,7 +212,7 @@
     </scenes>
     <designables>
         <designable name="2KH-WE-qzx">
-            <size key="intrinsicContentSize" width="137" height="36"/>
+            <size key="intrinsicContentSize" width="57" height="30"/>
         </designable>
     </designables>
     <resources>

@@ -72,7 +72,10 @@ class ChatViewModel: BaseViewModel {
         sendMessage.bind { _ in
             guard self.messageText.value.hasNonEmptyValue() else { return }
             let message = self.messageText.value
-            self.chatProcessor.sendMessage(chatId: self.shortChat!.id, message: message)
+            self.chatProcessor.sendMessage(chatId: self.shortChat?.id,
+                                           message: message,
+                                           teamId: self.shortChat?.team?.id,
+                                           secondUserId: self.shortChat?.secondUser?.id)
             self.messages.insert(ChatMessage(text: message, user: self.context.getShortUser()), at: 0)
             self.messageText.onNext("")
         }.disposed(by: disposeBag)

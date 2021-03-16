@@ -9,7 +9,7 @@ class HomeViewModel: BaseViewModel, RefreshableContentHost {
     let context: IAppContext
     
     let refresh = PublishSubject<Void>()
-    let isRefreshing = PublishSubject<Bool>()
+    let isRefreshing = BehaviorSubject<Bool>(value: false)
     
     let changeSearchableState = PublishSubject<Bool>()
     let isAvailableForSearching: BehaviorSubject<Bool>

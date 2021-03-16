@@ -9,6 +9,8 @@
 import Foundation
 
 extension BaseViewModel {
+    
+    @discardableResult
     func checkAndProcessApiResult(response: IApiResult, _ actionName: String = "") -> Bool {
         switch response.status {
         case .insufficientAccessRights:

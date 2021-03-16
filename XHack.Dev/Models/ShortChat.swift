@@ -9,23 +9,29 @@
 import Foundation
 
 class ShortChat {
-    let id: Int
-    let name: String
-    let firstUser: ShortUserDto?
-    let secondUser: ShortUserDto?
-    let team: ShortTeamDto?
-    let type: ChatType
-    let avatarUrl: String
-    let lastMessage: ShortChatMessage?
-    let unreadCount: Int
-    private(set) var lastMessageDate: String = ""
+    private(set) var  id: Int?  = .none
+    private(set) var  name: String
+    private(set) var  firstUser: ShortUser? = .none
+    private(set) var  secondUser: ShortUser?  = .none
+    private(set) var  team: ShortTeam?  = .none
+    private(set) var  type: ChatType
+    private(set) var  avatarUrl: String
+    private(set) var  lastMessage: ShortChatMessage?  = .none
+    private(set) var  unreadCount: Int = 0
+    private(set) var  lastMessageDate: String = ""
     
     init(_ data: ShortChatDto) {
         id = data.id
         name = data.name
-        firstUser = data.firstUser
-        secondUser = data.secondUser
-        team = data.team
+        if let firstUserDto = data.firstUser {
+            self.firstUser = ShortUser(firstUserDto)
+        }
+        if let secondUserDto = data.secondUser {
+            self.secondUser = ShortUser(secondUserDto)
+        }
+        if let teamDto = data.team {
+            self.team = ShortTeam(teamDto)
+        }
         type = ChatType(rawValue: data.type) ?? .p2p
         avatarUrl = data.avatarUrl ?? ""
         if let lasMessageDto = data.messages.first {
@@ -35,5 +41,13 @@ class ShortChat {
             self.lastMessage = .none
         }
         unreadCount = data.unreadMessageCount
+    }
+    
+    init(id: Int?, team: ShortTeam) {
+        self.id = id
+        name = team.name
+        self.team = team
+        type = .group
+        avatarUrl = team.avatarUrl ?? ""
     }
 }

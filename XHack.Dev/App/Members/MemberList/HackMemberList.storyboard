@@ -70,7 +70,7 @@
                                     <constraint firstItem="036-lU-Hok" firstAttribute="centerY" secondItem="7ir-Zi-VrP" secondAttribute="centerY" id="oc5-Lz-Tbz"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NZP-0X-Ix8">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NZP-0X-Ix8">
                                 <rect key="frame" x="0.0" y="175.5" width="414" height="720.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lFE-P9-EKE">

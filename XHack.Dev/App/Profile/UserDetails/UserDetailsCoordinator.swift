@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import Swinject
 
 class UserDetailsCoordinator: BaseCoordinator<Void> {
     
@@ -30,6 +31,19 @@ class UserDetailsCoordinator: BaseCoordinator<Void> {
     func applyBindings() {
         viewModel.back.subscribe(onNext: { [weak self] in
             self?.navigationController.popViewController(animated: true)
+        }).disposed(by: disposeBag)
+        
+        viewModel.showRequests.subscribe(onNext: { [weak self] requests in
+            self?.showRequests(requests)
+        }).disposed(by: disposeBag)
+    }
+    
+    private func showRequests(_ requests: [TeamRequest]) {
+        let coordinator = Container.resolve(UserRequestsCoordinator.self)
+        coordinator.navigationController = navigationController
+        coordinator.requests = requests
+        coordinator.start().subscribe(onNext: { _ in
+            self.viewModel.forceContentRefreshingAsync()
         }).disposed(by: disposeBag)
     }
 }

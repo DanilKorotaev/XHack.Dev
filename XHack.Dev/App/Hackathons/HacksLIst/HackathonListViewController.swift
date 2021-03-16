@@ -12,8 +12,13 @@ class HackathonListViewController: BaseViewController<HackathonListViewModel>, S
     static var storyboard =  AppStoryboard.hackathonList
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchButton: UIButton!
     var tableHeaderView: HackListHeaderView!
     var refreshHandler: RefreshHandler!
+    
+    lazy var pageLoadingBehavior: PageLoadingBehaviour = {
+        return PageLoadingBehaviour(TableViewLoadingTarget(tableView))
+    }()
     
     override func completeUi() {
         tableView.tableFooterView = UIView()
@@ -47,6 +52,10 @@ class HackathonListViewController: BaseViewController<HackathonListViewModel>, S
             .bind(to: dataContext.refresh)
             .disposed(by: disposeBag)
         
+        searchButton.rx.tap
+            .bind(to: dataContext.seachRequsted)
+            .disposed(by: disposeBag)
+        
 //        tableHeaderView.dataContext = dataContext
         dataContext.hackathons
             .bind(to: tableView.rx.items(cellIdentifier: HackathonViewCell.reuseIdentifier)) { row, model, cell in
@@ -57,6 +66,11 @@ class HackathonListViewController: BaseViewController<HackathonListViewModel>, S
         
         tableView.rx.modelSelected(ShortHackathon.self)
             .bind(to: dataContext.didSelectHack)
+            .disposed(by: disposeBag)
+        
+        pageLoadingBehavior.command = dataContext.loadNext
+        dataContext.isPageLoading
+            .bind(to: pageLoadingBehavior.isLoading)
             .disposed(by: disposeBag)
     }
 }

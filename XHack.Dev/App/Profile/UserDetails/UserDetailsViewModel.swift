@@ -19,6 +19,8 @@ class UserDetailsViewModel: BaseViewModel {
     let back = PublishSubject<Void>()
     let bookmark = PublishSubject<Void>()
     let changeRelatonState = PublishSubject<Void>()
+    let showRequests = PublishSubject<[TeamRequest]>()
+    
     let user = BehaviorSubject<UserDetails?>(value: nil)
     let isCurrentUser = BehaviorSubject<Bool>(value: true)
     var userId: Int = 0
@@ -81,21 +83,32 @@ class UserDetailsViewModel: BaseViewModel {
         guard let requests = user.value?.requests else { return }
         if requests.isEmpty {
             sendRequest()
-        } else if requests.contains(where: { $0.type == .teamToUser}) {
-            withdrawRequest()
-        } else if requests.contains(where: { $0.type == .userToTeam}) {
-            applyRequest()
+        } else {
+            showRequests.onNext(requests)
         }
+//        else if requests.contains(where: { $0.type == .teamToUser}) {
+//            withdrawRequest()
+//        } else if requests.contains(where: { $0.type == .userToTeam}) {
+//            applyRequest()
+//        }
     }
     
+    
     private func sendRequest() {
-        self.selectTeam().done { (team) in
-            guard let team = team else { return }
-            self.requestsApi.sendRequest(to: CreateRequestToUserDto(userId: self.userId, teamId: team.id)).done { (result) in
-                if self.checkAndProcessApiResult(response: result, "отправить запрос") {
-                    return
+        self.selectTeam().done { (selectResult) in
+            switch selectResult {
+            case .rejected:
+                return
+            case .noTeams:
+                self.showMessage(title: "", message: "У вас нет команд. Создайте команду, чтобы отправить запрос")
+                return
+            case .successful(let team):
+                self.requestsApi.sendRequest(to: CreateRequestToUserDto(userId: self.userId, teamId: team.id)).done { (result) in
+                    if self.checkAndProcessApiResult(response: result, "отправить запрос") {
+                        return
+                    }
+                    self.forceContentRefreshingAsync()
                 }
-                self.forceContentRefreshingAsync()
             }
         }
     }

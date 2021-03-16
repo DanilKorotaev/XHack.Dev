@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,8 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJc-ff-ZtQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hackathons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VX-sv-plR">
+                                        <rect key="frame" x="20" y="10.5" width="128" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ol3-gS-aJ8">
+                                        <rect key="frame" x="374" y="15" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="D3A-bN-yDX"/>
+                                            <constraint firstAttribute="height" constant="20" id="sLj-8i-FZB"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_search_gray"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ol3-gS-aJ8" secondAttribute="trailing" constant="20" id="Ra1-U2-6Rg"/>
+                                    <constraint firstAttribute="height" constant="50" id="TJ6-Fh-g5l"/>
+                                    <constraint firstItem="6VX-sv-plR" firstAttribute="leading" secondItem="YJc-ff-ZtQ" secondAttribute="leading" constant="20" id="Unf-KB-7pw"/>
+                                    <constraint firstItem="ol3-gS-aJ8" firstAttribute="centerY" secondItem="YJc-ff-ZtQ" secondAttribute="centerY" id="pBK-hi-44A"/>
+                                    <constraint firstItem="6VX-sv-plR" firstAttribute="centerY" secondItem="YJc-ff-ZtQ" secondAttribute="centerY" id="vrz-df-lAq"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z0d-jo-neo" userLabel="TableView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <sections/>
                             </tableView>
@@ -26,12 +54,16 @@
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="oPy-07-pZT" firstAttribute="bottom" secondItem="z0d-jo-neo" secondAttribute="bottom" id="3wD-Qg-DEu"/>
+                            <constraint firstItem="YJc-ff-ZtQ" firstAttribute="trailing" secondItem="oPy-07-pZT" secondAttribute="trailing" id="980-zp-hVP"/>
+                            <constraint firstItem="YJc-ff-ZtQ" firstAttribute="top" secondItem="oPy-07-pZT" secondAttribute="top" id="Q3F-9O-WAl"/>
                             <constraint firstItem="oPy-07-pZT" firstAttribute="trailing" secondItem="z0d-jo-neo" secondAttribute="trailing" id="cYx-2b-gQs"/>
+                            <constraint firstItem="z0d-jo-neo" firstAttribute="top" secondItem="YJc-ff-ZtQ" secondAttribute="bottom" id="f9R-1V-BA0"/>
                             <constraint firstItem="z0d-jo-neo" firstAttribute="leading" secondItem="oPy-07-pZT" secondAttribute="leading" id="heV-t5-LdA"/>
-                            <constraint firstItem="z0d-jo-neo" firstAttribute="top" secondItem="oPy-07-pZT" secondAttribute="top" id="pfb-cj-OlR"/>
+                            <constraint firstItem="YJc-ff-ZtQ" firstAttribute="leading" secondItem="oPy-07-pZT" secondAttribute="leading" id="udZ-QF-NNd"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchButton" destination="ol3-gS-aJ8" id="UAp-CM-5qo"/>
                         <outlet property="tableView" destination="z0d-jo-neo" id="7ty-DY-DMk"/>
                     </connections>
                 </viewController>
@@ -40,4 +72,10 @@
             <point key="canvasLocation" x="-249.27536231884059" y="178.79464285714286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_search_gray" width="13.5" height="13.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

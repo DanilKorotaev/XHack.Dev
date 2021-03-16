@@ -19,6 +19,9 @@ class HackTeamDetailsViewModel: BaseViewModel {
     let bookmark = PublishSubject<Void>()
     let memberSelected = PublishSubject<ShortUser>()
     let changeParticipantState = PublishSubject<Void>()
+    let chat = PublishSubject<Void>()
+    let canBookmark = BehaviorSubject<Bool>(value: false)
+    let canChat = BehaviorSubject<Bool>(value: false)
     var teamId: Int = 0
         
     init(teamsApi: ITeamsApi, bookmarksApi: IBookmarksApi, requestsApi: IRequestsApi) {
@@ -39,7 +42,11 @@ class HackTeamDetailsViewModel: BaseViewModel {
                 self.showMessage(title: "Ошибка", message: "Не удалось загрузить детальную информацию команды")
                 return
             }
-            self.team.onNext(TeamDetails(data: teamDto))
+            let team = TeamDetails(data: teamDto)
+            let isMember = team.participantType.isMember
+            self.canChat.onNext(isMember)
+            self.canBookmark.onNext(!isMember)
+            self.team.onNext(team)
         }
     }
     
