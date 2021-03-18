@@ -9,9 +9,15 @@
 import Foundation
 import UIKit
 
+fileprivate var cashedImages: [String: UIImage] = [:]
+
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         contentMode = mode
+        if let image =  cashedImages[url.absoluteString] {
+            self.image = image
+            return
+        }
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard
                 let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
@@ -21,6 +27,7 @@ extension UIImageView {
                 else { return }
             DispatchQueue.main.async() { [weak self] in
                 self?.image = image
+                cashedImages[url.absoluteString] = image
             }
         }.resume()
     }

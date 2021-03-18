@@ -19,6 +19,7 @@ class UserDetails {
     let tags = BehaviorSubject<[TagDto]>(value:[])
     let isBookmarked = BehaviorSubject<Bool>(value: false)
     let avatarUrl: String?
+    let chatId: Int?
     let relationType: TeamParticipantType
     let requests: [TeamRequest]
     
@@ -33,5 +34,6 @@ class UserDetails {
         avatarUrl = data.avatarUrl
         relationType = TeamParticipantType(rawValue: data.participantType) ?? .none
         requests = data.requests.map { TeamRequest($0)}
+        chatId = data.chatId
     }
 }

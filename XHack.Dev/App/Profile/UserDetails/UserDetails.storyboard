@@ -207,27 +207,46 @@
                                         <state key="normal" image="left_arrow"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdM-Mn-3X0">
-                                        <rect key="frame" x="51" y="7" width="307" height="26.5"/>
+                                        <rect key="frame" x="51" y="7" width="333" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5K-pX-0vk">
-                                        <rect key="frame" x="368" y="7" width="26" height="26"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="26" id="Gog-oI-gF7"/>
-                                            <constraint firstAttribute="height" constant="26" id="iZx-6l-kqt"/>
-                                        </constraints>
-                                        <state key="normal" image="Star"/>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AnW-q9-4HO">
+                                        <rect key="frame" x="394" y="7" width="0.0" height="26"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aXY-e8-8Gc">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="26"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" id="L9w-j1-CNC"/>
+                                                </constraints>
+                                            </view>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpl-Cx-PAC" customClass="SecondaryButton" customModule="XHack_Dev" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="37" height="26"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="37" id="EHx-Py-H4G"/>
+                                                </constraints>
+                                                <state key="normal" image="ic_chat"/>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZU-78-qyE">
+                                                <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="26" id="eV4-fP-Ezn"/>
+                                                    <constraint firstAttribute="height" constant="26" id="uRz-Uc-WzP"/>
+                                                </constraints>
+                                                <state key="normal" image="Star"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="PDZ-2A-0Sh" firstAttribute="leading" secondItem="Cpj-xZ-kq8" secondAttribute="leading" constant="20" id="08o-oj-bMh"/>
-                                    <constraint firstItem="c5K-pX-0vk" firstAttribute="centerY" secondItem="Cpj-xZ-kq8" secondAttribute="centerY" id="3jk-Fm-k5O"/>
-                                    <constraint firstAttribute="trailing" secondItem="c5K-pX-0vk" secondAttribute="trailing" constant="20" id="ZkY-N0-jhF"/>
+                                    <constraint firstAttribute="trailing" secondItem="AnW-q9-4HO" secondAttribute="trailing" constant="20" id="Lr9-af-8N9"/>
+                                    <constraint firstItem="AnW-q9-4HO" firstAttribute="leading" secondItem="VdM-Mn-3X0" secondAttribute="trailing" constant="10" id="NxT-Pw-Y2G"/>
+                                    <constraint firstItem="AnW-q9-4HO" firstAttribute="centerY" secondItem="Cpj-xZ-kq8" secondAttribute="centerY" id="aSq-98-4iz"/>
                                     <constraint firstItem="VdM-Mn-3X0" firstAttribute="centerY" secondItem="Cpj-xZ-kq8" secondAttribute="centerY" id="eeJ-EB-O5x"/>
-                                    <constraint firstItem="c5K-pX-0vk" firstAttribute="leading" secondItem="VdM-Mn-3X0" secondAttribute="trailing" constant="10" id="eoo-kq-QGD"/>
                                     <constraint firstAttribute="height" constant="40" id="guj-wY-Ukf"/>
                                     <constraint firstItem="VdM-Mn-3X0" firstAttribute="leading" secondItem="PDZ-2A-0Sh" secondAttribute="trailing" constant="13" id="hFW-cO-F9O"/>
                                     <constraint firstItem="PDZ-2A-0Sh" firstAttribute="centerY" secondItem="Cpj-xZ-kq8" secondAttribute="centerY" id="rf7-0g-BzZ"/>
@@ -249,9 +268,10 @@
                     <connections>
                         <outlet property="avatarImageView" destination="uwn-2m-kp4" id="KwD-GC-Mzu"/>
                         <outlet property="backButton" destination="PDZ-2A-0Sh" id="gIO-i9-71h"/>
-                        <outlet property="bookmarkButton" destination="c5K-pX-0vk" id="sxR-qH-z2Z"/>
+                        <outlet property="bookmarkButton" destination="TZU-78-qyE" id="FaR-hs-LYP"/>
                         <outlet property="changeRelationStateButton" destination="bE4-rY-6lj" id="3cP-XF-Azo"/>
                         <outlet property="changeRelationStateView" destination="xjc-ZE-HfJ" id="Z5I-U1-tg3"/>
+                        <outlet property="chatButton" destination="Dpl-Cx-PAC" id="ghW-zf-dqO"/>
                         <outlet property="descriptionLabel" destination="ezf-Cr-unq" id="544-hl-LYr"/>
                         <outlet property="linksTextView" destination="GVN-gf-ftU" id="hgR-B1-GWL"/>
                         <outlet property="nameLabel" destination="auh-cO-lnP" id="pxi-GR-Qaz"/>
@@ -267,6 +287,7 @@
     <resources>
         <image name="Star" width="28" height="27"/>
         <image name="default_hack_avatar" width="120" height="114.5"/>
+        <image name="ic_chat" width="24" height="24"/>
         <image name="left_arrow" width="18.5" height="8"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

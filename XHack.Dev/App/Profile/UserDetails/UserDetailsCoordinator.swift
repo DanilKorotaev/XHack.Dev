@@ -36,6 +36,10 @@ class UserDetailsCoordinator: BaseCoordinator<Void> {
         viewModel.showRequests.subscribe(onNext: { [weak self] requests in
             self?.showRequests(requests)
         }).disposed(by: disposeBag)
+        
+        viewModel.chat.subscribe(onNext: { [weak self] in
+            self?.navigateToChat()
+        }).disposed(by: disposeBag)
     }
     
     private func showRequests(_ requests: [TeamRequest]) {
@@ -44,6 +48,16 @@ class UserDetailsCoordinator: BaseCoordinator<Void> {
         coordinator.requests = requests
         coordinator.start().subscribe(onNext: { _ in
             self.viewModel.forceContentRefreshingAsync()
+        }).disposed(by: disposeBag)
+    }
+    
+    private func navigateToChat() {
+        guard let user = viewModel.user.value else { return }
+        let coordinator = Container.resolve(ChatCoordinator.self)
+        coordinator.navigationController = Container.resolve(MainScreeenProvider.self).navigationController
+        coordinator.shortChat = ShortChat(id: user.chatId, user: ShortUser(id: user.id, name: user.name.value, avatarUrl: user.avatarUrl))
+        coordinator.start().subscribe(onNext: { _ in
+            
         }).disposed(by: disposeBag)
     }
 }

@@ -17,6 +17,7 @@ class ChatProcessor: ChatProccessable {
     let socket: SocketIOClient
     var isConnected: Bool = false
     let newMessageRecived = PublishSubject<NewMessageData>()
+    let readChatRecived = PublishSubject<ReadChatData>()
     
     init(endpoints: ApiEndpoints, apiTokensHolder: IApiTokensHolder) {
         self.apiTokensHolder = apiTokensHolder
@@ -44,9 +45,18 @@ class ChatProcessor: ChatProccessable {
                 self.newMessageRecived.onNext(message)
             }
         }
+        socket.on(ServerEvents.readChat.rawValue) { (data, _) in
+            if let jsonData = (data[0]) as? [String: Any], let readChat = jsonData.convert(ReadChatData.self){
+                self.readChatRecived.onNext(readChat)
+            }
+        }
     }
     
-    func sendMessage(chatId: Int? = .none, message: String, teamId: Int? = .none, secondUserId: Int? = .none) {
-        socket.emit(ClientEvents.sendMessage.rawValue, SendMessageData(chatId: chatId, message: message, teamId: teamId, secondUserId: secondUserId))
+    func sendMessage(chatId: Int? = .none, message: String, guid: UUID, teamId: Int? = .none, secondUserId: Int? = .none) {
+        socket.emit(ClientEvents.sendMessage.rawValue, SendMessageData(chatId: chatId, message: message, teamId: teamId, secondUserId: secondUserId, guid: guid))
+    }
+    
+    func readMessage(chatId: Int, messageId: Int) {
+        socket.emit(ClientEvents.readMessage.rawValue, ReadMessageData(chatId: chatId, messageId: messageId))
     }
 }

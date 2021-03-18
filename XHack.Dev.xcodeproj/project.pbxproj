@@ -185,6 +185,7 @@
 		A349FB5D259BDB2C0038549E /* PopularHackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A349FB5B259BDB2C0038549E /* PopularHackViewCell.xib */; };
 		A349FB64259BE40C0038549E /* TagViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A349FB62259BE40C0038549E /* TagViewCell.swift */; };
 		A349FB65259BE40C0038549E /* TagViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A349FB63259BE40C0038549E /* TagViewCell.xib */; };
+		A352B5EC2602813F00F3F6B2 /* ReadMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A352B5EB2602813500F3F6B2 /* ReadMessageData.swift */; };
 		A35BFA9B25EADC230006EE31 /* TeamParticipantType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35BFA9A25EADC230006EE31 /* TeamParticipantType.swift */; };
 		A35BFAA325EAE0090006EE31 /* HackParticipationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35BFAA225EAE0090006EE31 /* HackParticipationType.swift */; };
 		A362EED125EC2BA300AC147F /* IncomingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A362EED025EC2BA300AC147F /* IncomingRequest.swift */; };
@@ -219,6 +220,9 @@
 		A370560D25857E7D005650FD /* IAlertDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A370560C25857E7D005650FD /* IAlertDispatcher.swift */; };
 		A374553D257D06F0006F4801 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374553C257D06F0006F4801 /* BaseViewController.swift */; };
 		A375596225FFDD9C008FCEEE /* MainScreeenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A375596125FFDD9C008FCEEE /* MainScreeenProvider.swift */; };
+		A378765F2603B4A000D26E37 /* ReadChatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A378765E2603B49F00D26E37 /* ReadChatData.swift */; };
+		A37876662603C89E00D26E37 /* HackTeamViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37876642603C89E00D26E37 /* HackTeamViewCell.swift */; };
+		A37876672603C89E00D26E37 /* HackTeamViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37876652603C89E00D26E37 /* HackTeamViewCell.xib */; };
 		A382162E25FFBD8700AF2BF5 /* SelectTeam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A382162D25FFBD8600AF2BF5 /* SelectTeam.storyboard */; };
 		A382163325FFBDAF00AF2BF5 /* SelectTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A382163225FFBDAF00AF2BF5 /* SelectTeamViewController.swift */; };
 		A382163825FFBDC200AF2BF5 /* SelectTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A382163725FFBDC200AF2BF5 /* SelectTeamViewModel.swift */; };
@@ -585,6 +589,7 @@
 		A349FB5B259BDB2C0038549E /* PopularHackViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularHackViewCell.xib; sourceTree = "<group>"; };
 		A349FB62259BE40C0038549E /* TagViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewCell.swift; sourceTree = "<group>"; };
 		A349FB63259BE40C0038549E /* TagViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagViewCell.xib; sourceTree = "<group>"; };
+		A352B5EB2602813500F3F6B2 /* ReadMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMessageData.swift; sourceTree = "<group>"; };
 		A35BFA9A25EADC230006EE31 /* TeamParticipantType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamParticipantType.swift; sourceTree = "<group>"; };
 		A35BFAA225EAE0090006EE31 /* HackParticipationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackParticipationType.swift; sourceTree = "<group>"; };
 		A362EED025EC2BA300AC147F /* IncomingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingRequest.swift; sourceTree = "<group>"; };
@@ -619,6 +624,9 @@
 		A370560C25857E7D005650FD /* IAlertDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAlertDispatcher.swift; sourceTree = "<group>"; };
 		A374553C257D06F0006F4801 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A375596125FFDD9C008FCEEE /* MainScreeenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreeenProvider.swift; sourceTree = "<group>"; };
+		A378765E2603B49F00D26E37 /* ReadChatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadChatData.swift; sourceTree = "<group>"; };
+		A37876642603C89E00D26E37 /* HackTeamViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackTeamViewCell.swift; sourceTree = "<group>"; };
+		A37876652603C89E00D26E37 /* HackTeamViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HackTeamViewCell.xib; sourceTree = "<group>"; };
 		A382162D25FFBD8600AF2BF5 /* SelectTeam.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectTeam.storyboard; sourceTree = "<group>"; };
 		A382163225FFBDAF00AF2BF5 /* SelectTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamViewController.swift; sourceTree = "<group>"; };
 		A382163725FFBDC200AF2BF5 /* SelectTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamViewModel.swift; sourceTree = "<group>"; };
@@ -1413,6 +1421,7 @@
 		A33579D825E5726E00297E22 /* TeamList */ = {
 			isa = PBXGroup;
 			children = (
+				A37876632603C87E00D26E37 /* Cells */,
 				A33579E125E5729200297E22 /* HackTeamListViewModel.swift */,
 				A33579E625E5729C00297E22 /* HackTeamListCoordinator.swift */,
 				A33579EB25E572AB00297E22 /* HackTeamListViewController.swift */,
@@ -1639,6 +1648,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		A37876632603C87E00D26E37 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A37876642603C89E00D26E37 /* HackTeamViewCell.swift */,
+				A37876652603C89E00D26E37 /* HackTeamViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		A382162C25FFBD6D00AF2BF5 /* SelectTeam */ = {
 			isa = PBXGroup;
 			children = (
@@ -1813,6 +1831,8 @@
 			children = (
 				A3C2B29A25FAAAB800BA103F /* SendMessageData.swift */,
 				A3C2B2C625FC16FB00BA103F /* NewMessageData.swift */,
+				A352B5EB2602813500F3F6B2 /* ReadMessageData.swift */,
+				A378765E2603B49F00D26E37 /* ReadChatData.swift */,
 			);
 			path = Socket.io;
 			sourceTree = "<group>";
@@ -2010,6 +2030,7 @@
 				16DD9CFD22DA6587007D9D2F /* Dashboard.storyboard in Resources */,
 				A3231284256F057900D3B97B /* Home.storyboard in Resources */,
 				16A1E5EC22DA40C40003F0DF /* SignIn.storyboard in Resources */,
+				A37876672603C89E00D26E37 /* HackTeamViewCell.xib in Resources */,
 				A382162E25FFBD8700AF2BF5 /* SelectTeam.storyboard in Resources */,
 				A3961AA82579934900FC3541 /* SearchHackathons.storyboard in Resources */,
 				A3DD556F25A668720095A130 /* TeammateSearch.storyboard in Resources */,
@@ -2197,6 +2218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3BA565C25742D1E007AD591 /* ApiHelpers.swift in Sources */,
+				A37876662603C89E00D26E37 /* HackTeamViewCell.swift in Sources */,
 				A362EED125EC2BA300AC147F /* IncomingRequest.swift in Sources */,
 				A31F572C25A5E3DE00759B61 /* RefreshHandler.swift in Sources */,
 				A33CC1E325F96152004CD16B /* ChatProccessable.swift in Sources */,
@@ -2430,6 +2452,7 @@
 				A3705603258534E6005650FD /* Container+Extension.swift in Sources */,
 				A392999725EEC6870031C5B9 /* AppContext.swift in Sources */,
 				A3C2B2C725FC16FB00BA103F /* NewMessageData.swift in Sources */,
+				A352B5EC2602813F00F3F6B2 /* ReadMessageData.swift in Sources */,
 				A3DC594C25E45C43009DA204 /* ShortTeamViewCell.swift in Sources */,
 				A3A6F3A025F6BD0400DCD778 /* IncomingMessageViewCell.swift in Sources */,
 				16A1E64522DA40C40003F0DF /* Session.swift in Sources */,
@@ -2498,6 +2521,7 @@
 				16DD9D1D22DB32AA007D9D2F /* SettingsCoordinator.swift in Sources */,
 				A3877550256AB0D300F00EB0 /* PushSubscribingResultMessage.swift in Sources */,
 				A3961AB22579936400FC3541 /* SearchHackathonsCoordinator.swift in Sources */,
+				A378765F2603B4A000D26E37 /* ReadChatData.swift in Sources */,
 				A3A6F3A725F6BD1B00DCD778 /* OutgoingMessageViewCell.swift in Sources */,
 				A3C2B2E125FCFD7200BA103F /* SmartScrollArgs.swift in Sources */,
 				16A1E62522DA40C40003F0DF /* BaseNavigationController.swift in Sources */,

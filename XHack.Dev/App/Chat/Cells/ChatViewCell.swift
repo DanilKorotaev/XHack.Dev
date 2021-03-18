@@ -26,11 +26,19 @@ class ChatViewCell: UITableViewCell {
     }
     
     func set(model: ShortChat) {
+        disposeBag = DisposeBag()
         nameLabel.text = model.name
         avatarImageView.downloaded(from: model.avatarUrl)
-        lastMessageLabel.text = model.lastMessage?.text
-        unreadCountView.isHidden = model.unreadCount <= 0
-        unreadCountLabel.text = "\(model.unreadCount)"
-        dateLabel.text = model.lastMessageDate
+        model.lastMessageText
+            .bind(to: lastMessageLabel.rx.text)
+            .disposed(by: disposeBag)
+        model.lastMessageDateText
+            .bind(to: dateLabel.rx.text)
+            .disposed(by: disposeBag)
+        model.unreadCount
+            .bind{ count in
+                self.unreadCountView.isHidden = count <= 0
+                self.unreadCountLabel.text = "\(count)"
+            }.disposed(by: disposeBag)
     }
 }

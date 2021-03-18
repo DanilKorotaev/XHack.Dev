@@ -14,7 +14,7 @@ class Team {
     var name: String
     var description: String
     var avatarUrl: String?
-    let members: BehaviorSubject<[ShortUser]>
+    let members: [ShortUser]
     let tags: BehaviorSubject<[Tag]>
     
     init(data: TeamDto) {
@@ -22,7 +22,7 @@ class Team {
         name = data.name
         description = data.description
         avatarUrl = data.avatarUrl
-        members = BehaviorSubject(value: data.members.map {ShortUser($0) })
+        members = data.members.map {ShortUser($0) }
         tags = BehaviorSubject(value: data.tags.map {Tag($0) })
     }
 }

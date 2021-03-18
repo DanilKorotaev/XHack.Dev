@@ -25,3 +25,9 @@ extension BehaviorSubject where Element == Bool {
         return !self.value
     }
 }
+
+extension BehaviorSubject where Element == Int {
+    func increment() {
+        self.onNext(self.value + 1)
+    }
+}

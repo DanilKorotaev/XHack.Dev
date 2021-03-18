@@ -24,6 +24,7 @@ class UserDetailsViewController: BaseViewController<UserDetailsViewModel>, Story
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var linksTextView: UITextView!
+    @IBOutlet weak var chatButton: UIButton!
     
     override func applyBinding() {
         guard let dataContext = dataContext else {
@@ -57,6 +58,18 @@ class UserDetailsViewController: BaseViewController<UserDetailsViewModel>, Story
         
         changeRelationStateButton.rx.tap
             .bind(to: dataContext.changeRelatonState)
+            .disposed(by: disposeBag)
+        
+        chatButton.rx.tap
+            .bind(to: dataContext.chat)
+            .disposed(by: disposeBag)
+        
+        dataContext.canChat
+            .bind(to: chatButton.rx.isHidden.mapObserver({ !$0}))
+            .disposed(by: disposeBag)
+        
+        dataContext.canBookmark
+            .bind(to: bookmarkButton.rx.isHidden.mapObserver({ !$0}))
             .disposed(by: disposeBag)
         
         dataContext.isCurrentUser.bind { value in

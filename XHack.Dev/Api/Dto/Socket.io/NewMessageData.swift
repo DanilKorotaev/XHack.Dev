@@ -12,6 +12,7 @@ struct NewMessageData: Codable {
     let id: Int
     let chatId: Int
     let message: String
+    let guid: UUID
     let sender: ShortUserDto
 //    let createdAt: Date
 }

@@ -18,6 +18,16 @@ class BaseViewModel {
         tryRefreshContentAsync()
     }
     
+    func viewCreated() { }
+    
+    func viewDidAppear() { }
+    
+    func viewWillAppear() { }
+    
+    func viewDidDisappear() { }
+    
+    func viewWillDisappear() { }
+    
     func refreshContent(operationArgs: IOperationStateControl) { }
     
     func createDefaultRefreshingArgs() -> IOperationStateControl {

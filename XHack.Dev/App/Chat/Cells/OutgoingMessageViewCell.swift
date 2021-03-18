@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import RxSwift
 
 class OutgoingMessageViewCell: UITableViewCell {
 
+    private var disposeBag: DisposeBag!
+    
     let MinDateWidth: CGFloat = 130
     let LeftPadding: CGFloat = 30
     let RightPadding: CGFloat = 10
@@ -33,10 +36,11 @@ class OutgoingMessageViewCell: UITableViewCell {
     }
     
     func set(_ model: ChatMessage) {
+        disposeBag = DisposeBag()
         if model.isIncoming {
             fatalError("\(IncomingMessageViewCell.reuseIdentifier) support only 'false' value for isIncoming for ChatMessage")
         }
-        dateLabel.text = model.date.toString("dd:MM:yy HH:mm:ss")
+        dateLabel.text = model.date.localDate().toString("dd:MM:yy HH:mm:ss")
         messageTextView.text = model.text
         
         let textSize = model.text.getRequiredTextSize(messageTextView.font!, maxTextWigth)

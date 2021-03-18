@@ -14,6 +14,7 @@ class ChatMessage {
     let date: Date
     let isIncoming: Bool
     let user: ShortUser
+    let guid: UUID
     
     init(_ data: ChatMessageDto, isIncoming: Bool) {
         id = data.id
@@ -21,21 +22,24 @@ class ChatMessage {
         user = ShortUser(data.from)
         date = data.createdAt
         self.isIncoming = isIncoming
+        guid = data.guid
     }
     
     init(_ data: NewMessageData, isIncoming: Bool) {
         id = data.id
         text = data.message
         user = ShortUser(data.sender)
-        date = Date()
+        date = Date()//data.createdAt
         self.isIncoming = isIncoming
+        guid = data.guid
     }
     
-    init(text: String, user: ShortUser) {
+    init(text: String, guid: UUID, user: ShortUser) {
         self.text = text
         self.user = user
         isIncoming = false
         date = Date()
         id = .none
+        self.guid = guid
     }
 }

@@ -42,3 +42,9 @@ extension Optional: DefaultValuable {
         return nil
     }
 }
+
+extension Date: DefaultValuable {
+    static func defaultValue() -> Date {
+        return Date()
+    }
+}

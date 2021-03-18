@@ -14,7 +14,7 @@ class HackTeamListViewModel: BaseViewModel {
     let teamSelected = PublishSubject<Team>()
     let back = PublishSubject<Void>()
     let filterBy = PublishSubject<String>()
-    let teams = BehaviorSubject<[Team]>(value: [])
+    var teams = ObservableArray<Team>([])
     var hackId = 0
     private var filter = ""
     
@@ -32,7 +32,8 @@ class HackTeamListViewModel: BaseViewModel {
                     return
                 }
                 guard let content = result.content else { self.showMessage(title: "Ошибка", message: "Не удалось загрузить список команд хакатона"); return}
-                self.teams.onNext(content.map({Team(data: $0)}))
+                let teams = content.map({Team(data: $0)})
+                self.teams.append(contentsOf: teams)
             }
     }
     

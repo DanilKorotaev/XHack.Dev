@@ -39,7 +39,7 @@ class IncomingMessageViewCell: UITableViewCell {
             fatalError("\(IncomingMessageViewCell.reuseIdentifier) support only 'true' value for isIncoming for ChatMessage")
         }
         nameLabel.text = model.user.name
-        dateLabel.text = model.date.toString("dd:MM:yy HH:mm:ss")
+        dateLabel.text = model.date.localDate().toString("dd:MM:yy HH:mm:ss")
         avatarImageView.downloaded(from: model.user.avatarUrl ?? "")
         messageTextView.text = model.text
         

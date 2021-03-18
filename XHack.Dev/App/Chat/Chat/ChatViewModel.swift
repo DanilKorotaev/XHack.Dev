@@ -15,6 +15,8 @@ class ChatViewModel: BaseViewModel {
     private let pageSize = 20
     private var allMessageLoaded = false
     
+    private var chatProccessorDisposeBag: DisposeBag?
+    
     let chatsApi: IChatsApi
     let context: IAppContext
     let chatProcessor: ChatProccessable
@@ -35,7 +37,6 @@ class ChatViewModel: BaseViewModel {
         self.context = context
         self.chatProcessor = chatProcessor
     }
-    
     
     override func refreshContent(operationArgs: IOperationStateControl) {
         chatProcessor.connect()
@@ -59,12 +60,16 @@ class ChatViewModel: BaseViewModel {
             if self.checkAndProcessApiResult(response: result, "список сообщений") {
                 return
             }
-            guard let messages = result.content else {
+            guard let messagesDto = result.content else {
                 return
             }
-            self.allMessageLoaded = messages.count < self.pageSize
             let currentUserId = self.context.currentUser?.id ?? 0
-            self.messages.append(contentsOf: messages.map { ChatMessage($0, isIncoming: $0.from.id != currentUserId ) })
+            let messages = messagesDto.map { ChatMessage($0, isIncoming: $0.from.id != currentUserId ) }
+            self.allMessageLoaded = messages.count < self.pageSize
+            self.messages.append(contentsOf: messages)
+            if !operationArgs.isPaging, let lastMessageId = messages.first?.id {
+                self.readMessage(lastMessageId)
+            }
         }
     }
     
@@ -72,22 +77,52 @@ class ChatViewModel: BaseViewModel {
         sendMessage.bind { _ in
             guard self.messageText.value.hasNonEmptyValue() else { return }
             let message = self.messageText.value
+            let messageGuid = UUID()
             self.chatProcessor.sendMessage(chatId: self.shortChat?.id,
                                            message: message,
+                                           guid: messageGuid,
                                            teamId: self.shortChat?.team?.id,
                                            secondUserId: self.shortChat?.secondUser?.id)
-            self.messages.insert(ChatMessage(text: message, user: self.context.getShortUser()), at: 0)
+            self.messages.insert(ChatMessage(text: message, guid: messageGuid, user: self.context.getShortUser()), at: 0)
             self.messageText.onNext("")
         }.disposed(by: disposeBag)
         
-        chatProcessor.newMessageRecived.subscribe(onNext: { message in
-            let currentUserId = self.context.currentUser?.id ?? 0
-            let isIncoming = currentUserId != message.sender.id
-            self.messages.insert(ChatMessage(message, isIncoming: isIncoming), at: 0)
-        }).disposed(by: disposeBag)
         
         loadNext.subscribe(onNext: { _ in
             self.forceContentRefreshingAsync(operationArgs: OperationStateControl.Paging)
         }).disposed(by: disposeBag)
+    }
+    
+    override func viewWillAppear() {
+        subscribeToChatProccessor()
+    }
+    
+    override func viewDidDisappear() {
+        unsubscribeFromChatProccessor()
+    }
+    
+    private func subscribeToChatProccessor() {
+        chatProccessorDisposeBag = DisposeBag()
+        chatProcessor.newMessageRecived.subscribe(onNext: { message in
+            guard let shortChat = self.shortChat,
+                  shortChat.id == message.chatId,
+                  !self.messages.contains(where: {$0.guid == message.guid})
+            else { return }
+            let currentUserId = self.context.currentUser?.id ?? 0
+            let isIncoming = currentUserId != message.sender.id
+            self.messages.insert(ChatMessage(message, isIncoming: isIncoming), at: 0)
+            self.readMessage(message.id)
+        }).disposed(by: chatProccessorDisposeBag!)
+    }
+    
+    private func unsubscribeFromChatProccessor() {
+        chatProccessorDisposeBag = nil
+    }
+    
+    private func readMessage(_ id: Int) {
+        guard let chatId =  shortChat?.id else {
+            return
+        }
+        chatProcessor.readMessage(chatId: chatId, messageId: id)
     }
 }

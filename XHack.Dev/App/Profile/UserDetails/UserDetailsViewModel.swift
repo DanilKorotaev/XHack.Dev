@@ -20,7 +20,9 @@ class UserDetailsViewModel: BaseViewModel {
     let bookmark = PublishSubject<Void>()
     let changeRelatonState = PublishSubject<Void>()
     let showRequests = PublishSubject<[TeamRequest]>()
-    
+    let canBookmark = BehaviorSubject<Bool>(value: false)
+    let canChat = BehaviorSubject<Bool>(value: false)
+    let chat = PublishSubject<Void>()
     let user = BehaviorSubject<UserDetails?>(value: nil)
     let isCurrentUser = BehaviorSubject<Bool>(value: true)
     var userId: Int = 0
@@ -39,14 +41,23 @@ class UserDetailsViewModel: BaseViewModel {
             if self.checkAndProcessApiResult(response: result, "загрузить детальную информацию участника") {
                 return
             }
-            guard let user = result.content else {
+            guard let userDto = result.content else {
                 self.showMessage(title: "Ошибка", message: "Не удалось загрузить детальную информацию участника")
                 return
             }
-            self.user.onNext(UserDetails(user))
+            let user = UserDetails(userDto)
+            
+            self.user.onNext(user)
+            let isCurrentUser: Bool
             if let currentUserId = self.context.currentUser?.id {
-                self.isCurrentUser.onNext(currentUserId == user.id)
+                isCurrentUser = currentUserId == user.id
+            } else {
+                isCurrentUser = false
             }
+            let canChat = !isCurrentUser && user.relationType == .outgoingRequest
+            self.canChat.onNext(canChat)
+            self.canBookmark.onNext(!isCurrentUser)
+            self.isCurrentUser.onNext(isCurrentUser)
         }
     }
     
@@ -86,11 +97,6 @@ class UserDetailsViewModel: BaseViewModel {
         } else {
             showRequests.onNext(requests)
         }
-//        else if requests.contains(where: { $0.type == .teamToUser}) {
-//            withdrawRequest()
-//        } else if requests.contains(where: { $0.type == .userToTeam}) {
-//            applyRequest()
-//        }
     }
     
     
@@ -111,18 +117,5 @@ class UserDetailsViewModel: BaseViewModel {
                 }
             }
         }
-    }
-    
-    private func withdrawRequest() {
-        requestsApi.withDrawRequestToUser(userId: userId).done { (result) in
-            if self.checkAndProcessApiResult(response: result, "отозвать запрос") {
-                return
-            }
-            self.forceContentRefreshingAsync()
-        }
-    }
-    
-    private func applyRequest() {
-        
     }
 }

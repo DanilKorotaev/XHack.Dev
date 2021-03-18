@@ -14,11 +14,13 @@ struct SendMessageData: SocketData {
     let message: String
     let teamId: Int?
     let secondUserId: Int?
+    let guid: UUID
     
     func socketRepresentation() -> SocketData {
         return ["chatId": chatId,
                 "message": message,
                 "teamId": teamId,
+                "guid": "\(guid)",
                 "secondUserId": secondUserId,
         ]
     }

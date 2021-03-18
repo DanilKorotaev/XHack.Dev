@@ -28,6 +28,7 @@ class BaseViewController<TViewModel>: UIViewController where TViewModel:BaseView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataContext?.viewCreated()
         completeUi()
         applyBinding()
         dataContext?.initialize()
@@ -35,12 +36,24 @@ class BaseViewController<TViewModel>: UIViewController where TViewModel:BaseView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        dataContext?.viewWillAppear()
         subscribeToKeyboardNotifications()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        dataContext?.viewWillDisappear()
         unsubscribeFromKeyboardNotifications()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        dataContext?.viewDidAppear()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        dataContext?.viewDidDisappear()
     }
     
     private func subscribeToKeyboardNotifications() {

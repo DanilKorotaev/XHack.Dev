@@ -19,11 +19,11 @@ extension Date {
     
     func applyChatDateTimeMask() -> String {
         if Calendar.current.isDateInToday(self) {
-            return self.toString("HH:mm")
+            return self.localDate().toString("HH:mm")
         }
         if Calendar.current.isDateInYesterday(self) {
             return "ВЧЕРА"
         }
-        return self.toString("dd.MM.yyyy")
+        return self.localDate().toString("dd.MM.yyyy")
     }
 }

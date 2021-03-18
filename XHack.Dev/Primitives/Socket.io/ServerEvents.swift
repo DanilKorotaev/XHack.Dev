@@ -10,4 +10,5 @@ import Foundation
 
 enum ServerEvents: String {
     case newMessage = "NewMessage"
+    case readChat = "ReadChat"
 }

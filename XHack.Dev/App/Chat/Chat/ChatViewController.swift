@@ -11,7 +11,7 @@ import RxSwift
 
 class ChatViewController: BaseViewController<ChatViewModel>, Storyboarded {
     static var storyboard = AppStoryboard.chat
-
+    
     let defaultMessageTextViewHeight: CGFloat = 35
     lazy var pageLoadingBehavior: PageLoadingBehaviour = {
         return PageLoadingBehaviour(TableViewLoadingTarget(tableView))
@@ -32,6 +32,7 @@ class ChatViewController: BaseViewController<ChatViewModel>, Storyboarded {
         configureDismissKeyboard()
         tableView.tableFooterView = UIView()
         tableView.keyboardDismissMode = .onDrag
+        
         tableView.register(IncomingMessageViewCell.nib, forCellReuseIdentifier: IncomingMessageViewCell.reuseIdentifier)
         tableView.register(OutgoingMessageViewCell.nib, forCellReuseIdentifier: OutgoingMessageViewCell.reuseIdentifier)
         tableView.setRotation(180)
@@ -44,6 +45,7 @@ class ChatViewController: BaseViewController<ChatViewModel>, Storyboarded {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: tableView.frame.width - 10)
         pageLoadingBehavior.initialize()
     }
     
@@ -63,7 +65,9 @@ class ChatViewController: BaseViewController<ChatViewModel>, Storyboarded {
         inputHeight = isMaxSize ? 150 : inputHeight
         
         if inputHeight != messageTextViewHeightConstraint.constant {
-            messageTextViewHeightConstraint.constant = inputHeight
+            UIView.animate(withDuration: 0.2) {
+                self.messageTextViewHeightConstraint.constant = inputHeight
+            }
             if !isMaxSize {
                 messageTextView.setContentOffset(.zero, animated: false)
             }

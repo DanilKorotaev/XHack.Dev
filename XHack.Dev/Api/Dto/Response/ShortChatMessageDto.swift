@@ -12,4 +12,5 @@ struct ShortChatMessageDto: Codable {
     let id: Int
     let text: String
     let createdAt: Date
+    let guid: UUID
 }

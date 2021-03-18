@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import RxSwift
 
-class ShortChat {
+class ShortChat: Comparable {
+
     private(set) var  id: Int?  = .none
     private(set) var  name: String
     private(set) var  firstUser: ShortUser? = .none
@@ -16,9 +18,11 @@ class ShortChat {
     private(set) var  team: ShortTeam?  = .none
     private(set) var  type: ChatType
     private(set) var  avatarUrl: String
-    private(set) var  lastMessage: ShortChatMessage?  = .none
-    private(set) var  unreadCount: Int = 0
-    private(set) var  lastMessageDate: String = ""
+    let unreadCount = BehaviorSubject<Int>(value: 0)
+    let lastMessage = BehaviorSubject<ShortChatMessage?>(value: .none)
+    let lastMessageText = BehaviorSubject<String>(value: "")
+    let lastMessageDate = BehaviorSubject<Date>(value: Date())
+    let lastMessageDateText = BehaviorSubject<String>(value: "")
     
     init(_ data: ShortChatDto) {
         id = data.id
@@ -35,12 +39,12 @@ class ShortChat {
         type = ChatType(rawValue: data.type) ?? .p2p
         avatarUrl = data.avatarUrl ?? ""
         if let lasMessageDto = data.messages.first {
-            self.lastMessage = ShortChatMessage(lasMessageDto)
-            self.lastMessageDate = lasMessageDto.createdAt.applyChatDateTimeMask()
-        }else {
-            self.lastMessage = .none
+            self.lastMessage.onNext(ShortChatMessage(lasMessageDto))
+            self.lastMessageText.onNext(lasMessageDto.text)
+            self.lastMessageDate.onNext(lasMessageDto.createdAt)
+            self.lastMessageDateText.onNext(lasMessageDto.createdAt.applyChatDateTimeMask())
         }
-        unreadCount = data.unreadMessageCount
+        unreadCount.onNext(data.unreadMessageCount)
     }
     
     init(id: Int?, team: ShortTeam) {
@@ -49,5 +53,37 @@ class ShortChat {
         self.team = team
         type = .group
         avatarUrl = team.avatarUrl ?? ""
+    }
+    
+    init(id: Int?, user: ShortUser) {
+        self.id = id
+        name = user.name
+        avatarUrl = user.avatarUrl ?? ""
+        type = .p2p
+        secondUser = user
+    }
+    
+    func update(_ lastMessage: ShortChatMessage, isCurrentUser: Bool) {
+        self.lastMessage.onNext(lastMessage)
+        self.lastMessageText.onNext(lastMessage.text)
+        self.lastMessageDate.onNext(lastMessage.createdAt)
+        self.lastMessageDateText.onNext(lastMessage.createdAt.applyChatDateTimeMask())
+        if isCurrentUser {
+            self.unreadCount.onNext(0)
+        } else {
+            self.unreadCount.increment()
+        }
+    }
+    
+    func update(_ readChat: ReadChatData) {
+        self.unreadCount.onNext(0)
+    }
+    
+    static func < (lhs: ShortChat, rhs: ShortChat) -> Bool {
+        lhs.lastMessageDate.value.compare(rhs.lastMessageDate.value) == .orderedDescending
+    }
+    
+    static func == (lhs: ShortChat, rhs: ShortChat) -> Bool {
+        lhs.lastMessageDate.value.compare(rhs.lastMessageDate.value) == .orderedSame
     }
 }

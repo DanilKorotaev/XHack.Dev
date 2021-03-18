@@ -20,4 +20,5 @@ struct UserDetailsDto: Codable {
     let isBookmarked: Bool
     let participantType: String
     let requests: [TeamRequestDto]
+    let chatId: Int?
 }

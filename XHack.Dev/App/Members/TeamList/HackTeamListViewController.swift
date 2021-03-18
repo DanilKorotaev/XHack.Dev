@@ -20,7 +20,7 @@ class HackTeamListViewController: BaseViewController<HackTeamListViewModel>, Sto
         configureDismissKeyboard()
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
-        tableView.register(HackathonViewCell.nib, forCellReuseIdentifier: HackathonViewCell.reuseIdentifier)
+        tableView.register(HackTeamViewCell.nib, forCellReuseIdentifier: HackTeamViewCell.reuseIdentifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,10 +33,10 @@ class HackTeamListViewController: BaseViewController<HackTeamListViewModel>, Sto
         guard let dataContext = dataContext else {
             return
         }
-        dataContext.teams
-            .bind(to: tableView.rx.items(cellIdentifier: HackathonViewCell.reuseIdentifier)) { row, model, cell in
-                guard let cell = cell as? HackathonViewCell else { return }
-//                cell.set(for: model)
+        dataContext.teams.rx_elements()
+            .bind(to: tableView.rx.items(cellIdentifier: HackTeamViewCell.reuseIdentifier)) { row, model, cell in
+                guard let cell = cell as? HackTeamViewCell else { return }
+                cell.set(model)
             }
             .disposed(by: disposeBag)
         

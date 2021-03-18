@@ -213,3 +213,13 @@ extension ObservableArray: Sequence {
     }
 }
 
+
+extension ObservableArray where Element: Comparable {
+    
+    @discardableResult
+    public mutating func sort() -> ObservableArray {
+        self.elements = self.sorted()
+        self.arrayDidChange(ArrayChangeEvent(updated: Array(0..<self.count)))
+        return self
+    }
+}
