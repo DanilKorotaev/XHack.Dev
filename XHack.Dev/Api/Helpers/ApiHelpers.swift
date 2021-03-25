@@ -56,6 +56,10 @@ class ApiHelpers {
         return HttpClientHelper.shared.delete(url: url, deleteData: content.toJson()!, accessToken: apiTokenHolder.accessToken).map(toApiResult)
     }
     
+    static func executeReliablySendFileRequest<TResponseContent: Codable>(apiTokenHolder: IApiTokensHolder, url: String, file: File) -> Promise<ApiResult<TResponseContent>> {
+        return HttpClientHelper.shared.sendFile(urlPath: url, fileName: file.name, data: file.data).map(toApiResult)
+    }
+    
     
     static func toLiteApiResult(_ response: Response<HTTPStatusCode, Data>) -> LiteApiResult {
         if response.status.isSuccessful {

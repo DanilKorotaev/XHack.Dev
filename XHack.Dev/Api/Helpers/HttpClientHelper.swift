@@ -87,6 +87,68 @@ class HttpClientHelper {
     }
     
     
+    func sendFile(
+        urlPath: String,
+        fileName: String,
+        data: Data) -> Promise<Response<HTTPStatusCode, Data>>  {
+
+        let url: URL = URL(string: urlPath)!
+        let request: NSMutableURLRequest = NSMutableURLRequest(url: url)
+
+        request.httpMethod = "POST"
+
+        let boundary = UUID().uuidString
+        let fullData = photoDataToFormData(data: data,boundary:boundary,fileName:fileName)
+
+        request.setValue("multipart/form-data; boundary=" + boundary,
+                          forHTTPHeaderField: "Content-Type")
+
+        // REQUIRED!
+        request.setValue(String(fullData.count), forHTTPHeaderField: "Content-Length")
+
+        request.httpBody = fullData
+        request.httpShouldHandleCookies = false
+        
+        return createDataTask(request: request as URLRequest)
+    }
+
+    private func photoDataToFormData(data:Data,boundary:String,fileName:String) -> Data {
+        let fullData = NSMutableData()
+
+        // 1 - Boundary should start with --
+        let lineOne = "--" + boundary + "\r\n"
+        fullData.append(lineOne.data(
+                            using: .utf8,
+                            allowLossyConversion: false)!)
+
+        // 2
+        let lineTwo = "Content-Disposition: form-data; name=\"image\"; filename=\"" + fileName + "\"\r\n"
+        NSLog(lineTwo)
+        fullData.append(lineTwo.data(
+                            using: .utf8,
+                            allowLossyConversion: false)!)
+
+        let lineThree = "Content-Type: image/jpg\r\n\r\n"
+        fullData.append(lineThree.data(
+                            using: .utf8,
+                            allowLossyConversion: false)!)
+
+        fullData.append(data)
+
+        let lineFive = "\r\n"
+        fullData.append(lineFive.data(
+                            using: .utf8,
+                            allowLossyConversion: false)!)
+
+        let lineSix = "--" + boundary + "--\r\n"
+        fullData.append(lineSix.data(
+                            using:  .utf8,
+                            allowLossyConversion: false)!)
+
+        return fullData as Data
+    }
+    
+    
     private func createDataTask(request: URLRequest) -> Promise<Response<HTTPStatusCode, Data>>  {
         return Promise() { promise in
             let dataTask = URLSession.shared.dataTask(with: request) { data,  response, error in
