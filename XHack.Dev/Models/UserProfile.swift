@@ -15,15 +15,22 @@ class UserProfile {
     let email = BehaviorSubject(value:"")
     let isAvailableForSearching = BehaviorSubject(value: false)
     let description = BehaviorSubject(value:"")
-    let tags = BehaviorSubject<[TagDto]>(value:[])
+    let specialization = BehaviorSubject(value:"")
+    var tags: ObservableArray<Tag>
+    let networks: [String]
     let avatarUrl: String
+    var teams: ObservableArray<ShortTeam>
     
     init(_ data: UserProfileDto) {
         id = data.id
         email.onNext(data.email)
+        name.onNext(data.name)
         isAvailableForSearching.onNext(data.isAvailableForSearching)
         description.onNext(data.description)
-        tags.onNext(data.tags)
+        specialization.onNext(data.specialization)
+        tags = ObservableArray(data.tags.map { Tag($0) }.sorted(by: { $0.name.count < $1.name.count }))
         avatarUrl = data.avatarUrl ?? ""
+        networks = data.networks
+        teams = ObservableArray(data.teams.map { ShortTeam($0) })
     }
 }

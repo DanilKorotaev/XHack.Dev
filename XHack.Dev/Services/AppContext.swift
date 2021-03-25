@@ -25,6 +25,10 @@ class AppContext: IAppContext {
         _ = self.messanger.subscribe(LoginMessage.self, completion: MessangerSubcribeComplition(comletion: { [weak self]  _ in
             self?.updateUserData().done({ _ in })
         }))
+        
+        _ = self.messanger.subscribe(UpdatedProfileMessage.self, completion: MessangerSubcribeComplition(comletion: { [weak self]  _ in
+            self?.updateUserData().done({ _ in })
+        }))
     }
     
     func updateUserData() -> Promise<Bool> {
