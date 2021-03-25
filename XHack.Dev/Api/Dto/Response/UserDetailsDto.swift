@@ -13,6 +13,7 @@ struct UserDetailsDto: Codable {
     let name: String
     let email: String
     let avatarUrl: String?
+    let specialization: String
     let isAvailableForSearching: Bool
     let tags: [TagDto]
     let description: String

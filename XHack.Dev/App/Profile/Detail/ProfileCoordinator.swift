@@ -29,6 +29,10 @@ class ProfileCoordinator: BaseCoordinator<Void> {
             })
             .disposed(by: disposeBag)
         
+        viewModel.teamSelected.bind { [weak self] team in
+            self?.toTeamProfile(for: team.id)
+        }.disposed(by: disposeBag)
+        
         viewModel.edit
             .subscribe(onNext: { [weak self] in
                 guard let self = self else {return}
@@ -38,8 +42,10 @@ class ProfileCoordinator: BaseCoordinator<Void> {
     }
     
     func editProfile() {
-        var coordinator = Container.resolve(EditProfileCoordinator.self)
+        guard let userProfile = viewModel.profile.value else { return }
+        let coordinator = Container.resolve(EditProfileCoordinator.self)
         coordinator.navigationController = navigationController
+        coordinator.parameter = EditProfileParameter(userProfile: userProfile)
         start(coordinator: coordinator)
     }
 }

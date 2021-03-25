@@ -22,6 +22,7 @@ class HackathonDetail {
     let avatarUrl: String
     let siteUrl: String
     let isBookmarked: BehaviorSubject<Bool>
+    var tags: ObservableArray<Tag>
     let participationType: HackParticipationType
     
     init(_ data: HackathonDto) {
@@ -32,6 +33,7 @@ class HackathonDetail {
         endDate = data.endDate
         location = data.location
         avatarUrl = data.avatarUrl
+        tags = ObservableArray(data.tags.map { Tag($0) }.sorted(by: { $0.name.count < $1.name.count }))
         participationType = HackParticipationType(rawValue: data.participationType) ?? .none
         siteUrl = data.siteUrl
         isBookmarked = BehaviorSubject<Bool>(value: data.isBookmarked)

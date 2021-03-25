@@ -28,10 +28,10 @@ class BaseViewController<TViewModel>: UIViewController where TViewModel:BaseView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataContext?.initialize()
         dataContext?.viewCreated()
         completeUi()
         applyBinding()
-        dataContext?.initialize()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -223,12 +223,19 @@
 		A378765F2603B4A000D26E37 /* ReadChatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A378765E2603B49F00D26E37 /* ReadChatData.swift */; };
 		A37876662603C89E00D26E37 /* HackTeamViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37876642603C89E00D26E37 /* HackTeamViewCell.swift */; };
 		A37876672603C89E00D26E37 /* HackTeamViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A37876652603C89E00D26E37 /* HackTeamViewCell.xib */; };
+		A378766F2607977800D26E37 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A378766E2607977500D26E37 /* ImagePicker.swift */; };
+		A37876742607A94600D26E37 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37876732607A94500D26E37 /* File.swift */; };
 		A382162E25FFBD8700AF2BF5 /* SelectTeam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A382162D25FFBD8600AF2BF5 /* SelectTeam.storyboard */; };
 		A382163325FFBDAF00AF2BF5 /* SelectTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A382163225FFBDAF00AF2BF5 /* SelectTeamViewController.swift */; };
 		A382163825FFBDC200AF2BF5 /* SelectTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A382163725FFBDC200AF2BF5 /* SelectTeamViewModel.swift */; };
 		A382163D25FFBDDF00AF2BF5 /* SelectTeamCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A382163C25FFBDDF00AF2BF5 /* SelectTeamCoordinator.swift */; };
 		A382164425FFD28800AF2BF5 /* SelectTeamViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A382164225FFD28800AF2BF5 /* SelectTeamViewCell.swift */; };
 		A382164525FFD28800AF2BF5 /* SelectTeamViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A382164325FFD28800AF2BF5 /* SelectTeamViewCell.xib */; };
+		A38765D22608F6D600B83BE3 /* IFilesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38765D12608F6D600B83BE3 /* IFilesApi.swift */; };
+		A38765D72608F75300B83BE3 /* FilesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38765D62608F75300B83BE3 /* FilesApi.swift */; };
+		A38765DC26090C3200B83BE3 /* FileUrlResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38765DB26090C3200B83BE3 /* FileUrlResponse.swift */; };
+		A38765E12609341F00B83BE3 /* UpdatedProfileMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38765E02609341F00B83BE3 /* UpdatedProfileMessage.swift */; };
+		A38765E6260A5DDD00B83BE3 /* UIViewAnchor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38765E5260A5DDC00B83BE3 /* UIViewAnchor+Extensions.swift */; };
 		A3877537256A9BC800F00EB0 /* IPushSubscriptionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3877536256A9BC800F00EB0 /* IPushSubscriptionProvider.swift */; };
 		A387753C256A9C4600F00EB0 /* PushSubscribingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387753B256A9C4600F00EB0 /* PushSubscribingResult.swift */; };
 		A3877541256A9D9A00F00EB0 /* PushSubscriptionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3877540256A9D9A00F00EB0 /* PushSubscriptionProvider.swift */; };
@@ -328,7 +335,7 @@
 		A3C2B29525FAAA2900BA103F /* ClientEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B29425FAAA2900BA103F /* ClientEvents.swift */; };
 		A3C2B29B25FAAAB800BA103F /* SendMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B29A25FAAAB800BA103F /* SendMessageData.swift */; };
 		A3C2B2B325FBEB9700BA103F /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B2B225FBEB9700BA103F /* ObservableArray.swift */; };
-		A3C2B2B825FBEF6F00BA103F /* UITableView+RxExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B2B725FBEF6F00BA103F /* UITableView+RxExtension.swift */; };
+		A3C2B2B825FBEF6F00BA103F /* UITableView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B2B725FBEF6F00BA103F /* UITableView+Rx.swift */; };
 		A3C2B2BD25FC073400BA103F /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B2BC25FC073400BA103F /* String+Size.swift */; };
 		A3C2B2C225FC15D100BA103F /* Dictionary+JsonParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B2C125FC15D100BA103F /* Dictionary+JsonParse.swift */; };
 		A3C2B2C725FC16FB00BA103F /* NewMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B2C625FC16FB00BA103F /* NewMessageData.swift */; };
@@ -375,6 +382,15 @@
 		A3F3D84225F3D56300DACC7A /* ChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3D84025F3D56300DACC7A /* ChatViewCell.swift */; };
 		A3F3D84325F3D56300DACC7A /* ChatViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F3D84125F3D56300DACC7A /* ChatViewCell.xib */; };
 		A3F7BBB12575895D00F18645 /* HttpClientHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F7BBB02575895D00F18645 /* HttpClientHelper.swift */; };
+		A3FE7281260A82570040446C /* UIResizableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE7280260A82570040446C /* UIResizableTableView.swift */; };
+		A3FE7287260A85EC0040446C /* ShadowFextFieldViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE7285260A85EC0040446C /* ShadowFextFieldViewCell.swift */; };
+		A3FE7288260A85EC0040446C /* ShadowFextFieldViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3FE7286260A85EC0040446C /* ShadowFextFieldViewCell.xib */; };
+		A3FE72B6260BAC6B0040446C /* TwoWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE72B5260BAC6A0040446C /* TwoWayBinding.swift */; };
+		A3FE72BB260BAF7B0040446C /* OneWayBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE72BA260BAF7B0040446C /* OneWayBinding.swift */; };
+		A3FE72C0260BB25C0040446C /* UIImageView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE72BF260BB25C0040446C /* UIImageView+Rx.swift */; };
+		A3FE72C5260BCBA20040446C /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE72C4260BCBA20040446C /* UITableView+Extensions.swift */; };
+		A3FE72D0260CEF9E0040446C /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE72CF260CEF9D0040446C /* UICollectionView+Extension.swift */; };
+		A3FE72D5260D0AB50040446C /* UIResizableCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE72D4260D0AB50040446C /* UIResizableCollectionView.swift */; };
 		C5751340814BF2C7C29BE078 /* Pods_XHack_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70DE3EB1E1DBDC0A2BDD1F9 /* Pods_XHack_Dev.framework */; };
 /* End PBXBuildFile section */
 
@@ -627,12 +643,19 @@
 		A378765E2603B49F00D26E37 /* ReadChatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadChatData.swift; sourceTree = "<group>"; };
 		A37876642603C89E00D26E37 /* HackTeamViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackTeamViewCell.swift; sourceTree = "<group>"; };
 		A37876652603C89E00D26E37 /* HackTeamViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HackTeamViewCell.xib; sourceTree = "<group>"; };
+		A378766E2607977500D26E37 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		A37876732607A94500D26E37 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		A382162D25FFBD8600AF2BF5 /* SelectTeam.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectTeam.storyboard; sourceTree = "<group>"; };
 		A382163225FFBDAF00AF2BF5 /* SelectTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamViewController.swift; sourceTree = "<group>"; };
 		A382163725FFBDC200AF2BF5 /* SelectTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamViewModel.swift; sourceTree = "<group>"; };
 		A382163C25FFBDDF00AF2BF5 /* SelectTeamCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamCoordinator.swift; sourceTree = "<group>"; };
 		A382164225FFD28800AF2BF5 /* SelectTeamViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamViewCell.swift; sourceTree = "<group>"; };
 		A382164325FFD28800AF2BF5 /* SelectTeamViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectTeamViewCell.xib; sourceTree = "<group>"; };
+		A38765D12608F6D600B83BE3 /* IFilesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFilesApi.swift; sourceTree = "<group>"; };
+		A38765D62608F75300B83BE3 /* FilesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesApi.swift; sourceTree = "<group>"; };
+		A38765DB26090C3200B83BE3 /* FileUrlResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUrlResponse.swift; sourceTree = "<group>"; };
+		A38765E02609341F00B83BE3 /* UpdatedProfileMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatedProfileMessage.swift; sourceTree = "<group>"; };
+		A38765E5260A5DDC00B83BE3 /* UIViewAnchor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewAnchor+Extensions.swift"; sourceTree = "<group>"; };
 		A3877536256A9BC800F00EB0 /* IPushSubscriptionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPushSubscriptionProvider.swift; sourceTree = "<group>"; };
 		A387753B256A9C4600F00EB0 /* PushSubscribingResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSubscribingResult.swift; sourceTree = "<group>"; };
 		A3877540256A9D9A00F00EB0 /* PushSubscriptionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSubscriptionProvider.swift; sourceTree = "<group>"; };
@@ -733,7 +756,7 @@
 		A3C2B29425FAAA2900BA103F /* ClientEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientEvents.swift; sourceTree = "<group>"; };
 		A3C2B29A25FAAAB800BA103F /* SendMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageData.swift; sourceTree = "<group>"; };
 		A3C2B2B225FBEB9700BA103F /* ObservableArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableArray.swift; sourceTree = "<group>"; };
-		A3C2B2B725FBEF6F00BA103F /* UITableView+RxExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+RxExtension.swift"; sourceTree = "<group>"; };
+		A3C2B2B725FBEF6F00BA103F /* UITableView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Rx.swift"; sourceTree = "<group>"; };
 		A3C2B2BC25FC073400BA103F /* String+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		A3C2B2C125FC15D100BA103F /* Dictionary+JsonParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+JsonParse.swift"; sourceTree = "<group>"; };
 		A3C2B2C625FC16FB00BA103F /* NewMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageData.swift; sourceTree = "<group>"; };
@@ -780,6 +803,15 @@
 		A3F3D84025F3D56300DACC7A /* ChatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewCell.swift; sourceTree = "<group>"; };
 		A3F3D84125F3D56300DACC7A /* ChatViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewCell.xib; sourceTree = "<group>"; };
 		A3F7BBB02575895D00F18645 /* HttpClientHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientHelper.swift; sourceTree = "<group>"; };
+		A3FE7280260A82570040446C /* UIResizableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResizableTableView.swift; sourceTree = "<group>"; };
+		A3FE7285260A85EC0040446C /* ShadowFextFieldViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowFextFieldViewCell.swift; sourceTree = "<group>"; };
+		A3FE7286260A85EC0040446C /* ShadowFextFieldViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShadowFextFieldViewCell.xib; sourceTree = "<group>"; };
+		A3FE72B5260BAC6A0040446C /* TwoWayBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoWayBinding.swift; sourceTree = "<group>"; };
+		A3FE72BA260BAF7B0040446C /* OneWayBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneWayBinding.swift; sourceTree = "<group>"; };
+		A3FE72BF260BB25C0040446C /* UIImageView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Rx.swift"; sourceTree = "<group>"; };
+		A3FE72C4260BCBA20040446C /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		A3FE72CF260CEF9D0040446C /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		A3FE72D4260D0AB50040446C /* UIResizableCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResizableCollectionView.swift; sourceTree = "<group>"; };
 		A819DD399E11BDE308700209 /* Pods_XHack_DevTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XHack_DevTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56B2DFC45659D8DA3B9C84C /* Pods-XHack.DevTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHack.DevTests.debug.xcconfig"; path = "Target Support Files/Pods-XHack.DevTests/Pods-XHack.DevTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DBF9D86402C69BE504360B82 /* Pods-XHack.DevTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHack.DevTests.release.xcconfig"; path = "Target Support Files/Pods-XHack.DevTests/Pods-XHack.DevTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -925,6 +957,7 @@
 				A3F3D82725F3C41700DACC7A /* ShortChatDto.swift */,
 				A3BDB60325F41ED2006CD2DC /* ShortChatMessageDto.swift */,
 				A3A6F39425F6A34C00DCD778 /* ChatMessageDto.swift */,
+				A38765DB26090C3200B83BE3 /* FileUrlResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1062,9 +1095,11 @@
 				A3A6F38725F6719700DCD778 /* Date+Extensions.swift */,
 				A3A6F3AC25F7FA8C00DCD778 /* UIView+Extensions.swift */,
 				A3A6F3B125F8106100DCD778 /* UITextView+Extension.swift */,
-				A3C2B2B725FBEF6F00BA103F /* UITableView+RxExtension.swift */,
 				A3C2B2BC25FC073400BA103F /* String+Size.swift */,
 				A3C2B2C125FC15D100BA103F /* Dictionary+JsonParse.swift */,
+				A38765E5260A5DDC00B83BE3 /* UIViewAnchor+Extensions.swift */,
+				A3FE72C4260BCBA20040446C /* UITableView+Extensions.swift */,
+				A3FE72CF260CEF9D0040446C /* UICollectionView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1081,6 +1116,8 @@
 				A32D3CD525E2E539002633B8 /* PrimaryButton.swift */,
 				A3AD07A425E2F58300DA0785 /* SecondaryButton.swift */,
 				A3DC592125E42D2B009DA204 /* UIHackLinkButton.swift */,
+				A3FE7280260A82570040446C /* UIResizableTableView.swift */,
+				A3FE72D4260D0AB50040446C /* UIResizableCollectionView.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -1142,6 +1179,7 @@
 				16DD9CFE22DA7508007D9D2F /* UserDataManager.swift */,
 				A387754A256AA3C600F00EB0 /* Messanger.swift */,
 				A392999625EEC6870031C5B9 /* AppContext.swift */,
+				A378766E2607977500D26E37 /* ImagePicker.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1178,6 +1216,7 @@
 				A3F3D82C25F3D08300DACC7A /* ShortChat.swift */,
 				A3BDB5FE25F41E5C006CD2DC /* ShortChatMessage.swift */,
 				A3A6F39925F6A3F400DCD778 /* ChatMessage.swift */,
+				A37876732607A94500D26E37 /* File.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1340,6 +1379,8 @@
 			children = (
 				A320CD5625FE9758002F8845 /* UserRequestViewCell.swift */,
 				A320CD5725FE9758002F8845 /* UserRequestViewCell.xib */,
+				A3FE7285260A85EC0040446C /* ShadowFextFieldViewCell.swift */,
+				A3FE7286260A85EC0040446C /* ShadowFextFieldViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1628,6 +1669,7 @@
 			children = (
 				A37055F425852EBB005650FD /* Parts */,
 				A37055EF25852E06005650FD /* AlertDialogMessage.swift */,
+				A38765E02609341F00B83BE3 /* UpdatedProfileMessage.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -1788,6 +1830,7 @@
 				A301E33625881DB90088B33A /* ITagsApi.swift */,
 				A3881418258A9E9D00FFF9A5 /* IRequestsApi.swift */,
 				A3F3D81D25F3B22500DACC7A /* IChatsApi.swift */,
+				A38765D12608F6D600B83BE3 /* IFilesApi.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1804,6 +1847,7 @@
 				A301E33B2588235F0088B33A /* TagsApi.swift */,
 				A3881427258AA09500FFF9A5 /* RequestsApi.swift */,
 				A3F3D82225F3B23A00DACC7A /* ChatsApi.swift */,
+				A38765D62608F75300B83BE3 /* FilesApi.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -1852,7 +1896,11 @@
 		A3DC592625E44626009DA204 /* Rx */ = {
 			isa = PBXGroup;
 			children = (
+				A3C2B2B725FBEF6F00BA103F /* UITableView+Rx.swift */,
 				A3DC592725E4464D009DA204 /* BehaviourSubject+Extensions.swift */,
+				A3FE72B5260BAC6A0040446C /* TwoWayBinding.swift */,
+				A3FE72BA260BAF7B0040446C /* OneWayBinding.swift */,
+				A3FE72BF260BB25C0040446C /* UIImageView+Rx.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -2034,6 +2082,7 @@
 				A382162E25FFBD8700AF2BF5 /* SelectTeam.storyboard in Resources */,
 				A3961AA82579934900FC3541 /* SearchHackathons.storyboard in Resources */,
 				A3DD556F25A668720095A130 /* TeammateSearch.storyboard in Resources */,
+				A3FE7288260A85EC0040446C /* ShadowFextFieldViewCell.xib in Resources */,
 				A31F575F25A6641E00759B61 /* TeamSearch.storyboard in Resources */,
 				A392999D25EED98B0031C5B9 /* UserDetails.storyboard in Resources */,
 				A320CD5925FE9758002F8845 /* UserRequestViewCell.xib in Resources */,
@@ -2225,23 +2274,27 @@
 				16A1E5F222DA40C40003F0DF /* ViewControllerUtils.swift in Sources */,
 				A37055F025852E06005650FD /* AlertDialogMessage.swift in Sources */,
 				16A1E61222DA40C40003F0DF /* Container+RegisterDependencies.swift in Sources */,
+				A3FE72D5260D0AB50040446C /* UIResizableCollectionView.swift in Sources */,
 				16DD9CEB22DA4854007D9D2F /* String+Trim.swift in Sources */,
 				A39299B625EEE0610031C5B9 /* UserDetailsDto.swift in Sources */,
 				A3961AE925799BA000FC3541 /* BookmarkUserDTO.swift in Sources */,
 				A3DD557225A668720095A130 /* TeammateSearchViewModel.swift in Sources */,
 				16A1E64622DA40C40003F0DF /* ApiError.swift in Sources */,
 				A33579E225E5729200297E22 /* HackTeamListViewModel.swift in Sources */,
+				A38765DC26090C3200B83BE3 /* FileUrlResponse.swift in Sources */,
 				A3961AD12579961900FC3541 /* HackathonsFilterDto.swift in Sources */,
 				16A1E63B22DA40C40003F0DF /* MeResponse.swift in Sources */,
 				A3231275256F04CA00D3B97B /* HomeCoordinator.swift in Sources */,
 				16A1E62D22DA40C40003F0DF /* AlertDispatcher.swift in Sources */,
 				16A1E61C22DA40C40003F0DF /* SignInCoordinator.swift in Sources */,
+				A3FE72BB260BAF7B0040446C /* OneWayBinding.swift in Sources */,
 				16A1E63A22DA40C40003F0DF /* SignUpRequest.swift in Sources */,
 				A320CD5825FE9758002F8845 /* UserRequestViewCell.swift in Sources */,
 				A33F44A825A8D48A00C16624 /* ReusableView.swift in Sources */,
 				16A1E60022DA40C40003F0DF /* String+Localization.swift in Sources */,
 				A3C2B2D725FCC8A800BA103F /* SmartScrollBehaviour.swift in Sources */,
 				A362EED925EC2C2F00AC147F /* Team.swift in Sources */,
+				A3FE7281260A82570040446C /* UIResizableTableView.swift in Sources */,
 				A33579F125E5741900297E22 /* HackTeamListFilterDto.swift in Sources */,
 				A3196295259A789900D58502 /* HackListHeaderView.swift in Sources */,
 				16A1E61A22DA40C40003F0DF /* AppCoordinator.swift in Sources */,
@@ -2271,7 +2324,7 @@
 				A30962592569DDCA007E366E /* TaskDetailViewModel.swift in Sources */,
 				A3E627F925E59B9E00C1FBB7 /* UITableViewHeaderFooterView+Extensions.swift in Sources */,
 				16A1E60F22DA40C40003F0DF /* DrawerMenuViewModel.swift in Sources */,
-				A3C2B2B825FBEF6F00BA103F /* UITableView+RxExtension.swift in Sources */,
+				A3C2B2B825FBEF6F00BA103F /* UITableView+Rx.swift in Sources */,
 				16DD9D1B22DB3242007D9D2F /* SettingsViewController.swift in Sources */,
 				A3196284259A757300D58502 /* HackathonListViewModel.swift in Sources */,
 				16DD9D0222DA7D5F007D9D2F /* OnBoardingCoordinator.swift in Sources */,
@@ -2327,6 +2380,7 @@
 				A301E33725881DB90088B33A /* ITagsApi.swift in Sources */,
 				16A1E5F322DA40C40003F0DF /* LocalizationUtils.swift in Sources */,
 				A32D3CE025E2E824002633B8 /* UIColor+Extensions.swift in Sources */,
+				A38765D22608F6D600B83BE3 /* IFilesApi.swift in Sources */,
 				A31F573B25A5E87100759B61 /* IOperationControl.swift in Sources */,
 				A3DBB812258AC22D0078CC4E /* TagDto.swift in Sources */,
 				16DD9CFF22DA7508007D9D2F /* UserDataManager.swift in Sources */,
@@ -2357,14 +2411,18 @@
 				A382163325FFBDAF00AF2BF5 /* SelectTeamViewController.swift in Sources */,
 				16A1E62F22DA40C40003F0DF /* SessionService.swift in Sources */,
 				A3B80B3C258593D10089E599 /* ShortHackathon.swift in Sources */,
+				A3FE72D0260CEF9E0040446C /* UICollectionView+Extension.swift in Sources */,
+				A38765D72608F75300B83BE3 /* FilesApi.swift in Sources */,
 				A3877537256A9BC800F00EB0 /* IPushSubscriptionProvider.swift in Sources */,
 				A3BA56442573EAA2007AD591 /* Container+Api.swift in Sources */,
 				A309624F2569DDA4007E366E /* TaskDetailCoordinator.swift in Sources */,
 				A3961ADF25799A7400FC3541 /* IBookmarksApi.swift in Sources */,
 				A31F575225A6640A00759B61 /* TeamSearchCoordinator.swift in Sources */,
+				A38765E12609341F00B83BE3 /* UpdatedProfileMessage.swift in Sources */,
 				A387754B256AA3C600F00EB0 /* Messanger.swift in Sources */,
 				A31F576425A6643100759B61 /* TeamSearchViewController.swift in Sources */,
 				A3961A74257984C600FC3541 /* UserProfileDto.swift in Sources */,
+				A37876742607A94600D26E37 /* File.swift in Sources */,
 				A3881419258A9E9D00FFF9A5 /* IRequestsApi.swift in Sources */,
 				A374553D257D06F0006F4801 /* BaseViewController.swift in Sources */,
 				A370560D25857E7D005650FD /* IAlertDispatcher.swift in Sources */,
@@ -2397,6 +2455,7 @@
 				A3DC595225E45C69009DA204 /* ShortTeam.swift in Sources */,
 				16A1E62E22DA40C40003F0DF /* BackendRestClient.swift in Sources */,
 				A33F44B125A8E9CD00C16624 /* MiniToLargePresentingViewAnimator.swift in Sources */,
+				A3FE7287260A85EC0040446C /* ShadowFextFieldViewCell.swift in Sources */,
 				16A1E64822DA40C40003F0DF /* Tokens.swift in Sources */,
 				A33F44B225A8E9CD00C16624 /* MiniToLargeDismissingViewAnimator.swift in Sources */,
 				16DD9CF022DA4981007D9D2F /* HttpClient.swift in Sources */,
@@ -2412,6 +2471,7 @@
 				A3BA567A25743166007AD591 /* ApiResult.swift in Sources */,
 				A33F449D25A88F7100C16624 /* HackFilterItem.swift in Sources */,
 				A323127F256F056D00D3B97B /* HomeViewController.swift in Sources */,
+				A3FE72C5260BCBA20040446C /* UITableView+Extensions.swift in Sources */,
 				A3BA569125743A05007AD591 /* AccountSecureStorage.swift in Sources */,
 				A3F3D7E925F3817700DACC7A /* TeamRequestDto.swift in Sources */,
 				16A1E61E22DA40C40003F0DF /* BaseCoordinator.swift in Sources */,
@@ -2432,6 +2492,7 @@
 				16A1E62822DA40C40003F0DF /* ViewControllerWithSideMenu.swift in Sources */,
 				16A1E62922DA40C40003F0DF /* DrawerMenuViewController.swift in Sources */,
 				A362EEEA25ED7A2800AC147F /* IncomingRequestViewCell.swift in Sources */,
+				A3FE72C0260BB25C0040446C /* UIImageView+Rx.swift in Sources */,
 				16DD9CE622DA47D3007D9D2F /* HttpMethod.swift in Sources */,
 				A38CDB3B256C1A6200E8A732 /* RegistrationViewModel.swift in Sources */,
 				A362EF2625EEC37600AC147F /* StartUpScreenCoordinator.swift in Sources */,
@@ -2454,6 +2515,7 @@
 				A3C2B2C725FC16FB00BA103F /* NewMessageData.swift in Sources */,
 				A352B5EC2602813F00F3F6B2 /* ReadMessageData.swift in Sources */,
 				A3DC594C25E45C43009DA204 /* ShortTeamViewCell.swift in Sources */,
+				A378766F2607977800D26E37 /* ImagePicker.swift in Sources */,
 				A3A6F3A025F6BD0400DCD778 /* IncomingMessageViewCell.swift in Sources */,
 				16A1E64522DA40C40003F0DF /* Session.swift in Sources */,
 				A349FB56259BD5BB0038549E /* Date+String.swift in Sources */,
@@ -2483,6 +2545,7 @@
 				A3A0E941259A8CE100634BED /* TopHackViewCell.swift in Sources */,
 				16A1E61D22DA40C40003F0DF /* DashboardCoordinator.swift in Sources */,
 				A39299AC25EED9B60031C5B9 /* UserDetailsCoordinator.swift in Sources */,
+				A3FE72B6260BAC6B0040446C /* TwoWayBinding.swift in Sources */,
 				A3AD07A525E2F58300DA0785 /* SecondaryButton.swift in Sources */,
 				A36AF8D52582D187000E2852 /* CreateTeamCoordinator.swift in Sources */,
 				A36AF8DA2582D198000E2852 /* CreateTeamViewController.swift in Sources */,
@@ -2508,6 +2571,7 @@
 				16A1E64422DA40C40003F0DF /* SettingKey.swift in Sources */,
 				A3961AF325799C5100FC3541 /* BookmarkChatDTO.swift in Sources */,
 				A3C2B2B325FBEB9700BA103F /* ObservableArray.swift in Sources */,
+				A38765E6260A5DDD00B83BE3 /* UIViewAnchor+Extensions.swift in Sources */,
 				A3961ACC2579956600FC3541 /* HackathonsApi.swift in Sources */,
 				A3BA568925743849007AD591 /* IAccountSecureStorage.swift in Sources */,
 				A3BDB5FF25F41E5D006CD2DC /* ShortChatMessage.swift in Sources */,

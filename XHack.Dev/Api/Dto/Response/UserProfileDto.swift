@@ -12,9 +12,11 @@ struct UserProfileDto: Codable {
     let id: Int
     let name: String
     let email: String
+    let specialization: String
     let avatarUrl: String?
     let isAvailableForSearching: Bool
     let tags: [TagDto]
     let description: String
     let networks: [String]
+    let teams: [ShortTeamDto]
 }

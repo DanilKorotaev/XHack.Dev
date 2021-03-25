@@ -8,10 +8,15 @@ class ProfileViewModel: BaseViewModel {
     let profile = BehaviorSubject<UserProfile?>(value: nil)
     let signOut = PublishSubject<Void>()
     let edit = PublishSubject<Void>()
+    let teamSelected = PublishSubject<ShortTeam>()
     
-    init(sessionService: SessionService, userApi: IUserApi) {
+    init(sessionService: SessionService, userApi: IUserApi, messager: IMessager) {
         self.sessionService = sessionService
         self.userApi = userApi
+        super.init()
+        _ = messager.subscribe(UpdatedProfileMessage.self, completion: MessangerSubcribeComplition { [weak self] _ in
+            self?.forceContentRefreshingAsync()
+        })
     }
     
     override func refreshContent(operationArgs: IOperationStateControl) {

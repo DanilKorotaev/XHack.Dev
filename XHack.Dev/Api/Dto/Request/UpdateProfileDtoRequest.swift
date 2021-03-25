@@ -9,5 +9,10 @@
 import Foundation
 
 struct UpdateProfileDtoRequest: Codable {
-    var name: String
+    let name: String
+    let specialization: String
+    let avatarUrl: String
+    let description: String
+    let email: String
+    let networks: [String]
 }

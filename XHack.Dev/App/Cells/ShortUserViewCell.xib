@@ -26,6 +26,11 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JX5-9U-lja" secondAttribute="height" multiplier="1:1" id="aST-6y-XPE"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEC-hb-Nbd">
                                 <rect key="frame" x="0.0" y="89" width="87" height="20"/>

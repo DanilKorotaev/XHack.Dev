@@ -28,7 +28,9 @@ class UIHackLinkButton: UIButton {
     
     override func setTitle(_ title: String?, for state: UIControl.State) {
         super.setTitle(title, for: state)
-        invalidateIntrinsicContentSize()
+        guard let title = title, let font = self.titleLabel?.font else { return }
+        let textSize = title.getRequiredTextSize(font)
+        joinWidth(contant: textSize.width + 40)
     }
     
     
@@ -37,7 +39,6 @@ class UIHackLinkButton: UIButton {
         setImage(#imageLiteral(resourceName: "link"), for: .normal)
         titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         setTitleColor(.blue, for: .normal)
-//        UIColor(hex: "#0CC5FF")
         self.backgroundColor = .white
         layer.cornerRadius = frame.size.height / 2
         clipsToBounds = false

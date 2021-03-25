@@ -10,34 +10,35 @@ import UIKit
 
 class TagViewCell: UICollectionViewCell {
 
+    static var defaultHeight:CGFloat = 20
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var rootView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
-        var shapes = UIView()
-        shapes.frame = rootView.frame
-        shapes.clipsToBounds = true
-        rootView.addSubview(shapes)
-        shapes.layer.zPosition = 0
-        let layer1 = CAGradientLayer()
-        layer1.colors = [
-          UIColor(red: 0.129, green: 1, blue: 0.791, alpha: 1).cgColor,
-          UIColor(red: 0.033, green: 0.887, blue: 0.734, alpha: 1).cgColor
+        let layer2 = CAGradientLayer()
+        layer2.colors = [
+          UIColor(red: 1, green: 0, blue: 0.36, alpha: 1).cgColor,
+          UIColor(red: 0.962, green: 0.346, blue: 0, alpha: 1).cgColor
         ]
-        layer1.locations = [0, 1]
-        layer1.startPoint = CGPoint(x: 0.25, y: 0.5)
-        layer1.endPoint = CGPoint(x: 0.75, y: 0.5)
-        layer1.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: 0.15, b: 1.83, c: -1.83, d: 0.85, tx: 1.24, ty: -0.55))
-        layer1.bounds = shapes.bounds.insetBy(dx: -0.5*shapes.bounds.size.width, dy: -0.5*shapes.bounds.size.height)
-        layer1.position = shapes.center
-        shapes.layer.addSublayer(layer1)
-        shapes.layer.cornerRadius = 38
+        layer2.locations = [0, 1]
+        layer2.startPoint = CGPoint(x: 0.25, y: 0.5)
+        layer2.endPoint = CGPoint(x: 0.75, y: 0.5)
+        layer2.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: -0.92, b: 1.28, c: -1.28, d: -19.9, tx: 1.6, ty: 9.86))
+        layer2.bounds = rootView.bounds
+        layer2.position = rootView.center
+        rootView.layer.insertSublayer(layer2, at: 0)
     }
 
     func set(for model: Tag) {
         nameLabel.text = model.name
+    }
+    
+    static func getRequiredSize(for model: Tag) -> CGSize {
+        var size = model.name.getRequiredTextSize(UIFont.systemFont(ofSize: 14))
+        size.width += 18
+        size.height = defaultHeight
+        return size
     }
 }

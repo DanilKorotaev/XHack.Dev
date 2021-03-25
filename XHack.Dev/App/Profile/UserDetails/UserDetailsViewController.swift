@@ -23,8 +23,15 @@ class UserDetailsViewController: BaseViewController<UserDetailsViewModel>, Story
     @IBOutlet weak var changeRelationStateView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var linksTextView: UITextView!
     @IBOutlet weak var chatButton: UIButton!
+    @IBOutlet weak var tagsCollectionView: UIResizableCollectionView!
+    @IBOutlet weak var tagsContainerView: UIView!
+    @IBOutlet weak var socialView: UIView!
+    @IBOutlet weak var socialsTextView: UITextView!
+    
+    override func completeUi() {
+        tagsCollectionView.register(TagViewCell.self)
+    }
     
     override func applyBinding() {
         guard let dataContext = dataContext else {
@@ -39,8 +46,17 @@ class UserDetailsViewController: BaseViewController<UserDetailsViewModel>, Story
                 guard let self = self, let userDetails = userDetails else { return }
                 self.nameLabel.text = userDetails.name.value
                 self.descriptionLabel.text = userDetails.description.value
+                self.specializationLabel.text = userDetails.specialization.value
                 self.avatarImageView.downloaded(from: userDetails.avatarUrl ?? "")
                 self.setChangeParticipantStateButtonTitle(requests: userDetails.requests)
+                self.tagsContainerView.isHidden = userDetails.tags.isEmpty
+                self.setSocials(userDetails.networks)
+                userDetails.tags.rx_elements()
+                    .bind(to: self.tagsCollectionView.rx.items(cellIdentifier: TagViewCell.reuseIdentifier)) { row, model, cell in
+                        guard let cell = cell as? TagViewCell else { return }
+                        cell.set(for: model)
+                    }
+                    .disposed(by: self.userDisposeBag)
                 
                 userDetails.isBookmarked.bind(onNext: { [weak self] value in
                     let bookmarkImage = value ? #imageLiteral(resourceName: "Star") : #imageLiteral(resourceName: "unselected_star")
@@ -86,13 +102,12 @@ class UserDetailsViewController: BaseViewController<UserDetailsViewModel>, Story
         } else {
             text = "Show requests"
         }
-//        else if requests.contains(where: { $0.type == .teamToUser}) {
-//            text = "Withdraw request"
-//        } else if requests.contains(where: { $0.type == .userToTeam}) {
-//            text = "Apply request"
-//        } else {
-//            self.changeRelationStateView.isHidden = true
-//        }
         changeRelationStateButton.setTitle(text, for: .normal)
+    }
+    
+    func setSocials(_ networks: [String]) {
+        socialView.isHidden = networks.isEmpty
+        self.socialsTextView.text = networks.joined(separator: "\n\n")
+        socialsTextView.joinHeight(constant: socialsTextView.getRequiredTextSize().height)
     }
 }

@@ -37,12 +37,18 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
     @IBOutlet weak var hackDescriptionContainerView: UIView!
     @IBOutlet weak var changeParticipantStateContainerView: UIView!
     @IBOutlet weak var descriptionTextViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var onlineImageView: UIImageView!
+    @IBOutlet weak var globeImageView: UIImageView!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var tagsCollectionView: UICollectionView!
+    @IBOutlet weak var tagsContainerView: UIView!
     
     override func completeUi() {
         hackDescriptionTextView.textContainer.maximumNumberOfLines = allDescriptionCollapsedLines
-        
+        hackDescriptionTextView.textContainerInset = .zero
         setTeamCollectionView()
         setMemberCollectionView()
+        tagsCollectionView.register(TagViewCell.self)
     }
     
     override func applyBinding() {
@@ -57,18 +63,32 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
                 guard let self = self, let hackDetail = hackDetail else { return }
                 self.hackNameLabel.text = hackDetail.name.value
                 self.hackDescriptionTextView.text = hackDetail.description.value
+                self.locationLabel.text = hackDetail.isOnline ? "online" : hackDetail.location
+                self.onlineImageView.isHidden = !hackDetail.isOnline
+                self.globeImageView.isHidden = hackDetail.isOnline
                 self.hackDescriptionContainerView.isHidden = hackDetail.description.value.isEmpty
                 self.dateLabel.text = hackDetail.dateText
                 self.hackLinkButton.setTitle(hackDetail.siteUrl, for: .normal)
+                self.hackLinkButton.isHidden = !hackDetail.siteUrl.hasNonEmptyValue()
                 self.searchTeamContainerView.isHidden = hackDetail.teams.value.isEmpty
                 self.searchMemberContainerView.isHidden = hackDetail.members.value.isEmpty
+                self.tagsContainerView.isHidden = hackDetail.tags.isEmpty
+                
                 self.setChangeParticipantStateButtonTitle(participantType: hackDetail.participationType)
                 self.updateDescriptionHeight()
                 self.updateVisibilityShowAllButton()
+                
                 hackDetail.isBookmarked.bind(onNext: { [weak self] value in
                     let bookmarkImage = value ? #imageLiteral(resourceName: "Star") : #imageLiteral(resourceName: "unselected_star")
                     self?.bookmarkButton.setImage(bookmarkImage, for: .normal)
                 }).disposed(by: self.hackDisposeBag)
+                
+                hackDetail.tags.rx_elements()
+                    .bind(to: self.tagsCollectionView.rx.items(cellIdentifier: TagViewCell.reuseIdentifier)) { row, model, cell in
+                        guard let cell = cell as? TagViewCell else { return }
+                        cell.set(for: model)
+                    }
+                    .disposed(by: self.hackDisposeBag)
                 
                 hackDetail.members
                     .bind(to: self.searchMemberCollectionView.rx.items(cellIdentifier: ShortUserViewCell.reuseIdentifier)) { row, model, cell in
@@ -122,13 +142,13 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
     }
 
     private func updateDescriptionHeight() {
-        let textSize = hackDescriptionTextView.getRequiredTextSize()
+        let textSize = hackDescriptionTextView.text.getRequiredTextSize(hackDescriptionTextView.font!, hackDescriptionTextView.frame.width)
         let lineHeight = hackDescriptionTextView.font!.lineHeight
         let maxLines = isAllDescriptionShown ?  allDescriptionExpandedLines : allDescriptionCollapsedLines
         let maxHeight = lineHeight * CGFloat(maxLines)
         let textHeight = (maxHeight > textSize.height ? textSize.height : maxHeight) + lineHeight / 2
 
-            self.hackDescriptionTextView.textContainer.maximumNumberOfLines = maxLines
+        self.hackDescriptionTextView.textContainer.maximumNumberOfLines = maxLines
 
         UIView.animate(withDuration: 0.3) {
             self.descriptionTextViewHeightConstraint.constant = textHeight
@@ -144,7 +164,7 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
     }
     
     private func setTeamCollectionView() {
-        seachTeamCollectionView.register(ShortTeamViewCell.nib, forCellWithReuseIdentifier: ShortTeamViewCell.reuseIdentifier)
+        seachTeamCollectionView.register(ShortTeamViewCell.self)
         
         let layout = UICollectionViewFlowLayout()
             layout.scrollDirection = .horizontal
@@ -153,7 +173,7 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
     }
     
     private func setMemberCollectionView() {
-        searchMemberCollectionView.register(ShortUserViewCell.nib, forCellWithReuseIdentifier: ShortUserViewCell.reuseIdentifier)
+        searchMemberCollectionView.register(ShortUserViewCell.self)
         
         let layout = UICollectionViewFlowLayout()
             layout.scrollDirection = .horizontal
