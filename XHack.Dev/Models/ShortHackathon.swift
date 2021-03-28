@@ -13,7 +13,7 @@ class ShortHackathon {
     let description: String
     let id: Int
     let location: String
-    let tags: [Tag]
+    var tags: ObservableArray<Tag>
     let avatarUrl: String
     let isOnline: Bool
     let startDate: Date
@@ -27,7 +27,7 @@ class ShortHackathon {
         location = data.location
         isOnline = data.isOnline
         avatarUrl = data.avatarUrl
-        tags = data.tags.map { Tag($0) }
+        tags = ObservableArray(data.tags.map { Tag($0) }.sorted(by: { $0.name.count < $1.name.count }))
         startDate = data.startDate
         endDate = data.endDate
         dateText = "\(startDate.toString("dd.MM.yyyy")) - \(endDate.toString("dd.MM.yyyy"))"

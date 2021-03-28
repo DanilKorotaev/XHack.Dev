@@ -21,4 +21,5 @@ protocol IRequestsApi {
     func sendRequest(to user: CreateRequestToUserDto) -> Promise<LiteApiResult>
     func withdrawRequest(requestId: Int) -> Promise<LiteApiResult>
     func declineRequestUserToTeam(requestId: Int) -> Promise<LiteApiResult>
+    func getSentRequests() -> Promise<ApiResult<SentRequestsDto>>
 }

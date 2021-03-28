@@ -13,8 +13,9 @@ class HomeViewModel: BaseViewModel, RefreshableContentHost {
     
     let changeSearchableState = PublishSubject<Bool>()
     let isAvailableForSearching: BehaviorSubject<Bool>
-    let requestSelected = PublishSubject<IncomingRequest>()
+    let requestSelected = PublishSubject<ParticipantRequestable>()
     let requestSections = BehaviorSubject<[RequestSection]>(value: [])
+    let SentRequest = PublishSubject<Void>()
     
     init(requestsApi: IRequestsApi, usersApi: IUserApi, context: IAppContext) {
         self.requestsApi = requestsApi

@@ -25,26 +25,22 @@ class HomeCoordinator: BaseCoordinator<Void> {
             guard let self = self else { return}
             switch (request.type) {
             case .teamToUser:
-                self.toTeamProfile(request.team.id)
+                self.toTeamProfile(for: request.team.id)
             case .userToTeam:
-                self.toUserProfile(request.user.id)
+                self.toUserDetails(for: request.user.id)
             default:
                 break
             }
         }.disposed(by: disposeBag)
+        
+        homeViewModel.SentRequest.bind { [weak self] in
+            self?.navigateToSentRequest()
+        }.disposed(by: disposeBag)
     }
     
-    func toTeamProfile(_ id: Int) {
-        let coordinator = Container.resolve(HackTeamDetailsCoordinator.self)
+    func navigateToSentRequest() {
+        let coordinator = Container.resolve(SentRequestCoordinator.self)
         coordinator.navigationController = self.navigationController
-        coordinator.teamId = id
-        self.start(coordinator: coordinator)
-    }
-    
-    func toUserProfile(_ id: Int) {
-        let coordinator = Container.resolve(UserDetailsCoordinator.self)
-        coordinator.navigationController = self.navigationController
-        coordinator.userId = id
         self.start(coordinator: coordinator)
     }
 }

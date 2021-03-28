@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bookmarks View Controller-->
+        <scene sceneID="ymO-b3-4ht">
+            <objects>
+                <viewController storyboardIdentifier="BookmarksViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="m0E-ba-8jK" customClass="BookmarksViewController" customModule="XHack_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8VI-OH-48b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpq-th-Ov2">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9d-Lz-vCd">
+                                        <rect key="frame" x="20" y="12.5" width="18" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="X0J-Rf-Qke"/>
+                                            <constraint firstAttribute="width" constant="18" id="vg3-cq-jrz"/>
+                                        </constraints>
+                                        <state key="normal" image="left_arrow"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bookmarks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ad-BU-6hZ">
+                                        <rect key="frame" x="51" y="12" width="110" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="W9d-Lz-vCd" firstAttribute="leading" secondItem="cpq-th-Ov2" secondAttribute="leading" constant="20" id="19L-jr-G5b"/>
+                                    <constraint firstItem="W9d-Lz-vCd" firstAttribute="centerY" secondItem="cpq-th-Ov2" secondAttribute="centerY" id="FlL-Eb-n8b"/>
+                                    <constraint firstItem="3ad-BU-6hZ" firstAttribute="leading" secondItem="W9d-Lz-vCd" secondAttribute="trailing" constant="13" id="IWO-4L-R4S"/>
+                                    <constraint firstItem="3ad-BU-6hZ" firstAttribute="centerY" secondItem="cpq-th-Ov2" secondAttribute="centerY" id="XXs-g8-6Hg"/>
+                                    <constraint firstAttribute="height" constant="50" id="zlD-0Z-P5M"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHT-dE-7bE" customClass="PageBarControlView" customModule="XHack_Dev" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="94" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7X0-xZ-yqF"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cN-0f-Lo4">
+                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wSN-zZ-xmO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cpq-th-Ov2" firstAttribute="top" secondItem="wSN-zZ-xmO" secondAttribute="top" id="0w6-Lj-XA1"/>
+                            <constraint firstItem="9cN-0f-Lo4" firstAttribute="leading" secondItem="wSN-zZ-xmO" secondAttribute="leading" id="18G-JL-KOi"/>
+                            <constraint firstAttribute="bottom" secondItem="9cN-0f-Lo4" secondAttribute="bottom" id="3Cz-uP-Kbk"/>
+                            <constraint firstItem="cpq-th-Ov2" firstAttribute="trailing" secondItem="wSN-zZ-xmO" secondAttribute="trailing" id="4Ae-Cf-cGW"/>
+                            <constraint firstItem="cpq-th-Ov2" firstAttribute="leading" secondItem="wSN-zZ-xmO" secondAttribute="leading" id="JgD-Bg-IhD"/>
+                            <constraint firstItem="wSN-zZ-xmO" firstAttribute="trailing" secondItem="9cN-0f-Lo4" secondAttribute="trailing" id="JrB-av-gdO"/>
+                            <constraint firstItem="GHT-dE-7bE" firstAttribute="leading" secondItem="wSN-zZ-xmO" secondAttribute="leading" id="Oii-WR-zeA"/>
+                            <constraint firstItem="GHT-dE-7bE" firstAttribute="top" secondItem="cpq-th-Ov2" secondAttribute="bottom" id="Rwc-aE-eXD"/>
+                            <constraint firstItem="9cN-0f-Lo4" firstAttribute="top" secondItem="GHT-dE-7bE" secondAttribute="bottom" id="z0B-rq-3er"/>
+                            <constraint firstItem="wSN-zZ-xmO" firstAttribute="trailing" secondItem="GHT-dE-7bE" secondAttribute="trailing" id="zMG-5L-vpI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="W9d-Lz-vCd" id="coN-0J-QHv"/>
+                        <outlet property="pageBarControlView" destination="GHT-dE-7bE" id="dtZ-7Z-hKp"/>
+                        <outlet property="pageContainer" destination="9cN-0f-Lo4" id="R1K-Hp-Iqx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wLW-U0-D3V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-225" y="105"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="left_arrow" width="18.5" height="8"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

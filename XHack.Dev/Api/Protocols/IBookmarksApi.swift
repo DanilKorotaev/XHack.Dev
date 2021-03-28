@@ -11,9 +11,9 @@ import RxSwift
 import PromiseKit
 
 protocol IBookmarksApi {
-    func getBookmarkedHackathons() -> Promise<LiteApiResult>
-    func getBookmarkedTeams() -> Promise<LiteApiResult>
-    func getBookmarkedUsers() -> Promise<LiteApiResult>
+    func getBookmarkedHackathons() -> Promise<ApiResult<[ShortHackathonDto]>>
+    func getBookmarkedTeams() -> Promise<ApiResult<[TeamDto]>>
+    func getBookmarkedUsers() -> Promise<ApiResult<[ShortUserDto]>>
     func getBookmarkedChats() -> Promise<LiteApiResult>
     func getBookmarkedMessages() -> Promise<LiteApiResult>
     func bookmark(hackathon: BookmarkHackathonDTO) -> Promise<LiteApiResult>

@@ -147,6 +147,9 @@
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8mq-DE-F6b" customClass="UIResizableCollectionView" customModule="XHack_Dev" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="10" width="354" height="80"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="80" id="gG1-so-buL"/>
+                                                                </constraints>
                                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y9P-BP-OUd">
                                                                     <size key="itemSize" width="128" height="128"/>
                                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -447,6 +450,7 @@
                         <outlet property="showAllDescriptionButton" destination="w0d-hF-1cg" id="PLC-hm-RPn"/>
                         <outlet property="tagsCollectionView" destination="8mq-DE-F6b" id="ELE-nW-FyU"/>
                         <outlet property="tagsContainerView" destination="mSH-AO-tao" id="Lu4-gF-gOf"/>
+                        <outlet property="tagsHeightConstraint" destination="gG1-so-buL" id="5i0-Uw-Dmq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIJ-XW-REe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

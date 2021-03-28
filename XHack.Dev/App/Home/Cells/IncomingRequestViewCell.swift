@@ -18,8 +18,8 @@ class IncomingRequestViewCell: UITableViewCell {
         selectionStyle = .none
     }
 
-    func set(_ model: IncomingRequest) {
+    func set(_ model: ParticipantRequestable) {
         nameLabel.text = model.name
-        avatarImageView.downloaded(from: model.avatarUrl ?? "")
+        avatarImageView.downloaded(from: model.avatarUrl)
     }
 }

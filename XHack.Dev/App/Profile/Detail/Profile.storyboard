@@ -21,10 +21,10 @@
                                 <rect key="frame" x="0.0" y="84" width="414" height="778"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFm-xB-miV">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="882"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="932"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8uC-bx-FVd">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="882"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="932"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GH6-ei-Fda" userLabel="AvatarView">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
@@ -180,8 +180,34 @@
                                                             <constraint firstAttribute="bottom" secondItem="nS0-OM-4Be" secondAttribute="bottom" constant="10" id="xva-VV-nac"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6A2-5N-yyO">
+                                                        <rect key="frame" x="0.0" y="763" width="414" height="50"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bookmarks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpN-tM-g4W">
+                                                                <rect key="frame" x="30" y="14.5" width="110" height="21"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="21" id="Igp-Cn-6jl"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSu-PN-ah9">
+                                                                <rect key="frame" x="362.5" y="14" width="21.5" height="22"/>
+                                                                <state key="normal" image="right_arrow"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="dpN-tM-g4W" firstAttribute="leading" secondItem="6A2-5N-yyO" secondAttribute="leading" constant="30" id="0yM-nC-ZnF"/>
+                                                            <constraint firstAttribute="height" constant="50" id="AJR-2U-pbu"/>
+                                                            <constraint firstAttribute="trailing" secondItem="NSu-PN-ah9" secondAttribute="trailing" constant="30" id="VXe-Ux-Eew"/>
+                                                            <constraint firstItem="dpN-tM-g4W" firstAttribute="centerY" secondItem="6A2-5N-yyO" secondAttribute="centerY" id="WbZ-mA-Lys"/>
+                                                            <constraint firstItem="NSu-PN-ah9" firstAttribute="centerY" secondItem="6A2-5N-yyO" secondAttribute="centerY" id="sI1-6f-2fr"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eT1-Lj-gOf">
-                                                        <rect key="frame" x="0.0" y="763" width="414" height="56"/>
+                                                        <rect key="frame" x="0.0" y="813" width="414" height="56"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqT-io-ptB">
                                                                 <rect key="frame" x="30" y="15" width="64" height="21"/>
@@ -209,7 +235,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uC7-6l-sFz">
-                                                        <rect key="frame" x="0.0" y="819" width="414" height="63"/>
+                                                        <rect key="frame" x="0.0" y="869" width="414" height="63"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2KH-WE-qzx" customClass="SecondaryButton" customModule="XHack_Dev" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="5" width="354" height="48"/>
@@ -287,6 +313,7 @@
                     <connections>
                         <outlet property="aboutUserTextView" destination="YdE-oD-3qM" id="h0p-nd-bRp"/>
                         <outlet property="avatarImageView" destination="sDT-4s-t6d" id="rQy-ze-nD8"/>
+                        <outlet property="bookmarksButton" destination="NSu-PN-ah9" id="gbH-p5-nTT"/>
                         <outlet property="editButton" destination="YTW-sP-yaM" id="d1Z-Ei-1cb"/>
                         <outlet property="nameLabel" destination="nZ4-0K-cfQ" id="h4t-fL-IRy"/>
                         <outlet property="scrollView" destination="V0Q-Jf-veP" id="1om-pj-Sw8"/>
@@ -307,6 +334,7 @@
     </scenes>
     <resources>
         <image name="default_hack_avatar" width="120" height="114.5"/>
+        <image name="right_arrow" width="21.5" height="16"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

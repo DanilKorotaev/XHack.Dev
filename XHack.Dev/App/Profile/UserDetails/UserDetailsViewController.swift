@@ -31,6 +31,8 @@ class UserDetailsViewController: BaseViewController<UserDetailsViewModel>, Story
     
     override func completeUi() {
         tagsCollectionView.register(TagViewCell.self)
+        tagsCollectionView.delegate = self
+        tagsCollectionView.collectionViewLayout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left)
     }
     
     override func applyBinding() {
@@ -109,5 +111,14 @@ class UserDetailsViewController: BaseViewController<UserDetailsViewModel>, Story
         socialView.isHidden = networks.isEmpty
         self.socialsTextView.text = networks.joined(separator: "\n\n")
         socialsTextView.joinHeight(constant: socialsTextView.getRequiredTextSize().height)
+    }
+}
+
+
+extension UserDetailsViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let tag = dataContext?.user.value?.tags[indexPath.row] else { return .zero}
+        
+        return TagViewCell.getRequiredSize(for: tag)
     }
 }

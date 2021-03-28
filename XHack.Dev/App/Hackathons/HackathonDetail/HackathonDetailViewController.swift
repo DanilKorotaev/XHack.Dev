@@ -40,7 +40,8 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
     @IBOutlet weak var onlineImageView: UIImageView!
     @IBOutlet weak var globeImageView: UIImageView!
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var tagsCollectionView: UICollectionView!
+    @IBOutlet weak var tagsCollectionView: UIResizableCollectionView!
+    @IBOutlet weak var tagsHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tagsContainerView: UIView!
     
     override func completeUi() {
@@ -48,7 +49,7 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
         hackDescriptionTextView.textContainerInset = .zero
         setTeamCollectionView()
         setMemberCollectionView()
-        tagsCollectionView.register(TagViewCell.self)
+        setTagsCollectionView()
     }
     
     override func applyBinding() {
@@ -73,7 +74,7 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
                 self.searchTeamContainerView.isHidden = hackDetail.teams.value.isEmpty
                 self.searchMemberContainerView.isHidden = hackDetail.members.value.isEmpty
                 self.tagsContainerView.isHidden = hackDetail.tags.isEmpty
-                
+                self.hackAvatarImageView.downloaded(from: hackDetail.avatarUrl)
                 self.setChangeParticipantStateButtonTitle(participantType: hackDetail.participationType)
                 self.updateDescriptionHeight()
                 self.updateVisibilityShowAllButton()
@@ -181,6 +182,15 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
         searchMemberCollectionView.setCollectionViewLayout(layout, animated: true)
     }
     
+    private func setTagsCollectionView() {
+        tagsCollectionView.register(TagViewCell.self)
+        tagsCollectionView.delegate = self
+        tagsCollectionView.collectionViewLayout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left)
+        tagsCollectionView.contentSizeChanged.subscribe(onNext: { [weak self] size in
+            self?.tagsHeightConstraint.constant = size.height
+        }).disposed(by: disposeBag)
+    }
+    
     
     func setChangeParticipantStateButtonTitle(participantType: HackParticipationType) {
         var text = ""
@@ -197,5 +207,14 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
                 text = ""
         }
         changeParticipantStateButton.setTitle(text, for: .normal)
+    }
+}
+
+
+extension HackathonDetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let tag = dataContext?.hackathon.value?.tags[indexPath.row] else { return .zero}
+        
+        return TagViewCell.getRequiredSize(for: tag)
     }
 }

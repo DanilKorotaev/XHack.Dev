@@ -31,7 +31,7 @@ class HackathonListCoordinator: BaseCoordinator<Void> {
     
     func setupBinding() {
         viewModel.didSelectHack
-            .subscribe(onNext: { [weak self] hack in self?.didSelect(hack: hack) })
+            .subscribe(onNext: { [weak self] hack in self?.navigateToHackDetails(for: hack.id) })
             .disposed(by: disposeBag)
         
         viewModel.seachRequsted
@@ -40,12 +40,6 @@ class HackathonListCoordinator: BaseCoordinator<Void> {
         
     }
     
-    func didSelect(hack: ShortHackathon) {
-        let coordinator = Container.resolve(HackathonDetailCoordinator.self)
-        coordinator.navigationController = navigationController
-        coordinator.hackId = hack.id
-        start(coordinator: coordinator)
-    }
         
     func toSelectHackFilters() {
         let coordinator = Container.resolve(SearchHackathonsCoordinator.self)

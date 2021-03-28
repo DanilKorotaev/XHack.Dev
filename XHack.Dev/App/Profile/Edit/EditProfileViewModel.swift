@@ -30,6 +30,7 @@ class EditProfileViewModel: BaseViewModel {
     let addNetwork = PublishSubject<Void>()
     let email = BehaviorSubject<String>(value: "")
     var tags = ObservableArray<Tag>([])
+    let searchableState = BehaviorSubject<Bool>(value: false)
     
     let avatarSelected = PublishSubject<File>()
     let save = PublishSubject<Void>()
@@ -42,7 +43,6 @@ class EditProfileViewModel: BaseViewModel {
     }
     
     override func initialize() {
-        super.initialize()
         guard let user = parameter?.userProfile else {
             fatalError("parameter should be initialize")
         }
@@ -53,6 +53,8 @@ class EditProfileViewModel: BaseViewModel {
         specialization.onNext(user.specialization.value)
         networks.append(contentsOf: user.networks.map { BehaviorSubject(value: $0) })
         tags.append(contentsOf: user.tags)
+        searchableState.onNext(user.isAvailableForSearching.value)
+        super.initialize()
     }
     
     override func applyBinding() {
@@ -60,8 +62,16 @@ class EditProfileViewModel: BaseViewModel {
             self?.uploadAvatar(file: file)
         }.disposed(by: disposeBag)
         
-        save.bind { [weak self] file in
+        save.bind { [weak self]  file in
             self?.updateProfile()
+        }.disposed(by: disposeBag)
+        
+        searchableState
+            .skip(2)
+            .bind { [weak self] active in
+            self?.userApi.setSearchingStatus(active).done { [weak self] (result) in
+                self?.checkAndProcessApiResult(response: result, "обновить статус")
+            }
         }.disposed(by: disposeBag)
         
         addNetwork.bind { [weak self] _ in

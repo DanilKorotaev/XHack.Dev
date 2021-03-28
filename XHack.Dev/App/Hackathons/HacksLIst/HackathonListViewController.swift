@@ -24,7 +24,7 @@ class HackathonListViewController: BaseViewController<HackathonListViewModel>, S
         tableView.tableFooterView = UIView()
 //        setupHeaderView()
         refreshHandler = RefreshHandler(view: tableView)
-        tableView.register(HackathonViewCell.nib, forCellReuseIdentifier: HackathonViewCell.reuseIdentifier)
+        tableView.register(HackathonViewCell.self)
     }
     
     func setupHeaderView() {

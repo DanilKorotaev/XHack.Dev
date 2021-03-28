@@ -52,13 +52,13 @@ class ShortChat: Comparable {
         name = team.name
         self.team = team
         type = .group
-        avatarUrl = team.avatarUrl ?? ""
+        avatarUrl = team.avatarUrl
     }
     
     init(id: Int?, user: ShortUser) {
         self.id = id
         name = user.name
-        avatarUrl = user.avatarUrl ?? ""
+        avatarUrl = user.avatarUrl
         type = .p2p
         secondUser = user
     }

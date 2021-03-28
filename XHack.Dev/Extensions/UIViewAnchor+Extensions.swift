@@ -140,7 +140,7 @@ extension UIView {
         self.joinHeight(constant: size.height, type: type)
     }
     
-    func joinToSuper(left: CGFloat?, top: CGFloat?, right: CGFloat?, bottom: CGFloat?) {
+    func joinToSuperView(left: CGFloat?, top: CGFloat?, right: CGFloat?, bottom: CGFloat?) {
         guard let superView = self.superview else {
             fatalError("superView is nil")
         }
@@ -160,6 +160,10 @@ extension UIView {
         if let bottom = bottom {
             self.joinBottom(of: superView, contant: bottom)
         }
+    }
+    
+    func joinToSuperView() {
+        self.joinToSuperView(left: 0, top: 0, right: 0, bottom: 0)
     }
     
     func getConstraints(with firstAttribute: NSLayoutConstraint.Attribute, and secondAttribute: NSLayoutConstraint.Attribute = .notAnAttribute) -> [NSLayoutConstraint] {

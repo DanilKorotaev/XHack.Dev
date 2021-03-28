@@ -24,6 +24,18 @@ func <-><T: Comparable>(property: ControlProperty<T>, variable: BehaviorSubject<
     return CompositeDisposable.init(variableToProperty, propertyToVariable)
 }
 
+
+func <-><T>(property: ControlProperty<T>, variable: BehaviorSubject<T>) -> Disposable {
+    let variableToProperty = variable.asObservable()
+        .bind(to: property)
+
+    let propertyToVariable = property
+        .bind(to: variable)
+
+    return CompositeDisposable.init(variableToProperty, propertyToVariable)
+}
+
+
 func <-><T: Comparable>(left: BehaviorSubject<T>, right: BehaviorSubject<T>) -> Disposable {
     let leftToRight = left.asObservable()
         .distinctUntilChanged()
@@ -35,6 +47,3 @@ func <-><T: Comparable>(left: BehaviorSubject<T>, right: BehaviorSubject<T>) -> 
 
     return CompositeDisposable.init(leftToRight, rightToLeft)
 }
-
-
-

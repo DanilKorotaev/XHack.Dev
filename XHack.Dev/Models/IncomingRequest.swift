@@ -14,7 +14,7 @@ enum RequestType: String {
     case userToTeam = "UserToTeam"
 }
 
-class IncomingRequest {
+class IncomingRequest: ParticipantRequestable {
     let team: ShortTeam
     let user: ShortUser
     let type: RequestType
@@ -30,7 +30,7 @@ class IncomingRequest {
         }
     }
     
-    var avatarUrl: String? {
+    var avatarUrl: String {
         switch (type) {
         case .teamToUser:
             return team.avatarUrl

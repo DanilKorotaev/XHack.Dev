@@ -69,4 +69,9 @@ class RequestsApi: IRequestsApi {
         let url = endpointsProvider.gatewayUrl + "/api/teams/declineRequestUserToTeam/\(requestId)"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
+    
+    func getSentRequests() -> Promise<ApiResult<SentRequestsDto>> {
+        let url = endpointsProvider.gatewayUrl + "/api/users/getOutgoingRequests"
+        return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
 }

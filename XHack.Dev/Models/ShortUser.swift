@@ -11,9 +11,9 @@ import Foundation
 class ShortUser {
     let id: Int
     let name: String
-    let avatarUrl: String?
+    let avatarUrl: String
     
-    init(id: Int, name: String, avatarUrl: String?) {
+    init(id: Int, name: String, avatarUrl: String) {
         self.id = id
         self.name = name
         self.avatarUrl = avatarUrl
@@ -22,6 +22,6 @@ class ShortUser {
     init(_ data: ShortUserDto) {
         self.id = data.id
         self.name = data.name
-        self.avatarUrl = data.avatarUrl
+        self.avatarUrl = data.avatarUrl ?? ""
     }
 }

@@ -23,11 +23,13 @@ class EditProfileViewController: BaseViewController<EditProfileViewModel>, Story
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var specializationTextField: UITextField!
     @IBOutlet weak var tagsCollectionView: UICollectionView!
+    @IBOutlet weak var changeSearchableStateSwitch: UISwitch!
     
     override func completeUi() {
         networksTableView.register(ShadowFextFieldViewCell.self)
         tagsCollectionView.register(TagViewCell.self)
-//        tagsCollectionView.delegate = self
+        tagsCollectionView.delegate = self
+        tagsCollectionView.collectionViewLayout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left)
         configureDismissKeyboard()
     }
     
@@ -74,6 +76,9 @@ class EditProfileViewController: BaseViewController<EditProfileViewModel>, Story
                 guard let cell = cell as? TagViewCell else { return }
                 cell.set(for: model)
             }
+            .disposed(by: disposeBag)
+        
+        (changeSearchableStateSwitch.rx.isOn <-> dataContext.searchableState)
             .disposed(by: disposeBag)
     }
     

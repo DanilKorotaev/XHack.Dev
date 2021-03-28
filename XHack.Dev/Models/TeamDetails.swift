@@ -13,7 +13,7 @@ struct TeamDetails {
     var id: Int
     var name: String
     var description: String
-    var avatarUrl: String?
+    var avatarUrl: String
     let chatId: Int?
     let participantType: TeamParticipantType
     let members: BehaviorSubject<[ShortUser]>
@@ -24,7 +24,7 @@ struct TeamDetails {
         id = data.id
         name = data.name
         description = data.description
-        avatarUrl = data.avatarUrl
+        avatarUrl = data.avatarUrl ?? ""
         participantType = TeamParticipantType(rawValue: data.participantType) ?? .none
         isBookmarked = BehaviorSubject<Bool>(value: data.isBookmarked)
         members = BehaviorSubject(value: data.members.map {ShortUser($0) })

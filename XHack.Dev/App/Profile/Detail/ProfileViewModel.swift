@@ -8,6 +8,7 @@ class ProfileViewModel: BaseViewModel {
     let profile = BehaviorSubject<UserProfile?>(value: nil)
     let signOut = PublishSubject<Void>()
     let edit = PublishSubject<Void>()
+    let bookmarks =  PublishSubject<Void>()
     let teamSelected = PublishSubject<ShortTeam>()
     
     init(sessionService: SessionService, userApi: IUserApi, messager: IMessager) {

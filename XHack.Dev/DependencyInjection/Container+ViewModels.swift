@@ -33,5 +33,10 @@ extension Container {
         autoregister(ChatViewModel.self, initializer: ChatViewModel.init)
         autoregister(UserRequestsViewModel.self, initializer: UserRequestsViewModel.init)
         autoregister(SelectTeamViewModel.self, initializer: SelectTeamViewModel.init)
+        autoregister(SentRequestViewModel.self, initializer: SentRequestViewModel.init)
+        autoregister(BookmarksViewModel.self, initializer: BookmarksViewModel.init)
+        autoregister(BookmarkedHacksViewModel.self, initializer: BookmarkedHacksViewModel.init)
+        autoregister(BookmarkedTeamsViewModel.self, initializer: BookmarkedTeamsViewModel.init)
+        autoregister(BookmarkedUsersViewModel.self, initializer: BookmarkedUsersViewModel.init)
     }
 }

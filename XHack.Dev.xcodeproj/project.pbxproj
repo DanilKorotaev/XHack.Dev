@@ -186,6 +186,28 @@
 		A349FB64259BE40C0038549E /* TagViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A349FB62259BE40C0038549E /* TagViewCell.swift */; };
 		A349FB65259BE40C0038549E /* TagViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A349FB63259BE40C0038549E /* TagViewCell.xib */; };
 		A352B5EC2602813F00F3F6B2 /* ReadMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A352B5EB2602813500F3F6B2 /* ReadMessageData.swift */; };
+		A3593B0B260F6BBE006C28B8 /* AlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B0A260F6BBE006C28B8 /* AlignedCollectionViewFlowLayout.swift */; };
+		A3593B11260F7D07006C28B8 /* SentRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B10260F7D07006C28B8 /* SentRequestViewModel.swift */; };
+		A3593B16260F7D13006C28B8 /* SentRequest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3593B15260F7D13006C28B8 /* SentRequest.storyboard */; };
+		A3593B1B260F7D35006C28B8 /* SentRequestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B1A260F7D35006C28B8 /* SentRequestCoordinator.swift */; };
+		A3593B20260F7D53006C28B8 /* SentRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B1F260F7D53006C28B8 /* SentRequestViewController.swift */; };
+		A3593B25260F86F4006C28B8 /* SentRequestsDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B24260F86F3006C28B8 /* SentRequestsDto.swift */; };
+		A3593B2A260FC734006C28B8 /* SentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B29260FC733006C28B8 /* SentRequest.swift */; };
+		A3593B2F260FC761006C28B8 /* SentRequestDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B2E260FC761006C28B8 /* SentRequestDto.swift */; };
+		A3593B35260FC91C006C28B8 /* ParticipantRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B34260FC91C006C28B8 /* ParticipantRequestable.swift */; };
+		A3593B502610BAE2006C28B8 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B4F2610BADB006C28B8 /* BookmarksViewModel.swift */; };
+		A3593B552610BB22006C28B8 /* BookmarksCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B542610BB21006C28B8 /* BookmarksCoordinator.swift */; };
+		A3593B5A2610C30E006C28B8 /* Bookmarks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3593B592610C30D006C28B8 /* Bookmarks.storyboard */; };
+		A3593B5F2610C33B006C28B8 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B5E2610C33B006C28B8 /* BookmarksViewController.swift */; };
+		A3593B652610C376006C28B8 /* BookmarkedUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B642610C376006C28B8 /* BookmarkedUsersViewController.swift */; };
+		A3593B6A2610C38E006C28B8 /* BookmarkedUsers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3593B692610C38E006C28B8 /* BookmarkedUsers.storyboard */; };
+		A3593B6C2610C3A6006C28B8 /* BookmarkedUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B6B2610C3A5006C28B8 /* BookmarkedUsersViewModel.swift */; };
+		A3593B752610C4F6006C28B8 /* BookmarkedTeams.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3593B742610C4F6006C28B8 /* BookmarkedTeams.storyboard */; };
+		A3593B7A2610C511006C28B8 /* BookmarkedTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B792610C511006C28B8 /* BookmarkedTeamsViewController.swift */; };
+		A3593B7F2610C523006C28B8 /* BookmarkedTeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B7E2610C523006C28B8 /* BookmarkedTeamsViewModel.swift */; };
+		A3593B852610C5CD006C28B8 /* BookmarkedHacksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B842610C5CD006C28B8 /* BookmarkedHacksViewModel.swift */; };
+		A3593B8D2610C5DC006C28B8 /* BookmarkedHacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3593B8C2610C5DC006C28B8 /* BookmarkedHacksViewController.swift */; };
+		A3593B922610C5E9006C28B8 /* BookmarkedHacks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3593B912610C5E9006C28B8 /* BookmarkedHacks.storyboard */; };
 		A35BFA9B25EADC230006EE31 /* TeamParticipantType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35BFA9A25EADC230006EE31 /* TeamParticipantType.swift */; };
 		A35BFAA325EAE0090006EE31 /* HackParticipationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35BFAA225EAE0090006EE31 /* HackParticipationType.swift */; };
 		A362EED125EC2BA300AC147F /* IncomingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A362EED025EC2BA300AC147F /* IncomingRequest.swift */; };
@@ -362,6 +384,9 @@
 		A3DD557025A668720095A130 /* TeammateSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DD556C25A668720095A130 /* TeammateSearchViewController.swift */; };
 		A3DD557125A668720095A130 /* TeammateSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DD556D25A668720095A130 /* TeammateSearchCoordinator.swift */; };
 		A3DD557225A668720095A130 /* TeammateSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DD556E25A668720095A130 /* TeammateSearchViewModel.swift */; };
+		A3E1FCDD2610DB470008A823 /* InnerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1FCDC2610DB460008A823 /* InnerPage.swift */; };
+		A3E1FCE32611060B0008A823 /* PageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1FCE22611060B0008A823 /* PageItemView.swift */; };
+		A3E1FCF0261108A70008A823 /* PageBarControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1FCEF261108A70008A823 /* PageBarControlView.swift */; };
 		A3E627E525E57B1900C1FBB7 /* HackTeamList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E627E425E57B1800C1FBB7 /* HackTeamList.storyboard */; };
 		A3E627F925E59B9E00C1FBB7 /* UITableViewHeaderFooterView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E627F825E59B9E00C1FBB7 /* UITableViewHeaderFooterView+Extensions.swift */; };
 		A3E627FF25E6EB0E00C1FBB7 /* HackTeamDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E627FE25E6EB0E00C1FBB7 /* HackTeamDetailsViewModel.swift */; };
@@ -606,6 +631,28 @@
 		A349FB62259BE40C0038549E /* TagViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewCell.swift; sourceTree = "<group>"; };
 		A349FB63259BE40C0038549E /* TagViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagViewCell.xib; sourceTree = "<group>"; };
 		A352B5EB2602813500F3F6B2 /* ReadMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMessageData.swift; sourceTree = "<group>"; };
+		A3593B0A260F6BBE006C28B8 /* AlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		A3593B10260F7D07006C28B8 /* SentRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentRequestViewModel.swift; sourceTree = "<group>"; };
+		A3593B15260F7D13006C28B8 /* SentRequest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SentRequest.storyboard; sourceTree = "<group>"; };
+		A3593B1A260F7D35006C28B8 /* SentRequestCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentRequestCoordinator.swift; sourceTree = "<group>"; };
+		A3593B1F260F7D53006C28B8 /* SentRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentRequestViewController.swift; sourceTree = "<group>"; };
+		A3593B24260F86F3006C28B8 /* SentRequestsDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentRequestsDto.swift; sourceTree = "<group>"; };
+		A3593B29260FC733006C28B8 /* SentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentRequest.swift; sourceTree = "<group>"; };
+		A3593B2E260FC761006C28B8 /* SentRequestDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentRequestDto.swift; sourceTree = "<group>"; };
+		A3593B34260FC91C006C28B8 /* ParticipantRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantRequestable.swift; sourceTree = "<group>"; };
+		A3593B4F2610BADB006C28B8 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
+		A3593B542610BB21006C28B8 /* BookmarksCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCoordinator.swift; sourceTree = "<group>"; };
+		A3593B592610C30D006C28B8 /* Bookmarks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bookmarks.storyboard; sourceTree = "<group>"; };
+		A3593B5E2610C33B006C28B8 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		A3593B642610C376006C28B8 /* BookmarkedUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedUsersViewController.swift; sourceTree = "<group>"; };
+		A3593B692610C38E006C28B8 /* BookmarkedUsers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookmarkedUsers.storyboard; sourceTree = "<group>"; };
+		A3593B6B2610C3A5006C28B8 /* BookmarkedUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedUsersViewModel.swift; sourceTree = "<group>"; };
+		A3593B742610C4F6006C28B8 /* BookmarkedTeams.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookmarkedTeams.storyboard; sourceTree = "<group>"; };
+		A3593B792610C511006C28B8 /* BookmarkedTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedTeamsViewController.swift; sourceTree = "<group>"; };
+		A3593B7E2610C523006C28B8 /* BookmarkedTeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedTeamsViewModel.swift; sourceTree = "<group>"; };
+		A3593B842610C5CD006C28B8 /* BookmarkedHacksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedHacksViewModel.swift; sourceTree = "<group>"; };
+		A3593B8C2610C5DC006C28B8 /* BookmarkedHacksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedHacksViewController.swift; sourceTree = "<group>"; };
+		A3593B912610C5E9006C28B8 /* BookmarkedHacks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookmarkedHacks.storyboard; sourceTree = "<group>"; };
 		A35BFA9A25EADC230006EE31 /* TeamParticipantType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamParticipantType.swift; sourceTree = "<group>"; };
 		A35BFAA225EAE0090006EE31 /* HackParticipationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackParticipationType.swift; sourceTree = "<group>"; };
 		A362EED025EC2BA300AC147F /* IncomingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingRequest.swift; sourceTree = "<group>"; };
@@ -783,6 +830,9 @@
 		A3DD556C25A668720095A130 /* TeammateSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeammateSearchViewController.swift; sourceTree = "<group>"; };
 		A3DD556D25A668720095A130 /* TeammateSearchCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeammateSearchCoordinator.swift; sourceTree = "<group>"; };
 		A3DD556E25A668720095A130 /* TeammateSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeammateSearchViewModel.swift; sourceTree = "<group>"; };
+		A3E1FCDC2610DB460008A823 /* InnerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerPage.swift; sourceTree = "<group>"; };
+		A3E1FCE22611060B0008A823 /* PageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageItemView.swift; sourceTree = "<group>"; };
+		A3E1FCEF261108A70008A823 /* PageBarControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBarControlView.swift; sourceTree = "<group>"; };
 		A3E627E425E57B1800C1FBB7 /* HackTeamList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HackTeamList.storyboard; sourceTree = "<group>"; };
 		A3E627F825E59B9E00C1FBB7 /* UITableViewHeaderFooterView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+Extensions.swift"; sourceTree = "<group>"; };
 		A3E627FE25E6EB0E00C1FBB7 /* HackTeamDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackTeamDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -851,6 +901,8 @@
 		1657979B22DB8B7A00DA52D2 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				A3593B4E2610BAAE006C28B8 /* Bookmarks */,
+				A3593B0F260F7CEE006C28B8 /* SentRequest */,
 				A362EF0325EEC27800AC147F /* StartUpScreen */,
 				A33579BA25E560DB00297E22 /* Members */,
 				A349FB61259BE3F40038549E /* Cells */,
@@ -958,6 +1010,8 @@
 				A3BDB60325F41ED2006CD2DC /* ShortChatMessageDto.swift */,
 				A3A6F39425F6A34C00DCD778 /* ChatMessageDto.swift */,
 				A38765DB26090C3200B83BE3 /* FileUrlResponse.swift */,
+				A3593B24260F86F3006C28B8 /* SentRequestsDto.swift */,
+				A3593B2E260FC761006C28B8 /* SentRequestDto.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1036,6 +1090,7 @@
 				16A1E54522DA3F170003F0DF /* Info.plist */,
 				A3884C032569624700851886 /* Injection.swift */,
 				A3C2B2B225FBEB9700BA103F /* ObservableArray.swift */,
+				A3593B0A260F6BBE006C28B8 /* AlignedCollectionViewFlowLayout.swift */,
 			);
 			path = XHack.Dev;
 			sourceTree = "<group>";
@@ -1107,6 +1162,7 @@
 		16A1E58A22DA40C20003F0DF /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				A3E1FCE1261105EC0008A823 /* Pager */,
 				16A1E58D22DA40C20003F0DF /* FancyButton.swift */,
 				16A1E58E22DA40C20003F0DF /* ButtonWithProgress.swift */,
 				16A1E59222DA40C20003F0DF /* LocalizedButton.swift */,
@@ -1187,6 +1243,7 @@
 		16A1E5D022DA40C40003F0DF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A3593B33260FC8E3006C28B8 /* Protocols */,
 				A35BFA9925EADC080006EE31 /* Primitives */,
 				A33F449B25A88F4900C16624 /* HackFilters */,
 				A37055EE25852DFC005650FD /* Messages */,
@@ -1217,6 +1274,8 @@
 				A3BDB5FE25F41E5C006CD2DC /* ShortChatMessage.swift */,
 				A3A6F39925F6A3F400DCD778 /* ChatMessage.swift */,
 				A37876732607A94500D26E37 /* File.swift */,
+				A3593B29260FC733006C28B8 /* SentRequest.swift */,
+				A3E1FCDC2610DB460008A823 /* InnerPage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1578,6 +1637,69 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		A3593B0F260F7CEE006C28B8 /* SentRequest */ = {
+			isa = PBXGroup;
+			children = (
+				A3593B10260F7D07006C28B8 /* SentRequestViewModel.swift */,
+				A3593B15260F7D13006C28B8 /* SentRequest.storyboard */,
+				A3593B1A260F7D35006C28B8 /* SentRequestCoordinator.swift */,
+				A3593B1F260F7D53006C28B8 /* SentRequestViewController.swift */,
+			);
+			path = SentRequest;
+			sourceTree = "<group>";
+		};
+		A3593B33260FC8E3006C28B8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A3593B34260FC91C006C28B8 /* ParticipantRequestable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A3593B4E2610BAAE006C28B8 /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				A3593B832610C5B9006C28B8 /* BookmarkedHacks */,
+				A3593B732610C4D8006C28B8 /* BookmarkedTeams */,
+				A3593B602610C343006C28B8 /* BookmarkedUsers */,
+				A3593B4F2610BADB006C28B8 /* BookmarksViewModel.swift */,
+				A3593B542610BB21006C28B8 /* BookmarksCoordinator.swift */,
+				A3593B592610C30D006C28B8 /* Bookmarks.storyboard */,
+				A3593B5E2610C33B006C28B8 /* BookmarksViewController.swift */,
+			);
+			path = Bookmarks;
+			sourceTree = "<group>";
+		};
+		A3593B602610C343006C28B8 /* BookmarkedUsers */ = {
+			isa = PBXGroup;
+			children = (
+				A3593B642610C376006C28B8 /* BookmarkedUsersViewController.swift */,
+				A3593B692610C38E006C28B8 /* BookmarkedUsers.storyboard */,
+				A3593B6B2610C3A5006C28B8 /* BookmarkedUsersViewModel.swift */,
+			);
+			path = BookmarkedUsers;
+			sourceTree = "<group>";
+		};
+		A3593B732610C4D8006C28B8 /* BookmarkedTeams */ = {
+			isa = PBXGroup;
+			children = (
+				A3593B742610C4F6006C28B8 /* BookmarkedTeams.storyboard */,
+				A3593B792610C511006C28B8 /* BookmarkedTeamsViewController.swift */,
+				A3593B7E2610C523006C28B8 /* BookmarkedTeamsViewModel.swift */,
+			);
+			path = BookmarkedTeams;
+			sourceTree = "<group>";
+		};
+		A3593B832610C5B9006C28B8 /* BookmarkedHacks */ = {
+			isa = PBXGroup;
+			children = (
+				A3593B842610C5CD006C28B8 /* BookmarkedHacksViewModel.swift */,
+				A3593B8C2610C5DC006C28B8 /* BookmarkedHacksViewController.swift */,
+				A3593B912610C5E9006C28B8 /* BookmarkedHacks.storyboard */,
+			);
+			path = BookmarkedHacks;
+			sourceTree = "<group>";
+		};
 		A35BFA9925EADC080006EE31 /* Primitives */ = {
 			isa = PBXGroup;
 			children = (
@@ -1916,6 +2038,15 @@
 			path = TeammateSearch;
 			sourceTree = "<group>";
 		};
+		A3E1FCE1261105EC0008A823 /* Pager */ = {
+			isa = PBXGroup;
+			children = (
+				A3E1FCE22611060B0008A823 /* PageItemView.swift */,
+				A3E1FCEF261108A70008A823 /* PageBarControlView.swift */,
+			);
+			path = Pager;
+			sourceTree = "<group>";
+		};
 		A3E627FD25E6EAD300C1FBB7 /* HackTeamDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -2079,6 +2210,7 @@
 				A3231284256F057900D3B97B /* Home.storyboard in Resources */,
 				16A1E5EC22DA40C40003F0DF /* SignIn.storyboard in Resources */,
 				A37876672603C89E00D26E37 /* HackTeamViewCell.xib in Resources */,
+				A3593B5A2610C30E006C28B8 /* Bookmarks.storyboard in Resources */,
 				A382162E25FFBD8700AF2BF5 /* SelectTeam.storyboard in Resources */,
 				A3961AA82579934900FC3541 /* SearchHackathons.storyboard in Resources */,
 				A3DD556F25A668720095A130 /* TeammateSearch.storyboard in Resources */,
@@ -2098,12 +2230,15 @@
 				16DD9D1922DB314C007D9D2F /* Settings.storyboard in Resources */,
 				A3A6F3A825F6BD1B00DCD778 /* OutgoingMessageViewCell.xib in Resources */,
 				16DD9D0622DA8192007D9D2F /* OnBoarding.storyboard in Resources */,
+				A3593B16260F7D13006C28B8 /* SentRequest.storyboard in Resources */,
 				A3961B26257AE6A300FC3541 /* TeamList.storyboard in Resources */,
+				A3593B752610C4F6006C28B8 /* BookmarkedTeams.storyboard in Resources */,
 				A323128D256F118100D3B97B /* Profile.storyboard in Resources */,
 				A349FB5D259BDB2C0038549E /* PopularHackViewCell.xib in Resources */,
 				A3196283259A757300D58502 /* HackathonList.storyboard in Resources */,
 				A3A6F3A125F6BD0500DCD778 /* IncomingMessageViewCell.xib in Resources */,
 				A38CDB2E256C1A2600E8A732 /* Registration.storyboard in Resources */,
+				A3593B6A2610C38E006C28B8 /* BookmarkedUsers.storyboard in Resources */,
 				A349FB65259BE40C0038549E /* TagViewCell.xib in Resources */,
 				A3196296259A789900D58502 /* HackListHeaderView.xib in Resources */,
 				16DD9D0922DA8216007D9D2F /* LaunchScreen.storyboard in Resources */,
@@ -2119,6 +2254,7 @@
 				A33579CF25E5614A00297E22 /* HackMemberList.storyboard in Resources */,
 				A362EF2B25EEC38200AC147F /* StartUpScreen.storyboard in Resources */,
 				A3441D3A25963B3200A3BFA5 /* ChatList.storyboard in Resources */,
+				A3593B922610C5E9006C28B8 /* BookmarkedHacks.storyboard in Resources */,
 				A3E6280E25E6EB5A00C1FBB7 /* HackTeamDetails.storyboard in Resources */,
 				A33F448925A7A55F00C16624 /* HackFilterDialog.storyboard in Resources */,
 			);
@@ -2294,6 +2430,7 @@
 				16A1E60022DA40C40003F0DF /* String+Localization.swift in Sources */,
 				A3C2B2D725FCC8A800BA103F /* SmartScrollBehaviour.swift in Sources */,
 				A362EED925EC2C2F00AC147F /* Team.swift in Sources */,
+				A3593B502610BAE2006C28B8 /* BookmarksViewModel.swift in Sources */,
 				A3FE7281260A82570040446C /* UIResizableTableView.swift in Sources */,
 				A33579F125E5741900297E22 /* HackTeamListFilterDto.swift in Sources */,
 				A3196295259A789900D58502 /* HackListHeaderView.swift in Sources */,
@@ -2325,12 +2462,15 @@
 				A3E627F925E59B9E00C1FBB7 /* UITableViewHeaderFooterView+Extensions.swift in Sources */,
 				16A1E60F22DA40C40003F0DF /* DrawerMenuViewModel.swift in Sources */,
 				A3C2B2B825FBEF6F00BA103F /* UITableView+Rx.swift in Sources */,
+				A3593B6C2610C3A6006C28B8 /* BookmarkedUsersViewModel.swift in Sources */,
 				16DD9D1B22DB3242007D9D2F /* SettingsViewController.swift in Sources */,
 				A3196284259A757300D58502 /* HackathonListViewModel.swift in Sources */,
 				16DD9D0222DA7D5F007D9D2F /* OnBoardingCoordinator.swift in Sources */,
 				A388142D258AA13600FFF9A5 /* AcceptRequestToUserDto.swift in Sources */,
 				A3881423258A9FAA00FFF9A5 /* IncomingRequestDto.swift in Sources */,
 				A320CD5125FE4BA6002F8845 /* UserRequestsCoordinator.swift in Sources */,
+				A3E1FCDD2610DB470008A823 /* InnerPage.swift in Sources */,
+				A3593B552610BB22006C28B8 /* BookmarksCoordinator.swift in Sources */,
 				A37055E225852A35005650FD /* BaseViewModel+ApiResult.swift in Sources */,
 				A33579CA25E5613C00297E22 /* HackMemberListViewController.swift in Sources */,
 				A3881432258AA1AF00FFF9A5 /* DeclineRequestToUserDto.swift in Sources */,
@@ -2346,6 +2486,7 @@
 				16A1E64322DA40C40003F0DF /* Credentials.swift in Sources */,
 				A32D3CA425E2BD6E002633B8 /* EditProfileViewModel.swift in Sources */,
 				A35BFA9B25EADC230006EE31 /* TeamParticipantType.swift in Sources */,
+				A3593B652610C376006C28B8 /* BookmarkedUsersViewController.swift in Sources */,
 				A3BA56312573E896007AD591 /* ApiEndpoints.swift in Sources */,
 				A3961AF825799C8A00FC3541 /* BookmarkMessageDTO.swift in Sources */,
 				A3961B0025799D2C00FC3541 /* BookmarksApi.swift in Sources */,
@@ -2354,7 +2495,9 @@
 				A33579C525E5611F00297E22 /* HackMemberListCoordinator.swift in Sources */,
 				A3441D4A25967A4500A3BFA5 /* ChooseSearchCategoryCoordinator.swift in Sources */,
 				A31F574525A5E95300759B61 /* IOperationStateControl.swift in Sources */,
+				A3593B5F2610C33B006C28B8 /* BookmarksViewController.swift in Sources */,
 				16A1E61422DA40C40003F0DF /* Container+Coordinators.swift in Sources */,
+				A3593B7A2610C511006C28B8 /* BookmarkedTeamsViewController.swift in Sources */,
 				16A1E61B22DA40C40003F0DF /* DrawerMenuCoordinator.swift in Sources */,
 				A362EEDE25EC2CDA00AC147F /* TeamDetailsDto.swift in Sources */,
 				A3F3D82825F3C41700DACC7A /* ShortChatDto.swift in Sources */,
@@ -2371,10 +2514,12 @@
 				A32D3CCC25E2CA53002633B8 /* CustomShadowTextField.swift in Sources */,
 				A3BA56362573E906007AD591 /* EndpointsProvider.swift in Sources */,
 				A3AD07AA25E3EB1700DA0785 /* UITableViewCell+Extensions.swift in Sources */,
+				A3593B25260F86F4006C28B8 /* SentRequestsDto.swift in Sources */,
 				A362EF3525EEC52500AC147F /* IAppContext.swift in Sources */,
 				A3BA566B25742F27007AD591 /* ApiActionResult.swift in Sources */,
 				16A1E60B22DA40C40003F0DF /* SessionEndpoints.swift in Sources */,
 				A31F574025A5E90400759B61 /* ICacheRetrievingStateControl.swift in Sources */,
+				A3E1FCE32611060B0008A823 /* PageItemView.swift in Sources */,
 				A3DC593C25E45A9C009DA204 /* ShortUser.swift in Sources */,
 				A3231251256DBD6300D3B97B /* RestClient.swift in Sources */,
 				A301E33725881DB90088B33A /* ITagsApi.swift in Sources */,
@@ -2387,6 +2532,7 @@
 				A33F448E25A7A56A00C16624 /* HackFilterDialogViewController.swift in Sources */,
 				A3705608258544E0005650FD /* HackathonDetail.swift in Sources */,
 				A3F3D83225F3D11600DACC7A /* ChatType.swift in Sources */,
+				A3593B2A260FC734006C28B8 /* SentRequest.swift in Sources */,
 				A3961B21257AE69600FC3541 /* TeamListViewController.swift in Sources */,
 				16A1E60822DA40C40003F0DF /* LocalizedButton.swift in Sources */,
 				A323127A256F052400D3B97B /* HomeViewModel.swift in Sources */,
@@ -2447,6 +2593,7 @@
 				A3C2B2C225FC15D100BA103F /* Dictionary+JsonParse.swift in Sources */,
 				A32D3CC425E2C66D002633B8 /* Common.swift in Sources */,
 				A33F44B925A8EB4800C16624 /* InteractiveTransitionableViewController.swift in Sources */,
+				A3E1FCF0261108A70008A823 /* PageBarControlView.swift in Sources */,
 				A3BA569625743A2F007AD591 /* KeyChainHelper.swift in Sources */,
 				A3231241256D982300D3B97B /* SignUpResponse.swift in Sources */,
 				A3DD557025A668720095A130 /* TeammateSearchViewController.swift in Sources */,
@@ -2473,6 +2620,7 @@
 				A323127F256F056D00D3B97B /* HomeViewController.swift in Sources */,
 				A3FE72C5260BCBA20040446C /* UITableView+Extensions.swift in Sources */,
 				A3BA569125743A05007AD591 /* AccountSecureStorage.swift in Sources */,
+				A3593B11260F7D07006C28B8 /* SentRequestViewModel.swift in Sources */,
 				A3F3D7E925F3817700DACC7A /* TeamRequestDto.swift in Sources */,
 				16A1E61E22DA40C40003F0DF /* BaseCoordinator.swift in Sources */,
 				16A1E64022DA40C40003F0DF /* DrawerMenuScreen.swift in Sources */,
@@ -2499,8 +2647,10 @@
 				A3C2B2CD25FCC6F600BA103F /* ActionBehavior.swift in Sources */,
 				A387753C256A9C4600F00EB0 /* PushSubscribingResult.swift in Sources */,
 				A37055DB25851905005650FD /* BaseViewModel.swift in Sources */,
+				A3593B0B260F6BBE006C28B8 /* AlignedCollectionViewFlowLayout.swift in Sources */,
 				A3BA567F257431D7007AD591 /* Response.swift in Sources */,
 				A301E33C2588235F0088B33A /* TagsApi.swift in Sources */,
+				A3593B35260FC91C006C28B8 /* ParticipantRequestable.swift in Sources */,
 				A3E6280925E6EB4900C1FBB7 /* HackTeamDetailsViewController.swift in Sources */,
 				16DD9CF922DA5522007D9D2F /* Constants.swift in Sources */,
 				A3F3D7F125F384F700DACC7A /* TeamRequest.swift in Sources */,
@@ -2528,6 +2678,8 @@
 				16DD9CEC22DA4854007D9D2F /* ApiResponse+Print.swift in Sources */,
 				A3877546256AA1B300F00EB0 /* IMessenger.swift in Sources */,
 				A3961A7E2579870000FC3541 /* TeamDto.swift in Sources */,
+				A3593B8D2610C5DC006C28B8 /* BookmarkedHacksViewController.swift in Sources */,
+				A3593B1B260F7D35006C28B8 /* SentRequestCoordinator.swift in Sources */,
 				16A1E63622DA40C40003F0DF /* TranslationsResponse.swift in Sources */,
 				16A1E5FF22DA40C40003F0DF /* Encodable+Json.swift in Sources */,
 				A3196285259A757300D58502 /* HackathonListViewController.swift in Sources */,
@@ -2544,9 +2696,12 @@
 				A3BA565325742BA2007AD591 /* AuthApiExecuter.swift in Sources */,
 				A3A0E941259A8CE100634BED /* TopHackViewCell.swift in Sources */,
 				16A1E61D22DA40C40003F0DF /* DashboardCoordinator.swift in Sources */,
+				A3593B852610C5CD006C28B8 /* BookmarkedHacksViewModel.swift in Sources */,
+				A3593B20260F7D53006C28B8 /* SentRequestViewController.swift in Sources */,
 				A39299AC25EED9B60031C5B9 /* UserDetailsCoordinator.swift in Sources */,
 				A3FE72B6260BAC6B0040446C /* TwoWayBinding.swift in Sources */,
 				A3AD07A525E2F58300DA0785 /* SecondaryButton.swift in Sources */,
+				A3593B7F2610C523006C28B8 /* BookmarkedTeamsViewModel.swift in Sources */,
 				A36AF8D52582D187000E2852 /* CreateTeamCoordinator.swift in Sources */,
 				A36AF8DA2582D198000E2852 /* CreateTeamViewController.swift in Sources */,
 				A3BDB60425F41ED2006CD2DC /* ShortChatMessageDto.swift in Sources */,
@@ -2597,6 +2752,7 @@
 				A3441D4F25967A7500A3BFA5 /* ChooseSearchCategoryViewModel.swift in Sources */,
 				A3DD557125A668720095A130 /* TeammateSearchCoordinator.swift in Sources */,
 				A301E3412588238A0088B33A /* AddTagsDto.swift in Sources */,
+				A3593B2F260FC761006C28B8 /* SentRequestDto.swift in Sources */,
 				A3C2B29525FAAA2900BA103F /* ClientEvents.swift in Sources */,
 				A31F573625A5E7CB00759B61 /* IOperationStateHolder.swift in Sources */,
 				A3BA567525743048007AD591 /* IErrorResult.swift in Sources */,

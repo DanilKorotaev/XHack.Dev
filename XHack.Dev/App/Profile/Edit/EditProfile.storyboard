@@ -45,10 +45,10 @@
                                 <rect key="frame" x="0.0" y="84" width="414" height="778"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3J-g1-2xh">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="558"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="624"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zil-GW-jHH">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="558"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="624"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiD-ww-Ehl" userLabel="AvatarView">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
@@ -90,8 +90,31 @@
                                                             <constraint firstItem="xRy-iH-zic" firstAttribute="top" secondItem="aiD-ww-Ehl" secondAttribute="top" constant="20" id="pl1-Wd-osN"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKN-X0-sC5">
+                                                        <rect key="frame" x="0.0" y="200" width="414" height="56"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available for searching" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOM-Hu-N5X">
+                                                                <rect key="frame" x="30" y="18" width="295" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hcv-pc-fVi">
+                                                                <rect key="frame" x="335" y="12.5" width="51" height="31"/>
+                                                            </switch>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="hcv-pc-fVi" firstAttribute="centerY" secondItem="CKN-X0-sC5" secondAttribute="centerY" id="8yW-Ek-l2j"/>
+                                                            <constraint firstAttribute="trailing" secondItem="hcv-pc-fVi" secondAttribute="trailing" constant="30" id="Rva-J9-7Fk"/>
+                                                            <constraint firstItem="fOM-Hu-N5X" firstAttribute="centerY" secondItem="CKN-X0-sC5" secondAttribute="centerY" id="dEd-oW-2Zd"/>
+                                                            <constraint firstItem="fOM-Hu-N5X" firstAttribute="leading" secondItem="CKN-X0-sC5" secondAttribute="leading" constant="30" id="gfh-4a-1Kn"/>
+                                                            <constraint firstItem="hcv-pc-fVi" firstAttribute="leading" secondItem="fOM-Hu-N5X" secondAttribute="trailing" constant="10" id="qg8-rd-3un"/>
+                                                            <constraint firstAttribute="height" constant="56" id="uDh-DP-3os"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3R-4K-lio">
-                                                        <rect key="frame" x="0.0" y="200" width="414" height="70"/>
+                                                        <rect key="frame" x="0.0" y="266" width="414" height="70"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwe-QW-Eew">
                                                                 <rect key="frame" x="52" y="0.0" width="38" height="17"/>
@@ -119,7 +142,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2o7-9Y-w4D">
-                                                        <rect key="frame" x="0.0" y="280" width="414" height="70"/>
+                                                        <rect key="frame" x="0.0" y="346" width="414" height="70"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specialization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dC-F1-TJ5">
                                                                 <rect key="frame" x="52" y="0.0" width="90" height="17"/>
@@ -147,7 +170,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVF-pf-Hrm">
-                                                        <rect key="frame" x="0.0" y="360" width="414" height="88"/>
+                                                        <rect key="frame" x="0.0" y="426" width="414" height="88"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Networks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyF-1X-66u">
                                                                 <rect key="frame" x="52" y="0.0" width="61.5" height="17"/>
@@ -184,7 +207,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1w-Vb-iMp">
-                                                        <rect key="frame" x="0.0" y="458" width="414" height="100"/>
+                                                        <rect key="frame" x="0.0" y="524" width="414" height="100"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dp-eZ-3S1">
                                                                 <rect key="frame" x="52" y="15" width="33.5" height="17"/>
@@ -207,12 +230,7 @@
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ms1-lm-bmm" customClass="UIResizableCollectionView" customModule="XHack_Dev" customModuleProvider="target">
                                                                 <rect key="frame" x="30" y="41.5" width="354" height="48.5"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uCz-nr-vE8">
-                                                                    <size key="itemSize" width="128" height="128"/>
-                                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                </collectionViewFlowLayout>
+                                                                <collectionViewLayout key="collectionViewLayout" id="g5h-8V-Psb" customClass="AlignedCollectionViewFlowLayout" customModule="XHack_Dev" customModuleProvider="target"/>
                                                                 <cells/>
                                                             </collectionView>
                                                         </subviews>
@@ -266,6 +284,7 @@
                         <outlet property="addNetworkButton" destination="qQB-aN-Omm" id="0Vx-w9-cOh"/>
                         <outlet property="avatarImageView" destination="xRy-iH-zic" id="bAw-Vy-zud"/>
                         <outlet property="backButton" destination="j5E-UR-xDY" id="JjB-mJ-X7o"/>
+                        <outlet property="changeSearchableStateSwitch" destination="hcv-pc-fVi" id="ucY-AK-loL"/>
                         <outlet property="chooseAvatarButton" destination="dMA-OH-H5H" id="VdT-Yp-1Ev"/>
                         <outlet property="nameTextField" destination="dKj-6g-spt" id="1Im-Tx-Pkh"/>
                         <outlet property="networksTableView" destination="GmC-7e-Bgd" id="cQq-L3-7qh"/>

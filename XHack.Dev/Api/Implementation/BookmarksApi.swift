@@ -21,19 +21,19 @@ class BookmarksApi: IBookmarksApi {
     }
     
     
-    func getBookmarkedHackathons() -> Promise<LiteApiResult> {
+    func getBookmarkedHackathons() ->Promise<ApiResult<[ShortHackathonDto]>> {
         let url = endpointsProvider.gatewayUrl + "/api/bookmarks/get-bookmarked-hackathons"
-        return ApiHelpers.executeReliablyEmptyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
+        return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
     
-    func getBookmarkedTeams() -> Promise<LiteApiResult> {
+    func getBookmarkedTeams() -> Promise<ApiResult<[TeamDto]>> {
         let url = endpointsProvider.gatewayUrl + "/api/bookmarks/get-bookmarked-teams"
-        return ApiHelpers.executeReliablyEmptyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
+        return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
     
-    func getBookmarkedUsers() -> Promise<LiteApiResult> {
+    func getBookmarkedUsers() -> Promise<ApiResult<[ShortUserDto]>> {
         let url = endpointsProvider.gatewayUrl + "/api/bookmarks/get-bookmarked-users"
-        return ApiHelpers.executeReliablyEmptyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
+        return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
     
     func getBookmarkedChats() -> Promise<LiteApiResult> {

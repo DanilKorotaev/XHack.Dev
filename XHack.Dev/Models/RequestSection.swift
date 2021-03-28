@@ -10,22 +10,21 @@ import Foundation
 import RxDataSources
 
 class RequestSection: SectionModelType {
-    var items: [IncomingRequest]
+    var items: [ParticipantRequestable]
     
-    required init(original: RequestSection, items: [IncomingRequest]) {
-//        self = original
+    required init(original: RequestSection, items: [ParticipantRequestable]) {
         self.items = items
         self.title = original.title
         self.data = items
     }
     
-    typealias Item = IncomingRequest
+    typealias Item = ParticipantRequestable
     
     let title: String
-    let data: [IncomingRequest]
+    let data: [ParticipantRequestable]
     var isCollapsed: Bool = true
     
-    init(_ title: String, _ data: [IncomingRequest]) {
+    init(_ title: String, _ data: [ParticipantRequestable]) {
         self.title = title
         self.data = data
         self.items = data

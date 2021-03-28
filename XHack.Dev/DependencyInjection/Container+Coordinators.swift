@@ -31,6 +31,8 @@ extension Container {
         autoregister(UserDetailsCoordinator.self, initializer: UserDetailsCoordinator.init)
         autoregister(ChatCoordinator.self, initializer: ChatCoordinator.init)
         autoregister(UserRequestsCoordinator.self, initializer: UserRequestsCoordinator.init)
-        autoregister(SelectTeamCoordinator.self, initializer: SelectTeamCoordinator.init)        
+        autoregister(SelectTeamCoordinator.self, initializer: SelectTeamCoordinator.init)
+        autoregister(SentRequestCoordinator.self, initializer: SentRequestCoordinator.init)
+        autoregister(BookmarksCoordinator.self, initializer: BookmarksCoordinator.init)
     }
 }

@@ -19,7 +19,7 @@ class UserDetails {
     let specialization = BehaviorSubject(value:"")
     var tags: ObservableArray<Tag>
     let isBookmarked = BehaviorSubject<Bool>(value: false)
-    let avatarUrl: String?
+    let avatarUrl: String
     let chatId: Int?
     let relationType: TeamParticipantType
     let requests: [TeamRequest]
@@ -34,7 +34,7 @@ class UserDetails {
         description.onNext(data.description)
         tags = ObservableArray(data.tags.map { Tag($0) }.sorted(by: { $0.name.count < $1.name.count }))
         isBookmarked.onNext(data.isBookmarked)
-        avatarUrl = data.avatarUrl
+        avatarUrl = data.avatarUrl ?? ""
         relationType = TeamParticipantType(rawValue: data.participantType) ?? .none
         requests = data.requests.map { TeamRequest($0)}
         chatId = data.chatId

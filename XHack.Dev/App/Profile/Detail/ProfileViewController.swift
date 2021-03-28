@@ -20,10 +20,13 @@ class ProfileViewController: BaseViewController<ProfileViewModel>, Storyboarded 
     @IBOutlet weak var teamContainerView: UIView!
     @IBOutlet weak var tagsCollectionView: UIResizableCollectionView!
     @IBOutlet weak var tagsContainerView: UIView!
-    
+    @IBOutlet weak var bookmarksButton: UIButton!
+        
     override func completeUi() {
         teamTableView.register(SelectTeamViewCell.self)
         tagsCollectionView.register(TagViewCell.self)
+        tagsCollectionView.delegate = self
+        tagsCollectionView.collectionViewLayout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left)
     }
     
     override func applyBinding() {
@@ -65,6 +68,9 @@ class ProfileViewController: BaseViewController<ProfileViewModel>, Storyboarded 
         (dataContext.signOut <- signOutButton.rx.tap)
             .disposed(by: disposeBag)
         
+        (dataContext.bookmarks <- bookmarksButton.rx.tap)
+            .disposed(by: disposeBag)
+        
         (dataContext.teamSelected <- teamTableView.rx.modelSelected(ShortTeam.self))
             .disposed(by: disposeBag)
     }
@@ -73,5 +79,14 @@ class ProfileViewController: BaseViewController<ProfileViewModel>, Storyboarded 
         socialView.isHidden = networks.isEmpty
         self.socialsTextView.text = networks.joined(separator: "\n\n")
         socialsTextView.joinHeight(constant: socialsTextView.getRequiredTextSize().height)
+    }
+}
+
+
+extension ProfileViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let tag = dataContext?.profile.value?.tags[indexPath.row] else { return .zero}
+        
+        return TagViewCell.getRequiredSize(for: tag)
     }
 }
