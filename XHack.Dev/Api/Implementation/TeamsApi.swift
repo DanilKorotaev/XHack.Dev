@@ -45,4 +45,9 @@ class TeamsApi: ITeamsApi {
         let url = endpointsProvider.gatewayUrl + "/api/teams/leaveFromTeam/\(teamId)"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
+    
+    func update(team: UpdateTeamDto, for teamId: Int) -> Promise<LiteApiResult> {
+        let url = endpointsProvider.gatewayUrl + "/api/teams/updateTeam/\(teamId)"
+        return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: team)
+    }
 }

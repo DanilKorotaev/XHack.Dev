@@ -91,13 +91,13 @@ class HackathonDetailCoordinator: BaseCoordinator<Void> {
     private func createTeam() {
         let coordinator = Container.resolve(CreateTeamCoordinator.self)
         coordinator.navigationController = self.navigationController
-        coordinator.hackId = hackId
+        coordinator.parameter = .createForHack(id: hackId)
         self.start(coordinator: coordinator).subscribe(onNext: { [weak self] result in
             switch (result){
-            case .rejected:
-                return
             case .teamCreated:
                 self?.viewModel.showMessage(title: "Успех", message: "Команда создана")
+            default:
+                break
             }
         }).disposed(by: disposeBag)
     }

@@ -20,8 +20,10 @@ class HackTeamDetailsViewModel: BaseViewModel {
     let memberSelected = PublishSubject<ShortUser>()
     let changeParticipantState = PublishSubject<Void>()
     let chat = PublishSubject<Void>()
+    let edit = PublishSubject<Void>()
     let canBookmark = BehaviorSubject<Bool>(value: false)
     let canChat = BehaviorSubject<Bool>(value: false)
+    let canEdit = BehaviorSubject<Bool>(value: false)
     var teamId: Int = 0
         
     init(teamsApi: ITeamsApi, bookmarksApi: IBookmarksApi, requestsApi: IRequestsApi) {
@@ -46,6 +48,7 @@ class HackTeamDetailsViewModel: BaseViewModel {
             let isMember = team.participantType.isMember
             self.canChat.onNext(isMember)
             self.canBookmark.onNext(!isMember)
+            self.canEdit.onNext(team.participantType == .captaint)
             self.team.onNext(team)
         }
     }

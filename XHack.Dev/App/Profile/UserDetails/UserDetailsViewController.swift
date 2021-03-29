@@ -49,7 +49,7 @@ class UserDetailsViewController: BaseViewController<UserDetailsViewModel>, Story
                 self.nameLabel.text = userDetails.name.value
                 self.descriptionLabel.text = userDetails.description.value
                 self.specializationLabel.text = userDetails.specialization.value
-                self.avatarImageView.downloaded(from: userDetails.avatarUrl ?? "")
+                self.avatarImageView.downloaded(from: userDetails.avatarUrl)
                 self.setChangeParticipantStateButtonTitle(requests: userDetails.requests)
                 self.tagsContainerView.isHidden = userDetails.tags.isEmpty
                 self.setSocials(userDetails.networks)

@@ -24,7 +24,7 @@ class HackathonViewCell: UITableViewCell {
 
     func set(for model: ShortHackathon) {
         disposeBag = DisposeBag()
-        hackImageView.downloaded(from: model.avatarUrl, contentMode: .scaleToFill)
+        hackImageView.downloaded(from: model.avatarUrl)
         
         hackNameLabel.text = model.name
         dateLabel.text = model.dateText

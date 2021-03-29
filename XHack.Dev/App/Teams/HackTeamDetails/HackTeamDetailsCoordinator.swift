@@ -39,6 +39,10 @@ class HackTeamDetailsCoordinator: BaseCoordinator<Void> {
         viewModel.chat.subscribe(onNext: { [weak self] _ in
             self?.toChat(for: self!.viewModel.team.value!)
         }).disposed(by: disposeBag)
+        
+        viewModel.edit.subscribe(onNext: { [weak self] _ in
+            self?.navigateToEditTeam()
+        }).disposed(by: disposeBag)
     }
     
     
@@ -55,6 +59,20 @@ class HackTeamDetailsCoordinator: BaseCoordinator<Void> {
         coordinator.shortChat = ShortChat(id: team.chatId, team: ShortTeam(id: team.id, name: team.name, avatarUrl: team.avatarUrl))
         coordinator.start().subscribe(onNext: { _ in
             
+        }).disposed(by: disposeBag)
+    }
+    
+    func navigateToEditTeam() {
+        let coordinator = Container.resolve(CreateTeamCoordinator.self)
+        coordinator.navigationController = self.navigationController
+        coordinator.parameter = .edit(profile: self.viewModel.team.value)
+        self.start(coordinator: coordinator).subscribe(onNext: { [weak self] result in
+            switch (result){
+            case .teamEdited:
+                self?.viewModel.forceContentRefreshingAsync()
+            default:
+                break
+            }
         }).disposed(by: disposeBag)
     }
 }

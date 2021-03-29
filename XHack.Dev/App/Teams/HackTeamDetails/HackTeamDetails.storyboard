@@ -37,7 +37,7 @@
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                        <integer key="value" value="60"/>
+                                                                        <integer key="value" value="75"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </imageView>
@@ -220,7 +220,7 @@
                                         <state key="normal" image="left_arrow"/>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WS-xg-V9p">
-                                        <rect key="frame" x="394" y="7" width="0.0" height="26"/>
+                                        <rect key="frame" x="339" y="7" width="55" height="26"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEX-zS-KdE">
                                                 <rect key="frame" x="0.0" y="0.0" width="0.0" height="26"/>
@@ -229,15 +229,26 @@
                                                     <constraint firstAttribute="width" id="vDX-Oh-hib"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fi4-Zl-LzZ" customClass="SecondaryButton" customModule="XHack_Dev" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="26"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="55" id="QdQ-Il-r2y"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Edit" image="ic_edit">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uX5-UI-JWq" customClass="SecondaryButton" customModule="XHack_Dev" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="37" height="26"/>
+                                                <rect key="frame" x="55" y="0.0" width="37" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="37" id="1mP-SC-wi8"/>
                                                 </constraints>
                                                 <state key="normal" image="ic_chat"/>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LC3-sJ-SB9">
-                                                <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
+                                                <rect key="frame" x="55" y="0.0" width="26" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="26" id="GJa-U2-swS"/>
                                                     <constraint firstAttribute="width" constant="26" id="LDx-zX-bMq"/>
@@ -279,6 +290,7 @@
                         <outlet property="changeParticipantStateContainerView" destination="a77-9O-XLT" id="0OK-KT-wNR"/>
                         <outlet property="chatButton" destination="uX5-UI-JWq" id="61s-eI-NLA"/>
                         <outlet property="descriptionTextViewHeightConstraint" destination="mgm-Cp-lVi" id="Mcb-W4-STl"/>
+                        <outlet property="editButton" destination="fi4-Zl-LzZ" id="uR1-2a-5u0"/>
                         <outlet property="hackDescriptionContainerView" destination="5S4-SU-bfr" id="obS-hT-3tD"/>
                         <outlet property="hackDescriptionTextView" destination="86W-dp-kWL" id="hnn-Ra-8NU"/>
                         <outlet property="membersCollectionView" destination="aB8-kd-GXV" id="pxf-XL-YXx"/>
@@ -297,6 +309,7 @@
         <image name="Star" width="28" height="27"/>
         <image name="default_hack_avatar" width="120" height="114.5"/>
         <image name="ic_chat" width="24" height="24"/>
+        <image name="ic_edit" width="10" height="10"/>
         <image name="left_arrow" width="18.5" height="8"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -80,14 +80,9 @@ class EditProfileViewModel: BaseViewModel {
     }
     
     private func uploadAvatar(file: File) {
-        self.isLoading.onNext(true)
-        self.filesApi.uploadFile(file: file).done { (result) in
-            self.isLoading.onNext(false)
-            if self.checkAndProcessApiResult(response: result, "загрузить аватарку") {
-                return
-            }
-            guard let fileContentUrl = result.content  else { return }
-            self.avatarUrl.onNext(fileContentUrl.image_url)
+        self.uploadFile(file).done { [weak self] (url) in
+            guard let url = url else { return }
+            self?.avatarUrl.onNext(url)
         }
     }
     
