@@ -24,4 +24,9 @@ class TagsApi: ITagsApi {
         let url = endpointsProvider.gatewayUrl + "/api/tags/addTagsForUser"
         return ApiHelpers.executeReliablyLiteDeleteRequest(apiTokenHolder: apiTokenHolder, url: url, content: AddTagsDto(tagIds: tagIds))
     }
+    
+    func getTags() -> Promise<ApiResult<[TagDto]>> {
+        let url = endpointsProvider.gatewayUrl + "/api/tags/getTagsList"
+        return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
 }

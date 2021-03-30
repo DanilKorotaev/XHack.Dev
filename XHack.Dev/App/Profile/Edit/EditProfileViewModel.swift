@@ -31,7 +31,8 @@ class EditProfileViewModel: BaseViewModel {
     let email = BehaviorSubject<String>(value: "")
     var tags = ObservableArray<Tag>([])
     let searchableState = BehaviorSubject<Bool>(value: false)
-    
+    let editTags = PublishSubject<Void>()
+    let tagsSelected = PublishSubject<[Tag]>()
     let avatarSelected = PublishSubject<File>()
     let save = PublishSubject<Void>()
     let back = PublishSubject<Void>()
@@ -62,6 +63,11 @@ class EditProfileViewModel: BaseViewModel {
             self?.uploadAvatar(file: file)
         }.disposed(by: disposeBag)
         
+        tagsSelected.bind { [weak self] tags in
+            self?.tags.removeAll()
+            self?.tags.append(contentsOf: tags)
+        }.disposed(by: disposeBag)
+        
         save.bind { [weak self]  file in
             self?.updateProfile()
         }.disposed(by: disposeBag)
@@ -88,7 +94,8 @@ class EditProfileViewModel: BaseViewModel {
     
     private func updateProfile() {
         let networks = self.networks.elements.map { $0.value }.filter { $0.hasNonEmptyValue()}
-        let updateDate = UpdateProfileDtoRequest(name: name.value, specialization: specialization.value, avatarUrl: avatarUrl.value, description: description.value, email: email.value, networks: networks)
+        let tags = self.tags.map { TagDto(id: $0.id, name: $0.name) }
+        let updateDate = UpdateProfileDtoRequest(name: name.value, specialization: specialization.value, avatarUrl: avatarUrl.value, description: description.value, email: email.value, networks: networks, tags: tags)
         userApi.updateProfile(updateDate).done { [weak self] (result) in
             guard let self = self else { return }
             if self.checkAndProcessApiResult(response: result, "обновить данные профиля") {

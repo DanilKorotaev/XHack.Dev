@@ -18,6 +18,7 @@ class EditProfileViewController: BaseViewController<EditProfileViewModel>, Story
     @IBOutlet weak var networksTableView: UITableView!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var editTagsButton: UIButton!
     @IBOutlet weak var addNetworkButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -54,6 +55,9 @@ class EditProfileViewController: BaseViewController<EditProfileViewModel>, Story
             .disposed(by: disposeBag)
         
         (dataContext.back <- backButton.rx.tap)
+            .disposed(by: disposeBag)
+        
+        (dataContext.editTags <- editTagsButton.rx.tap)
             .disposed(by: disposeBag)
         
         (nameTextField.rx.text.orEmpty <-> dataContext.name)

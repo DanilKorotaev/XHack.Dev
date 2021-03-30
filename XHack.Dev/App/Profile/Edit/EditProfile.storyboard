@@ -286,6 +286,7 @@
                         <outlet property="backButton" destination="j5E-UR-xDY" id="JjB-mJ-X7o"/>
                         <outlet property="changeSearchableStateSwitch" destination="hcv-pc-fVi" id="ucY-AK-loL"/>
                         <outlet property="chooseAvatarButton" destination="dMA-OH-H5H" id="VdT-Yp-1Ev"/>
+                        <outlet property="editTagsButton" destination="ZNk-UD-rDk" id="HY1-we-mHv"/>
                         <outlet property="nameTextField" destination="dKj-6g-spt" id="1Im-Tx-Pkh"/>
                         <outlet property="networksTableView" destination="GmC-7e-Bgd" id="cQq-L3-7qh"/>
                         <outlet property="saveButton" destination="hey-cK-Vbs" id="LwU-T8-c0Z"/>

@@ -12,4 +12,5 @@ import PromiseKit
 
 protocol ITagsApi {
     func addTags(_ tagIds:[Int]) -> Promise<LiteApiResult>
+    func getTags() -> Promise<ApiResult<[TagDto]>>
 }

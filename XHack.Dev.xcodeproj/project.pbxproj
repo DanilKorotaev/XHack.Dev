@@ -389,6 +389,14 @@
 		A3E1FCF0261108A70008A823 /* PageBarControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1FCEF261108A70008A823 /* PageBarControlView.swift */; };
 		A3E1FCF8261245FD0008A823 /* BaseViewModel+Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1FCF7261245FC0008A823 /* BaseViewModel+Files.swift */; };
 		A3E1FCFD2612621B0008A823 /* UpdateTeamDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1FCFC2612621A0008A823 /* UpdateTeamDto.swift */; };
+		A3E1FD04261393880008A823 /* SelectTagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1FD03261393860008A823 /* SelectTagsViewModel.swift */; };
+		A3E1FD092613939F0008A823 /* SelectTagsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1FD082613939F0008A823 /* SelectTagsCoordinator.swift */; };
+		A3E1FD0E261393C90008A823 /* SelectTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1FD0D261393C90008A823 /* SelectTagsViewController.swift */; };
+		A3E1FD13261393DF0008A823 /* SelectTags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E1FD12261393DF0008A823 /* SelectTags.storyboard */; };
+		A3E1FD18261396670008A823 /* SelectedTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1FD17261396670008A823 /* SelectedTag.swift */; };
+		A3E1FD1E26139F8B0008A823 /* SelectedTagViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1FD1C26139F8A0008A823 /* SelectedTagViewCell.swift */; };
+		A3E1FD1F26139F8B0008A823 /* SelectedTagViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3E1FD1D26139F8A0008A823 /* SelectedTagViewCell.xib */; };
+		A3E1FD242613A8FF0008A823 /* BaseViewModel+Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1FD232613A8FF0008A823 /* BaseViewModel+Tags.swift */; };
 		A3E627E525E57B1900C1FBB7 /* HackTeamList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E627E425E57B1800C1FBB7 /* HackTeamList.storyboard */; };
 		A3E627F925E59B9E00C1FBB7 /* UITableViewHeaderFooterView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E627F825E59B9E00C1FBB7 /* UITableViewHeaderFooterView+Extensions.swift */; };
 		A3E627FF25E6EB0E00C1FBB7 /* HackTeamDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E627FE25E6EB0E00C1FBB7 /* HackTeamDetailsViewModel.swift */; };
@@ -837,6 +845,14 @@
 		A3E1FCEF261108A70008A823 /* PageBarControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBarControlView.swift; sourceTree = "<group>"; };
 		A3E1FCF7261245FC0008A823 /* BaseViewModel+Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseViewModel+Files.swift"; sourceTree = "<group>"; };
 		A3E1FCFC2612621A0008A823 /* UpdateTeamDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTeamDto.swift; sourceTree = "<group>"; };
+		A3E1FD03261393860008A823 /* SelectTagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTagsViewModel.swift; sourceTree = "<group>"; };
+		A3E1FD082613939F0008A823 /* SelectTagsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTagsCoordinator.swift; sourceTree = "<group>"; };
+		A3E1FD0D261393C90008A823 /* SelectTagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTagsViewController.swift; sourceTree = "<group>"; };
+		A3E1FD12261393DF0008A823 /* SelectTags.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectTags.storyboard; sourceTree = "<group>"; };
+		A3E1FD17261396670008A823 /* SelectedTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedTag.swift; sourceTree = "<group>"; };
+		A3E1FD1C26139F8A0008A823 /* SelectedTagViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedTagViewCell.swift; sourceTree = "<group>"; };
+		A3E1FD1D26139F8A0008A823 /* SelectedTagViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedTagViewCell.xib; sourceTree = "<group>"; };
+		A3E1FD232613A8FF0008A823 /* BaseViewModel+Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseViewModel+Tags.swift"; sourceTree = "<group>"; };
 		A3E627E425E57B1800C1FBB7 /* HackTeamList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HackTeamList.storyboard; sourceTree = "<group>"; };
 		A3E627F825E59B9E00C1FBB7 /* UITableViewHeaderFooterView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+Extensions.swift"; sourceTree = "<group>"; };
 		A3E627FE25E6EB0E00C1FBB7 /* HackTeamDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackTeamDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -905,6 +921,7 @@
 		1657979B22DB8B7A00DA52D2 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				A3E1FD01261393540008A823 /* Tags */,
 				A3593B4E2610BAAE006C28B8 /* Bookmarks */,
 				A3593B0F260F7CEE006C28B8 /* SentRequest */,
 				A362EF0325EEC27800AC147F /* StartUpScreen */,
@@ -1281,6 +1298,7 @@
 				A37876732607A94500D26E37 /* File.swift */,
 				A3593B29260FC733006C28B8 /* SentRequest.swift */,
 				A3E1FCDC2610DB460008A823 /* InnerPage.swift */,
+				A3E1FD17261396670008A823 /* SelectedTag.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1638,6 +1656,8 @@
 				A3DC593525E45983009DA204 /* ShortUserViewCell.xib */,
 				A3DC594A25E45C43009DA204 /* ShortTeamViewCell.swift */,
 				A3DC594B25E45C43009DA204 /* ShortTeamViewCell.xib */,
+				A3E1FD1C26139F8A0008A823 /* SelectedTagViewCell.swift */,
+				A3E1FD1D26139F8A0008A823 /* SelectedTagViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1788,6 +1808,7 @@
 				A36BFE3025F2B21000272E1D /* BaseViewModel+Teams.swift */,
 				A3A6F38C25F6903C00DCD778 /* BaseCoordinator+Navigation.swift */,
 				A3E1FCF7261245FC0008A823 /* BaseViewModel+Files.swift */,
+				A3E1FD232613A8FF0008A823 /* BaseViewModel+Tags.swift */,
 			);
 			path = BaseViewModelExtensions;
 			sourceTree = "<group>";
@@ -2053,6 +2074,25 @@
 			path = Pager;
 			sourceTree = "<group>";
 		};
+		A3E1FD01261393540008A823 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				A3E1FD02261393640008A823 /* SelectTags */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
+		A3E1FD02261393640008A823 /* SelectTags */ = {
+			isa = PBXGroup;
+			children = (
+				A3E1FD03261393860008A823 /* SelectTagsViewModel.swift */,
+				A3E1FD082613939F0008A823 /* SelectTagsCoordinator.swift */,
+				A3E1FD0D261393C90008A823 /* SelectTagsViewController.swift */,
+				A3E1FD12261393DF0008A823 /* SelectTags.storyboard */,
+			);
+			path = SelectTags;
+			sourceTree = "<group>";
+		};
 		A3E627FD25E6EAD300C1FBB7 /* HackTeamDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -2223,6 +2263,7 @@
 				A3FE7288260A85EC0040446C /* ShadowFextFieldViewCell.xib in Resources */,
 				A31F575F25A6641E00759B61 /* TeamSearch.storyboard in Resources */,
 				A392999D25EED98B0031C5B9 /* UserDetails.storyboard in Resources */,
+				A3E1FD13261393DF0008A823 /* SelectTags.storyboard in Resources */,
 				A320CD5925FE9758002F8845 /* UserRequestViewCell.xib in Resources */,
 				A36AF8DF2582D1A3000E2852 /* CreateTeam.storyboard in Resources */,
 				A37055C725851526005650FD /* HackathonDetail.storyboard in Resources */,
@@ -2248,6 +2289,7 @@
 				A349FB65259BE40C0038549E /* TagViewCell.xib in Resources */,
 				A3196296259A789900D58502 /* HackListHeaderView.xib in Resources */,
 				16DD9D0922DA8216007D9D2F /* LaunchScreen.storyboard in Resources */,
+				A3E1FD1F26139F8B0008A823 /* SelectedTagViewCell.xib in Resources */,
 				16DD9CF722DA504F007D9D2F /* Assets.xcassets in Resources */,
 				A3DC594D25E45C43009DA204 /* ShortTeamViewCell.xib in Resources */,
 				A3A0E942259A8CE100634BED /* TopHackViewCell.xib in Resources */,
@@ -2445,6 +2487,7 @@
 				A33579EC25E572AB00297E22 /* HackTeamListViewController.swift in Sources */,
 				16A1E60E22DA40C40003F0DF /* SignInViewModel.swift in Sources */,
 				A31F573125A5E6D900759B61 /* RefreshableContentHost.swift in Sources */,
+				A3E1FD1E26139F8B0008A823 /* SelectedTagViewCell.swift in Sources */,
 				A33F449325A7A57300C16624 /* HackFilterDialogViewModel.swift in Sources */,
 				A3C2B29025FAA9DE00BA103F /* ServerEvents.swift in Sources */,
 				16DD9D1F22DB32F2007D9D2F /* SettingsViewModel.swift in Sources */,
@@ -2547,6 +2590,7 @@
 				16DD9CFB22DA5C24007D9D2F /* SignInRequest.swift in Sources */,
 				A3BA56842574380D007AD591 /* ApiTokensHolder.swift in Sources */,
 				16A1E61122DA40C40003F0DF /* Container+ViewModels.swift in Sources */,
+				A3E1FD242613A8FF0008A823 /* BaseViewModel+Tags.swift in Sources */,
 				A3961A79257986A100FC3541 /* ITeamsApi.swift in Sources */,
 				A33CC1DB25F96136004CD16B /* ChatProcessor.swift in Sources */,
 				A3A6F38D25F6903C00DCD778 /* BaseCoordinator+Navigation.swift in Sources */,
@@ -2574,6 +2618,7 @@
 				A38765E12609341F00B83BE3 /* UpdatedProfileMessage.swift in Sources */,
 				A387754B256AA3C600F00EB0 /* Messanger.swift in Sources */,
 				A31F576425A6643100759B61 /* TeamSearchViewController.swift in Sources */,
+				A3E1FD04261393880008A823 /* SelectTagsViewModel.swift in Sources */,
 				A3961A74257984C600FC3541 /* UserProfileDto.swift in Sources */,
 				A37876742607A94600D26E37 /* File.swift in Sources */,
 				A3881419258A9E9D00FFF9A5 /* IRequestsApi.swift in Sources */,
@@ -2626,6 +2671,7 @@
 				A33F449D25A88F7100C16624 /* HackFilterItem.swift in Sources */,
 				A323127F256F056D00D3B97B /* HomeViewController.swift in Sources */,
 				A3FE72C5260BCBA20040446C /* UITableView+Extensions.swift in Sources */,
+				A3E1FD092613939F0008A823 /* SelectTagsCoordinator.swift in Sources */,
 				A3BA569125743A05007AD591 /* AccountSecureStorage.swift in Sources */,
 				A3593B11260F7D07006C28B8 /* SentRequestViewModel.swift in Sources */,
 				A3F3D7E925F3817700DACC7A /* TeamRequestDto.swift in Sources */,
@@ -2639,6 +2685,7 @@
 				16A1E61022DA40C40003F0DF /* DashboardViewModel.swift in Sources */,
 				A3961B11257AE39900FC3541 /* TeamListViewModel.swift in Sources */,
 				A362EF3025EEC39000AC147F /* StartUpScreenViewController.swift in Sources */,
+				A3E1FD18261396670008A823 /* SelectedTag.swift in Sources */,
 				A37055F625852EC8005650FD /* ActionInfo.swift in Sources */,
 				16DD9CEF22DA4981007D9D2F /* DataManager.swift in Sources */,
 				A3F3D81425F3AFFF00DACC7A /* ChatViewController.swift in Sources */,
@@ -2718,6 +2765,7 @@
 				A33579E725E5729D00297E22 /* HackTeamListCoordinator.swift in Sources */,
 				A3A6F39525F6A34C00DCD778 /* ChatMessageDto.swift in Sources */,
 				A3441D712597C2F400A3BFA5 /* UIImageView+Extension.swift in Sources */,
+				A3E1FD0E261393C90008A823 /* SelectTagsViewController.swift in Sources */,
 				A3961B1C257AE5F800FC3541 /* TeamListCoordonator.swift in Sources */,
 				A3B7639C25FD0C7D006D31D7 /* TableViewLoadingTarget.swift in Sources */,
 				A3441D5425967AB400A3BFA5 /* ChooseSearchCategoryViewController.swift in Sources */,

@@ -47,6 +47,18 @@ class EditProfileCoordinator: BaseCoordinator<EditProfileResult> {
         viewModel.back.bind { [weak self] _ in
             self?.navigationController.popViewController(animated: true)
         }.disposed(by: disposeBag)
+        
+        viewModel.editTags.bind { [weak self]  file in
+            guard let self = self else { return }
+            self.selectTags(self.viewModel.tags.elements).done { [weak self] result in
+                switch (result) {
+                case .successfull(let selectedTags):
+                    self?.viewModel.tagsSelected.onNext(selectedTags)
+                default:
+                    return
+                }
+            }
+        }.disposed(by: disposeBag)
     }
 }
 

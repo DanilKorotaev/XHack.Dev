@@ -15,4 +15,5 @@ struct UpdateProfileDtoRequest: Codable {
     let description: String
     let email: String
     let networks: [String]
+    let tags: [TagDto]
 }

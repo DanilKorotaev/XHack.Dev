@@ -34,4 +34,5 @@ enum AppStoryboard: String {
     case bookmarkedTeams = "BookmarkedTeams"
     case bookmarkedHacks = "BookmarkedHacks"
     case bookmarks = "Bookmarks"
+    case selectTags = "SelectTags"
 }
