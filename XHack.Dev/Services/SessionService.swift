@@ -15,7 +15,7 @@ class SessionService {
     private let signInSubject = PublishSubject<Void>()
     private let disposeBag = DisposeBag()
     private let authApi: AuthApi
-    
+    private let apiTokensHolder: IApiTokensHolder
     private var token: Tokens?
     
     // MARK: - Public properties
@@ -31,11 +31,12 @@ class SessionService {
     
     // MARK: - Public Methods
     
-    init(authApi: AuthApi, dataManager: DataManager, messanger: IMessager, accountSecureStorage: IAccountSecureStorage) {
+    init(authApi: AuthApi, dataManager: DataManager, messanger: IMessager, accountSecureStorage: IAccountSecureStorage, apiTokensHolder: IApiTokensHolder) {
         self.dataManager = dataManager
         self.messager = messanger
         self.authApi = authApi
         self.accountSecureStorage = accountSecureStorage
+        self.apiTokensHolder = apiTokensHolder
         loadSession()
     }
     
@@ -107,6 +108,7 @@ class SessionService {
         dataManager.set(key: SettingKey.session, value: sessionState)
         accountSecureStorage.saveLogin(login: email)
         accountSecureStorage.saveTokens(token: token)
+        apiTokensHolder.restoreTokensFromCashe()
         signInSubject.onNext(Void())
     }
     
@@ -117,6 +119,7 @@ class SessionService {
     private func removeSession() {
         accountSecureStorage.clearStorage()
         dataManager.clear()
+        apiTokensHolder.clearToken()
         token = nil
         sessionState = nil
         signOutSubject.onNext(Void())
