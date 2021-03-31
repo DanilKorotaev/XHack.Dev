@@ -14,7 +14,8 @@ class SearchHackathonsViewController: BaseViewController<SearchHackathonsViewMod
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: CustomShadowTextField!
     @IBOutlet weak var backButton: UIButton!
-        
+    @IBOutlet weak var filtersButton: UIButton!
+    
     override func completeUi() {
         configureDismissKeyboard()
         tableView.tableFooterView = UIView()
@@ -53,6 +54,9 @@ class SearchHackathonsViewController: BaseViewController<SearchHackathonsViewMod
         
         backButton.rx.tap
             .bind(to: dataContext.back)
-            .disposed(by: disposeBag)        
+            .disposed(by: disposeBag)
+        
+        (dataContext.selectFilters <- filtersButton.rx.tap)
+            .disposed(by: disposeBag)
     }
 }

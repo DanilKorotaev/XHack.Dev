@@ -36,5 +36,8 @@ class BookmarkedUsersViewController: BaseViewController<BookmarkedUsersViewModel
                 guard let cell = cell as? ShortUserViewCell else { return }
                 cell.set(for: model)
             }.disposed(by: disposeBag)
+        
+        (dataContext.memberSelected <- collectionView.rx.modelSelected(ShortUser.self))
+            .disposed(by: disposeBag)
     }
 }

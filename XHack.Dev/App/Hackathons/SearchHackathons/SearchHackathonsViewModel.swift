@@ -13,8 +13,11 @@ class SearchHackathonsViewModel: BaseViewModel {
     let hackathonsApi: IHackathonsApi
     let hackathons = BehaviorSubject(value: [ShortHackathon]())
     let didSelectHack = PublishSubject<ShortHackathon>()
+    let selectFilters = PublishSubject<Void>()
+    let filtersSelected = PublishSubject<HackFilters>()
     let filterBy = PublishSubject<String>()
     let back = PublishSubject<Void>()
+    private(set) var filters: HackFilters?
     private var filter = ""
     
     init(hackathonsApi: IHackathonsApi) {
@@ -23,7 +26,11 @@ class SearchHackathonsViewModel: BaseViewModel {
     
     override func refreshContent(operationArgs: IOperationStateControl) {
         isLoading.onNext(true)
-        hackathonsApi.getHackatons(by: HackathonsFilterDto(filter: filter))
+        var filterDto = HackathonsFilterDto(filter: filter)
+        if let filters = filters  {
+            filterDto.tagsIds = filters.tags?.map { $0.id }
+        }
+        hackathonsApi.getHackatons(by: filterDto)
             .done { [weak self] result in
                 guard let self = self else { return }
                 self.isLoading.onNext(false)
@@ -41,5 +48,10 @@ class SearchHackathonsViewModel: BaseViewModel {
             self.filter = result
             self.forceContentRefreshingAsync()
         }).disposed(by: disposeBag)
+        
+        filtersSelected.bind { [weak self] filters in
+            self?.filters = filters
+            self?.forceContentRefreshingAsync(operationArgs: OperationStateControl.Default)
+        }.disposed(by: disposeBag)
     }
 }

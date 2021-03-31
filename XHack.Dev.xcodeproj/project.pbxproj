@@ -99,6 +99,11 @@
 		A309624F2569DDA4007E366E /* TaskDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A309624E2569DDA4007E366E /* TaskDetailCoordinator.swift */; };
 		A30962542569DDB9007E366E /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30962532569DDB9007E366E /* TaskDetailViewController.swift */; };
 		A30962592569DDCA007E366E /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30962582569DDCA007E366E /* TaskDetailViewModel.swift */; };
+		A30A2C652614FFE30033CD22 /* HackFiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A2C642614FFE30033CD22 /* HackFiltersViewModel.swift */; };
+		A30A2C6D2614FFF00033CD22 /* HackFiltersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A2C6C2614FFF00033CD22 /* HackFiltersCoordinator.swift */; };
+		A30A2C72261500020033CD22 /* HackFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A2C71261500020033CD22 /* HackFiltersViewController.swift */; };
+		A30A2C772615000C0033CD22 /* HackFilters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30A2C762615000C0033CD22 /* HackFilters.storyboard */; };
+		A30A2C7C261505C40033CD22 /* HackFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A2C7B261505C40033CD22 /* HackFilters.swift */; };
 		A3196282259A757300D58502 /* HackathonListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319627E259A757300D58502 /* HackathonListCoordinator.swift */; };
 		A3196283259A757300D58502 /* HackathonList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A319627F259A757300D58502 /* HackathonList.storyboard */; };
 		A3196284259A757300D58502 /* HackathonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3196280259A757300D58502 /* HackathonListViewModel.swift */; };
@@ -397,6 +402,7 @@
 		A3E1FD1E26139F8B0008A823 /* SelectedTagViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1FD1C26139F8A0008A823 /* SelectedTagViewCell.swift */; };
 		A3E1FD1F26139F8B0008A823 /* SelectedTagViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3E1FD1D26139F8A0008A823 /* SelectedTagViewCell.xib */; };
 		A3E1FD242613A8FF0008A823 /* BaseViewModel+Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1FD232613A8FF0008A823 /* BaseViewModel+Tags.swift */; };
+		A3E1FD292614E7040008A823 /* String+Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E1FD282614E7020008A823 /* String+Regex.swift */; };
 		A3E627E525E57B1900C1FBB7 /* HackTeamList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E627E425E57B1800C1FBB7 /* HackTeamList.storyboard */; };
 		A3E627F925E59B9E00C1FBB7 /* UITableViewHeaderFooterView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E627F825E59B9E00C1FBB7 /* UITableViewHeaderFooterView+Extensions.swift */; };
 		A3E627FF25E6EB0E00C1FBB7 /* HackTeamDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E627FE25E6EB0E00C1FBB7 /* HackTeamDetailsViewModel.swift */; };
@@ -554,6 +560,11 @@
 		A309624E2569DDA4007E366E /* TaskDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailCoordinator.swift; sourceTree = "<group>"; };
 		A30962532569DDB9007E366E /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		A30962582569DDCA007E366E /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewModel.swift; sourceTree = "<group>"; };
+		A30A2C642614FFE30033CD22 /* HackFiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFiltersViewModel.swift; sourceTree = "<group>"; };
+		A30A2C6C2614FFF00033CD22 /* HackFiltersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFiltersCoordinator.swift; sourceTree = "<group>"; };
+		A30A2C71261500020033CD22 /* HackFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFiltersViewController.swift; sourceTree = "<group>"; };
+		A30A2C762615000C0033CD22 /* HackFilters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HackFilters.storyboard; sourceTree = "<group>"; };
+		A30A2C7B261505C40033CD22 /* HackFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFilters.swift; sourceTree = "<group>"; };
 		A319627E259A757300D58502 /* HackathonListCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackathonListCoordinator.swift; sourceTree = "<group>"; };
 		A319627F259A757300D58502 /* HackathonList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HackathonList.storyboard; sourceTree = "<group>"; };
 		A3196280259A757300D58502 /* HackathonListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackathonListViewModel.swift; sourceTree = "<group>"; };
@@ -853,6 +864,7 @@
 		A3E1FD1C26139F8A0008A823 /* SelectedTagViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedTagViewCell.swift; sourceTree = "<group>"; };
 		A3E1FD1D26139F8A0008A823 /* SelectedTagViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedTagViewCell.xib; sourceTree = "<group>"; };
 		A3E1FD232613A8FF0008A823 /* BaseViewModel+Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseViewModel+Tags.swift"; sourceTree = "<group>"; };
+		A3E1FD282614E7020008A823 /* String+Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Regex.swift"; sourceTree = "<group>"; };
 		A3E627E425E57B1800C1FBB7 /* HackTeamList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HackTeamList.storyboard; sourceTree = "<group>"; };
 		A3E627F825E59B9E00C1FBB7 /* UITableViewHeaderFooterView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewHeaderFooterView+Extensions.swift"; sourceTree = "<group>"; };
 		A3E627FE25E6EB0E00C1FBB7 /* HackTeamDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackTeamDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -1177,6 +1189,7 @@
 				A38765E5260A5DDC00B83BE3 /* UIViewAnchor+Extensions.swift */,
 				A3FE72C4260BCBA20040446C /* UITableView+Extensions.swift */,
 				A3FE72CF260CEF9D0040446C /* UICollectionView+Extension.swift */,
+				A3E1FD282614E7020008A823 /* String+Regex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1299,6 +1312,7 @@
 				A3593B29260FC733006C28B8 /* SentRequest.swift */,
 				A3E1FCDC2610DB460008A823 /* InnerPage.swift */,
 				A3E1FD17261396670008A823 /* SelectedTag.swift */,
+				A30A2C7B261505C40033CD22 /* HackFilters.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1384,6 +1398,17 @@
 				A30962582569DDCA007E366E /* TaskDetailViewModel.swift */,
 			);
 			path = TaskDetail;
+			sourceTree = "<group>";
+		};
+		A30A2C632614FFC70033CD22 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				A30A2C642614FFE30033CD22 /* HackFiltersViewModel.swift */,
+				A30A2C6C2614FFF00033CD22 /* HackFiltersCoordinator.swift */,
+				A30A2C71261500020033CD22 /* HackFiltersViewController.swift */,
+				A30A2C762615000C0033CD22 /* HackFilters.storyboard */,
+			);
+			path = Filters;
 			sourceTree = "<group>";
 		};
 		A3196269259A74B500D58502 /* HacksLIst */ = {
@@ -1780,6 +1805,7 @@
 		A37055C125851501005650FD /* Hackathons */ = {
 			isa = PBXGroup;
 			children = (
+				A30A2C632614FFC70033CD22 /* Filters */,
 				A3961AA12579931D00FC3541 /* SearchHackathons */,
 				A33F448225A7A53400C16624 /* HackFilterDialog */,
 				A3196269259A74B500D58502 /* HacksLIst */,
@@ -2297,6 +2323,7 @@
 				A3441D612597881C00A3BFA5 /* HackathonViewCell.xib in Resources */,
 				A3DC593725E45984009DA204 /* ShortUserViewCell.xib in Resources */,
 				A309624A2569DD86007E366E /* TaskDetail.storyboard in Resources */,
+				A30A2C772615000C0033CD22 /* HackFilters.storyboard in Resources */,
 				16A1E61922DA40C40003F0DF /* translations.json in Resources */,
 				A320CD4225FE4B7B002F8845 /* UserRequests.storyboard in Resources */,
 				A33579CF25E5614A00297E22 /* HackMemberList.storyboard in Resources */,
@@ -2489,6 +2516,7 @@
 				A31F573125A5E6D900759B61 /* RefreshableContentHost.swift in Sources */,
 				A3E1FD1E26139F8B0008A823 /* SelectedTagViewCell.swift in Sources */,
 				A33F449325A7A57300C16624 /* HackFilterDialogViewModel.swift in Sources */,
+				A30A2C72261500020033CD22 /* HackFiltersViewController.swift in Sources */,
 				A3C2B29025FAA9DE00BA103F /* ServerEvents.swift in Sources */,
 				16DD9D1F22DB32F2007D9D2F /* SettingsViewModel.swift in Sources */,
 				A37055CC25851535005650FD /* HackathonDetailViewModel.swift in Sources */,
@@ -2584,6 +2612,7 @@
 				A3593B2A260FC734006C28B8 /* SentRequest.swift in Sources */,
 				A3E1FCF8261245FD0008A823 /* BaseViewModel+Files.swift in Sources */,
 				A3961B21257AE69600FC3541 /* TeamListViewController.swift in Sources */,
+				A3E1FD292614E7040008A823 /* String+Regex.swift in Sources */,
 				16A1E60822DA40C40003F0DF /* LocalizedButton.swift in Sources */,
 				A323127A256F052400D3B97B /* HomeViewModel.swift in Sources */,
 				16A1E63E22DA40C40003F0DF /* AlertMessage.swift in Sources */,
@@ -2678,6 +2707,7 @@
 				16A1E61E22DA40C40003F0DF /* BaseCoordinator.swift in Sources */,
 				16A1E64022DA40C40003F0DF /* DrawerMenuScreen.swift in Sources */,
 				A3DC594625E45B32009DA204 /* ShortTeamDto.swift in Sources */,
+				A30A2C652614FFE30033CD22 /* HackFiltersViewModel.swift in Sources */,
 				A3F3D82D25F3D08300DACC7A /* ShortChat.swift in Sources */,
 				A3441D692597920B00A3BFA5 /* Tag.swift in Sources */,
 				A3F7BBB12575895D00F18645 /* HttpClientHelper.swift in Sources */,
@@ -2719,6 +2749,7 @@
 				A392999725EEC6870031C5B9 /* AppContext.swift in Sources */,
 				A3C2B2C725FC16FB00BA103F /* NewMessageData.swift in Sources */,
 				A352B5EC2602813F00F3F6B2 /* ReadMessageData.swift in Sources */,
+				A30A2C6D2614FFF00033CD22 /* HackFiltersCoordinator.swift in Sources */,
 				A3DC594C25E45C43009DA204 /* ShortTeamViewCell.swift in Sources */,
 				A378766F2607977800D26E37 /* ImagePicker.swift in Sources */,
 				A3A6F3A025F6BD0400DCD778 /* IncomingMessageViewCell.swift in Sources */,
@@ -2744,6 +2775,7 @@
 				A3DC592225E42D2B009DA204 /* UIHackLinkButton.swift in Sources */,
 				A382164425FFD28800AF2BF5 /* SelectTeamViewCell.swift in Sources */,
 				16A1E60D22DA40C40003F0DF /* GeneralEndpoints.swift in Sources */,
+				A30A2C7C261505C40033CD22 /* HackFilters.swift in Sources */,
 				A3877561256B19A700F00EB0 /* LoginMessage.swift in Sources */,
 				A33579BD25E5610D00297E22 /* HackMemberListViewModel.swift in Sources */,
 				A3441D602597881C00A3BFA5 /* HackathonViewCell.swift in Sources */,

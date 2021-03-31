@@ -35,9 +35,13 @@ class SearchHackathonsCoordinator: BaseCoordinator<Void> {
     }
     
     func setupBinding() {
-        viewModel.didSelectHack.subscribe(onNext: { [weak self] hack in
+        viewModel.didSelectHack.bind { [weak self] hack in
             self?.didSelect(hack: hack)
-        }).disposed(by: disposeBag)
+        }.disposed(by: disposeBag)
+        
+        viewModel.selectFilters.bind { [weak self] hack in
+            self?.setFilters()
+        }.disposed(by: disposeBag)
         
         viewModel.back.subscribe(onNext: { [weak self] _ in
             self?.navigationController.popViewController(animated: true)
@@ -49,5 +53,20 @@ class SearchHackathonsCoordinator: BaseCoordinator<Void> {
         coordinator.navigationController = navigationController
         coordinator.hackId = hack.id
         start(coordinator: coordinator)
+    }
+    
+    func setFilters() {
+        let coordinator = Container.resolve(HackFiltersCoordinator.self)
+        coordinator.navigationController = navigationController
+        coordinator.parameter = HackFiltersParameter(filters: viewModel.filters)
+        start(coordinator: coordinator).subscribe(onNext: { [weak self] result in
+            guard let self = self else { return }
+            switch (result) {
+            case .rejected:
+                return
+            case .successfull(filters: let filters):
+                self.viewModel.filtersSelected.onNext(filters)
+            }
+        }).disposed(by: disposeBag)
     }
 }

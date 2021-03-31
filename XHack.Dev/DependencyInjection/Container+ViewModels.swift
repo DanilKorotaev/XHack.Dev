@@ -39,5 +39,6 @@ extension Container {
         autoregister(BookmarkedTeamsViewModel.self, initializer: BookmarkedTeamsViewModel.init)
         autoregister(BookmarkedUsersViewModel.self, initializer: BookmarkedUsersViewModel.init)
         autoregister(SelectTagsViewModel.self, initializer: SelectTagsViewModel.init)
+        autoregister(HackFiltersViewModel.self, initializer: HackFiltersViewModel.init)
     }
 }

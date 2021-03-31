@@ -32,11 +32,11 @@ class HackathonListViewModel: BaseViewModel, RefreshableContentHost {
         guard !isRefreshing.value, !isLoading.value, !isPageLoading.value else { return }
         if operationArgs.isManuallyTriggered {
             isRefreshing.onNext(true)
-            page = 0
+            page = 1
         } else if operationArgs.isPaging {
             isPageLoading.onNext(true)
         } else {
-            page = 0
+            page = 1
             isLoading.onNext(true)
         }
         

@@ -39,7 +39,7 @@
                                         <state key="normal" image="left_arrow"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJ3-Yq-lj1">
-                                        <rect key="frame" x="361" y="19" width="17" height="22"/>
+                                        <rect key="frame" x="377" y="19" width="17" height="22"/>
                                         <state key="normal" image="ic_filters"/>
                                     </button>
                                 </subviews>
@@ -51,14 +51,14 @@
                                     <constraint firstItem="XBs-tx-r5j" firstAttribute="leading" secondItem="TIa-A9-Ast" secondAttribute="trailing" constant="13" id="Oo4-Qj-N2r"/>
                                     <constraint firstAttribute="height" constant="60" id="ccl-j7-juq"/>
                                     <constraint firstItem="TIa-A9-Ast" firstAttribute="leading" secondItem="s2M-gy-yVP" secondAttribute="leading" constant="20" id="dJV-ZB-Rpj"/>
-                                    <constraint firstAttribute="trailing" secondItem="fJ3-Yq-lj1" secondAttribute="trailing" constant="36" id="qyK-Il-0Gv"/>
+                                    <constraint firstAttribute="trailing" secondItem="fJ3-Yq-lj1" secondAttribute="trailing" constant="20" id="qyK-Il-0Gv"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wr-vk-tEG">
                                 <rect key="frame" x="0.0" y="104" width="414" height="70"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search hacks" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYh-Sc-1vB" customClass="CustomShadowTextField" customModule="XHack_Dev" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="10" width="334" height="40"/>
+                                        <rect key="frame" x="30" y="10" width="354" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ncg-DP-Ngi"/>
                                         </constraints>
@@ -68,9 +68,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="eYh-Sc-1vB" firstAttribute="leading" secondItem="3wr-vk-tEG" secondAttribute="leading" constant="40" id="06q-Ye-lNz"/>
+                                    <constraint firstItem="eYh-Sc-1vB" firstAttribute="leading" secondItem="3wr-vk-tEG" secondAttribute="leading" constant="30" id="06q-Ye-lNz"/>
                                     <constraint firstAttribute="height" constant="70" id="0p7-Ck-kn7"/>
-                                    <constraint firstAttribute="trailing" secondItem="eYh-Sc-1vB" secondAttribute="trailing" constant="40" id="hu7-rV-WTv"/>
+                                    <constraint firstAttribute="trailing" secondItem="eYh-Sc-1vB" secondAttribute="trailing" constant="30" id="hu7-rV-WTv"/>
                                     <constraint firstItem="eYh-Sc-1vB" firstAttribute="top" secondItem="3wr-vk-tEG" secondAttribute="top" constant="10" id="k48-gP-6bf"/>
                                 </constraints>
                             </view>
@@ -92,6 +92,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="TIa-A9-Ast" id="DQl-di-DBw"/>
+                        <outlet property="filtersButton" destination="fJ3-Yq-lj1" id="lEg-mU-ATR"/>
                         <outlet property="searchTextField" destination="eYh-Sc-1vB" id="8Tz-vt-Vzp"/>
                         <outlet property="tableView" destination="z0d-jo-neo" id="7ty-DY-DMk"/>
                     </connections>
