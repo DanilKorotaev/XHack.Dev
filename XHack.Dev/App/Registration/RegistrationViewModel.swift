@@ -7,13 +7,13 @@ class RegistrationViewModel: BaseViewModel {
     let email = BehaviorSubject<String>(value: "")
     let firstName = BehaviorSubject<String>(value: "")
     let password = BehaviorSubject<String>(value: "")
+    let confirmPassword = BehaviorSubject<String>(value: "")
     let canContinue = BehaviorSubject<Bool>(value: false)
     let back = PublishSubject<Void>()
     
     init(sessionService: SessionService) {
         self.sessionService = sessionService
     }
-    
     
     func signUp() {
         isLoading.onNext(true)
@@ -28,11 +28,15 @@ class RegistrationViewModel: BaseViewModel {
             .disposed(by: disposeBag)
     }
     
-    
     override func applyBinding() {
         Observable
-            .combineLatest(email, password)
-            .map { $0.hasNonEmptyValue() && $1.hasNonEmptyValue() }
+            .combineLatest(email, password, confirmPassword, firstName)
+            .map { $0.hasNonEmptyValue()
+                && $1.hasNonEmptyValue()
+                && $3.hasNonEmptyValue()
+                && $0.isValidEmail()
+                && $1 == $2
+            }
             .bind(to: canContinue)
             .disposed(by: disposeBag)
     }

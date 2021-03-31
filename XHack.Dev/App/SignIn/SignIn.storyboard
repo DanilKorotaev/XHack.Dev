@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAG-jO-52g">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="583"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ufc-sg-3nl" customClass="CustomShadowTextField" customModule="XHack_Dev" customModuleProvider="target">
                                                 <rect key="frame" x="40" y="300" width="295" height="43"/>
@@ -84,6 +84,7 @@
                                             <constraint firstItem="YaI-Se-TFJ" firstAttribute="top" secondItem="Ufc-sg-3nl" secondAttribute="bottom" constant="16" id="iTZ-i1-g6A"/>
                                             <constraint firstAttribute="trailing" secondItem="Ufc-sg-3nl" secondAttribute="trailing" constant="40" id="kQj-Ta-e8j"/>
                                             <constraint firstItem="YaI-Se-TFJ" firstAttribute="leading" secondItem="QAG-jO-52g" secondAttribute="leading" constant="40" id="oK9-UB-qKa"/>
+                                            <constraint firstAttribute="bottom" secondItem="812-Vs-ioI" secondAttribute="bottom" constant="20" id="yFX-gc-Adt"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -109,6 +110,7 @@
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="YaI-Se-TFJ" id="u6f-dO-W9e"/>
+                        <outlet property="scrollView" destination="fop-nS-4Rp" id="PMC-Kd-dgS"/>
                         <outlet property="signInButton" destination="lsW-cL-hN3" id="KV1-K1-f82"/>
                         <outlet property="signUpButton" destination="812-Vs-ioI" id="K5y-yg-Rgd"/>
                         <outlet property="usernameTextField" destination="Ufc-sg-3nl" id="s9Y-qB-l15"/>

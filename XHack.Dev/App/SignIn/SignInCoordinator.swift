@@ -11,7 +11,7 @@ class SignInCoordinator: BaseCoordinator<Void> {
     
     override func start() -> Observable<Void> {
         let viewController = SignInViewController.instantiate()
-        viewController.viewModel = viewModel
+        viewController.dataContext = viewModel
         
         navigationController.isNavigationBarHidden = true
         navigationController.modalPresentationStyle = .fullScreen

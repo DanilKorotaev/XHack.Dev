@@ -2,16 +2,15 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SignInViewController: UIViewController, Storyboarded {
+class SignInViewController: BaseViewController<SignInViewModel>, Storyboarded {
     static var storyboard = AppStoryboard.signIn
 
     @IBOutlet weak var usernameTextField: CustomShadowTextField!
     @IBOutlet weak var passwordTextField: CustomShadowTextField!
     @IBOutlet weak var signInButton: PrimaryButton!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
-    private let disposeBag = DisposeBag()
-    var viewModel: SignInViewModel?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
@@ -20,34 +19,33 @@ class SignInViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDismissKeyboard()
-        setUpBindings()
     }
     
-    private func setUpBindings() {
-        guard let viewModel = viewModel else { return }
+    override func applyBinding() {
+        guard let dataContext = dataContext else { return }
         
         Observable.of(usernameTextField, passwordTextField)
             .flatMap { $0.rx.controlEvent(.editingDidEndOnExit) }
-            .withLatestFrom(viewModel.isSignInActive)
+            .withLatestFrom(dataContext.isSignInActive)
             .filter { $0 }
-            .bind { [weak self] _ in self?.viewModel?.signIn() }
+            .bind { [weak self] _ in self?.dataContext?.signIn() }
             .disposed(by: disposeBag)
         
         usernameTextField.rx.text.orEmpty
-            .bind(to: viewModel.email)
+            .bind(to: dataContext.email)
             .disposed(by: disposeBag)
         
         passwordTextField.rx.text.orEmpty
-            .bind(to: viewModel.password)
+            .bind(to: dataContext.password)
             .disposed(by: disposeBag)
         
         signInButton.rx.tap
             .throttle(RxTimeInterval.seconds(3), scheduler: MainScheduler.instance)
             .bind { [weak self] _ in
-                self?.viewModel?.signIn()
+                self?.dataContext?.signIn()
             }.disposed(by: disposeBag)
         
-        viewModel.isLoading
+        dataContext.isLoading
             .observeOn(MainScheduler.instance)            
             .bind { [weak self] in
                 guard let self = self else { return }
@@ -57,7 +55,15 @@ class SignInViewController: UIViewController, Storyboarded {
             .disposed(by: disposeBag)
         
         signUpButton.rx.tap
-            .bind(to: viewModel.signUp)
+            .bind(to: dataContext.signUp)
             .disposed(by: disposeBag)
+    }
+    
+    override func keyboardHideHandler(_ keyboardBounds: CGRect) {
+        scrollView.contentInset = .zero
+    }
+    
+    override func keyboardShownHandler(_ keyboardBounds: CGRect) {
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardBounds.height, right: 0)
     }
 }

@@ -9,8 +9,10 @@ class RegistrationViewController: BaseViewController<RegistrationViewModel>, Sto
     @IBOutlet weak var firstNameTextField: CustomShadowTextField!
     @IBOutlet weak var emailTextField: CustomShadowTextField!
     @IBOutlet weak var passwordTextField: CustomShadowTextField!
+    @IBOutlet weak var confirmPasswordTextField: CustomShadowTextField!
     @IBOutlet weak var signUpButton: PrimaryButton!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
@@ -36,6 +38,10 @@ class RegistrationViewController: BaseViewController<RegistrationViewModel>, Sto
         
         passwordTextField.rx.text.orEmpty
             .bind(to: dataContext.password)
+            .disposed(by: disposeBag)
+        
+        confirmPasswordTextField.rx.text.orEmpty
+            .bind(to: dataContext.confirmPassword)
             .disposed(by: disposeBag)
         
         firstNameTextField.rx.text.orEmpty
@@ -64,5 +70,13 @@ class RegistrationViewController: BaseViewController<RegistrationViewModel>, Sto
         backButton.rx.tap
             .bind(to: dataContext.back)
             .disposed(by: disposeBag)
+    }
+    
+    override func keyboardHideHandler(_ keyboardBounds: CGRect) {
+        scrollView.contentInset = .zero
+    }
+    
+    override func keyboardShownHandler(_ keyboardBounds: CGRect) {
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardBounds.height, right: 0)
     }
 }

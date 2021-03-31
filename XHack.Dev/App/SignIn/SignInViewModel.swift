@@ -1,18 +1,15 @@
 import RxSwift
 
-class SignInViewModel {
+class SignInViewModel: BaseViewModel {
 	private let sessionService: SessionService
-    private let disposeBag = DisposeBag()
     
     let email = BehaviorSubject<String>(value: "")
     let password = BehaviorSubject<String>(value: "")
     let isSignInActive = BehaviorSubject<Bool>(value: false)
-    let isLoading = BehaviorSubject<Bool>(value: false)
     let signUp = PublishSubject<Void>()
     
     init(sessionService: SessionService) {
         self.sessionService = sessionService
-        setUpBindings()
     }
     
     func signIn() {
@@ -28,10 +25,13 @@ class SignInViewModel {
             .disposed(by: disposeBag)
     }
     
-    private func setUpBindings() {
+    override func applyBinding() {
         Observable
             .combineLatest(email, password)
-            .map { $0.hasNonEmptyValue() && $1.hasNonEmptyValue() }
+            .map { $0.hasNonEmptyValue()
+                && $1.hasNonEmptyValue()
+                && $0.isValidEmail()
+            }
             .bind(to: isSignInActive)
             .disposed(by: disposeBag)
     }
