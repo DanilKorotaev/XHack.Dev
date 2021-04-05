@@ -28,7 +28,8 @@ class ChatViewCell: UITableViewCell {
     func set(model: ShortChat) {
         disposeBag = DisposeBag()
         nameLabel.text = model.name
-        avatarImageView.downloaded(from: model.avatarUrl)
+        let avatarPlaceholder = model.type == .p2p ? "no_avatar" : "no_group_avatar"
+        avatarImageView.downloaded(from: model.avatarUrl, placeholder: avatarPlaceholder)
         model.lastMessageText
             .bind(to: lastMessageLabel.rx.text)
             .disposed(by: disposeBag)

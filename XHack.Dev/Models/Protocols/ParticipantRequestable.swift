@@ -14,4 +14,5 @@ protocol ParticipantRequestable {
     var team: ShortTeam { get }
     var user: ShortUser { get }
     var type: RequestType { get }
+    var avatarPlaceholder: String { get }
 }

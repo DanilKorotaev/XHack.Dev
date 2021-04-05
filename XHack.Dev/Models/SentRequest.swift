@@ -35,6 +35,17 @@ class SentRequest: ParticipantRequestable {
         }
     }
     
+    var avatarPlaceholder: String {
+        switch (type) {
+        case .teamToUser:
+            return "no_avatar"
+        case .userToTeam:
+            return "no_group_avatar"
+        default:
+            return ""
+        }
+    }
+    
     init(_ data: SentRequestDto) {
         type = RequestType(rawValue: data.type) ?? .none
         team = ShortTeam(data.team)

@@ -20,6 +20,6 @@ class ShortUserViewCell: UICollectionViewCell {
     
     func set(for model: ShortUser) {
         nameLabel.text = model.name
-        avatarImageView.downloaded(from: model.avatarUrl ?? "")
+        avatarImageView.downloaded(from: model.avatarUrl, placeholder: "no_avatar")
     }
 }

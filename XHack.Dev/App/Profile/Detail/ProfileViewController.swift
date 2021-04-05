@@ -42,7 +42,7 @@ class ProfileViewController: BaseViewController<ProfileViewModel>, Storyboarded 
             (self.nameLabel.rx.text <- profile.name)
                 .disposed(by: self.profileDisposeBag)
             self.setSocials(profile.networks)
-            self.avatarImageView.downloaded(from: profile.avatarUrl)
+            self.avatarImageView.downloaded(from: profile.avatarUrl, placeholder: "no_avatar")
             self.teamContainerView.isHidden = profile.teams.isEmpty
             self.tagsContainerView.isHidden = profile.tags.isEmpty
             

@@ -12,8 +12,11 @@ import UIKit
 fileprivate var cashedImages: [String: UIImage] = [:]
 
 extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit, placeholder: String? = nil) {
         contentMode = mode
+        if let placeholder = placeholder {
+            self.image = UIImage(named: placeholder)
+        }
         if let image =  cashedImages[url.absoluteString] {
             self.image = image
             return
@@ -32,8 +35,8 @@ extension UIImageView {
         }.resume()
     }
     
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
+    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFill, placeholder: String? = nil) {
         guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
+        downloaded(from: url, contentMode: mode, placeholder: placeholder)
     }
 }

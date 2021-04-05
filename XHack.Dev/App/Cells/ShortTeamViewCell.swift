@@ -20,7 +20,7 @@ class ShortTeamViewCell: UICollectionViewCell {
     
     func set(for model: ShortTeam) {
         nameLabel.text = model.name
-        avatarImageView.downloaded(from: model.avatarUrl)
+        avatarImageView.downloaded(from: model.avatarUrl, placeholder: "no_group_avatar")
     }
 
 }

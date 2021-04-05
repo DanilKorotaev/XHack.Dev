@@ -74,7 +74,7 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
                 self.searchTeamContainerView.isHidden = hackDetail.teams.value.isEmpty
                 self.searchMemberContainerView.isHidden = hackDetail.members.value.isEmpty
                 self.tagsContainerView.isHidden = hackDetail.tags.isEmpty
-                self.hackAvatarImageView.downloaded(from: hackDetail.avatarUrl)
+                self.hackAvatarImageView.downloaded(from: hackDetail.avatarUrl, placeholder: "no_group_avatar")
                 self.setChangeParticipantStateButtonTitle(participantType: hackDetail.participationType)
                 self.updateDescriptionHeight()
                 self.updateVisibilityShowAllButton()
