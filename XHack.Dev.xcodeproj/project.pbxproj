@@ -373,6 +373,7 @@
 		A3C2B2E125FCFD7200BA103F /* SmartScrollArgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C2B2E025FCFD7200BA103F /* SmartScrollArgs.swift */; };
 		A3DBB80D258ABA5E0078CC4E /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBB80C258ABA5D0078CC4E /* UserProfile.swift */; };
 		A3DBB812258AC22D0078CC4E /* TagDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DBB811258AC22D0078CC4E /* TagDto.swift */; };
+		A3DC48FE26199F4D00C5A6A5 /* LocalEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC48FD26199F4D00C5A6A5 /* LocalEndpoints.swift */; };
 		A3DC592225E42D2B009DA204 /* UIHackLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC592125E42D2B009DA204 /* UIHackLinkButton.swift */; };
 		A3DC592825E4464E009DA204 /* BehaviourSubject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC592725E4464D009DA204 /* BehaviourSubject+Extensions.swift */; };
 		A3DC593025E448A1009DA204 /* DefaultValuable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DC592F25E448A1009DA204 /* DefaultValuable.swift */; };
@@ -835,6 +836,7 @@
 		A3C2B2E025FCFD7200BA103F /* SmartScrollArgs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartScrollArgs.swift; sourceTree = "<group>"; };
 		A3DBB80C258ABA5D0078CC4E /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		A3DBB811258AC22D0078CC4E /* TagDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDto.swift; sourceTree = "<group>"; };
+		A3DC48FD26199F4D00C5A6A5 /* LocalEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalEndpoints.swift; sourceTree = "<group>"; };
 		A3DC592125E42D2B009DA204 /* UIHackLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHackLinkButton.swift; sourceTree = "<group>"; };
 		A3DC592725E4464D009DA204 /* BehaviourSubject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviourSubject+Extensions.swift"; sourceTree = "<group>"; };
 		A3DC592F25E448A1009DA204 /* DefaultValuable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValuable.swift; sourceTree = "<group>"; };
@@ -1982,6 +1984,7 @@
 			isa = PBXGroup;
 			children = (
 				A3BA563B2573EA20007AD591 /* TestEndpoints.swift */,
+				A3DC48FD26199F4D00C5A6A5 /* LocalEndpoints.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -2635,6 +2638,7 @@
 				16A1E61722DA40C40003F0DF /* Storyboarded.swift in Sources */,
 				A3DBB80D258ABA5E0078CC4E /* UserProfile.swift in Sources */,
 				A382163325FFBDAF00AF2BF5 /* SelectTeamViewController.swift in Sources */,
+				A3DC48FE26199F4D00C5A6A5 /* LocalEndpoints.swift in Sources */,
 				16A1E62F22DA40C40003F0DF /* SessionService.swift in Sources */,
 				A3B80B3C258593D10089E599 /* ShortHackathon.swift in Sources */,
 				A3FE72D0260CEF9E0040446C /* UICollectionView+Extension.swift in Sources */,
