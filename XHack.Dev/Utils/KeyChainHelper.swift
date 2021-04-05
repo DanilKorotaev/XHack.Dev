@@ -32,7 +32,7 @@ class KeyChainHelper {
     
     
     func set(value: String, for key: String) -> Bool {
-        if !getValue(for: key).hasNonEmptyValue() {
+        if getValue(for: key).hasNonEmptyValue() {
             removeKey(key)
         }
         let attributes = createKeyValueRecord(key, value)
