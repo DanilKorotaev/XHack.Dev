@@ -17,6 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFX-Vu-cF7">
+                                <rect key="frame" x="0.0" y="94" width="414" height="802"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There will be chats" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypo-a0-FZf">
+                                        <rect key="frame" x="30" y="388" width="354" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Ypo-a0-FZf" firstAttribute="centerY" secondItem="lFX-Vu-cF7" secondAttribute="centerY" id="MRK-eH-HbZ"/>
+                                    <constraint firstItem="Ypo-a0-FZf" firstAttribute="leading" secondItem="lFX-Vu-cF7" secondAttribute="leading" constant="30" id="Y9K-Pv-XkJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ypo-a0-FZf" secondAttribute="trailing" constant="30" id="dj0-kF-3AH"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmC-fK-qdK">
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
@@ -44,11 +61,15 @@
                         <constraints>
                             <constraint firstItem="vmC-fK-qdK" firstAttribute="leading" secondItem="ar2-EK-eYu" secondAttribute="leading" id="28m-qC-7f9"/>
                             <constraint firstItem="vmC-fK-qdK" firstAttribute="top" secondItem="ar2-EK-eYu" secondAttribute="top" id="9zP-7z-QiT"/>
+                            <constraint firstAttribute="bottom" secondItem="lFX-Vu-cF7" secondAttribute="bottom" id="HP7-s3-7Xo"/>
                             <constraint firstItem="ar2-EK-eYu" firstAttribute="trailing" secondItem="GDR-Fe-Ra7" secondAttribute="trailing" id="I4S-jz-dDy"/>
                             <constraint firstItem="GDR-Fe-Ra7" firstAttribute="top" secondItem="vmC-fK-qdK" secondAttribute="bottom" id="RZm-nK-v7i"/>
                             <constraint firstItem="GDR-Fe-Ra7" firstAttribute="leading" secondItem="ar2-EK-eYu" secondAttribute="leading" id="UqO-er-Cmx"/>
                             <constraint firstAttribute="bottom" secondItem="GDR-Fe-Ra7" secondAttribute="bottom" id="WBv-yF-5xb"/>
                             <constraint firstItem="ar2-EK-eYu" firstAttribute="trailing" secondItem="vmC-fK-qdK" secondAttribute="trailing" id="ec6-RW-hsJ"/>
+                            <constraint firstItem="lFX-Vu-cF7" firstAttribute="top" secondItem="vmC-fK-qdK" secondAttribute="bottom" id="f0Z-HU-Klk"/>
+                            <constraint firstItem="lFX-Vu-cF7" firstAttribute="leading" secondItem="ar2-EK-eYu" secondAttribute="leading" id="l2D-Lk-nrY"/>
+                            <constraint firstItem="lFX-Vu-cF7" firstAttribute="trailing" secondItem="ar2-EK-eYu" secondAttribute="trailing" id="qeS-T5-51a"/>
                         </constraints>
                     </view>
                     <connections>

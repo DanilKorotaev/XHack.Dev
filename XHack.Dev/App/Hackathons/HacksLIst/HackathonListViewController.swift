@@ -64,6 +64,10 @@ class HackathonListViewController: BaseViewController<HackathonListViewModel>, S
             }
             .disposed(by: disposeBag)
         
+        dataContext.hackathons.bind { [weak self] hacks in
+            self?.tableView.isHidden = hacks.isEmpty
+        }.disposed(by: disposeBag)
+        
         tableView.rx.modelSelected(ShortHackathon.self)
             .bind(to: dataContext.didSelectHack)
             .disposed(by: disposeBag)

@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,6 +17,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHH-Gq-IzL">
+                                <rect key="frame" x="0.0" y="94" width="414" height="802"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There will be hackathons" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev0-Zf-N2M">
+                                        <rect key="frame" x="30" y="388" width="354" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ev0-Zf-N2M" secondAttribute="trailing" constant="30" id="BeE-95-evv"/>
+                                    <constraint firstItem="Ev0-Zf-N2M" firstAttribute="leading" secondItem="lHH-Gq-IzL" secondAttribute="leading" constant="30" id="TNv-MI-Nfp"/>
+                                    <constraint firstItem="Ev0-Zf-N2M" firstAttribute="centerY" secondItem="lHH-Gq-IzL" secondAttribute="centerY" id="nlf-5J-zEi"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJc-ff-ZtQ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
@@ -52,13 +70,17 @@
                         <viewLayoutGuide key="safeArea" id="oPy-07-pZT"/>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="lHH-Gq-IzL" firstAttribute="trailing" secondItem="oPy-07-pZT" secondAttribute="trailing" id="1ms-Kb-ee3"/>
                             <constraint firstItem="oPy-07-pZT" firstAttribute="bottom" secondItem="z0d-jo-neo" secondAttribute="bottom" id="3wD-Qg-DEu"/>
                             <constraint firstItem="YJc-ff-ZtQ" firstAttribute="trailing" secondItem="oPy-07-pZT" secondAttribute="trailing" id="980-zp-hVP"/>
                             <constraint firstItem="YJc-ff-ZtQ" firstAttribute="top" secondItem="oPy-07-pZT" secondAttribute="top" id="Q3F-9O-WAl"/>
                             <constraint firstItem="oPy-07-pZT" firstAttribute="trailing" secondItem="z0d-jo-neo" secondAttribute="trailing" id="cYx-2b-gQs"/>
                             <constraint firstItem="z0d-jo-neo" firstAttribute="top" secondItem="YJc-ff-ZtQ" secondAttribute="bottom" id="f9R-1V-BA0"/>
                             <constraint firstItem="z0d-jo-neo" firstAttribute="leading" secondItem="oPy-07-pZT" secondAttribute="leading" id="heV-t5-LdA"/>
+                            <constraint firstItem="lHH-Gq-IzL" firstAttribute="leading" secondItem="oPy-07-pZT" secondAttribute="leading" id="jI8-Eb-UUB"/>
+                            <constraint firstAttribute="bottom" secondItem="lHH-Gq-IzL" secondAttribute="bottom" id="jtR-IQ-iLX"/>
                             <constraint firstItem="YJc-ff-ZtQ" firstAttribute="leading" secondItem="oPy-07-pZT" secondAttribute="leading" id="udZ-QF-NNd"/>
+                            <constraint firstItem="lHH-Gq-IzL" firstAttribute="top" secondItem="YJc-ff-ZtQ" secondAttribute="bottom" id="zYq-IS-J75"/>
                         </constraints>
                     </view>
                     <connections>
@@ -73,5 +95,8 @@
     </scenes>
     <resources>
         <image name="ic_search_gray" width="13.5" height="13.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
