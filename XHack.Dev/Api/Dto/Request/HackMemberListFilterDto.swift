@@ -12,4 +12,5 @@ struct HackMemberListFilterDto: Codable {
     var filter: String? = ""
     var take: Int = 200
     var page: Int = 0
+    var tagIds: [Int]? = nil
 }
