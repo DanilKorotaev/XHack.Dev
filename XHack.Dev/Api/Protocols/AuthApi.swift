@@ -13,4 +13,5 @@ import PromiseKit
 protocol AuthApi {
     func singIn(creadential: SignInRequest) -> Promise<ApiResult<SignInResponse>>
     func signUp(_ model: SignUpRequest) -> Promise<ApiResult<SignUpResponse>>
+    func checkUserExist() -> Promise<ApiResult<Bool>>
 }

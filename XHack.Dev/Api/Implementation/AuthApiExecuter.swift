@@ -28,4 +28,9 @@ class AuthApiExecuter: AuthApi {
         let url = endpointsProvider.gatewayUrl + "/api/auth/register"
         return ApiHelpers.executeReliablyPostRequest(apiTokenHolder: apiTokenHolder, url: url, content: model)
     }
+    
+    func checkUserExist() -> Promise<ApiResult<Bool>> {
+        let url = endpointsProvider.gatewayUrl + "/api/users/checkUserExists"
+        return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
 }
