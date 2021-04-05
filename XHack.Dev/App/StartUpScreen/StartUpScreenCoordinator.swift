@@ -71,13 +71,19 @@ class StartUpScreenCoordinator: BaseCoordinator<Void> {
     }
     
     private func showRootTabBar() {
-        context.updateUserData().done { (result) in
-            let coordinator = AppDelegate.container.resolve(RootTabBarCoordinator.self)!
-            self.start(coordinator: coordinator)
-            ViewControllerUtils.setRootViewController(
-                window: self.window,
-                viewController: coordinator.navigationController,
-                withAnimation: true)
+        sessionService.checkUserExist().done { (result) in
+            guard result else {
+                self.showSignIn()
+                return
+            }
+            self.context.updateUserData().done { (result) in
+                let coordinator = AppDelegate.container.resolve(RootTabBarCoordinator.self)!
+                self.start(coordinator: coordinator)
+                ViewControllerUtils.setRootViewController(
+                    window: self.window,
+                    viewController: coordinator.navigationController,
+                    withAnimation: true)
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 import Foundation
 import RxSwift
+import PromiseKit
 
 class SessionService {
     enum SessionError: Error {
@@ -44,7 +45,8 @@ class SessionService {
         let signIn = self.authApi.singIn(creadential: SignInRequest(email: credentials.email, password: credentials.password))
         signIn.done{ [weak self] result in
             guard let content = result.content, result.status == .successful else { return }
-            try self?.setToken(response: content)
+            self?.token = Tokens(accessToken: content.token ?? "")
+//            try self?.setToken(response: content)
             try self?.setSession(email: credentials.email)
             self?.messager.publish(message: LoginMessage())
             self?.signInSubject.onNext(Void())
@@ -79,6 +81,18 @@ class SessionService {
         
     }
     
+    func checkUserExist() -> Promise<Bool> {
+        Promise() { promise in
+            authApi.checkUserExist().done { (result) in
+                if result.status != .successful {
+                    promise.fulfill(false)
+                    return
+                }
+                promise.fulfill(result.content ?? false)
+            }
+        }
+    }
+    
     //    func refreshProfile() -> Single<MeResponse> {
     //        let fetchMe = restClient.request(SessionEndpoints.FetchMe())
     //
@@ -109,7 +123,6 @@ class SessionService {
         accountSecureStorage.saveLogin(login: email)
         accountSecureStorage.saveTokens(token: token)
         apiTokensHolder.restoreTokensFromCashe()
-        signInSubject.onNext(Void())
     }
     
     private func loadSession() {
