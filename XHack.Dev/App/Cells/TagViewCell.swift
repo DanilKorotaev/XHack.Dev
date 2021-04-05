@@ -36,7 +36,7 @@ class TagViewCell: UICollectionViewCell {
     }
     
     static func getRequiredSize(for model: Tag) -> CGSize {
-        var size = model.name.getRequiredTextSize(UIFont.systemFont(ofSize: 17))
+        var size = model.name.getRequiredTextSize(.systemFont(ofSize: 17, weight: .medium))
         size.width += 25
         size.height = defaultHeight
         return size
