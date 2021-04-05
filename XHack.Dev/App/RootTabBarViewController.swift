@@ -14,6 +14,7 @@ class RootTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ensureLightThemeEnabled()
         self.tabBar.isTranslucent = false
         tabBar.backgroundColor = .white
         self.tabBar.layer.borderWidth = 1

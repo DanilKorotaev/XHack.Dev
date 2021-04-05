@@ -17,4 +17,10 @@ extension UIViewController {
         }
         topViewController.present(viewController, animated: animated)
     }
+    
+    func ensureLightThemeEnabled() {
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } 
+    }
 }

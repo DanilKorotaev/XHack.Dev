@@ -28,6 +28,7 @@ class BaseViewController<TViewModel>: UIViewController where TViewModel:BaseView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ensureLightThemeEnabled()
         dataContext?.initialize()
         dataContext?.viewCreated()
         completeUi()
