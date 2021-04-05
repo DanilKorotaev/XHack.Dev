@@ -9,14 +9,21 @@
 import Foundation
 import RxSwift
 
+struct HackMemberFilters {
+    var tags: [Tag]?
+}
+
 class HackMemberListViewModel: BaseViewModel {
     let hackathonsApi: IHackathonsApi
     let memberSelected = PublishSubject<ShortUser>()
     let back = PublishSubject<Void>()
+    let selectFilters = PublishSubject<Void>()
+    let filtersSelected = PublishSubject<HackMemberFilters>()
     let filterBy = PublishSubject<String>()
     let members = BehaviorSubject<[ShortUser]>(value: [])
     var hackId = 0
     private var filter = ""
+    private(set) var filters = HackMemberFilters()
     
     init(hackathonsApi: IHackathonsApi) {
         self.hackathonsApi = hackathonsApi
@@ -24,7 +31,9 @@ class HackMemberListViewModel: BaseViewModel {
     
     override func refreshContent(operationArgs: IOperationStateControl) {
         isLoading.onNext(true)
-        hackathonsApi.getUsersForHackathon(by: HackMemberListFilterDto(filter: filter), for: hackId)
+        var filterDto = HackMemberListFilterDto(filter: filter)
+        filterDto.tagIds = filters.tags?.map { $0.id }
+        hackathonsApi.getUsersForHackathon(by: filterDto, for: hackId)
             .done { [weak self] result in
                 guard let self = self else { return }
                 self.isLoading.onNext(false)
@@ -43,5 +52,10 @@ class HackMemberListViewModel: BaseViewModel {
             self.filter = result
             self.forceContentRefreshingAsync()
         }).disposed(by: disposeBag)
+        
+        filtersSelected.bind { [weak self] filters in
+            self?.filters = filters
+            self?.forceContentRefreshingAsync(operationArgs: OperationStateControl.Default)
+        }.disposed(by: disposeBag)
     }
 }

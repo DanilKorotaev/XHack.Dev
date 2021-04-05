@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import Swinject
 
 class HackMemberListCoordinator: BaseCoordinator<Void> {
     let viewModel: HackMemberListViewModel
@@ -30,6 +31,10 @@ class HackMemberListCoordinator: BaseCoordinator<Void> {
             self?.navigationController.popViewController(animated: true)
         }).disposed(by: disposeBag)
         
+        viewModel.selectFilters.bind { [weak self] hack in
+            self?.setFilters()
+        }.disposed(by: disposeBag)
+        
         viewModel.memberSelected.bind { member in
             self.toMemberProfile(member)
         }.disposed(by: disposeBag)
@@ -37,5 +42,17 @@ class HackMemberListCoordinator: BaseCoordinator<Void> {
     
     private func toMemberProfile(_ member: ShortUser) {
         self.toUserDetails(for: member.id)
+    }
+    
+    func setFilters() {
+        self.selectTags(self.viewModel.filters.tags ?? []).done { [weak self] result in
+            guard let self = self else { return }
+            switch (result) {
+            case .successfull(let selectedTags):
+                self.viewModel.filtersSelected.onNext(HackMemberFilters(tags:selectedTags))
+            default:
+                return
+            }
+        }
     }
 }

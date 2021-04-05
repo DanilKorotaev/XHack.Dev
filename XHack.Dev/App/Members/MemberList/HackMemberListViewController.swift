@@ -14,10 +14,11 @@ class HackMemberListViewController: BaseViewController<HackMemberListViewModel>,
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchTextField: CustomShadowTextField!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var filtersButton: UIButton!
     
     override func completeUi() {
         configureDismissKeyboard()
-        collectionView.register(ShortUserViewCell.nib, forCellWithReuseIdentifier: ShortUserViewCell.reuseIdentifier)
+        collectionView.register(ShortUserViewCell.self)
         let sideInset: CGFloat = 20
         collectionView.contentInset = UIEdgeInsets(top: 0, left: sideInset, bottom: 0, right: sideInset)
         let cellSize = CGSize(width: 95, height: 126)
@@ -43,24 +44,10 @@ class HackMemberListViewController: BaseViewController<HackMemberListViewModel>,
             })
             .disposed(by: disposeBag)
         
-//        collectionView.rx.modelSelected(Any.self)
-//            .asDriver()
-//            .drive(onNext: { [unowned self] user in
-//                print(user)
-////                dataContext.memberSelected.onNext(user)
-//            })
-//            .disposed(by: disposeBag)
         
-//        collectionView.rx.modelSelected(ShortUser.self)
-//            .subscribe(onNext: { user in
-//                print("\(user.name)")
-//            })
-////            .bind(to: dataContext.memberSelected)
-//            .disposed(by: disposeBag)
-        
-        collectionView.rx.itemSelected.bind { index in
-            print(index)
-        }.disposed(by: disposeBag)
+        collectionView.rx.modelSelected(ShortUser.self)
+            .bind(to: dataContext.memberSelected)
+            .disposed(by: disposeBag)
         
         dataContext.members
             .bind(to: collectionView.rx.items(cellIdentifier: ShortUserViewCell.reuseIdentifier)) { row, model, cell in
@@ -68,9 +55,11 @@ class HackMemberListViewController: BaseViewController<HackMemberListViewModel>,
                 cell.set(for: model)
             }.disposed(by: disposeBag)
         
-        
         backButton.rx.tap
             .bind(to: dataContext.back)
+            .disposed(by: disposeBag)
+        
+        (dataContext.selectFilters <- filtersButton.rx.tap)
             .disposed(by: disposeBag)
     }
 }
