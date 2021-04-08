@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class RootTabBarViewController: UITabBarController {
     var menuButton: UIButton!
@@ -26,10 +27,33 @@ class RootTabBarViewController: UITabBarController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setupMiddleButton()
+        navigationController?.navigationBar.barStyle = .default
+//        setupMiddleButton()
         tabBar.items?.forEach({ (item) in
             item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.red], for:.selected)
         })
+    }
+    
+    private func setUpSideMenu() {
+        // Define the menus
+        let leftMenuNavigationController = SideMenuNavigationController(rootViewController: DrawerMenuViewController.instantiate())
+        SideMenuManager.default.rightMenuNavigationController = leftMenuNavigationController
+        leftMenuNavigationController.navigationBar.isHidden = true
+
+        let style = SideMenuPresentationStyle.menuSlideIn
+        style.backgroundColor = .black
+        style.presentingEndAlpha = 0.32
+        style.onTopShadowColor = .black
+        style.onTopShadowRadius = 4.0
+        style.onTopShadowOpacity = 0.2
+        style.onTopShadowOffset = CGSize(width: 2.0, height: 0.0)
+
+        var settings = SideMenuSettings()
+        settings.presentationStyle = style
+        settings.menuWidth = max(round(min((UIScreen.main.bounds.width), (UIScreen.main.bounds.height)) * 0.75), 240)
+        settings.statusBarEndAlpha = 0.0
+
+        leftMenuNavigationController.settings = settings
     }
     
     func setupMiddleButton() {
