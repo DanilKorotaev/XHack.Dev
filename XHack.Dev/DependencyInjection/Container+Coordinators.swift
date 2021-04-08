@@ -36,5 +36,6 @@ extension Container {
         autoregister(BookmarksCoordinator.self, initializer: BookmarksCoordinator.init)
         autoregister(SelectTagsCoordinator.self, initializer: SelectTagsCoordinator.init)
         autoregister(HackFiltersCoordinator.self, initializer: HackFiltersCoordinator.init)
+        autoregister(TeamRequestCoordinator.self, initializer: TeamRequestCoordinator.init)
     }
 }

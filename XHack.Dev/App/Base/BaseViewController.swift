@@ -26,6 +26,10 @@ class BaseViewController<TViewModel>: UIViewController where TViewModel:BaseView
         return window.safeAreaInsets
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ensureLightThemeEnabled()

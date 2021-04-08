@@ -7,10 +7,6 @@ class TaskDetailViewController: UIViewController, Storyboarded {
     
     var viewModel: TaskDetailViewModel?
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDismissKeyboard()

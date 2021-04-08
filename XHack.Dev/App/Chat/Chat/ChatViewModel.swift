@@ -32,6 +32,8 @@ class ChatViewModel: BaseViewModel {
     let sendMessage = PublishSubject<Void>()
     let messageText = BehaviorSubject<String>(value: "")
     
+    private(set) var resultStatus = ChatResult.nothingChanged
+    
     init(chatsApi: IChatsApi, context: IAppContext, chatProcessor: ChatProccessable) {
         self.chatsApi = chatsApi
         self.context = context
@@ -104,10 +106,14 @@ class ChatViewModel: BaseViewModel {
     private func subscribeToChatProccessor() {
         chatProccessorDisposeBag = DisposeBag()
         chatProcessor.newMessageRecived.subscribe(onNext: { message in
-            guard let shortChat = self.shortChat,
-                  shortChat.id == message.chatId,
-                  !self.messages.contains(where: {$0.guid == message.guid})
-            else { return }
+            guard var shortChat = self.shortChat  else { return }
+            if shortChat.id == nil && self.messages.contains(where: {$0.guid == message.guid}) {
+                shortChat.update(message)
+                self.resultStatus = .chatCreated
+            }
+            guard shortChat.id == message.chatId,
+                  !self.messages.contains(where: {$0.guid == message.guid}) else { return }
+           
             let currentUserId = self.context.currentUser?.id ?? 0
             let isIncoming = currentUserId != message.sender.id
             self.messages.insert(ChatMessage(message, isIncoming: isIncoming), at: 0)

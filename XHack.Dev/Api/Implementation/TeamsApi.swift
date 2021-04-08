@@ -49,5 +49,5 @@ class TeamsApi: ITeamsApi {
     func update(team: UpdateTeamDto, for teamId: Int) -> Promise<LiteApiResult> {
         let url = endpointsProvider.gatewayUrl + "/api/teams/updateTeam/\(teamId)"
         return ApiHelpers.executeReliablyLitePostRequest(apiTokenHolder: apiTokenHolder, url: url, content: team)
-    }
+    }   
 }

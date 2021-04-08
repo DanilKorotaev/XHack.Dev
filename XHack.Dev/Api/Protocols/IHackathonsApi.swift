@@ -18,4 +18,5 @@ protocol IHackathonsApi {
     func getUsersForHackathon(by filter: HackMemberListFilterDto, for hackID: Int) -> Promise<ApiResult<[ShortUserDto]>>
     func getTeamsForHackathon(by filter: HackTeamListFilterDto, for hackID: Int) -> Promise<ApiResult<[TeamDto]>>
     func leaveTeam(for hackId: Int) -> Promise<LiteApiResult>
+    func unsingTeamFromHack(hackId: Int) -> Promise<LiteApiResult>
 }

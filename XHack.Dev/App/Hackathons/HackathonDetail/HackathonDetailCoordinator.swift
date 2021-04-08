@@ -95,7 +95,7 @@ class HackathonDetailCoordinator: BaseCoordinator<Void> {
         self.start(coordinator: coordinator).subscribe(onNext: { [weak self] result in
             switch (result){
             case .teamCreated:
-                self?.viewModel.showMessage(title: "Успех", message: "Команда создана")
+                self?.viewModel.forceContentRefreshingAsync()                
             default:
                 break
             }

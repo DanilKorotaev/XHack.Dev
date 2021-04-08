@@ -12,6 +12,7 @@ enum Json {
         let decoder = JSONDecoder()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.locale = Locale(identifier: "en_US")
         decoder.dateDecodingStrategy = .formatted(dateFormatter)
         return decoder
     }

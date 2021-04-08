@@ -41,9 +41,9 @@ class RootTabBarCoordinator : BaseCoordinator<Void> {
             .disposed(by: disposeBag)
         let hacksViewController = hacksCoordinator.navigationController
         
-        tabBarController.setViewControllers([homeViewController, hacksViewController, UIViewController(), chatListViewController, profileViewController], animated: true)
+        tabBarController.setViewControllers([homeViewController, hacksViewController, /*UIViewController(),*/ chatListViewController, profileViewController], animated: true)
         
-        self.tabBarController.tabBar.items![2].isEnabled = false
+//        self.tabBarController.tabBar.items![2].isEnabled = false
 
         tabBarController.middleButtonTap = {
             let chooseCoordinator =  Container.resolve(ChooseSearchCategoryCoordinator.self)

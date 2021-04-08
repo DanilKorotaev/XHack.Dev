@@ -14,12 +14,11 @@ class RegistrationViewController: BaseViewController<RegistrationViewModel>, Sto
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
-    }
     
     override func completeUi() {
         configureDismissKeyboard()
+        emailTextField.textContentType = .emailAddress
+        emailTextField.keyboardType = .emailAddress
     }
     
     override func applyBinding() {

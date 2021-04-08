@@ -13,6 +13,7 @@ struct TeamDto: Codable {
     var name: String
     var description: String
     var avatarUrl: String?
+    let captain: Int
     let members : [ShortUserDto]
     let tags: [TagDto] = []
 }

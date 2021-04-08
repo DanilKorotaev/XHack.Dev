@@ -40,7 +40,7 @@ class IncomingMessageViewCell: UITableViewCell {
         }
         nameLabel.text = model.user.name
         dateLabel.text = model.date.localDate().toString("dd:MM:yy HH:mm:ss")
-        avatarImageView.downloaded(from: model.user.avatarUrl ?? "")
+        avatarImageView.downloaded(from: model.user.avatarUrl, placeholder: "no_avatar")
         messageTextView.text = model.text
         
         let textSize = model.text.getRequiredTextSize(messageTextView.font!, maxTextWigth)

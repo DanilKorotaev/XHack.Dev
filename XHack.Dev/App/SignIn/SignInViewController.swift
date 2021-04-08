@@ -12,13 +12,10 @@ class SignInViewController: BaseViewController<SignInViewModel>, Storyboarded {
     @IBOutlet weak var scrollView: UIScrollView!
     
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func completeUi() {
         configureDismissKeyboard()
+        usernameTextField.textContentType = .emailAddress
+        usernameTextField.keyboardType = .emailAddress
     }
     
     override func applyBinding() {

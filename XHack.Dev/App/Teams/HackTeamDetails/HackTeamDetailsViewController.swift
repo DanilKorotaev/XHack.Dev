@@ -58,6 +58,7 @@ class HackTeamDetailsViewController: BaseViewController<HackTeamDetailsViewModel
                 self.setVisibilityChangeParticipantStateButton(participantType: teamDetail.participantType)
                 self.updateDescriptionHeight()
                 self.updateVisibilityShowAllButton()
+                self.hackDescriptionContainerView.isHidden = teamDetail.description.isEmpty
                 self.teamAvatarImageView.downloaded(from: teamDetail.avatarUrl)
                 teamDetail.isBookmarked.bind(onNext: { [weak self] value in
                     let bookmarkImage = value ? #imageLiteral(resourceName: "Star") : #imageLiteral(resourceName: "unselected_star")
@@ -158,9 +159,9 @@ class HackTeamDetailsViewController: BaseViewController<HackTeamDetailsViewModel
             case .member:
                 text = "Leave team"
             case .outgoingRequest:
-                text = "Withdraw request"
+                text = "Show requests"
             case .incomingRequest:
-                text = "Apply request"
+                text = "Show requests"
             default:
                 text = ""
         }

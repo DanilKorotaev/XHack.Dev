@@ -56,8 +56,10 @@ class UserDetailsCoordinator: BaseCoordinator<Void> {
         let coordinator = Container.resolve(ChatCoordinator.self)
         coordinator.navigationController = Container.resolve(MainScreeenProvider.self).navigationController
         coordinator.shortChat = ShortChat(id: user.chatId, user: ShortUser(id: user.id, name: user.name.value, avatarUrl: user.avatarUrl))
-        coordinator.start().subscribe(onNext: { _ in
-            
+        start(coordinator: coordinator).subscribe(onNext: { result in
+            if result == .chatCreated {
+                self.viewModel.forceContentRefreshingAsync()
+            }
         }).disposed(by: disposeBag)
     }
 }

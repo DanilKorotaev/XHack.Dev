@@ -36,6 +36,9 @@ extension UIImageView {
     }
     
     func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFill, placeholder: String? = nil) {
+        if let placeholder = placeholder {
+            self.image = UIImage(named: placeholder)
+        }
         guard let url = URL(string: link) else { return }
         downloaded(from: url, contentMode: mode, placeholder: placeholder)
     }

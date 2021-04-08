@@ -79,6 +79,10 @@ class ShortChat: Comparable {
         self.unreadCount.onNext(0)
     }
     
+    func update(_ newMessage: NewMessageData) {
+        id = id ?? newMessage.chatId
+    }
+    
     static func < (lhs: ShortChat, rhs: ShortChat) -> Bool {
         lhs.lastMessageDate.value.compare(rhs.lastMessageDate.value) == .orderedDescending
     }

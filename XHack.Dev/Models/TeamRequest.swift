@@ -20,4 +20,11 @@ class TeamRequest {
         team = ShortTeam(data.team)
         type = RequestType(rawValue: data.type) ?? .none
     }
+    
+    init(id: Int, userId: Int, team: ShortTeam, type: RequestType) {
+        self.id = id
+        self.userId = userId
+        self.team = team
+        self.type = type
+    }
 }

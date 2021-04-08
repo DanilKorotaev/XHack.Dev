@@ -17,5 +17,6 @@ struct TeamDetailsDto: Codable {
     var isBookmarked: Bool = true
     let chat: Int?
     let participantType: String
+    let requests: [ShortRequestDto]
     let tags: [TagDto] = []
 }

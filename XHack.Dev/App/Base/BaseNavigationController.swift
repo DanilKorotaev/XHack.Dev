@@ -13,4 +13,9 @@ class BaseNavigationController: UINavigationController {
         navigationBar.barTintColor = Constants.mainColor
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.ensureLightThemeEnabled()
+    }
 }

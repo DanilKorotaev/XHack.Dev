@@ -17,6 +17,8 @@ extension BaseViewModel {
     func selectTeam() -> Promise<SelectTeamResult> {
         Promise() { promise in
             let teamsApi = Container.resolve(ITeamsApi.self)
+            let context = Container.resolve(IAppContext.self)
+            let currentUserId = context.currentUser?.id
             teamsApi.getTeams().done { (result) in
                 if self.checkAndProcessApiResult(response: result, "") {
                     promise.fulfill(.rejected)
@@ -26,11 +28,13 @@ extension BaseViewModel {
                     promise.fulfill(.rejected)
                     return
                 }
-                if teamsDto.count == 0 {
+                let teams = teamsDto.filter { $0.captain == currentUserId}.map { ShortTeam(id: $0.id, name: $0.name, avatarUrl: $0.avatarUrl ?? "")}
+                
+                if teams.count == 0 {
                     promise.fulfill(.noTeams)
                     return
                 }
-                let teams = teamsDto.map { ShortTeam(id: $0.id, name: $0.name, avatarUrl: $0.avatarUrl ?? "")}
+               
                 if teams.count == 1,  let team = teams.first {
                     promise.fulfill(.successful(team))
                     return

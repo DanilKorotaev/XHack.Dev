@@ -93,7 +93,13 @@ class HackathonDetailViewModel: BaseViewModel {
     }
     
     private func cancelTeamParticitation() {
-        
+        hackathonsApi.unsingTeamFromHack(hackId: hackathonId).done { [weak self] (result) in
+            guard let self = self else { return }
+            if self.checkAndProcessApiResult(response: result, "отменить участие в хакатоне") {
+                return
+            }
+            self.forceContentRefreshingAsync()
+        }
     }
     
     private func leaveFromTeam() {

@@ -320,6 +320,13 @@
 		A3961B1C257AE5F800FC3541 /* TeamListCoordonator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961B1B257AE5F800FC3541 /* TeamListCoordonator.swift */; };
 		A3961B21257AE69600FC3541 /* TeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3961B20257AE69600FC3541 /* TeamListViewController.swift */; };
 		A3961B26257AE6A300FC3541 /* TeamList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3961B25257AE6A200FC3541 /* TeamList.storyboard */; };
+		A39C8F8F261F9E4100CE59C6 /* ShortRequestDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C8F8E261F9E4100CE59C6 /* ShortRequestDto.swift */; };
+		A39C8F95261FA2CD00CE59C6 /* TeamsRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C8F94261FA2CD00CE59C6 /* TeamsRequestViewModel.swift */; };
+		A39C8F9D261FA2DA00CE59C6 /* TeamsRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C8F9C261FA2DA00CE59C6 /* TeamsRequestViewController.swift */; };
+		A39C8FA2261FA2E900CE59C6 /* TeamsRequestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C8FA1261FA2E900CE59C6 /* TeamsRequestCoordinator.swift */; };
+		A39C8FA7261FA2F100CE59C6 /* TeamsRequest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39C8FA6261FA2F100CE59C6 /* TeamsRequest.storyboard */; };
+		A39C8FAD261FA57100CE59C6 /* TeamRequestViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C8FAB261FA57100CE59C6 /* TeamRequestViewCell.swift */; };
+		A39C8FAE261FA57100CE59C6 /* TeamRequestViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A39C8FAC261FA57100CE59C6 /* TeamRequestViewCell.xib */; };
 		A3A0E941259A8CE100634BED /* TopHackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A0E93F259A8CE100634BED /* TopHackViewCell.swift */; };
 		A3A0E942259A8CE100634BED /* TopHackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3A0E940259A8CE100634BED /* TopHackViewCell.xib */; };
 		A3A6F38825F6719700DCD778 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6F38725F6719700DCD778 /* Date+Extensions.swift */; };
@@ -783,6 +790,13 @@
 		A3961B1B257AE5F800FC3541 /* TeamListCoordonator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListCoordonator.swift; sourceTree = "<group>"; };
 		A3961B20257AE69600FC3541 /* TeamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListViewController.swift; sourceTree = "<group>"; };
 		A3961B25257AE6A200FC3541 /* TeamList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamList.storyboard; sourceTree = "<group>"; };
+		A39C8F8E261F9E4100CE59C6 /* ShortRequestDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortRequestDto.swift; sourceTree = "<group>"; };
+		A39C8F94261FA2CD00CE59C6 /* TeamsRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRequestViewModel.swift; sourceTree = "<group>"; };
+		A39C8F9C261FA2DA00CE59C6 /* TeamsRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRequestViewController.swift; sourceTree = "<group>"; };
+		A39C8FA1261FA2E900CE59C6 /* TeamsRequestCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRequestCoordinator.swift; sourceTree = "<group>"; };
+		A39C8FA6261FA2F100CE59C6 /* TeamsRequest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamsRequest.storyboard; sourceTree = "<group>"; };
+		A39C8FAB261FA57100CE59C6 /* TeamRequestViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRequestViewCell.swift; sourceTree = "<group>"; };
+		A39C8FAC261FA57100CE59C6 /* TeamRequestViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamRequestViewCell.xib; sourceTree = "<group>"; };
 		A3A0E93F259A8CE100634BED /* TopHackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHackViewCell.swift; sourceTree = "<group>"; };
 		A3A0E940259A8CE100634BED /* TopHackViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopHackViewCell.xib; sourceTree = "<group>"; };
 		A3A6F38725F6719700DCD778 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
@@ -1040,13 +1054,13 @@
 				A362EEDD25EC2CDA00AC147F /* TeamDetailsDto.swift */,
 				A39299B525EEE0610031C5B9 /* UserDetailsDto.swift */,
 				A3F3D7E825F3817600DACC7A /* TeamRequestDto.swift */,
-				A3F3D7F025F384F700DACC7A /* TeamRequest.swift */,
 				A3F3D82725F3C41700DACC7A /* ShortChatDto.swift */,
 				A3BDB60325F41ED2006CD2DC /* ShortChatMessageDto.swift */,
 				A3A6F39425F6A34C00DCD778 /* ChatMessageDto.swift */,
 				A38765DB26090C3200B83BE3 /* FileUrlResponse.swift */,
 				A3593B24260F86F3006C28B8 /* SentRequestsDto.swift */,
 				A3593B2E260FC761006C28B8 /* SentRequestDto.swift */,
+				A39C8F8E261F9E4100CE59C6 /* ShortRequestDto.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1315,6 +1329,7 @@
 				A3E1FCDC2610DB460008A823 /* InnerPage.swift */,
 				A3E1FD17261396670008A823 /* SelectedTag.swift */,
 				A30A2C7B261505C40033CD22 /* HackFilters.swift */,
+				A3F3D7F025F384F700DACC7A /* TeamRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1892,6 +1907,8 @@
 			children = (
 				A382164225FFD28800AF2BF5 /* SelectTeamViewCell.swift */,
 				A382164325FFD28800AF2BF5 /* SelectTeamViewCell.xib */,
+				A39C8FAB261FA57100CE59C6 /* TeamRequestViewCell.swift */,
+				A39C8FAC261FA57100CE59C6 /* TeamRequestViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1933,6 +1950,7 @@
 		A3961B0F257AE37E00FC3541 /* Teams */ = {
 			isa = PBXGroup;
 			children = (
+				A39C8F93261FA2A100CE59C6 /* TeamsRequest */,
 				A382164125FFD25700AF2BF5 /* Cell */,
 				A382162C25FFBD6D00AF2BF5 /* SelectTeam */,
 				A3E627FD25E6EAD300C1FBB7 /* HackTeamDetails */,
@@ -1940,6 +1958,17 @@
 				A36AF8CA2582D13F000E2852 /* TeamList */,
 			);
 			path = Teams;
+			sourceTree = "<group>";
+		};
+		A39C8F93261FA2A100CE59C6 /* TeamsRequest */ = {
+			isa = PBXGroup;
+			children = (
+				A39C8F94261FA2CD00CE59C6 /* TeamsRequestViewModel.swift */,
+				A39C8F9C261FA2DA00CE59C6 /* TeamsRequestViewController.swift */,
+				A39C8FA1261FA2E900CE59C6 /* TeamsRequestCoordinator.swift */,
+				A39C8FA6261FA2F100CE59C6 /* TeamsRequest.storyboard */,
+			);
+			path = TeamsRequest;
 			sourceTree = "<group>";
 		};
 		A3B7639525FD0BCC006D31D7 /* Targets */ = {
@@ -2281,6 +2310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A39C8FA7261FA2F100CE59C6 /* TeamsRequest.storyboard in Resources */,
 				16DD9CFD22DA6587007D9D2F /* Dashboard.storyboard in Resources */,
 				A3231284256F057900D3B97B /* Home.storyboard in Resources */,
 				16A1E5EC22DA40C40003F0DF /* SignIn.storyboard in Resources */,
@@ -2331,6 +2361,7 @@
 				A320CD4225FE4B7B002F8845 /* UserRequests.storyboard in Resources */,
 				A33579CF25E5614A00297E22 /* HackMemberList.storyboard in Resources */,
 				A362EF2B25EEC38200AC147F /* StartUpScreen.storyboard in Resources */,
+				A39C8FAE261FA57100CE59C6 /* TeamRequestViewCell.xib in Resources */,
 				A3441D3A25963B3200A3BFA5 /* ChatList.storyboard in Resources */,
 				A3593B922610C5E9006C28B8 /* BookmarkedHacks.storyboard in Resources */,
 				A3E6280E25E6EB5A00C1FBB7 /* HackTeamDetails.storyboard in Resources */,
@@ -2570,6 +2601,7 @@
 				A3BA56312573E896007AD591 /* ApiEndpoints.swift in Sources */,
 				A3961AF825799C8A00FC3541 /* BookmarkMessageDTO.swift in Sources */,
 				A3961B0025799D2C00FC3541 /* BookmarksApi.swift in Sources */,
+				A39C8FAD261FA57100CE59C6 /* TeamRequestViewCell.swift in Sources */,
 				A3BA567025743025007AD591 /* HTTPStatusCode.swift in Sources */,
 				16A1E5F522DA40C40003F0DF /* UIViewControllerExtensions.swift in Sources */,
 				A33579C525E5611F00297E22 /* HackMemberListCoordinator.swift in Sources */,
@@ -2611,6 +2643,7 @@
 				16DD9CFF22DA7508007D9D2F /* UserDataManager.swift in Sources */,
 				A33F448E25A7A56A00C16624 /* HackFilterDialogViewController.swift in Sources */,
 				A3705608258544E0005650FD /* HackathonDetail.swift in Sources */,
+				A39C8FA2261FA2E900CE59C6 /* TeamsRequestCoordinator.swift in Sources */,
 				A3F3D83225F3D11600DACC7A /* ChatType.swift in Sources */,
 				A3593B2A260FC734006C28B8 /* SentRequest.swift in Sources */,
 				A3E1FCF8261245FD0008A823 /* BaseViewModel+Files.swift in Sources */,
@@ -2621,6 +2654,7 @@
 				16A1E63E22DA40C40003F0DF /* AlertMessage.swift in Sources */,
 				16DD9CFB22DA5C24007D9D2F /* SignInRequest.swift in Sources */,
 				A3BA56842574380D007AD591 /* ApiTokensHolder.swift in Sources */,
+				A39C8F9D261FA2DA00CE59C6 /* TeamsRequestViewController.swift in Sources */,
 				16A1E61122DA40C40003F0DF /* Container+ViewModels.swift in Sources */,
 				A3E1FD242613A8FF0008A823 /* BaseViewModel+Tags.swift in Sources */,
 				A3961A79257986A100FC3541 /* ITeamsApi.swift in Sources */,
@@ -2661,6 +2695,7 @@
 				A37055FE25852F5D005650FD /* DialogActionInfo.swift in Sources */,
 				A31F574B25A5EAD500759B61 /* OperationStateControl.swift in Sources */,
 				A3961A9D25798A9E00FC3541 /* CreateRequestToUserDto.swift in Sources */,
+				A39C8F95261FA2CD00CE59C6 /* TeamsRequestViewModel.swift in Sources */,
 				A3C2B2DC25FCFCFD00BA103F /* ScrollDirection.swift in Sources */,
 				A33F448425A7A55200C16624 /* HackFilterDialogCoordinator.swift in Sources */,
 				A32D3C9A25E2BD14002633B8 /* EditProfileCoordinator.swift in Sources */,
@@ -2697,6 +2732,7 @@
 				A3961A6A257980EA00FC3541 /* UpdateProfileDtoRequest.swift in Sources */,
 				A320CD4C25FE4B9A002F8845 /* UserRequestsViewModel.swift in Sources */,
 				A3B7639125FD0B20006D31D7 /* PageLoadingBehaviour.swift in Sources */,
+				A39C8F8F261F9E4100CE59C6 /* ShortRequestDto.swift in Sources */,
 				A3DC594125E45B05009DA204 /* ShortUserDto.swift in Sources */,
 				16A1E63C22DA40C40003F0DF /* ErrorResponse.swift in Sources */,
 				A382163D25FFBDDF00AF2BF5 /* SelectTeamCoordinator.swift in Sources */,

@@ -24,6 +24,7 @@ class HackTeamDetailsViewModel: BaseViewModel {
     let canBookmark = BehaviorSubject<Bool>(value: false)
     let canChat = BehaviorSubject<Bool>(value: false)
     let canEdit = BehaviorSubject<Bool>(value: false)
+    let showRequests = PublishSubject<[TeamRequest]>()
     var teamId: Int = 0
         
     init(teamsApi: ITeamsApi, bookmarksApi: IBookmarksApi, requestsApi: IRequestsApi) {
@@ -88,9 +89,9 @@ class HackTeamDetailsViewModel: BaseViewModel {
         case .member:
             leaveFromTeamExecute()
         case .outgoingRequest:
-            withdrawRequestExecute()
+            fallthrough
         case .incomingRequest:
-            acceptRequestExecute()
+            showRequests.onNext(team.requests)
         default:
             // do nothing
             break

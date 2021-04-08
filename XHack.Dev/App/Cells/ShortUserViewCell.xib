@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6G-yh-JB5">
                         <rect key="frame" x="0.0" y="0.0" width="87" height="109"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_hack_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="JX5-9U-lja">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="JX5-9U-lja">
                                 <rect key="frame" x="0.0" y="0.0" width="87" height="87"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JX5-9U-lja" secondAttribute="height" multiplier="1:1" id="aST-6y-XPE"/>
@@ -63,7 +63,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="default_hack_avatar" width="120" height="114.5"/>
+        <image name="no_avatar" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -80,7 +80,8 @@ class ChatViewController: BaseViewController<ChatViewModel>, Storyboarded {
         }
         
         nameLabel.text = dataContext.shortChat?.name
-        avatarImageView.downloaded(from: dataContext.shortChat?.avatarUrl ?? "")
+        let avatarPlaceholder = dataContext.shortChat?.type == .p2p ? "no_avatar" : "no_group_avatar"
+        avatarImageView.downloaded(from: dataContext.shortChat?.avatarUrl ?? "", placeholder: avatarPlaceholder)
         
         dataContext.messages.rx_elements()
             .bind(to: tableView.rx.items) { (tableView, row, item) -> UITableViewCell in

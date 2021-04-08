@@ -13,7 +13,7 @@ class OutgoingMessageViewCell: UITableViewCell {
 
     private var disposeBag: DisposeBag!
     
-    let MinDateWidth: CGFloat = 130
+    let MinDateWidth: CGFloat = 140
     let LeftPadding: CGFloat = 30
     let RightPadding: CGFloat = 10
     let TextSidePadding: CGFloat = 10

@@ -28,8 +28,8 @@ class ShortHackathon {
         isOnline = data.isOnline
         avatarUrl = data.avatarUrl
         tags = ObservableArray(data.tags.map { Tag($0) }.sorted(by: { $0.name.count < $1.name.count }))
-        startDate = data.startDate
-        endDate = data.endDate
+        startDate = Date.from(data.startDate)
+        endDate = Date.from(data.endDate)
         dateText = "\(startDate.toString("dd.MM.yyyy")) - \(endDate.toString("dd.MM.yyyy"))"
     }
 }

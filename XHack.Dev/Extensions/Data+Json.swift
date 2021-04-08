@@ -5,6 +5,11 @@ extension Data {
         if type == VoidResponse.self {
             return VoidResponse() as? T
         }
-        return try? Json.decoder.decode(type, from: self)
+        do {
+            return try Json.decoder.decode(type, from: self)
+        } catch {
+            print(error.localizedDescription)
+        }
+        return nil
     }
 }

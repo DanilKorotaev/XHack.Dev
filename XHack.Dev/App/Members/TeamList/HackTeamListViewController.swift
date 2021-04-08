@@ -18,16 +18,10 @@ class HackTeamListViewController: BaseViewController<HackTeamListViewModel>, Sto
         
     override func completeUi() {
         configureDismissKeyboard()
-        tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
-        tableView.register(HackTeamViewCell.nib, forCellReuseIdentifier: HackTeamViewCell.reuseIdentifier)
+        tableView.delegate = self
+        tableView.register(HackTeamViewCell.self)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
-    }
-    
     
     override func applyBinding() {
         guard let dataContext = dataContext else {
@@ -40,19 +34,19 @@ class HackTeamListViewController: BaseViewController<HackTeamListViewModel>, Sto
             }
             .disposed(by: disposeBag)
         
-        tableView.rx.modelSelected(Team.self)
-            .bind(to: dataContext.teamSelected)
-            .disposed(by: disposeBag)
+//        tableView.rx.modelSelected(Team.self)
+//            .bind(to: dataContext.teamSelected)
+//            .disposed(by: disposeBag)
         
-        searchTextField.rx.text.orEmpty
-            .asDriver()
-            .skip(3)
-            .debounce(2)
-            .distinctUntilChanged()
-            .drive(onNext: {value in
-                dataContext.filterBy.onNext(value)
-            })
-            .disposed(by: disposeBag)
+//        searchTextField.rx.text.orEmpty
+//            .asDriver()
+//            .skip(3)
+//            .debounce(2)
+//            .distinctUntilChanged()
+//            .drive(onNext: {value in
+//                dataContext.filterBy.onNext(value)
+//            })
+//            .disposed(by: disposeBag)
         
         backButton.rx.tap
             .bind(to: dataContext.back)
@@ -60,3 +54,12 @@ class HackTeamListViewController: BaseViewController<HackTeamListViewModel>, Sto
     }
 }
 
+extension HackTeamListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let dataContext = dataContext  else {
+            return
+        }
+        let team = dataContext.teams[indexPath.row]
+        dataContext.teamSelected.onNext(team)
+    }
+}

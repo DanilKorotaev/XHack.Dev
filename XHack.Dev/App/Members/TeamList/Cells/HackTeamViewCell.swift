@@ -22,7 +22,7 @@ class HackTeamViewCell: UITableViewCell {
     }
     
     func set(_ model: Team) {
-        avatarImageView.downloaded(from: model.avatarUrl ?? "")
+        avatarImageView.downloaded(from: model.avatarUrl ?? "", placeholder: "no_group_avatar")
         nameLabel.text = model.name
         countMembersLabel.text = "Participants: \(model.members.count)"
         descriptionLabel.text = model.description

@@ -10,6 +10,13 @@ import Foundation
 
 extension Date {
     
+    static func from(_ iso: String, format: String = "yyyy-MM-dd'T'HH:mm:ss.SSSZ") -> Date{
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        formatter.locale = Locale(identifier: "en_US")
+        return formatter.date(from: iso) ?? Date()
+    }
+    
     func toString(_ format: String, timeZone: TimeZone = .current) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format

@@ -9,28 +9,38 @@
 import Foundation
 import RxSwift
 
-class ChatCoordinator: BaseCoordinator<Void> {
+enum ChatResult {
+    case changed
+    case chatCreated
+    case nothingChanged
+}
+
+class ChatCoordinator: BaseCoordinator<ChatResult> {
     let viewModel: ChatViewModel
     let context: IAppContext
     var shortChat: ShortChat? = .none
+    
+    let result = PublishSubject<ChatResult>()
     
     init(viewModel: ChatViewModel, context: IAppContext) {
         self.viewModel = viewModel
         self.context = context
     }
     
-    override func start() -> Observable<Void> {
+    override func start() -> Observable<ChatResult> {
         let viewController = ChatViewController.instantiate()
         viewController.dataContext = viewModel
         viewModel.shortChat = shortChat
         applyBindings()
         navigationController.pushViewController(viewController, animated: true)
         
-        return Observable.empty()
+        return result
     }
+    
     
     private func applyBindings() {
         viewModel.back.bind { _ in
+            self.result.onNext(self.viewModel.resultStatus)
             self.navigationController.popViewController(animated: true)
         }.disposed(by: disposeBag)
         

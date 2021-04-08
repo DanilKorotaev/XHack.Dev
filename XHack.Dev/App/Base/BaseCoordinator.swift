@@ -16,7 +16,7 @@ import RxSwift
 class BaseCoordinator<ResultType>: NSObject {
     public typealias CoordinationResult = ResultType
     
-    var navigationController = UINavigationController()
+    var navigationController: UINavigationController = BaseNavigationController()
 //    var childCoordinators = [Coordinator]()
 //    var parentCoordinator: Coordinator?
     private let identifier = UUID()
