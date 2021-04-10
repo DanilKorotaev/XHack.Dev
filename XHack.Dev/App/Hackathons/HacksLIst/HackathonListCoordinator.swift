@@ -24,7 +24,7 @@ class HackathonListCoordinator: BaseCoordinator<Void> {
         let viewController = HackathonListViewController.instantiate()
         viewController.dataContext = viewModel
         navigationController.pushViewController(viewController, animated: true)
-        navigationController.tabBarItem = UITabBarItem(title: "hacks", image: #imageLiteral(resourceName: "Calendar"), selectedImage: #imageLiteral(resourceName: "Calendar_tap").withRenderingMode(.alwaysOriginal))       
+        navigationController.tabBarItem = UITabBarItem(title: "Хакатоны", image: #imageLiteral(resourceName: "Calendar"), selectedImage: #imageLiteral(resourceName: "Calendar_tap").withRenderingMode(.alwaysOriginal))
         setupBinding()
         return Observable.empty()
     }

@@ -34,15 +34,15 @@ class BookmarksCoordinator: BaseCoordinator<Void> {
         
         let hackController = BookmarkedHacksViewController.instantiate()
         hackController.dataContext = bookmarkedHacksViewModel
-        let hackPage = InnerPage(title: "Hacks", viewModel: bookmarkedHacksViewModel, view: hackController)
+        let hackPage = InnerPage(title: "Хакатоны", viewModel: bookmarkedHacksViewModel, view: hackController)
         
         let teamsController = BookmarkedTeamsViewController.instantiate()
         teamsController.dataContext = bookmarkedTeamsViewModel
-        let teamPage = InnerPage(title: "Teams", viewModel: bookmarkedTeamsViewModel, view: teamsController)
+        let teamPage = InnerPage(title: "Команды", viewModel: bookmarkedTeamsViewModel, view: teamsController)
         
         let usersController = BookmarkedUsersViewController.instantiate()
         usersController.dataContext = bookmarkedUsersViewModel
-        let userPage = InnerPage(title: "Users", viewModel: bookmarkedUsersViewModel, view: usersController)
+        let userPage = InnerPage(title: "Пользователи", viewModel: bookmarkedUsersViewModel, view: usersController)
         
         viewController.pages = [hackPage, teamPage, userPage]
         

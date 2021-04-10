@@ -113,11 +113,11 @@ class HackathonDetailViewModel: BaseViewModel {
     }
     
     private func joinToHack() {
-        let likeTeam = DialogActionInfo(title: "Team") { [weak self] in
+        let likeTeam = DialogActionInfo(title: "Как команда") { [weak self] in
             self?.createTeam.onNext(())
         }
         
-        let likeMember = DialogActionInfo(title: "Member") { [weak self] in
+        let likeMember = DialogActionInfo(title: "") { [weak self] in
             guard let self = self else { return }
             self.hackathonsApi.willGoHackathon(id: self.hackathonId)
                 .done { (result) in
@@ -128,9 +128,9 @@ class HackathonDetailViewModel: BaseViewModel {
                 }
         }
         
-        let cancel = DialogActionInfo(title: "Cancel", isAccented: false)
+        let cancel = DialogActionInfo(title: "Отменить", isAccented: false)
         
-        let message = AlertDialogMessage(title: "", message: "Как хотите участвовать?", dialogActions: [likeTeam, likeMember, cancel], style: .actionSheet)
+        let message = AlertDialogMessage(title: "Участник", message: "Как хотите участвовать?", dialogActions: [likeTeam, likeMember, cancel], style: .actionSheet)
         
         messanger.publish(message: message)
     }

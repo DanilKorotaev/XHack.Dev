@@ -15,7 +15,7 @@ class ChatListCoordinator: BaseCoordinator<Void> {
         vc.dataContext = viewModel
         navigationController.viewControllers = [vc]
         navigationController.navigationBar.isHidden = true
-        navigationController.tabBarItem = UITabBarItem(title: "messenger", image: #imageLiteral(resourceName: "Messanger"), selectedImage: #imageLiteral(resourceName: "Messanger_tap").withRenderingMode(.alwaysOriginal))
+        navigationController.tabBarItem = UITabBarItem(title: "Чаты", image: #imageLiteral(resourceName: "Messanger"), selectedImage: #imageLiteral(resourceName: "Messanger_tap").withRenderingMode(.alwaysOriginal))
         applyBindings()
         return Observable.empty()
     }

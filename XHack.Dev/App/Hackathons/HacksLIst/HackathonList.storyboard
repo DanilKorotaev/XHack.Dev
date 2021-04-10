@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,28 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHH-Gq-IzL">
-                                <rect key="frame" x="0.0" y="94" width="414" height="802"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There will be hackathons" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev0-Zf-N2M">
-                                        <rect key="frame" x="30" y="388" width="354" height="26.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Ev0-Zf-N2M" secondAttribute="trailing" constant="30" id="BeE-95-evv"/>
-                                    <constraint firstItem="Ev0-Zf-N2M" firstAttribute="leading" secondItem="lHH-Gq-IzL" secondAttribute="leading" constant="30" id="TNv-MI-Nfp"/>
-                                    <constraint firstItem="Ev0-Zf-N2M" firstAttribute="centerY" secondItem="lHH-Gq-IzL" secondAttribute="centerY" id="nlf-5J-zEi"/>
-                                </constraints>
-                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z0d-jo-neo" userLabel="TableView">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <sections/>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJc-ff-ZtQ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hackathons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VX-sv-plR">
-                                        <rect key="frame" x="20" y="10.5" width="128" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Хакатоны" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VX-sv-plR">
+                                        <rect key="frame" x="20" y="10.5" width="109.5" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -61,11 +48,23 @@
                                     <constraint firstItem="6VX-sv-plR" firstAttribute="centerY" secondItem="YJc-ff-ZtQ" secondAttribute="centerY" id="vrz-df-lAq"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z0d-jo-neo" userLabel="TableView">
-                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
-                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <sections/>
-                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHH-Gq-IzL">
+                                <rect key="frame" x="0.0" y="94" width="414" height="802"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Здесь будут хакатоны" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev0-Zf-N2M">
+                                        <rect key="frame" x="30" y="388" width="354" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ev0-Zf-N2M" secondAttribute="trailing" constant="30" id="BeE-95-evv"/>
+                                    <constraint firstItem="Ev0-Zf-N2M" firstAttribute="leading" secondItem="lHH-Gq-IzL" secondAttribute="leading" constant="30" id="TNv-MI-Nfp"/>
+                                    <constraint firstItem="Ev0-Zf-N2M" firstAttribute="centerY" secondItem="lHH-Gq-IzL" secondAttribute="centerY" id="nlf-5J-zEi"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oPy-07-pZT"/>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -85,6 +84,7 @@
                     </view>
                     <connections>
                         <outlet property="searchButton" destination="ol3-gS-aJ8" id="UAp-CM-5qo"/>
+                        <outlet property="stubView" destination="lHH-Gq-IzL" id="ZHx-mD-Nu0"/>
                         <outlet property="tableView" destination="z0d-jo-neo" id="7ty-DY-DMk"/>
                     </connections>
                 </viewController>
@@ -95,8 +95,5 @@
     </scenes>
     <resources>
         <image name="ic_search_gray" width="13.5" height="13.5"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

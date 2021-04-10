@@ -25,11 +25,11 @@
                                         <state key="normal" image="left_arrow"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hey-cK-Vbs" customClass="SecondaryButton" customModule="XHack_Dev" customModuleProvider="target">
-                                        <rect key="frame" x="349" y="5" width="45" height="30"/>
+                                        <rect key="frame" x="314" y="5" width="80" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="45" id="zgC-5l-HYp"/>
+                                            <constraint firstAttribute="width" constant="80" id="zgC-5l-HYp"/>
                                         </constraints>
-                                        <state key="normal" title="Save"/>
+                                        <state key="normal" title="Сохранить"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -93,7 +93,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKN-X0-sC5">
                                                         <rect key="frame" x="0.0" y="200" width="414" height="56"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available for searching" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOM-Hu-N5X">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Показывать в поиске" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOM-Hu-N5X">
                                                                 <rect key="frame" x="30" y="18" width="295" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -116,8 +116,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3R-4K-lio">
                                                         <rect key="frame" x="0.0" y="266" width="414" height="70"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwe-QW-Eew">
-                                                                <rect key="frame" x="52" y="0.0" width="38" height="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwe-QW-Eew">
+                                                                <rect key="frame" x="52" y="0.0" width="28.5" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" red="0.41176470588235292" green="0.41176470588235292" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -144,8 +144,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2o7-9Y-w4D">
                                                         <rect key="frame" x="0.0" y="346" width="414" height="70"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specialization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dC-F1-TJ5">
-                                                                <rect key="frame" x="52" y="0.0" width="90" height="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Специализация" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dC-F1-TJ5">
+                                                                <rect key="frame" x="52" y="0.0" width="106.5" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -172,8 +172,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVF-pf-Hrm">
                                                         <rect key="frame" x="0.0" y="426" width="414" height="88"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Networks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyF-1X-66u">
-                                                                <rect key="frame" x="52" y="0.0" width="61.5" height="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Контакты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyF-1X-66u">
+                                                                <rect key="frame" x="52" y="0.0" width="64" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -183,7 +183,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="48" id="Okr-I8-Euo"/>
                                                                 </constraints>
-                                                                <state key="normal" title="New contact">
+                                                                <state key="normal" title="Добавить контакт">
                                                                     <color key="titleColor" red="0.63137254901960782" green="0.63137254901960782" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                             </button>
@@ -209,21 +209,21 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1w-Vb-iMp">
                                                         <rect key="frame" x="0.0" y="524" width="414" height="100"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dp-eZ-3S1">
-                                                                <rect key="frame" x="52" y="15" width="33.5" height="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Навыки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Dp-eZ-3S1">
+                                                                <rect key="frame" x="52" y="15" width="51.5" height="17"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNk-UD-rDk" customClass="SecondaryButton" customModule="XHack_Dev" customModuleProvider="target">
-                                                                <rect key="frame" x="95.5" y="13.5" width="55" height="20"/>
+                                                                <rect key="frame" x="113.5" y="13.5" width="85" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="2kD-4x-cih"/>
-                                                                    <constraint firstAttribute="width" constant="55" id="deb-kM-xtS"/>
+                                                                    <constraint firstAttribute="width" constant="85" id="deb-kM-xtS"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                <state key="normal" title="Edit" image="ic_edit">
+                                                                <state key="normal" title="Изменить" image="ic_edit">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                             </button>

@@ -24,15 +24,15 @@
                                 <rect key="frame" x="10" y="65" width="280" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzj-J7-In2" customClass="SecondaryButton" customModule="XHack_Dev" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="140" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="115" height="48"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
                                             <action selector="cancelButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5Ch-JL-VvU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4D-vj-p6U" customClass="PrimaryButton" customModule="XHack_Dev" customModuleProvider="target">
-                                        <rect key="frame" x="148" y="0.0" width="132" height="48"/>
-                                        <state key="normal" title="Apply"/>
+                                        <rect key="frame" x="123" y="0.0" width="157" height="48"/>
+                                        <state key="normal" title="Принять"/>
                                         <connections>
                                             <action selector="applyButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KsP-Cc-zEJ"/>
                                         </connections>

@@ -137,7 +137,7 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
     
     @IBAction func showAllTaped(_ sender: UIButton) {
         isAllDescriptionShown = !isAllDescriptionShown
-        let title = isAllDescriptionShown ? "Collapse" : "Show All"
+        let title = isAllDescriptionShown ? "Свернуть" : "Показать"
         showAllDescriptionButton.setTitle(title, for: .normal)
         updateDescriptionHeight()
     }
@@ -196,13 +196,13 @@ class HackathonDetailViewController: BaseViewController<HackathonDetailViewModel
         var text = ""
         switch(participantType) {
             case .none:
-                text = "Join"
+                text = "Присоединиться"
             case .teamMember:
-                text = "Leave team"
+                text = "Выйти из команды"
             case .single:
-                text = "Cancel participation"
+                text = "Отменить участие"
             case .teamCaptain:
-                text = "Cancel team participation"
+                text = "Отменить участие команды"
             @unknown default:
                 text = ""
         }

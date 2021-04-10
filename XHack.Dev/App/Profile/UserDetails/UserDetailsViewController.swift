@@ -100,9 +100,9 @@ class UserDetailsViewController: BaseViewController<UserDetailsViewModel>, Story
         var text = ""
         self.changeRelationStateView.isHidden = false
         if requests.isEmpty {
-            text = "Send request"
+            text = "Пригласить в команду"
         } else {
-            text = "Show requests"
+            text = "Показать запросы"
         }
         changeRelationStateButton.setTitle(text, for: .normal)
     }

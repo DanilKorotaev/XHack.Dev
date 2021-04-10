@@ -21,8 +21,8 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create team for hack" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fre-0C-qBD">
-                                        <rect key="frame" x="51" y="15" width="333" height="20"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <rect key="frame" x="51" y="13" width="333" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -37,8 +37,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Fre-0C-qBD" firstAttribute="top" secondItem="4Uv-pD-cb8" secondAttribute="top" constant="15" id="0OQ-VG-Zru"/>
-                                    <constraint firstAttribute="bottom" secondItem="Fre-0C-qBD" secondAttribute="bottom" constant="15" id="7LK-zO-E3V"/>
+                                    <constraint firstItem="Fre-0C-qBD" firstAttribute="centerY" secondItem="4Uv-pD-cb8" secondAttribute="centerY" id="AgJ-rj-zoK"/>
                                     <constraint firstAttribute="height" constant="50" id="LRc-eP-RJk"/>
                                     <constraint firstItem="Fre-0C-qBD" firstAttribute="leading" secondItem="4J0-0i-BSM" secondAttribute="trailing" constant="13" id="XV1-Np-CfH"/>
                                     <constraint firstItem="4J0-0i-BSM" firstAttribute="centerY" secondItem="4Uv-pD-cb8" secondAttribute="centerY" id="ZF4-6S-EMB"/>
@@ -103,8 +102,8 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phk-Mb-eYt">
-                                                        <rect key="frame" x="52" y="10" width="38" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phk-Mb-eYt">
+                                                        <rect key="frame" x="52" y="10" width="69" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>

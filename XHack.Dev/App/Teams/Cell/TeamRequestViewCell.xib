@@ -24,7 +24,7 @@
                                 <rect key="frame" x="10" y="62" width="280" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JF-AP-Jod" customClass="SecondaryButton" customModule="XHack_Dev" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="141.5" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="115.5" height="48"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
@@ -32,9 +32,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crl-MB-F5g" customClass="PrimaryButton" customModule="XHack_Dev" customModuleProvider="target">
-                                        <rect key="frame" x="149.5" y="0.0" width="130.5" height="48"/>
+                                        <rect key="frame" x="123.5" y="0.0" width="156.5" height="48"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                        <state key="normal" title="Apply"/>
+                                        <state key="normal" title="Принять"/>
                                         <connections>
                                             <action selector="applyButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WdG-6G-DRt"/>
                                         </connections>

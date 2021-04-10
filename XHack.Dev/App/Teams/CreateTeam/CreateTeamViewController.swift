@@ -29,8 +29,8 @@ class CreateTeamViewController: BaseViewController<CreateTeamViewModel>, Storybo
     override func applyBinding() {
         guard let dataContext = dataContext else { return }
         
-        titleLabel.text = dataContext.mode == .edit ? "Edit team" : "Create team"
-        createTeamButton.setTitle(dataContext.mode == .edit ? "Save" : "Create", for: .normal) 
+        titleLabel.text = dataContext.mode == .edit ? "Редактирование команды" : "Создание команды"
+        createTeamButton.setTitle(dataContext.mode == .edit ? "Сохранить" : "Создать", for: .normal)
         (teamNameTextField.rx.text.orEmpty <-> dataContext.teamName)
             .disposed(by: disposeBag)
         

@@ -33,15 +33,15 @@ class TeamRequestViewCell: UITableViewCell {
         self.model = model
         var teamText = ""
         if model.type == .userToTeam {
-            typeLabel.text = "Outgoing request"
-            teamText = "To team: "
+            typeLabel.text = "Исходящий запрос"
+            teamText = "В команду: "
             applyButton.isHidden = true
-            cancelButton.setTitle("Withdraw", for: .normal)
+            cancelButton.setTitle("Отозвать", for: .normal)
         } else {
-            typeLabel.text = "Incoming request"
-            teamText = "To team: "
+            typeLabel.text = "Входящий запрос"
+            teamText = "От команды: "
             applyButton.isHidden = false
-            cancelButton.setTitle("Cancel", for: .normal)
+            cancelButton.setTitle("Отклонить", for: .normal)
         }
         teamLabel.text = teamText + model.team.name
     }

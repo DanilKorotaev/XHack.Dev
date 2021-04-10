@@ -59,7 +59,7 @@ class HackTeamDetailsViewController: BaseViewController<HackTeamDetailsViewModel
                 self.updateDescriptionHeight()
                 self.updateVisibilityShowAllButton()
                 self.hackDescriptionContainerView.isHidden = teamDetail.description.isEmpty
-                self.teamAvatarImageView.downloaded(from: teamDetail.avatarUrl)
+                self.teamAvatarImageView.downloaded(from: teamDetail.avatarUrl, placeholder: "no_group_avatar")
                 teamDetail.isBookmarked.bind(onNext: { [weak self] value in
                     let bookmarkImage = value ? #imageLiteral(resourceName: "Star") : #imageLiteral(resourceName: "unselected_star")
                     self?.bookmarkButton.setImage(bookmarkImage, for: .normal)
@@ -111,7 +111,7 @@ class HackTeamDetailsViewController: BaseViewController<HackTeamDetailsViewModel
     
     @IBAction func showAllTaped(_ sender: UIButton) {
         isAllDescriptionShown = !isAllDescriptionShown
-        let title = isAllDescriptionShown ? "Collapse" : "Show All"
+        let title = isAllDescriptionShown ? "Свернуть" : "Показать"
         showAllDescriptionButton.setTitle(title, for: .normal)
         updateDescriptionHeight()
     }
@@ -155,13 +155,13 @@ class HackTeamDetailsViewController: BaseViewController<HackTeamDetailsViewModel
         var text = ""
         switch(participantType) {
             case .none:
-                text = "Send request"
+                text = "Отправить запрос"
             case .member:
-                text = "Leave team"
+                text = "Покинуть команды"
             case .outgoingRequest:
-                text = "Show requests"
+                text = "Показать запросы"
             case .incomingRequest:
-                text = "Show requests"
+                text = "Показать запросы"
             default:
                 text = ""
         }

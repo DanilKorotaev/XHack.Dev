@@ -17,5 +17,6 @@ class BaseNavigationController: UINavigationController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.ensureLightThemeEnabled()
+        tabBarItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.red], for:.selected)
     }
 }

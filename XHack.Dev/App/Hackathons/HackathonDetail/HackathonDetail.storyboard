@@ -27,7 +27,7 @@
                                         </constraints>
                                         <state key="normal" image="left_arrow"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hackathon Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oW-8j-sXG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карточка хакатона" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oW-8j-sXG">
                                         <rect key="frame" x="51" y="7" width="307" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                         <nil key="textColor"/>
@@ -171,8 +171,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z8O-4b-Ly8">
                                                         <rect key="frame" x="0.0" y="255" width="414" height="73"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dz4-cN-JEL">
-                                                                <rect key="frame" x="30" y="10" width="57.5" height="26"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Даты проведения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dz4-cN-JEL">
+                                                                <rect key="frame" x="30" y="10" width="183" height="26"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="26" id="2vV-N8-PDa"/>
                                                                 </constraints>
@@ -206,8 +206,8 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ntu-0I-8PX">
                                                                 <rect key="frame" x="11" y="11" width="392" height="98"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9v-Va-gxi">
-                                                                        <rect key="frame" x="20" y="12" width="112.5" height="26"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9v-Va-gxi">
+                                                                        <rect key="frame" x="20" y="12" width="103" height="26"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="26" id="Df7-LJ-bvn"/>
                                                                         </constraints>
@@ -266,7 +266,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7r-s5-gxD">
                                                         <rect key="frame" x="0.0" y="467" width="414" height="157"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members looking for teams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlN-DL-VUi">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ищут команду" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlN-DL-VUi">
                                                                 <rect key="frame" x="30" y="10" width="374" height="26"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="26" id="x05-O4-dbO"/>
@@ -320,7 +320,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7c-pb-NNC">
                                                         <rect key="frame" x="0.0" y="624" width="414" height="162"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teams looking for members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpO-Be-Py5">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ищут специалистов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpO-Be-Py5">
                                                                 <rect key="frame" x="30" y="10" width="374" height="26"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="26" id="buC-px-SNU"/>

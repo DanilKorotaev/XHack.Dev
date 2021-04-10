@@ -13,6 +13,8 @@ class HackathonListViewController: BaseViewController<HackathonListViewModel>, S
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var stubView: UIView!
+    
     var tableHeaderView: HackListHeaderView!
     var refreshHandler: RefreshHandler!
     
@@ -65,7 +67,7 @@ class HackathonListViewController: BaseViewController<HackathonListViewModel>, S
             .disposed(by: disposeBag)
         
         dataContext.hackathons.bind { [weak self] hacks in
-            self?.tableView.isHidden = hacks.isEmpty
+            self?.stubView.isHidden = !hacks.isEmpty
         }.disposed(by: disposeBag)
         
         tableView.rx.modelSelected(ShortHackathon.self)

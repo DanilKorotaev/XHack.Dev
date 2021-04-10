@@ -95,8 +95,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dmj-vt-uQs">
                                                         <rect key="frame" x="0.0" y="276" width="414" height="382"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skils" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P21-fU-qAW">
-                                                                <rect key="frame" x="30" y="10" width="46.5" height="21"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Навыки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P21-fU-qAW">
+                                                                <rect key="frame" x="30" y="10" width="79.5" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="rwG-En-cbG"/>
                                                                 </constraints>
@@ -138,8 +138,8 @@
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                             </textView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZU-P1-H1D">
-                                                                <rect key="frame" x="30" y="15" width="89.5" height="21"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Контакты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZU-P1-H1D">
+                                                                <rect key="frame" x="30" y="15" width="98.5" height="21"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="z8P-DK-zy0"/>
                                                                 </constraints>
@@ -229,7 +229,7 @@
                                         </constraints>
                                         <state key="normal" image="left_arrow"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdM-Mn-3X0">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карточка пользователя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdM-Mn-3X0">
                                         <rect key="frame" x="51" y="7" width="333" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                         <nil key="textColor"/>

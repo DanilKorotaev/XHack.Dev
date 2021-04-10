@@ -28,19 +28,19 @@
                                         </constraints>
                                         <state key="normal" image="left_arrow"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJJ-2y-Xdp">
-                                        <rect key="frame" x="51" y="12" width="109.5" height="26.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите навыки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJJ-2y-Xdp">
+                                        <rect key="frame" x="51" y="12" width="183.5" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojn-hY-iaz" customClass="SecondaryButton" customModule="XHack_Dev" customModuleProvider="target">
-                                        <rect key="frame" x="314" y="11" width="80" height="28"/>
+                                        <rect key="frame" x="344" y="11" width="50" height="28"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="P2q-RN-v1T"/>
+                                            <constraint firstAttribute="width" constant="50" id="P2q-RN-v1T"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="Select all"/>
+                                        <state key="normal" title="Все"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -64,7 +64,7 @@
                                     <constraint firstAttribute="height" constant="48" id="gy7-pU-R5S"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Сохранить"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gg0-q8-xax"/>
