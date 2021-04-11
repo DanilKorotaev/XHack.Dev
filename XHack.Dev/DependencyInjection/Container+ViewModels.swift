@@ -41,5 +41,6 @@ extension Container {
         autoregister(SelectTagsViewModel.self, initializer: SelectTagsViewModel.init)
         autoregister(HackFiltersViewModel.self, initializer: HackFiltersViewModel.init)
         autoregister(TeamRequestViewModel.self, initializer: TeamRequestViewModel.init)
+        autoregister(SearchTeamViewModel.self, initializer: SearchTeamViewModel.init)
     }
 }

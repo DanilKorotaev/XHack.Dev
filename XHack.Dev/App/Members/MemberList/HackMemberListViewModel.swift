@@ -20,17 +20,26 @@ class HackMemberListViewModel: BaseViewModel {
     let selectFilters = PublishSubject<Void>()
     let filtersSelected = PublishSubject<HackMemberFilters>()
     let filterBy = PublishSubject<String>()
-    let members = BehaviorSubject<[ShortUser]>(value: [])
+    var members = ObservableArray<ShortUser>([])
     var hackId = 0
     private var filter = ""
     private(set) var filters = HackMemberFilters()
+    
+    let refresh = PublishSubject<Void>()
+    let isRefreshing = BehaviorSubject<Bool>(value: false)
     
     init(hackathonsApi: IHackathonsApi) {
         self.hackathonsApi = hackathonsApi
     }
     
     override func refreshContent(operationArgs: IOperationStateControl) {
-        isLoading.onNext(true)
+        guard !isRefreshing.value, !isLoading.value else { return }
+        if operationArgs.isManuallyTriggered {
+            isRefreshing.onNext(true)
+        } else {
+            isLoading.onNext(true)
+        }
+        self.isRefreshing.onNext(false)
         var filterDto = HackMemberListFilterDto(filter: filter)
         filterDto.tagIds = filters.tags?.map { $0.id }
         hackathonsApi.getUsersForHackathon(by: filterDto, for: hackId)
@@ -40,8 +49,14 @@ class HackMemberListViewModel: BaseViewModel {
                 if self.checkAndProcessApiResult(response: result, "загрузить список участников хакатона") {
                     return
                 }
-                guard let content = result.content else { self.showMessage(title: "Ошибка", message: "Не удалось загрузить список участников хакатона"); return}
-                self.members.onNext(content.map({ShortUser($0)}))
+                guard let content = result.content else {
+                    self.showMessage(title: "Ошибка", message: "Не удалось загрузить список участников хакатона");
+                    return
+                }
+                if operationArgs.isManuallyTriggered {
+                    self.members.removeAll()
+                }
+                self.members.append(contentsOf: content.map({ShortUser($0)}))
             }
     }
     
@@ -56,6 +71,10 @@ class HackMemberListViewModel: BaseViewModel {
         filtersSelected.bind { [weak self] filters in
             self?.filters = filters
             self?.forceContentRefreshingAsync(operationArgs: OperationStateControl.Default)
+        }.disposed(by: disposeBag)
+        
+        refresh.bind { [weak self] _ in
+            self?.forceContentRefreshingAsync(operationArgs: OperationStateControl.ManuallyTriggered)
         }.disposed(by: disposeBag)
     }
 }

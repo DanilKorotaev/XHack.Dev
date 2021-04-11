@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search Team View Controller-->
+        <scene sceneID="tHn-GR-BDE">
+            <objects>
+                <viewController storyboardIdentifier="SearchTeamViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jM4-j6-aYw" customClass="SearchTeamViewController" customModule="XHack_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="apx-tc-THg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yk5-3e-Kz6">
+                                <rect key="frame" x="0.0" y="94" width="414" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Поиск" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bx0-g0-oHh" customClass="CustomShadowTextField" customModule="XHack_Dev" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="5" width="374" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="P1R-mJ-5zL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bx0-g0-oHh" secondAttribute="trailing" constant="20" id="Cai-IA-dZf"/>
+                                    <constraint firstAttribute="bottom" secondItem="bx0-g0-oHh" secondAttribute="bottom" constant="15" id="Kyp-CJ-fbv"/>
+                                    <constraint firstItem="bx0-g0-oHh" firstAttribute="top" secondItem="Yk5-3e-Kz6" secondAttribute="top" constant="5" id="WX4-ej-Oat"/>
+                                    <constraint firstItem="bx0-g0-oHh" firstAttribute="leading" secondItem="Yk5-3e-Kz6" secondAttribute="leading" constant="20" id="gQZ-As-6vi"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luG-an-L4J">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlG-Ul-FuH">
+                                        <rect key="frame" x="20" y="12.5" width="18" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="Cma-t4-5s7"/>
+                                            <constraint firstAttribute="width" constant="18" id="eiz-fd-E4P"/>
+                                        </constraints>
+                                        <state key="normal" image="left_arrow"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ищут специалистов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGE-Eu-mMK">
+                                        <rect key="frame" x="51" y="12" width="206.5" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="GlG-Ul-FuH" firstAttribute="centerY" secondItem="luG-an-L4J" secondAttribute="centerY" id="3MV-NB-2sF"/>
+                                    <constraint firstItem="HGE-Eu-mMK" firstAttribute="leading" secondItem="GlG-Ul-FuH" secondAttribute="trailing" constant="13" id="66P-GJ-9Tg"/>
+                                    <constraint firstAttribute="height" constant="50" id="ecN-BY-Hjb"/>
+                                    <constraint firstItem="HGE-Eu-mMK" firstAttribute="centerY" secondItem="luG-an-L4J" secondAttribute="centerY" id="lsx-lK-Qw2"/>
+                                    <constraint firstItem="GlG-Ul-FuH" firstAttribute="leading" secondItem="luG-an-L4J" secondAttribute="leading" constant="20" id="mHc-3Y-qmw"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fLc-qW-7ng">
+                                <rect key="frame" x="0.0" y="154" width="414" height="742"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="73i-Xk-duo"/>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="73i-Xk-duo" firstAttribute="trailing" secondItem="fLc-qW-7ng" secondAttribute="trailing" id="1Wt-oh-MqY"/>
+                            <constraint firstItem="luG-an-L4J" firstAttribute="trailing" secondItem="73i-Xk-duo" secondAttribute="trailing" id="2Xh-0Y-oDS"/>
+                            <constraint firstAttribute="bottom" secondItem="fLc-qW-7ng" secondAttribute="bottom" id="Ep2-iD-mr3"/>
+                            <constraint firstItem="luG-an-L4J" firstAttribute="top" secondItem="73i-Xk-duo" secondAttribute="top" id="In4-6b-2ME"/>
+                            <constraint firstItem="Yk5-3e-Kz6" firstAttribute="leading" secondItem="73i-Xk-duo" secondAttribute="leading" id="LEL-uX-QYm"/>
+                            <constraint firstItem="73i-Xk-duo" firstAttribute="trailing" secondItem="Yk5-3e-Kz6" secondAttribute="trailing" id="UO4-FU-RFE"/>
+                            <constraint firstItem="fLc-qW-7ng" firstAttribute="leading" secondItem="73i-Xk-duo" secondAttribute="leading" id="XM7-KE-NHU"/>
+                            <constraint firstItem="fLc-qW-7ng" firstAttribute="top" secondItem="Yk5-3e-Kz6" secondAttribute="bottom" id="byA-vm-NSx"/>
+                            <constraint firstItem="Yk5-3e-Kz6" firstAttribute="top" secondItem="luG-an-L4J" secondAttribute="bottom" id="gIn-C6-c3g"/>
+                            <constraint firstItem="luG-an-L4J" firstAttribute="leading" secondItem="73i-Xk-duo" secondAttribute="leading" id="pZd-Sk-klc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="GlG-Ul-FuH" id="cO8-ZF-EdU"/>
+                        <outlet property="searchTextField" destination="bx0-g0-oHh" id="Duo-pm-UEW"/>
+                        <outlet property="tableView" destination="fLc-qW-7ng" id="9gZ-ef-e8f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="poq-p0-5sT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-186" y="142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="left_arrow" width="18.5" height="8"/>
+    </resources>
+</document>

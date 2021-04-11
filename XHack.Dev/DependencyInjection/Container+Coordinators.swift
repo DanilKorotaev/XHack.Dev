@@ -37,5 +37,6 @@ extension Container {
         autoregister(SelectTagsCoordinator.self, initializer: SelectTagsCoordinator.init)
         autoregister(HackFiltersCoordinator.self, initializer: HackFiltersCoordinator.init)
         autoregister(TeamRequestCoordinator.self, initializer: TeamRequestCoordinator.init)
+        autoregister(SearchTeamCoordinator.self, initializer: SearchTeamCoordinator.init)
     }
 }

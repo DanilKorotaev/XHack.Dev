@@ -41,7 +41,7 @@ class EditProfileCoordinator: BaseCoordinator<EditProfileResult> {
     func applyBindings() {
         viewModel.chooseAvatar.bind { [weak self] _ in
             guard let self = self else { return }
-            self.imagePicker.present(from: self.viewController.chooseAvatarButton)
+            self.imagePicker.present()
         }.disposed(by: disposeBag)
         
         viewModel.back.bind { [weak self] _ in

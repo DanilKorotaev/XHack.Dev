@@ -17,23 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toE-OY-Ux1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lbh-TK-WZN">
                                 <rect key="frame" x="0.0" y="94" width="414" height="802"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There will be sended requests" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0q-Iw-kOP">
-                                        <rect key="frame" x="30" y="388" width="354" height="26.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="X0q-Iw-kOP" firstAttribute="centerY" secondItem="toE-OY-Ux1" secondAttribute="centerY" id="Czc-UN-AN7"/>
-                                    <constraint firstAttribute="trailing" secondItem="X0q-Iw-kOP" secondAttribute="trailing" constant="30" id="YMF-G9-syt"/>
-                                    <constraint firstItem="X0q-Iw-kOP" firstAttribute="leading" secondItem="toE-OY-Ux1" secondAttribute="leading" constant="30" id="dqg-V0-aYF"/>
-                                </constraints>
-                            </view>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eii-YT-bjX">
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
@@ -61,29 +48,31 @@
                                     <constraint firstItem="QYD-dI-dpD" firstAttribute="centerY" secondItem="Eii-YT-bjX" secondAttribute="centerY" id="s7Z-8a-9xm"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lbh-TK-WZN">
-                                <rect key="frame" x="0.0" y="94" width="414" height="802"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Здесь будут отправленные запросы" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0q-Iw-kOP">
+                                <rect key="frame" x="30" y="468.5" width="354" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ieu-xS-w0A"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Eii-YT-bjX" firstAttribute="trailing" secondItem="Ieu-xS-w0A" secondAttribute="trailing" id="3cX-fo-srY"/>
                             <constraint firstAttribute="bottom" secondItem="lbh-TK-WZN" secondAttribute="bottom" id="BPA-hf-iOY"/>
-                            <constraint firstItem="toE-OY-Ux1" firstAttribute="leading" secondItem="Ieu-xS-w0A" secondAttribute="leading" id="Uj5-d0-N8I"/>
+                            <constraint firstItem="Ieu-xS-w0A" firstAttribute="trailing" secondItem="X0q-Iw-kOP" secondAttribute="trailing" constant="30" id="CYm-p8-Eg3"/>
+                            <constraint firstItem="X0q-Iw-kOP" firstAttribute="centerY" secondItem="lbh-TK-WZN" secondAttribute="centerY" id="MRx-rv-Dsz"/>
                             <constraint firstItem="Eii-YT-bjX" firstAttribute="top" secondItem="Ieu-xS-w0A" secondAttribute="top" id="Y4Q-WB-4rK"/>
-                            <constraint firstItem="toE-OY-Ux1" firstAttribute="top" secondItem="Eii-YT-bjX" secondAttribute="bottom" id="ZDS-tH-Dov"/>
                             <constraint firstItem="lbh-TK-WZN" firstAttribute="leading" secondItem="Ieu-xS-w0A" secondAttribute="leading" id="eBl-6U-x4L"/>
-                            <constraint firstAttribute="bottom" secondItem="toE-OY-Ux1" secondAttribute="bottom" id="iAG-7D-nhq"/>
                             <constraint firstAttribute="trailing" secondItem="lbh-TK-WZN" secondAttribute="trailing" id="iUh-LS-eZc"/>
                             <constraint firstItem="lbh-TK-WZN" firstAttribute="top" secondItem="Eii-YT-bjX" secondAttribute="bottom" id="mpd-XC-b99"/>
-                            <constraint firstAttribute="trailing" secondItem="toE-OY-Ux1" secondAttribute="trailing" id="nDX-ho-50X"/>
+                            <constraint firstItem="X0q-Iw-kOP" firstAttribute="leading" secondItem="Ieu-xS-w0A" secondAttribute="leading" constant="30" id="qo3-vX-N49"/>
                             <constraint firstItem="Eii-YT-bjX" firstAttribute="leading" secondItem="Ieu-xS-w0A" secondAttribute="leading" id="r6L-Mh-dcn"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="RH1-x6-OWe" id="cy3-Sg-son"/>
+                        <outlet property="noRequestsLabel" destination="X0q-Iw-kOP" id="OyI-3X-pK9"/>
                         <outlet property="tableView" destination="lbh-TK-WZN" id="sFG-NL-i8d"/>
                     </connections>
                 </viewController>

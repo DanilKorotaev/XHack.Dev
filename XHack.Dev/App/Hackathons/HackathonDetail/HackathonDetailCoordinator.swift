@@ -75,9 +75,9 @@ class HackathonDetailCoordinator: BaseCoordinator<Void> {
     }
     
     private func toTeamSearch() {
-        let coordinator = Container.resolve(HackTeamListCoordinator.self)
+        let coordinator = Container.resolve(SearchTeamCoordinator.self)
         coordinator.navigationController = self.navigationController
-        coordinator.viewModel.hackId = viewModel.hackathonId
+        coordinator.hackId = viewModel.hackathonId
         self.start(coordinator: coordinator)
     }
     

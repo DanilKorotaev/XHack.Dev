@@ -13,11 +13,11 @@ class SessionService {
     private let accountSecureStorage: IAccountSecureStorage
     private let messager: IMessager
     private let signOutSubject = PublishSubject<Void>()
-    private let signInSubject = PublishSubject<Void>()
+    let signInSubject = PublishSubject<Void>()
     private let disposeBag = DisposeBag()
     private let authApi: AuthApi
     private let apiTokensHolder: IApiTokensHolder
-    private var token: Tokens?
+    var token: Tokens?
     
     // MARK: - Public properties
     
@@ -110,7 +110,7 @@ class SessionService {
         token = Tokens(accessToken: accessToken)
     }
     
-    private func setSession(email: String) throws {
+    func setSession(email: String) throws {
         guard let token = token else {
             throw SessionError.invalidToken
         }

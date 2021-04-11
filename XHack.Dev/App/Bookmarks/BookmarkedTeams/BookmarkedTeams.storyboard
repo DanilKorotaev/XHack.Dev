@@ -21,17 +21,27 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Здесь будут избранные команды" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jh4-qg-dnc">
+                                <rect key="frame" x="20" y="436" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9og-1o-Y8F"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="9og-1o-Y8F" firstAttribute="trailing" secondItem="Jh4-qg-dnc" secondAttribute="trailing" constant="20" id="3WI-Pl-HcW"/>
                             <constraint firstItem="FYp-UT-kHe" firstAttribute="leading" secondItem="9og-1o-Y8F" secondAttribute="leading" id="R6y-CX-DHA"/>
+                            <constraint firstItem="Jh4-qg-dnc" firstAttribute="centerY" secondItem="1HI-H1-fEw" secondAttribute="centerY" id="Rff-9i-Ncj"/>
                             <constraint firstItem="9og-1o-Y8F" firstAttribute="trailing" secondItem="FYp-UT-kHe" secondAttribute="trailing" id="Vnd-dA-8Wf"/>
                             <constraint firstAttribute="bottom" secondItem="FYp-UT-kHe" secondAttribute="bottom" id="vik-A2-gL9"/>
                             <constraint firstItem="FYp-UT-kHe" firstAttribute="top" secondItem="9og-1o-Y8F" secondAttribute="top" id="w72-nR-oHy"/>
+                            <constraint firstItem="Jh4-qg-dnc" firstAttribute="leading" secondItem="9og-1o-Y8F" secondAttribute="leading" constant="20" id="znI-y9-G7m"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="noTeamsLabel" destination="Jh4-qg-dnc" id="fdq-cl-K2a"/>
                         <outlet property="tableView" destination="FYp-UT-kHe" id="bef-uS-cSB"/>
                     </connections>
                 </viewController>

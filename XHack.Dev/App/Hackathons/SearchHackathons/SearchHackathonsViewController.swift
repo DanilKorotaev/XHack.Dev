@@ -17,7 +17,6 @@ class SearchHackathonsViewController: BaseViewController<SearchHackathonsViewMod
     @IBOutlet weak var filtersButton: UIButton!
     
     override func completeUi() {
-        configureDismissKeyboard()
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
         tableView.register(HackathonViewCell.nib, forCellReuseIdentifier: HackathonViewCell.reuseIdentifier)
@@ -38,10 +37,9 @@ class SearchHackathonsViewController: BaseViewController<SearchHackathonsViewMod
                 cell.set(for: model)
         }.disposed(by: disposeBag)
         
-        tableView.rx.modelSelected(ShortHackathon.self)
-            .bind(to: dataContext.didSelectHack)
+        (dataContext.didSelectHack <- tableView.rx.modelSelected(ShortHackathon.self))
             .disposed(by: disposeBag)
-        
+            
         searchTextField.rx.text.orEmpty
             .asDriver()
             .skip(3)

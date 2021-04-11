@@ -12,7 +12,12 @@ class BookmarkedHacksViewController: BaseViewController<BookmarkedHacksViewModel
     static var storyboard = AppStoryboard.bookmarkedHacks
     
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var noHackLabel: UILabel!
+    
+    lazy var refreshHandler: RefreshHandler = {
+        RefreshHandler(view: tableView)
+    }()
+    
     override func completeUi() {
         tableView.register(HackathonViewCell.self)
     }
@@ -21,6 +26,10 @@ class BookmarkedHacksViewController: BaseViewController<BookmarkedHacksViewModel
         guard let dataContext = dataContext else {
             return
         }
+        
+        dataContext.hackathons.rx_elements().bind { [weak self] hacks in
+            self?.noHackLabel.isHidden = !hacks.isEmpty
+        }.disposed(by: disposeBag)
         
         dataContext.hackathons.rx_elements()
             .bind(to: tableView.rx.items(cellIdentifier: HackathonViewCell.reuseIdentifier)) { row, model, cell in
@@ -31,6 +40,14 @@ class BookmarkedHacksViewController: BaseViewController<BookmarkedHacksViewModel
         
         tableView.rx.modelSelected(ShortHackathon.self)
             .bind(to: dataContext.hackSelect)
+            .disposed(by: disposeBag)
+        
+        dataContext.isRefreshing
+            .bind(to: refreshHandler.isRefreshing)
+            .disposed(by: disposeBag)
+        
+        refreshHandler.refresh
+            .bind(to: dataContext.refresh)
             .disposed(by: disposeBag)
     }
 }

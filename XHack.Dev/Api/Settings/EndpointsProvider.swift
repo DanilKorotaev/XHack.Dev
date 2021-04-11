@@ -21,6 +21,6 @@ class EndpointsProvider: ApiEndpoints {
     private let endpoints: ApiEndpoints
     
     init() {
-        endpoints = LocalEndpoints()
+        endpoints = TestEndpoints()
     }
 }

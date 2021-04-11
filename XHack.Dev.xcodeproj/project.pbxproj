@@ -327,6 +327,10 @@
 		A39C8FA7261FA2F100CE59C6 /* TeamsRequest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39C8FA6261FA2F100CE59C6 /* TeamsRequest.storyboard */; };
 		A39C8FAD261FA57100CE59C6 /* TeamRequestViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C8FAB261FA57100CE59C6 /* TeamRequestViewCell.swift */; };
 		A39C8FAE261FA57100CE59C6 /* TeamRequestViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A39C8FAC261FA57100CE59C6 /* TeamRequestViewCell.xib */; };
+		A39C8FB42621F59400CE59C6 /* SearchTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C8FB32621F59300CE59C6 /* SearchTeamViewController.swift */; };
+		A39C8FBC2621F5A900CE59C6 /* SearchTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C8FBB2621F5A900CE59C6 /* SearchTeamViewModel.swift */; };
+		A39C8FBE2621F5B300CE59C6 /* SearchTeam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A39C8FBD2621F5B300CE59C6 /* SearchTeam.storyboard */; };
+		A39C8FC32621F5F900CE59C6 /* SearchTeamCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C8FC22621F5F900CE59C6 /* SearchTeamCoordinator.swift */; };
 		A3A0E941259A8CE100634BED /* TopHackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A0E93F259A8CE100634BED /* TopHackViewCell.swift */; };
 		A3A0E942259A8CE100634BED /* TopHackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3A0E940259A8CE100634BED /* TopHackViewCell.xib */; };
 		A3A6F38825F6719700DCD778 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6F38725F6719700DCD778 /* Date+Extensions.swift */; };
@@ -797,6 +801,10 @@
 		A39C8FA6261FA2F100CE59C6 /* TeamsRequest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamsRequest.storyboard; sourceTree = "<group>"; };
 		A39C8FAB261FA57100CE59C6 /* TeamRequestViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRequestViewCell.swift; sourceTree = "<group>"; };
 		A39C8FAC261FA57100CE59C6 /* TeamRequestViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamRequestViewCell.xib; sourceTree = "<group>"; };
+		A39C8FB32621F59300CE59C6 /* SearchTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamViewController.swift; sourceTree = "<group>"; };
+		A39C8FBB2621F5A900CE59C6 /* SearchTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamViewModel.swift; sourceTree = "<group>"; };
+		A39C8FBD2621F5B300CE59C6 /* SearchTeam.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchTeam.storyboard; sourceTree = "<group>"; };
+		A39C8FC22621F5F900CE59C6 /* SearchTeamCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTeamCoordinator.swift; sourceTree = "<group>"; };
 		A3A0E93F259A8CE100634BED /* TopHackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHackViewCell.swift; sourceTree = "<group>"; };
 		A3A0E940259A8CE100634BED /* TopHackViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopHackViewCell.xib; sourceTree = "<group>"; };
 		A3A6F38725F6719700DCD778 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
@@ -1566,6 +1574,7 @@
 		A33579BA25E560DB00297E22 /* Members */ = {
 			isa = PBXGroup;
 			children = (
+				A39C8FB22621F55900CE59C6 /* SearchTeam */,
 				A33579D825E5726E00297E22 /* TeamList */,
 				A33579BB25E560E400297E22 /* MemberList */,
 			);
@@ -1971,6 +1980,17 @@
 			path = TeamsRequest;
 			sourceTree = "<group>";
 		};
+		A39C8FB22621F55900CE59C6 /* SearchTeam */ = {
+			isa = PBXGroup;
+			children = (
+				A39C8FB32621F59300CE59C6 /* SearchTeamViewController.swift */,
+				A39C8FBB2621F5A900CE59C6 /* SearchTeamViewModel.swift */,
+				A39C8FBD2621F5B300CE59C6 /* SearchTeam.storyboard */,
+				A39C8FC22621F5F900CE59C6 /* SearchTeamCoordinator.swift */,
+			);
+			path = SearchTeam;
+			sourceTree = "<group>";
+		};
 		A3B7639525FD0BCC006D31D7 /* Targets */ = {
 			isa = PBXGroup;
 			children = (
@@ -2317,6 +2337,7 @@
 				A37876672603C89E00D26E37 /* HackTeamViewCell.xib in Resources */,
 				A3593B5A2610C30E006C28B8 /* Bookmarks.storyboard in Resources */,
 				A382162E25FFBD8700AF2BF5 /* SelectTeam.storyboard in Resources */,
+				A39C8FBE2621F5B300CE59C6 /* SearchTeam.storyboard in Resources */,
 				A3961AA82579934900FC3541 /* SearchHackathons.storyboard in Resources */,
 				A3DD556F25A668720095A130 /* TeammateSearch.storyboard in Resources */,
 				A3FE7288260A85EC0040446C /* ShadowFextFieldViewCell.xib in Resources */,
@@ -2680,6 +2701,7 @@
 				A3877537256A9BC800F00EB0 /* IPushSubscriptionProvider.swift in Sources */,
 				A3BA56442573EAA2007AD591 /* Container+Api.swift in Sources */,
 				A309624F2569DDA4007E366E /* TaskDetailCoordinator.swift in Sources */,
+				A39C8FBC2621F5A900CE59C6 /* SearchTeamViewModel.swift in Sources */,
 				A3961ADF25799A7400FC3541 /* IBookmarksApi.swift in Sources */,
 				A31F575225A6640A00759B61 /* TeamSearchCoordinator.swift in Sources */,
 				A38765E12609341F00B83BE3 /* UpdatedProfileMessage.swift in Sources */,
@@ -2765,6 +2787,7 @@
 				16A1E62922DA40C40003F0DF /* DrawerMenuViewController.swift in Sources */,
 				A362EEEA25ED7A2800AC147F /* IncomingRequestViewCell.swift in Sources */,
 				A3FE72C0260BB25C0040446C /* UIImageView+Rx.swift in Sources */,
+				A39C8FC32621F5F900CE59C6 /* SearchTeamCoordinator.swift in Sources */,
 				16DD9CE622DA47D3007D9D2F /* HttpMethod.swift in Sources */,
 				A38CDB3B256C1A6200E8A732 /* RegistrationViewModel.swift in Sources */,
 				A362EF2625EEC37600AC147F /* StartUpScreenCoordinator.swift in Sources */,
@@ -2820,6 +2843,7 @@
 				A33579BD25E5610D00297E22 /* HackMemberListViewModel.swift in Sources */,
 				A3441D602597881C00A3BFA5 /* HackathonViewCell.swift in Sources */,
 				16DD9D1722DB2871007D9D2F /* TasksEndpoints.swift in Sources */,
+				A39C8FB42621F59400CE59C6 /* SearchTeamViewController.swift in Sources */,
 				A3BA565325742BA2007AD591 /* AuthApiExecuter.swift in Sources */,
 				A3A0E941259A8CE100634BED /* TopHackViewCell.swift in Sources */,
 				16A1E61D22DA40C40003F0DF /* DashboardCoordinator.swift in Sources */,

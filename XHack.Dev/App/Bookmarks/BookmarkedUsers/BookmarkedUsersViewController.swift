@@ -12,7 +12,12 @@ class BookmarkedUsersViewController: BaseViewController<BookmarkedUsersViewModel
     static var storyboard = AppStoryboard.bookmarkedUsers
     
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var noUsersLabel: UILabel!
+    
+    lazy var refreshHandler: RefreshHandler = {
+        RefreshHandler(view: collectionView)
+    }()
+    
     override func completeUi() {
         collectionView.register(ShortUserViewCell.nib, forCellWithReuseIdentifier: ShortUserViewCell.reuseIdentifier)
         let sideInset: CGFloat = 20
@@ -38,6 +43,18 @@ class BookmarkedUsersViewController: BaseViewController<BookmarkedUsersViewModel
             }.disposed(by: disposeBag)
         
         (dataContext.memberSelected <- collectionView.rx.modelSelected(ShortUser.self))
+            .disposed(by: disposeBag)
+        
+        dataContext.users.rx_elements().bind { [weak self] users in
+            self?.noUsersLabel.isHidden = !users.isEmpty
+        }.disposed(by: disposeBag)
+        
+        dataContext.isRefreshing
+            .bind(to: refreshHandler.isRefreshing)
+            .disposed(by: disposeBag)
+        
+        refreshHandler.refresh
+            .bind(to: dataContext.refresh)
             .disposed(by: disposeBag)
     }
 }

@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +19,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJF-ws-UK9">
                                 <rect key="frame" x="0.0" y="97" width="414" height="70"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search hacks" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tx-vR-2YH" customClass="CustomShadowTextField" customModule="XHack_Dev" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Поиск" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tx-vR-2YH" customClass="CustomShadowTextField" customModule="XHack_Dev" customModuleProvider="target">
                                         <rect key="frame" x="30" y="10" width="354" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="atA-vS-RZ3"/>
@@ -40,7 +39,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZW3-Ib-ypV" userLabel="HeaderView">
                                 <rect key="frame" x="0.0" y="44" width="414" height="53"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members looking for teams" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ir-Zi-VrP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ищут команду" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ir-Zi-VrP">
                                         <rect key="frame" x="51" y="15" width="318" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
@@ -76,7 +75,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NZP-0X-Ix8">
                                 <rect key="frame" x="0.0" y="167" width="414" height="729"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lFE-P9-EKE">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -87,7 +86,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="emP-R2-zcX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ZW3-Ib-ypV" firstAttribute="top" secondItem="emP-R2-zcX" secondAttribute="top" id="Bni-8C-if1"/>
                             <constraint firstItem="NZP-0X-Ix8" firstAttribute="top" secondItem="mJF-ws-UK9" secondAttribute="bottom" id="Gjs-a1-3t6"/>
@@ -116,8 +115,5 @@
     <resources>
         <image name="ic_filters" width="17" height="11"/>
         <image name="left_arrow" width="18.5" height="8"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

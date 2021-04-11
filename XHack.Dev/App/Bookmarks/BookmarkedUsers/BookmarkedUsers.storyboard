@@ -19,7 +19,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WwI-C3-rNg">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oKQ-6J-2mk">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -28,18 +28,28 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Здесь будут избранные пользователи" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXV-by-aTt">
+                                <rect key="frame" x="20" y="436" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yWE-Lp-Ovs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="CXV-by-aTt" firstAttribute="leading" secondItem="yWE-Lp-Ovs" secondAttribute="leading" constant="20" id="G9S-0f-4LX"/>
                             <constraint firstItem="WwI-C3-rNg" firstAttribute="top" secondItem="yWE-Lp-Ovs" secondAttribute="top" id="Noa-Ia-bZB"/>
                             <constraint firstItem="WwI-C3-rNg" firstAttribute="leading" secondItem="yWE-Lp-Ovs" secondAttribute="leading" id="NzX-C2-ZLS"/>
                             <constraint firstItem="yWE-Lp-Ovs" firstAttribute="trailing" secondItem="WwI-C3-rNg" secondAttribute="trailing" id="SeV-xi-NCP"/>
+                            <constraint firstItem="yWE-Lp-Ovs" firstAttribute="trailing" secondItem="CXV-by-aTt" secondAttribute="trailing" constant="20" id="TBt-CK-fM0"/>
                             <constraint firstAttribute="bottom" secondItem="WwI-C3-rNg" secondAttribute="bottom" id="hLU-lM-crU"/>
+                            <constraint firstItem="CXV-by-aTt" firstAttribute="centerY" secondItem="CJP-pf-rc3" secondAttribute="centerY" id="ovx-0f-Xm6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="WwI-C3-rNg" id="rfY-6m-Dt8"/>
+                        <outlet property="noUsersLabel" destination="CXV-by-aTt" id="we5-ZU-rz4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="od6-Lg-FLC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

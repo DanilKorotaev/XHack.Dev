@@ -16,8 +16,11 @@ class HackMemberListViewController: BaseViewController<HackMemberListViewModel>,
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var filtersButton: UIButton!
     
+    lazy var refreshHandler: RefreshHandler = {
+        RefreshHandler(view: collectionView)
+    }()
+    
     override func completeUi() {
-        configureDismissKeyboard()
         collectionView.register(ShortUserViewCell.self)
         let sideInset: CGFloat = 20
         collectionView.contentInset = UIEdgeInsets(top: 0, left: sideInset, bottom: 0, right: sideInset)
@@ -49,7 +52,7 @@ class HackMemberListViewController: BaseViewController<HackMemberListViewModel>,
             .bind(to: dataContext.memberSelected)
             .disposed(by: disposeBag)
         
-        dataContext.members
+        dataContext.members.rx_elements()
             .bind(to: collectionView.rx.items(cellIdentifier: ShortUserViewCell.reuseIdentifier)) { row, model, cell in
                 guard let cell = cell as? ShortUserViewCell else { return }
                 cell.set(for: model)
@@ -60,6 +63,14 @@ class HackMemberListViewController: BaseViewController<HackMemberListViewModel>,
             .disposed(by: disposeBag)
         
         (dataContext.selectFilters <- filtersButton.rx.tap)
+            .disposed(by: disposeBag)
+        
+        dataContext.isRefreshing
+            .bind(to: refreshHandler.isRefreshing)
+            .disposed(by: disposeBag)
+        
+        refreshHandler.refresh
+            .bind(to: dataContext.refresh)
             .disposed(by: disposeBag)
     }
 }

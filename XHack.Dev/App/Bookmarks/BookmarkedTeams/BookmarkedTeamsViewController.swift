@@ -12,7 +12,13 @@ class BookmarkedTeamsViewController: BaseViewController<BookmarkedTeamsViewModel
     static var storyboard = AppStoryboard.bookmarkedTeams
     
     @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var noTeamsLabel: UILabel!
+    
+    lazy var refreshHandler: RefreshHandler = {
+        RefreshHandler(view: tableView)
+    }()
+    
+    
     override func completeUi() {
         tableView.register(HackTeamViewCell.self)
     }
@@ -31,6 +37,18 @@ class BookmarkedTeamsViewController: BaseViewController<BookmarkedTeamsViewModel
         
         tableView.rx.modelSelected(Team.self)
             .bind(to: dataContext.teamSelected)
+            .disposed(by: disposeBag)
+        
+        dataContext.teams.rx_elements().bind { [weak self] teams in
+            self?.noTeamsLabel.isHidden = !teams.isEmpty
+        }.disposed(by: disposeBag)
+        
+        dataContext.isRefreshing
+            .bind(to: refreshHandler.isRefreshing)
+            .disposed(by: disposeBag)
+        
+        refreshHandler.refresh
+            .bind(to: dataContext.refresh)
             .disposed(by: disposeBag)
     }
 }

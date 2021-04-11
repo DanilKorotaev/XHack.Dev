@@ -16,7 +16,7 @@ class PageBarControlView: UIView {
         self.addSubview(stackView)
         stackView.joinToSuperView()
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
         return stackView
     }()
     var items = PublishSubject<[InnerPage]>()
@@ -37,8 +37,7 @@ class PageBarControlView: UIView {
     private func setupView() {
         setupRx()
     }
-
-
+    
     private func commonInit(items: [InnerPage]) {
         guard items.count > 0 else { return }
         let widthItem = self.bounds.width / CGFloat(items.count)

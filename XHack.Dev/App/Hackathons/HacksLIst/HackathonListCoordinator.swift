@@ -43,7 +43,8 @@ class HackathonListCoordinator: BaseCoordinator<Void> {
         
     func toSelectHackFilters() {
         let coordinator = Container.resolve(SearchHackathonsCoordinator.self)
-        coordinator.navigationController = self.navigationController
+        let provider = Container.resolve(MainScreeenProvider.self)
+        coordinator.navigationController = provider.navigationController
         self.start(coordinator: coordinator)
 //        let coordinator = Container.resolve(HackFilterDialogCoordinator.self)
 //        let navController = rootNavigationController ?? navigationController

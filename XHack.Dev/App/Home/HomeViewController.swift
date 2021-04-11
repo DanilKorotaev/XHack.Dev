@@ -11,6 +11,7 @@ class HomeViewController: BaseViewController<HomeViewModel>, Storyboarded {
     @IBOutlet weak var changeSearchableStateSwitch: UISwitch!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var SentRequestButton: UIButton!
+    @IBOutlet weak var noRequestsLabel: UILabel!
     
     var dataSource:  RxTableViewSectionedReloadDataSource<RequestSection> = {
         let dataSource = RxTableViewSectionedReloadDataSource<RequestSection>(configureCell: { (_, tableView, indexPath, target) -> UITableViewCell in
@@ -44,7 +45,7 @@ class HomeViewController: BaseViewController<HomeViewModel>, Storyboarded {
             .disposed(by: disposeBag)
         
         dataContext.requestSections.bind { [weak self] sections in
-            self?.tableView.isHidden = sections.isEmpty
+            self?.noRequestsLabel.isHidden = !sections.isEmpty
         }.disposed(by: disposeBag)
         
         tableView.rx.modelSelected(ParticipantRequestable.self)
@@ -55,17 +56,8 @@ class HomeViewController: BaseViewController<HomeViewModel>, Storyboarded {
             .bind(to: dataContext.refresh)
             .disposed(by: disposeBag)
         
-        changeSearchableStateSwitch.rx.isOn
-            .skip(1)
-            .bind(to: dataContext.changeSearchableState)
-            .disposed(by: disposeBag)
-        
         tableView.rx
             .setDelegate(self)
-            .disposed(by: disposeBag)
-        
-        dataContext.isAvailableForSearching
-            .bind(to: changeSearchableStateSwitch.rx.isOn)
             .disposed(by: disposeBag)
         
         (dataContext.SentRequest <- SentRequestButton.rx.tap)

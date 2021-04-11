@@ -13,10 +13,13 @@ import RxDataSources
 class SentRequestViewController: BaseViewController<SentRequestViewModel>, Storyboarded {
     static var storyboard = AppStoryboard.sentRequest
     
-    var refreshHandler: RefreshHandler!
+    lazy var refreshHandler: RefreshHandler = {
+        RefreshHandler(view: tableView)
+    }()
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noRequestsLabel: UILabel!
     
     var dataSource:  RxTableViewSectionedReloadDataSource<RequestSection> = {
         let dataSource = RxTableViewSectionedReloadDataSource<RequestSection>(configureCell: { (_, tableView, indexPath, target) -> UITableViewCell in
@@ -34,7 +37,6 @@ class SentRequestViewController: BaseViewController<SentRequestViewModel>, Story
     
     
     override func completeUi() {
-        refreshHandler = RefreshHandler(view: tableView)
         tableView.register(IncomingRequestViewCell.self)
         tableView.delegate = self
     }
@@ -49,11 +51,19 @@ class SentRequestViewController: BaseViewController<SentRequestViewModel>, Story
             .bind(to: dataContext.requestSelected)
             .disposed(by: disposeBag)
         
-        dataContext.requestSections.bind { [weak self] sections in
-            self?.tableView.isHidden = sections.isEmpty
+        dataContext.requestSections.rx_elements().bind { [weak self] sections in
+            self?.noRequestsLabel.isHidden = !sections.isEmpty
         }.disposed(by: disposeBag)
         
-        dataContext.requestSections.bind(to: tableView.rx.items(dataSource: dataSource))
+        dataContext.requestSections.rx_elements().bind(to: tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
+        dataContext.isRefreshing
+            .bind(to: refreshHandler.isRefreshing)
+            .disposed(by: disposeBag)
+        
+        refreshHandler.refresh
+            .bind(to: dataContext.refresh)
             .disposed(by: disposeBag)
     }
 }

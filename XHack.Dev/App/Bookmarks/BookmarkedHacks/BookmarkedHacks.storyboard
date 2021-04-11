@@ -21,17 +21,27 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Здесь будут избранные хакатоны" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Au-ql-5k2">
+                                <rect key="frame" x="20" y="436" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Us-bo-plf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="URy-Gu-E5I" firstAttribute="top" secondItem="5Us-bo-plf" secondAttribute="top" id="3ux-46-p8f"/>
                             <constraint firstAttribute="bottom" secondItem="URy-Gu-E5I" secondAttribute="bottom" id="5pd-Er-g0c"/>
+                            <constraint firstItem="0Au-ql-5k2" firstAttribute="leading" secondItem="5Us-bo-plf" secondAttribute="leading" constant="20" id="IRX-0n-9Ml"/>
+                            <constraint firstItem="5Us-bo-plf" firstAttribute="trailing" secondItem="0Au-ql-5k2" secondAttribute="trailing" constant="20" id="Igx-Od-Ukw"/>
                             <constraint firstItem="5Us-bo-plf" firstAttribute="trailing" secondItem="URy-Gu-E5I" secondAttribute="trailing" id="jEo-oH-Ony"/>
                             <constraint firstItem="URy-Gu-E5I" firstAttribute="leading" secondItem="5Us-bo-plf" secondAttribute="leading" id="ncv-To-Urw"/>
+                            <constraint firstItem="0Au-ql-5k2" firstAttribute="centerY" secondItem="qqr-Hp-tSP" secondAttribute="centerY" id="o8K-6D-vzL"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="noHackLabel" destination="0Au-ql-5k2" id="K1R-Rb-tVh"/>
                         <outlet property="tableView" destination="URy-Gu-E5I" id="ZR4-iA-qkt"/>
                     </connections>
                 </viewController>

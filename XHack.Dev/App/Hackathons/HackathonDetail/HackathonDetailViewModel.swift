@@ -117,7 +117,7 @@ class HackathonDetailViewModel: BaseViewModel {
             self?.createTeam.onNext(())
         }
         
-        let likeMember = DialogActionInfo(title: "") { [weak self] in
+        let likeMember = DialogActionInfo(title: "Как участник") { [weak self] in
             guard let self = self else { return }
             self.hackathonsApi.willGoHackathon(id: self.hackathonId)
                 .done { (result) in
@@ -130,7 +130,7 @@ class HackathonDetailViewModel: BaseViewModel {
         
         let cancel = DialogActionInfo(title: "Отменить", isAccented: false)
         
-        let message = AlertDialogMessage(title: "Участник", message: "Как хотите участвовать?", dialogActions: [likeTeam, likeMember, cancel], style: .actionSheet)
+        let message = AlertDialogMessage(title: "", message: "Как хотите участвовать?", dialogActions: [likeTeam, likeMember, cancel], style: .actionSheet)
         
         messanger.publish(message: message)
     }

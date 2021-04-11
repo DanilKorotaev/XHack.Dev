@@ -17,45 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyN-9d-qbO">
-                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Показывать меня в поиске" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b36-rw-Hzp">
-                                        <rect key="frame" x="15" y="17.5" width="214" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2Ku-T8-lzZ">
-                                        <rect key="frame" x="350" y="12.5" width="51" height="31"/>
-                                    </switch>
-                                </subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MTp-gj-fzA">
+                                <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="I4Z-FQ-zAD"/>
-                                    <constraint firstItem="2Ku-T8-lzZ" firstAttribute="centerY" secondItem="hyN-9d-qbO" secondAttribute="centerY" id="S7Q-VF-x8F"/>
-                                    <constraint firstAttribute="trailing" secondItem="2Ku-T8-lzZ" secondAttribute="trailing" constant="15" id="bLA-kK-7NU"/>
-                                    <constraint firstItem="b36-rw-Hzp" firstAttribute="centerY" secondItem="hyN-9d-qbO" secondAttribute="centerY" id="rJK-cl-msw"/>
-                                    <constraint firstItem="b36-rw-Hzp" firstAttribute="leading" secondItem="hyN-9d-qbO" secondAttribute="leading" constant="15" id="rKe-gn-oYF"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KU6-XM-cGH">
-                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Здесь будет список входящих запросов" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSD-C8-BJO">
-                                        <rect key="frame" x="30" y="354.5" width="354" height="53"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="SSD-C8-BJO" firstAttribute="centerY" secondItem="KU6-XM-cGH" secondAttribute="centerY" id="4iv-ZH-nxw"/>
-                                    <constraint firstItem="SSD-C8-BJO" firstAttribute="leading" secondItem="KU6-XM-cGH" secondAttribute="leading" constant="30" id="Cob-YS-fUP"/>
-                                    <constraint firstAttribute="trailing" secondItem="SSD-C8-BJO" secondAttribute="trailing" constant="30" id="kNf-uk-Oi5"/>
-                                </constraints>
-                            </view>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7a-gb-l6m">
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
@@ -82,33 +47,31 @@
                                     <constraint firstAttribute="trailing" secondItem="ZeM-PP-8RC" secondAttribute="trailing" constant="20" id="tEL-j7-o6a"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MTp-gj-fzA">
-                                <rect key="frame" x="0.0" y="100" width="414" height="796"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Здесь будет список входящих запросов" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSD-C8-BJO">
+                                <rect key="frame" x="30" y="468.5" width="354" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PIV-Fu-xAe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="R7a-gb-l6m" firstAttribute="trailing" secondItem="PIV-Fu-xAe" secondAttribute="trailing" id="0pB-we-J6n"/>
                             <constraint firstItem="PIV-Fu-xAe" firstAttribute="trailing" secondItem="MTp-gj-fzA" secondAttribute="trailing" id="8jk-SM-54W"/>
-                            <constraint firstItem="hyN-9d-qbO" firstAttribute="leading" secondItem="PIV-Fu-xAe" secondAttribute="leading" id="B2O-aq-bgz"/>
+                            <constraint firstItem="PIV-Fu-xAe" firstAttribute="trailing" secondItem="SSD-C8-BJO" secondAttribute="trailing" constant="30" id="Amg-HC-ojq"/>
+                            <constraint firstItem="SSD-C8-BJO" firstAttribute="leading" secondItem="PIV-Fu-xAe" secondAttribute="leading" constant="30" id="CnE-dO-0k0"/>
                             <constraint firstItem="R7a-gb-l6m" firstAttribute="top" secondItem="PIV-Fu-xAe" secondAttribute="top" id="Gk1-eV-dOn"/>
                             <constraint firstItem="R7a-gb-l6m" firstAttribute="leading" secondItem="PIV-Fu-xAe" secondAttribute="leading" id="N53-bx-ihR"/>
                             <constraint firstAttribute="bottom" secondItem="MTp-gj-fzA" secondAttribute="bottom" id="RtW-2w-T5Z"/>
+                            <constraint firstItem="MTp-gj-fzA" firstAttribute="top" secondItem="R7a-gb-l6m" secondAttribute="bottom" id="XyB-NU-wGd"/>
                             <constraint firstItem="MTp-gj-fzA" firstAttribute="leading" secondItem="PIV-Fu-xAe" secondAttribute="leading" id="YJU-I8-sIz"/>
-                            <constraint firstItem="MTp-gj-fzA" firstAttribute="top" secondItem="hyN-9d-qbO" secondAttribute="bottom" id="edA-8e-DTQ"/>
-                            <constraint firstItem="KU6-XM-cGH" firstAttribute="leading" secondItem="PIV-Fu-xAe" secondAttribute="leading" id="gex-q5-py8"/>
-                            <constraint firstItem="hyN-9d-qbO" firstAttribute="top" secondItem="PIV-Fu-xAe" secondAttribute="top" id="hMD-s4-w4t"/>
-                            <constraint firstItem="KU6-XM-cGH" firstAttribute="top" secondItem="hyN-9d-qbO" secondAttribute="bottom" id="ulc-bN-JCp"/>
-                            <constraint firstItem="PIV-Fu-xAe" firstAttribute="trailing" secondItem="hyN-9d-qbO" secondAttribute="trailing" id="w3Y-iL-ZTf"/>
-                            <constraint firstItem="PIV-Fu-xAe" firstAttribute="trailing" secondItem="KU6-XM-cGH" secondAttribute="trailing" id="xKb-0p-zVz"/>
-                            <constraint firstItem="PIV-Fu-xAe" firstAttribute="bottom" secondItem="KU6-XM-cGH" secondAttribute="bottom" id="xvx-rx-oGe"/>
+                            <constraint firstItem="SSD-C8-BJO" firstAttribute="centerY" secondItem="MTp-gj-fzA" secondAttribute="centerY" id="iBj-2x-UXo"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="SentRequestButton" destination="ZeM-PP-8RC" id="qQm-jY-S3Q"/>
-                        <outlet property="changeSearchableStateSwitch" destination="2Ku-T8-lzZ" id="dC2-C5-IFl"/>
+                        <outlet property="noRequestsLabel" destination="SSD-C8-BJO" id="cif-Oi-E4c"/>
                         <outlet property="tableView" destination="MTp-gj-fzA" id="MIW-9U-CoX"/>
                     </connections>
                 </viewController>

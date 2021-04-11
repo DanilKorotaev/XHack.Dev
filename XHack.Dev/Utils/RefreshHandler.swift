@@ -18,7 +18,10 @@ class RefreshHandler: NSObject {
     
     init(view: UIScrollView) {
         super.init()
-        view.addSubview(refreshControl)
+        view.refreshControl = refreshControl
+        if view is UICollectionView {
+            view.alwaysBounceVertical = true
+        }
         refreshControl.addTarget(self, action: #selector(refreshControlDidRefresh(_: )), for: .valueChanged)
         setBinding()
     }

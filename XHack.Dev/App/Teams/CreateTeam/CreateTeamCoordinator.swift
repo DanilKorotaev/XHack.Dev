@@ -81,7 +81,7 @@ class CreateTeamCoordinator : BaseCoordinator<CreateTeamCoordinatorResult> {
         
         viewModel.chooseAvatar.bind { [weak self] _ in
             guard let self = self else { return }
-            self.imagePicker.present(from: self.viewController.chooseAvatarButton)
+            self.imagePicker.present()
         }.disposed(by: disposeBag)
         
         viewModel.back.subscribe(onNext: { [weak self] in
