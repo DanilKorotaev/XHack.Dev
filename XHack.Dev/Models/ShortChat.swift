@@ -38,13 +38,13 @@ class ShortChat: Comparable {
         }
         type = ChatType(rawValue: data.type) ?? .p2p
         avatarUrl = data.avatarUrl ?? ""
-        if let lasMessageDto = data.messages.first {
+        if let lasMessageDto = data.messages?.first {
             self.lastMessage.onNext(ShortChatMessage(lasMessageDto))
             self.lastMessageText.onNext(lasMessageDto.text)
             self.lastMessageDate.onNext(lasMessageDto.createdAt)
             self.lastMessageDateText.onNext(lasMessageDto.createdAt.applyChatDateTimeMask())
         }
-        unreadCount.onNext(data.unreadMessageCount)
+        unreadCount.onNext(data.unreadMessageCount ?? 0)
     }
     
     init(id: Int?, team: ShortTeam) {

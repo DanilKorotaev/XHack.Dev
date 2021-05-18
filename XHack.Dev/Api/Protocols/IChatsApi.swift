@@ -12,4 +12,5 @@ import PromiseKit
 protocol IChatsApi {
     func getChats() -> Promise<ApiResult<[ShortChatDto]>>
     func getHistorySince(chatId: Int, messageId: Int?, take: Int) -> Promise<ApiResult<[ChatMessageDto]>>
+    func getChatInfo(by id: Int) -> Promise<ApiResult<ShortChatDto>>
 }

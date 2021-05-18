@@ -14,6 +14,8 @@ class StartUpScreenCoordinator: BaseCoordinator<Void> {
     private let sessionService: SessionService
     private var window = UIWindow(frame: UIScreen.main.bounds)
     private let context: IAppContext
+    private var pushData: PushData?
+    private var isRootViewShown = false
     
     init(sessionService: SessionService, context: IAppContext, viewModel: StartUpScreenViewModel) {
         self.sessionService = sessionService
@@ -43,6 +45,36 @@ class StartUpScreenCoordinator: BaseCoordinator<Void> {
     
     func applyBindings() {
         
+    }
+    
+    
+    func navigateToProperScreen(by pushData: PushData) {
+        if !isRootViewShown {
+            self.pushData = pushData
+            return
+        }
+        tryNavigateByPushData(pushData)
+    }
+    
+    
+    private func tryNavigateByPushData(_ pushData: PushData) {
+        guard let navigationData = pushData.data as? PushNavigationData else {
+            return
+        }
+        switch navigationData.pushCategoryType {
+        case .newMessage:
+            tryNavigateToChat(navigationData)
+        default:
+            return
+        }
+    }
+    
+    
+    private func tryNavigateToChat(_ data: PushNavigationData) {
+        guard let data = data as? PushChatNavigationData else {
+            return
+        }
+        self.navigateToChat(with: data.chatId, completionHandler: nil)
     }
     
     
@@ -83,6 +115,11 @@ class StartUpScreenCoordinator: BaseCoordinator<Void> {
                     window: self.window,
                     viewController: coordinator.navigationController,
                     withAnimation: true)
+                self.isRootViewShown = true
+                if let pushData = self.pushData {
+                    self.tryNavigateByPushData(pushData)
+                    self.pushData = nil
+                }
             }
         }
     }

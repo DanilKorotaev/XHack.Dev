@@ -45,4 +45,20 @@ extension BaseCoordinator {
         coordinator.hackId = hackId
         start(coordinator: coordinator)
     }
+    
+    
+    func navigateToChat(with id: Int, completionHandler: ((ChatResult) -> Void)?) {
+        let chatApi = Container.resolve(IChatsApi.self)
+        chatApi.getChatInfo(by: id).done { (result) in
+            guard let chatDto = result.content else {
+                return
+            }
+            let coordinator = Container.resolve(ChatCoordinator.self)
+            coordinator.navigationController = Container.resolve(MainScreeenProvider.self).navigationController
+            coordinator.shortChat = ShortChat(chatDto)
+            coordinator.start().subscribe(onNext: { result in
+                completionHandler?(result)
+            }).disposed(by: self.disposeBag)
+        }
+    }
 }

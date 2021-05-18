@@ -34,7 +34,7 @@ class PushSubscriptionProvider: IPushSubscriptionProvider {
     }
     
     private func subscribeMessager() {
-        unsubscriptionCallback =  self.messager.subscribe(PushSubscribingResultMessage.self, completion: MessangerSubcribeComplition<PushSubscribingResultMessage> {[weak self] (message) in
+        unsubscriptionCallback =  self.messager.subscribe(PushSubscribingResultMessage.self, completion: MessangerSubcribeComplition {[weak self] (message) in
             guard let self = self else {return}
             let currentToken =  message.error?.hasNonEmptyValue() ?? true ? message.pushToken : nil;
             let result = PushSubscribingResult(oldPushToken: self.pushToken, currentPushToken: currentToken)

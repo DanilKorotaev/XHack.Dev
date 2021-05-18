@@ -16,6 +16,6 @@ struct ShortChatDto: Codable {
     let team: ShortTeamDto?
     let type: String
     let avatarUrl: String?
-    let messages: [ShortChatMessageDto]
-    let unreadMessageCount: Int
+    let messages: [ShortChatMessageDto]?
+    let unreadMessageCount: Int?
 }

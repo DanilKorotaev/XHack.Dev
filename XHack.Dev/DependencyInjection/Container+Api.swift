@@ -22,5 +22,6 @@ extension Container {
         autoregister(IRequestsApi.self, initializer: RequestsApi.init).inObjectScope(.container)
         autoregister(IChatsApi.self, initializer: ChatsApi.init).inObjectScope(.container)
         autoregister(IFilesApi.self, initializer: FilesApi.init).inObjectScope(.container)
+        autoregister(IPushApi.self, initializer: PushApi.init).inObjectScope(.container)
     }
 }

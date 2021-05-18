@@ -104,6 +104,7 @@
 		A30A2C72261500020033CD22 /* HackFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A2C71261500020033CD22 /* HackFiltersViewController.swift */; };
 		A30A2C772615000C0033CD22 /* HackFilters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30A2C762615000C0033CD22 /* HackFilters.storyboard */; };
 		A30A2C7C261505C40033CD22 /* HackFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A2C7B261505C40033CD22 /* HackFilters.swift */; };
+		A316FAC3265198DA00273D3E /* PushApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A316FAC2265198DA00273D3E /* PushApi.swift */; };
 		A3196282259A757300D58502 /* HackathonListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A319627E259A757300D58502 /* HackathonListCoordinator.swift */; };
 		A3196283259A757300D58502 /* HackathonList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A319627F259A757300D58502 /* HackathonList.storyboard */; };
 		A3196284259A757300D58502 /* HackathonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3196280259A757300D58502 /* HackathonListViewModel.swift */; };
@@ -279,6 +280,15 @@
 		A3881432258AA1AF00FFF9A5 /* DeclineRequestToUserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3881431258AA1AF00FFF9A5 /* DeclineRequestToUserDto.swift */; };
 		A3881437258AA1D800FFF9A5 /* WithDrawRequestToUserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3881436258AA1D800FFF9A5 /* WithDrawRequestToUserDto.swift */; };
 		A3884C042569624700851886 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3884C032569624700851886 /* Injection.swift */; };
+		A38C414C26543144008914FF /* PushProcessable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C414B26543144008914FF /* PushProcessable.swift */; };
+		A38C41512654322E008914FF /* PushData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C41502654322E008914FF /* PushData.swift */; };
+		A38C41562654326D008914FF /* PushProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C41552654326D008914FF /* PushProcessor.swift */; };
+		A38C415B2654338A008914FF /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C415A2654338A008914FF /* PushNotificationData.swift */; };
+		A38C416026543798008914FF /* AnyDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C415F26543798008914FF /* AnyDecodable.swift */; };
+		A38C416526543A87008914FF /* NavigationPushData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C416426543A87008914FF /* NavigationPushData.swift */; };
+		A38C416A26543A92008914FF /* PushNavigationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C416926543A92008914FF /* PushNavigationData.swift */; };
+		A38C416F26543B61008914FF /* PushCategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C416E26543B61008914FF /* PushCategoryType.swift */; };
+		A38C417526543C00008914FF /* PushChatNavigationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38C417426543C00008914FF /* PushChatNavigationData.swift */; };
 		A38CDB2E256C1A2600E8A732 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A38CDB2D256C1A2600E8A732 /* Registration.storyboard */; };
 		A38CDB36256C1A3C00E8A732 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38CDB35256C1A3C00E8A732 /* RegistrationViewController.swift */; };
 		A38CDB3B256C1A6200E8A732 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38CDB3A256C1A6200E8A732 /* RegistrationViewModel.swift */; };
@@ -435,6 +445,9 @@
 		A3F3D84225F3D56300DACC7A /* ChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F3D84025F3D56300DACC7A /* ChatViewCell.swift */; };
 		A3F3D84325F3D56300DACC7A /* ChatViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3F3D84125F3D56300DACC7A /* ChatViewCell.xib */; };
 		A3F7BBB12575895D00F18645 /* HttpClientHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F7BBB02575895D00F18645 /* HttpClientHelper.swift */; };
+		A3F892DD26517F6B00010042 /* IPushSubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F892DC26517F6B00010042 /* IPushSubscriptionManager.swift */; };
+		A3F892E526517FC400010042 /* PushSubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F892E426517FC400010042 /* PushSubscriptionManager.swift */; };
+		A3F892EA26517FEB00010042 /* IPushApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F892E926517FEB00010042 /* IPushApi.swift */; };
 		A3FE7281260A82570040446C /* UIResizableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE7280260A82570040446C /* UIResizableTableView.swift */; };
 		A3FE7287260A85EC0040446C /* ShadowFextFieldViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE7285260A85EC0040446C /* ShadowFextFieldViewCell.swift */; };
 		A3FE7288260A85EC0040446C /* ShadowFextFieldViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3FE7286260A85EC0040446C /* ShadowFextFieldViewCell.xib */; };
@@ -577,6 +590,7 @@
 		A30A2C71261500020033CD22 /* HackFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFiltersViewController.swift; sourceTree = "<group>"; };
 		A30A2C762615000C0033CD22 /* HackFilters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HackFilters.storyboard; sourceTree = "<group>"; };
 		A30A2C7B261505C40033CD22 /* HackFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackFilters.swift; sourceTree = "<group>"; };
+		A316FAC2265198DA00273D3E /* PushApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushApi.swift; sourceTree = "<group>"; };
 		A319627E259A757300D58502 /* HackathonListCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackathonListCoordinator.swift; sourceTree = "<group>"; };
 		A319627F259A757300D58502 /* HackathonList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HackathonList.storyboard; sourceTree = "<group>"; };
 		A3196280259A757300D58502 /* HackathonListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackathonListViewModel.swift; sourceTree = "<group>"; };
@@ -753,6 +767,15 @@
 		A3881431258AA1AF00FFF9A5 /* DeclineRequestToUserDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclineRequestToUserDto.swift; sourceTree = "<group>"; };
 		A3881436258AA1D800FFF9A5 /* WithDrawRequestToUserDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithDrawRequestToUserDto.swift; sourceTree = "<group>"; };
 		A3884C032569624700851886 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
+		A38C414B26543144008914FF /* PushProcessable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushProcessable.swift; sourceTree = "<group>"; };
+		A38C41502654322E008914FF /* PushData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushData.swift; sourceTree = "<group>"; };
+		A38C41552654326D008914FF /* PushProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushProcessor.swift; sourceTree = "<group>"; };
+		A38C415A2654338A008914FF /* PushNotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationData.swift; sourceTree = "<group>"; };
+		A38C415F26543798008914FF /* AnyDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDecodable.swift; sourceTree = "<group>"; };
+		A38C416426543A87008914FF /* NavigationPushData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPushData.swift; sourceTree = "<group>"; };
+		A38C416926543A92008914FF /* PushNavigationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNavigationData.swift; sourceTree = "<group>"; };
+		A38C416E26543B61008914FF /* PushCategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushCategoryType.swift; sourceTree = "<group>"; };
+		A38C417426543C00008914FF /* PushChatNavigationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushChatNavigationData.swift; sourceTree = "<group>"; };
 		A38CDB2D256C1A2600E8A732 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		A38CDB35256C1A3C00E8A732 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A38CDB3A256C1A6200E8A732 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -909,6 +932,9 @@
 		A3F3D84025F3D56300DACC7A /* ChatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewCell.swift; sourceTree = "<group>"; };
 		A3F3D84125F3D56300DACC7A /* ChatViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewCell.xib; sourceTree = "<group>"; };
 		A3F7BBB02575895D00F18645 /* HttpClientHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientHelper.swift; sourceTree = "<group>"; };
+		A3F892DC26517F6B00010042 /* IPushSubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPushSubscriptionManager.swift; sourceTree = "<group>"; };
+		A3F892E426517FC400010042 /* PushSubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSubscriptionManager.swift; sourceTree = "<group>"; };
+		A3F892E926517FEB00010042 /* IPushApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPushApi.swift; sourceTree = "<group>"; };
 		A3FE7280260A82570040446C /* UIResizableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResizableTableView.swift; sourceTree = "<group>"; };
 		A3FE7285260A85EC0040446C /* ShadowFextFieldViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowFextFieldViewCell.swift; sourceTree = "<group>"; };
 		A3FE7286260A85EC0040446C /* ShadowFextFieldViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShadowFextFieldViewCell.xib; sourceTree = "<group>"; };
@@ -1183,6 +1209,8 @@
 				A3BA569025743A05007AD591 /* AccountSecureStorage.swift */,
 				A3BA569525743A2F007AD591 /* KeyChainHelper.swift */,
 				A31F572B25A5E3DE00759B61 /* RefreshHandler.swift */,
+				A3F892E426517FC400010042 /* PushSubscriptionManager.swift */,
+				A38C41552654326D008914FF /* PushProcessor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1281,6 +1309,8 @@
 				A362EF3425EEC52500AC147F /* IAppContext.swift */,
 				A320CD5D25FE9D30002F8845 /* ModalHandler.swift */,
 				A375596125FFDD9C008FCEEE /* MainScreeenProvider.swift */,
+				A3F892DC26517F6B00010042 /* IPushSubscriptionManager.swift */,
+				A38C414B26543144008914FF /* PushProcessable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1464,10 +1494,12 @@
 		A31F574925A5EAC300759B61 /* Primitives */ = {
 			isa = PBXGroup;
 			children = (
+				A38C417326543BC2008914FF /* Push */,
 				A3C2B28E25FAA9BF00BA103F /* Socket.io */,
 				A31F574A25A5EAD500759B61 /* OperationStateControl.swift */,
 				A3C2B2DB25FCFCFD00BA103F /* ScrollDirection.swift */,
 				A3C2B2E025FCFD7200BA103F /* SmartScrollArgs.swift */,
+				A38C415F26543798008914FF /* AnyDecodable.swift */,
 			);
 			path = Primitives;
 			sourceTree = "<group>";
@@ -1728,6 +1760,7 @@
 			isa = PBXGroup;
 			children = (
 				A3593B34260FC91C006C28B8 /* ParticipantRequestable.swift */,
+				A38C41502654322E008914FF /* PushData.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1922,6 +1955,18 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		A38C417326543BC2008914FF /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				A38C415A2654338A008914FF /* PushNotificationData.swift */,
+				A38C416426543A87008914FF /* NavigationPushData.swift */,
+				A38C416926543A92008914FF /* PushNavigationData.swift */,
+				A38C416E26543B61008914FF /* PushCategoryType.swift */,
+				A38C417426543C00008914FF /* PushChatNavigationData.swift */,
+			);
+			path = Push;
+			sourceTree = "<group>";
+		};
 		A38CDB2C256C19D100E8A732 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -2058,6 +2103,7 @@
 				A3881418258A9E9D00FFF9A5 /* IRequestsApi.swift */,
 				A3F3D81D25F3B22500DACC7A /* IChatsApi.swift */,
 				A38765D12608F6D600B83BE3 /* IFilesApi.swift */,
+				A3F892E926517FEB00010042 /* IPushApi.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -2075,6 +2121,7 @@
 				A3881427258AA09500FFF9A5 /* RequestsApi.swift */,
 				A3F3D82225F3B23A00DACC7A /* ChatsApi.swift */,
 				A38765D62608F75300B83BE3 /* FilesApi.swift */,
+				A316FAC2265198DA00273D3E /* PushApi.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -2566,6 +2613,7 @@
 				A3196295259A789900D58502 /* HackListHeaderView.swift in Sources */,
 				16A1E61A22DA40C40003F0DF /* AppCoordinator.swift in Sources */,
 				A3231292256F119100D3B97B /* ProfileViewController.swift in Sources */,
+				A3F892E526517FC400010042 /* PushSubscriptionManager.swift in Sources */,
 				A33579EC25E572AB00297E22 /* HackTeamListViewController.swift in Sources */,
 				16A1E60E22DA40C40003F0DF /* SignInViewModel.swift in Sources */,
 				A31F573125A5E6D900759B61 /* RefreshableContentHost.swift in Sources */,
@@ -2585,12 +2633,14 @@
 				A3E627FF25E6EB0E00C1FBB7 /* HackTeamDetailsViewModel.swift in Sources */,
 				A3961AE425799B4000FC3541 /* BookmarkHackathonDTO.swift in Sources */,
 				A3A6F38825F6719700DCD778 /* Date+Extensions.swift in Sources */,
+				A38C416026543798008914FF /* AnyDecodable.swift in Sources */,
 				16DD9D0422DA7D92007D9D2F /* OnBoardingData.swift in Sources */,
 				16A1E60422DA40C40003F0DF /* ButtonWithProgress.swift in Sources */,
 				A382163825FFBDC200AF2BF5 /* SelectTeamViewModel.swift in Sources */,
 				A37055EA25852D6E005650FD /* BaseViewModel+Dialogs.swift in Sources */,
 				A3961A6F2579844800FC3541 /* UserApi.swift in Sources */,
 				A30962592569DDCA007E366E /* TaskDetailViewModel.swift in Sources */,
+				A38C416F26543B61008914FF /* PushCategoryType.swift in Sources */,
 				A3E627F925E59B9E00C1FBB7 /* UITableViewHeaderFooterView+Extensions.swift in Sources */,
 				16A1E60F22DA40C40003F0DF /* DrawerMenuViewModel.swift in Sources */,
 				A3C2B2B825FBEF6F00BA103F /* UITableView+Rx.swift in Sources */,
@@ -2735,6 +2785,7 @@
 				A3C2B2C225FC15D100BA103F /* Dictionary+JsonParse.swift in Sources */,
 				A32D3CC425E2C66D002633B8 /* Common.swift in Sources */,
 				A33F44B925A8EB4800C16624 /* InteractiveTransitionableViewController.swift in Sources */,
+				A38C417526543C00008914FF /* PushChatNavigationData.swift in Sources */,
 				A3E1FCF0261108A70008A823 /* PageBarControlView.swift in Sources */,
 				A3BA569625743A2F007AD591 /* KeyChainHelper.swift in Sources */,
 				A3231241256D982300D3B97B /* SignUpResponse.swift in Sources */,
@@ -2768,6 +2819,7 @@
 				A3F3D7E925F3817700DACC7A /* TeamRequestDto.swift in Sources */,
 				16A1E61E22DA40C40003F0DF /* BaseCoordinator.swift in Sources */,
 				16A1E64022DA40C40003F0DF /* DrawerMenuScreen.swift in Sources */,
+				A38C41512654322E008914FF /* PushData.swift in Sources */,
 				A3DC594625E45B32009DA204 /* ShortTeamDto.swift in Sources */,
 				A30A2C652614FFE30033CD22 /* HackFiltersViewModel.swift in Sources */,
 				A3F3D82D25F3D08300DACC7A /* ShortChat.swift in Sources */,
@@ -2784,6 +2836,7 @@
 				A37055D125851545005650FD /* HackathonDetailViewController.swift in Sources */,
 				16A1E62C22DA40C40003F0DF /* TranslationsService.swift in Sources */,
 				16A1E62822DA40C40003F0DF /* ViewControllerWithSideMenu.swift in Sources */,
+				A38C416526543A87008914FF /* NavigationPushData.swift in Sources */,
 				16A1E62922DA40C40003F0DF /* DrawerMenuViewController.swift in Sources */,
 				A362EEEA25ED7A2800AC147F /* IncomingRequestViewCell.swift in Sources */,
 				A3FE72C0260BB25C0040446C /* UIImageView+Rx.swift in Sources */,
@@ -2813,9 +2866,11 @@
 				A3C2B2C725FC16FB00BA103F /* NewMessageData.swift in Sources */,
 				A352B5EC2602813F00F3F6B2 /* ReadMessageData.swift in Sources */,
 				A30A2C6D2614FFF00033CD22 /* HackFiltersCoordinator.swift in Sources */,
+				A38C414C26543144008914FF /* PushProcessable.swift in Sources */,
 				A3DC594C25E45C43009DA204 /* ShortTeamViewCell.swift in Sources */,
 				A378766F2607977800D26E37 /* ImagePicker.swift in Sources */,
 				A3A6F3A025F6BD0400DCD778 /* IncomingMessageViewCell.swift in Sources */,
+				A38C41562654326D008914FF /* PushProcessor.swift in Sources */,
 				16A1E64522DA40C40003F0DF /* Session.swift in Sources */,
 				A349FB56259BD5BB0038549E /* Date+String.swift in Sources */,
 				A3961AEE25799C1700FC3541 /* BookmarkTeamDTO.swift in Sources */,
@@ -2857,6 +2912,7 @@
 				A36AF8DA2582D198000E2852 /* CreateTeamViewController.swift in Sources */,
 				A3BDB60425F41ED2006CD2DC /* ShortChatMessageDto.swift in Sources */,
 				A3BA563C2573EA20007AD591 /* TestEndpoints.swift in Sources */,
+				A3F892EA26517FEB00010042 /* IPushApi.swift in Sources */,
 				A3961AC2257994E000FC3541 /* ShortHackathonDto.swift in Sources */,
 				A33579E725E5729D00297E22 /* HackTeamListCoordinator.swift in Sources */,
 				A3A6F39525F6A34C00DCD778 /* ChatMessageDto.swift in Sources */,
@@ -2866,8 +2922,10 @@
 				A3B7639C25FD0C7D006D31D7 /* TableViewLoadingTarget.swift in Sources */,
 				A3441D5425967AB400A3BFA5 /* ChooseSearchCategoryViewController.swift in Sources */,
 				A3A6F3AD25F7FA8E00DCD778 /* UIView+Extensions.swift in Sources */,
+				A38C416A26543A92008914FF /* PushNavigationData.swift in Sources */,
 				A320CD5E25FE9D30002F8845 /* ModalHandler.swift in Sources */,
 				A39299A225EED99C0031C5B9 /* UserDetailsViewController.swift in Sources */,
+				A316FAC3265198DA00273D3E /* PushApi.swift in Sources */,
 				A3BA564B25742A0E007AD591 /* AuthApi.swift in Sources */,
 				A3C2B2BD25FC073400BA103F /* String+Size.swift in Sources */,
 				A323129C256F11AC00D3B97B /* ProfileCoordinator.swift in Sources */,
@@ -2891,6 +2949,7 @@
 				A3231259256DBDF000D3B97B /* HttpRequestExecutor.swift in Sources */,
 				16DD9D1D22DB32AA007D9D2F /* SettingsCoordinator.swift in Sources */,
 				A3877550256AB0D300F00EB0 /* PushSubscribingResultMessage.swift in Sources */,
+				A3F892DD26517F6B00010042 /* IPushSubscriptionManager.swift in Sources */,
 				A3961AB22579936400FC3541 /* SearchHackathonsCoordinator.swift in Sources */,
 				A378765F2603B4A000D26E37 /* ReadChatData.swift in Sources */,
 				A3A6F3A725F6BD1B00DCD778 /* OutgoingMessageViewCell.swift in Sources */,
@@ -2899,6 +2958,7 @@
 				A3441D2A25963B0900A3BFA5 /* ChatListCoordinator.swift in Sources */,
 				16A1E62622DA40C40003F0DF /* DashboardViewController.swift in Sources */,
 				16A1E60A22DA40C40003F0DF /* LocalizedTextField.swift in Sources */,
+				A38C415B2654338A008914FF /* PushNotificationData.swift in Sources */,
 				A349FB64259BE40C0038549E /* TagViewCell.swift in Sources */,
 				A3961A8D2579897E00FC3541 /* CreateRequestToTeamDto.swift in Sources */,
 				A3441D4F25967A7500A3BFA5 /* ChooseSearchCategoryViewModel.swift in Sources */,

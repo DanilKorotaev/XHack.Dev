@@ -29,4 +29,9 @@ class ChatsApi: IChatsApi {
         let url = endpointsProvider.gatewayUrl + "/api/chat/getHistorySince/\(chatId)/\(message)/\(take)"
         return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
     }
+    
+    func getChatInfo(by id: Int) -> Promise<ApiResult<ShortChatDto>> {
+        let url = "\(endpointsProvider.gatewayUrl)/api/chat/getChatInfo/\(id)"
+        return ApiHelpers.executeReliablyGetRequest(apiTokenHolder: apiTokenHolder, url: url)
+    }
 }

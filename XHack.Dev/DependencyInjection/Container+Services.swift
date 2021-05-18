@@ -14,5 +14,7 @@ extension Container {
         autoregister(IAccountSecureStorage.self, initializer: AccountSecureStorage.init).inObjectScope(.container)
         autoregister(IAppContext.self, initializer: AppContext.init).inObjectScope(.container)
         autoregister(ChatProccessable.self, initializer: ChatProcessor.init).inObjectScope(.container)
+        autoregister(IPushSubscriptionManager.self, initializer: PushSubscriptionManager.init).inObjectScope(.container)
+        autoregister(PushProcessable.self, initializer: PushProcessor.init).inObjectScope(.container)
     }
 }
