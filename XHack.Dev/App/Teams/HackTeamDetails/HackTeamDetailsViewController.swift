@@ -33,7 +33,7 @@ class HackTeamDetailsViewController: BaseViewController<HackTeamDetailsViewModel
     @IBOutlet weak var descriptionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var chatButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
-        
+    
     override func completeUi() {
         hackDescriptionTextView.textContainer.maximumNumberOfLines = allDescriptionCollapsedLines
         hackDescriptionTextView.textContainer.lineBreakMode = .byTruncatingTail
@@ -55,7 +55,6 @@ class HackTeamDetailsViewController: BaseViewController<HackTeamDetailsViewModel
                 self.teamNameLabel.text = teamDetail.name
                 self.hackDescriptionTextView.text = teamDetail.description
                 self.setChangeParticipantStateButtonTitle(participantType: teamDetail.participantType)
-                self.setVisibilityChangeParticipantStateButton(participantType: teamDetail.participantType)
                 self.updateDescriptionHeight()
                 self.updateVisibilityShowAllButton()
                 self.hackDescriptionContainerView.isHidden = teamDetail.description.isEmpty
@@ -66,9 +65,9 @@ class HackTeamDetailsViewController: BaseViewController<HackTeamDetailsViewModel
                 }).disposed(by: self.teamDisposeBag)
                 
                 teamDetail.members.bind(to: self.membersCollectionView.rx.items(cellIdentifier: ShortUserViewCell.reuseIdentifier)) { row, model, cell in
-                        guard let cell = cell as? ShortUserViewCell else { return }
-                        cell.set(for: model)
-                    }.disposed(by: self.teamDisposeBag)
+                    guard let cell = cell as? ShortUserViewCell else { return }
+                    cell.set(for: model)
+                }.disposed(by: self.teamDisposeBag)
                 
             }).disposed(by: disposeBag)
         
@@ -87,7 +86,7 @@ class HackTeamDetailsViewController: BaseViewController<HackTeamDetailsViewModel
         backButton.rx.tap
             .bind(to: dataContext.back)
             .disposed(by: disposeBag)
-       
+        
         editButton.rx.tap
             .bind(to: dataContext.edit)
             .disposed(by: disposeBag)
@@ -95,7 +94,7 @@ class HackTeamDetailsViewController: BaseViewController<HackTeamDetailsViewModel
         dataContext.canChat
             .bind(to: chatButton.rx.isHidden.mapObserver({ !$0}))
             .disposed(by: disposeBag)
-       
+        
         dataContext.canEdit
             .bind(to: editButton.rx.isHidden.mapObserver({ !$0}))
             .disposed(by: disposeBag)
@@ -122,9 +121,9 @@ class HackTeamDetailsViewController: BaseViewController<HackTeamDetailsViewModel
         let maxLines = isAllDescriptionShown ?  allDescriptionExpandedLines : allDescriptionCollapsedLines
         let maxHeight = lineHeight * CGFloat(maxLines)
         let textHeight = (maxHeight > textSize.height ? textSize.height : maxHeight) + lineHeight / 2
-
-            self.hackDescriptionTextView.textContainer.maximumNumberOfLines = maxLines
-
+        
+        self.hackDescriptionTextView.textContainer.maximumNumberOfLines = maxLines
+        
         UIView.animate(withDuration: 0.3) {
             self.descriptionTextViewHeightConstraint.constant = textHeight
             self.view.layoutIfNeeded()
@@ -142,9 +141,10 @@ class HackTeamDetailsViewController: BaseViewController<HackTeamDetailsViewModel
         membersCollectionView.register(ShortUserViewCell.nib, forCellWithReuseIdentifier: ShortUserViewCell.reuseIdentifier)
         
         let layout = UICollectionViewFlowLayout()
-            layout.scrollDirection = .horizontal
+        layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: 55, height: membersCollectionView.frame.height)
         membersCollectionView.setCollectionViewLayout(layout, animated: true)
+        membersCollectionView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress)))
     }
     
     func setVisibilityChangeParticipantStateButton(participantType: TeamParticipantType) {
@@ -154,17 +154,47 @@ class HackTeamDetailsViewController: BaseViewController<HackTeamDetailsViewModel
     func setChangeParticipantStateButtonTitle(participantType: TeamParticipantType) {
         var text = ""
         switch(participantType) {
-            case .none:
-                text = "Отправить запрос"
-            case .member:
-                text = "Покинуть команды"
-            case .outgoingRequest:
-                text = "Показать запросы"
-            case .incomingRequest:
-                text = "Показать запросы"
-            default:
-                text = ""
+        case .none:
+            text = "Отправить запрос"
+        case .member:
+            text = "Покинуть команды"
+        case .outgoingRequest:
+            text = "Показать запросы"
+        case .incomingRequest:
+            text = "Показать запросы"
+        case .captaint:
+            text = "Удалить команду"
+        @unknown default:
+            text = ""
         }
         changeParticipantStateButton.setTitle(text, for: .normal)
+    }
+    
+    
+    @objc fileprivate func handleLongPress(longPressGR: UILongPressGestureRecognizer) {
+        let point = longPressGR.location(in: self.membersCollectionView)
+        guard let indexPath = self.membersCollectionView.indexPathForItem(at: point) else { return }
+        guard let cell = self.membersCollectionView.cellForItem(at: indexPath) as? ShortUserViewCell else { return }
+        switch longPressGR.state {
+        case UIGestureRecognizer.State.began:
+            let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+            selectionFeedbackGenerator.selectionChanged()
+            self.membersCollectionView.bringSubviewToFront(cell)
+            UIView.animate(withDuration: 0.25) {
+                cell.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            }
+        case UIGestureRecognizer.State.changed:
+            UIView.animate(withDuration: 0.25) {
+                cell.transform = .identity
+            }
+            break
+        default:
+            UIView.animate(withDuration: 0.25) {
+                cell.transform = .identity
+            }
+            dataContext?.memberActionRequested.onNext(cell.model)
+            longPressGR.state = .ended
+        }
+        return
     }
 }

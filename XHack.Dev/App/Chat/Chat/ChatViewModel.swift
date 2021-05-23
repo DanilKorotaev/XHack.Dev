@@ -25,6 +25,9 @@ class ChatViewModel: BaseViewModel {
     let isPageLoading =  BehaviorSubject<Bool>(value: false)
     
     let back = PublishSubject<Void>()
+    let chatLeaved = PublishSubject<Void>()
+    let chatRemoved = PublishSubject<Void>()
+    
     var shortChat: ShortChat? = .none
     
     let information = PublishSubject<Void>()
@@ -118,6 +121,18 @@ class ChatViewModel: BaseViewModel {
             let isIncoming = currentUserId != message.sender.id
             self.messages.insert(ChatMessage(message, isIncoming: isIncoming), at: 0)
             self.readMessage(message.id)
+        }).disposed(by: chatProccessorDisposeBag!)
+        
+        chatProcessor.chatLeaved.subscribe(onNext: { [weak self] message in
+            guard let self = self, let chatId = self.shortChat?.id, chatId == message.chatId else { return }
+            self.showMessage(title: "Внимание", message: "Вас исключили из чата")
+            self.chatLeaved.onNext(())
+        }).disposed(by: chatProccessorDisposeBag!)
+        
+        chatProcessor.chatRemoved.subscribe(onNext: { [weak self] message in
+            guard let self = self, let chatId = self.shortChat?.id, chatId == message.chatId else { return }
+            self.showMessage(title: "Внимание", message: "Чат удален")
+            self.chatRemoved.onNext(())
         }).disposed(by: chatProccessorDisposeBag!)
     }
     

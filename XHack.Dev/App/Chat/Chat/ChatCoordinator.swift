@@ -13,6 +13,7 @@ enum ChatResult {
     case changed
     case chatCreated
     case nothingChanged
+    case removed
 }
 
 class ChatCoordinator: BaseCoordinator<ChatResult> {
@@ -46,6 +47,16 @@ class ChatCoordinator: BaseCoordinator<ChatResult> {
         
         viewModel.information.bind { _ in
             self.toInformation()
+        }.disposed(by: disposeBag)
+        
+        viewModel.chatLeaved.bind { _ in
+            self.result.onNext(.removed)
+            self.navigationController.popViewController(animated: true)
+        }.disposed(by: disposeBag)
+        
+        viewModel.chatRemoved.bind { _ in
+            self.result.onNext(.removed)
+            self.navigationController.popViewController(animated: true)
         }.disposed(by: disposeBag)
     }
     

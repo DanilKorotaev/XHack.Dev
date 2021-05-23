@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum ClientEvents: String {
-    case sendMessage = "SendMessage"
-    case authorize = "Authorize"
-    case deleteMessage = "DeleteMessage"
-    case readMessage = "ReadMessage"
+struct ClientEvents {
+    static let sendMessage = "SendMessage"
+    static let authorize = "Authorize"
+    static let deleteMessage = "DeleteMessage"
+    static let readMessage = "ReadMessage"
 }

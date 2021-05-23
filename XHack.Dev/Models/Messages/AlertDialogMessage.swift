@@ -11,11 +11,11 @@ import UIKit
 
 class AlertDialogMessage: Message, Equatable {
     let dialogActions: [DialogActionInfo]
-    let title: String
+    let title: String?
     let message: String?
     let style: UIAlertController.Style
     
-    init(title: String, message: String?, dialogActions: [DialogActionInfo], style: UIAlertController.Style = .alert) {
+    init(title: String?, message: String?, dialogActions: [DialogActionInfo], style: UIAlertController.Style = .alert) {
         self.message = message
         self.title = title
         self.dialogActions = dialogActions

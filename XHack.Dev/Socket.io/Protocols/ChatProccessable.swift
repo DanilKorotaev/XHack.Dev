@@ -13,7 +13,9 @@ protocol ChatProccessable {
     func connect()
     func sendMessage(chatId: Int?, message: String, guid: UUID, teamId: Int?, secondUserId: Int?)
     func readMessage(chatId: Int, messageId: Int)
+    func disconnect()
     var newMessageRecived: PublishSubject<NewMessageData> { get }
     var readChatRecived: PublishSubject<ReadChatData> { get }
-
+    var chatLeaved: PublishSubject<ChatLeavedData> { get }
+    var chatRemoved: PublishSubject<ChatRemovedData> { get }
 }

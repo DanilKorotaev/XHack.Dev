@@ -17,4 +17,6 @@ protocol ITeamsApi {
     func getDetail(for teamId: Int) -> Promise<ApiResult<TeamDetailsDto>>
     func leave(teamId: Int) -> Promise<LiteApiResult>
     func update(team: UpdateTeamDto, for teamId: Int) -> Promise<LiteApiResult>
+    func removeTeammate(teamId: Int, userId: Int) -> Promise<LiteApiResult>
+    func removeTeam(teamId: Int) -> Promise<LiteApiResult>
 }

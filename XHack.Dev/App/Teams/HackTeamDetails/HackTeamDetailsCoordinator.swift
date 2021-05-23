@@ -32,6 +32,10 @@ class HackTeamDetailsCoordinator: BaseCoordinator<Void> {
             self?.navigationController.popViewController(animated: true)
         }).disposed(by: disposeBag)
         
+        viewModel.teamRemoved.subscribe(onNext: { [weak self] in
+            self?.navigationController.popViewController(animated: true)
+        }).disposed(by: disposeBag)
+        
         viewModel.memberSelected.bind { [weak self] member in
             self?.toUserProfile(member.id)
         }.disposed(by: disposeBag)

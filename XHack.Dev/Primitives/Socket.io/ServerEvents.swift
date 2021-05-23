@@ -8,7 +8,9 @@
 
 import Foundation
 
-enum ServerEvents: String {
-    case newMessage = "NewMessage"
-    case readChat = "ReadChat"
+struct ServerEvents {
+    static let newMessage = "NewMessage"
+    static let readChat = "ReadChat"
+    static let chatLeaved = "ChatLeaved"
+    static let chatRemoved = "ChatRemoved"
 }

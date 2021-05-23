@@ -13,11 +13,15 @@ class HackTeamDetailsViewModel: BaseViewModel {
     let teamsApi: ITeamsApi
     let bookmarksApi: IBookmarksApi
     let requestsApi: IRequestsApi
+    let messager: IMessager
+    let context: IAppContext
     
     let team = BehaviorSubject<TeamDetails?>(value: .none)
     let back = PublishSubject<Void>()
     let bookmark = PublishSubject<Void>()
     let memberSelected = PublishSubject<ShortUser>()
+    let memberActionRequested = PublishSubject<ShortUser>()
+    let teamRemoved = PublishSubject<Void>()
     let changeParticipantState = PublishSubject<Void>()
     let chat = PublishSubject<Void>()
     let edit = PublishSubject<Void>()
@@ -27,10 +31,12 @@ class HackTeamDetailsViewModel: BaseViewModel {
     let showRequests = PublishSubject<[TeamRequest]>()
     var teamId: Int = 0
         
-    init(teamsApi: ITeamsApi, bookmarksApi: IBookmarksApi, requestsApi: IRequestsApi) {
+    init(teamsApi: ITeamsApi, bookmarksApi: IBookmarksApi, requestsApi: IRequestsApi, messager: IMessager, context: IAppContext) {
         self.teamsApi = teamsApi
         self.bookmarksApi = bookmarksApi
         self.requestsApi = requestsApi
+        self.messager = messager
+        self.context = context
     }
     
     override func refreshContent(operationArgs: IOperationStateControl) {
@@ -62,6 +68,10 @@ class HackTeamDetailsViewModel: BaseViewModel {
         changeParticipantState.subscribe(onNext: { [weak self] in
             self?.changeParticipantStateExecute()
         }).disposed(by: disposeBag)
+        
+        memberActionRequested.bind { [weak self] member in
+            self?.memberActionExecute(member)
+        }.disposed(by: disposeBag)
     }
     
     private func bookmarkTeam() {
@@ -92,10 +102,26 @@ class HackTeamDetailsViewModel: BaseViewModel {
             fallthrough
         case .incomingRequest:
             showRequests.onNext(team.requests)
+        case .captaint:
+            removedTeamExecute()
         default:
             // do nothing
             break
         }
+    }
+    
+    private func removedTeamExecute() {
+        let removeTeam: () -> Void = {
+            self.teamsApi.removeTeam(teamId: self.teamId).done { (result) in
+                if self.checkAndProcessApiResult(response: result, "удалить команду") {
+                    return
+                }
+                self.teamRemoved.onNext(())
+            }
+        }
+        let message = AlertDialogMessage(title: "Внимание", message: "При удалении команды, чат команды удалиться. Вы действительно хотите удалить команду?", dialogActions: [DialogActionInfo.cancel, DialogActionInfo(title: "Удалить", action: removeTeam)])
+        messager.publish(message: message)
+       
     }
     
     private func leaveFromTeamExecute() {
@@ -136,5 +162,27 @@ class HackTeamDetailsViewModel: BaseViewModel {
             }
             self.forceContentRefreshingAsync()
         }
+    }
+    
+    private func memberActionExecute(_ member: ShortUser) {
+        if member.id == context.currentUser?.id {
+            return
+        }
+        
+        let delete: () -> Void = {
+            self.teamsApi.removeTeammate(teamId: self.teamId, userId: member.id).done { (result) in
+                if self.checkAndProcessApiResult(response: result, "исключить \(member.name) из команды") {
+                    return
+                }
+                self.forceContentRefreshingAsync()
+            }
+        }
+        
+        let message = AlertDialogMessage(title: nil, message: nil, dialogActions: [
+            DialogActionInfo(title: "Исключить из команды", action: delete),
+            DialogActionInfo.cancel
+        ], style: .actionSheet)
+        
+        messager.publish(message: message)
     }
 }
